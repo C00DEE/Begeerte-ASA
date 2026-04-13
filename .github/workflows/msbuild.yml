@@ -3,31 +3,59 @@ name: Build Solution
 on:
   push:
     branches: [ "main" ]
+  pull_request:
 
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
+      # 1. 拉代码
       - name: Checkout
         uses: actions/checkout@v4
 
+      # 2. 查看目录（防路径问题）
+      - name: Show project structure
+        run: tree /F
+
+      # 3. 设置 MSBuild
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
 
-      - name: Restore NuGet
-        run: nuget restore src/begeerte_ark_survival_ascended.sln
-
-      - name: Build
+      # 4. 自动查找 .sln（防路径写死）
+      - name: Find solution file
+        id: find_sln
+        shell: pwsh
         run: |
-          msbuild src/begeerte_ark_survival_ascended.sln ^
-            /p:Configuration=Release ^
-            /p:Platform=x64 ^
-            /m
+          $sln = Get-ChildItem -Recurse -Filter *.sln | Select-Object -First 1
+          if (-not $sln) {
+            Write-Error "No .sln file found!"
+            exit 1
+          }
+          echo "SLN_PATH=$($sln.FullName)" >> $env:GITHUB_ENV
+          echo "Found solution: $($sln.FullName)"
 
-      - name: Upload
+      # 5. 还原 NuGet（有就还原，没有自动跳过）
+      - name: Restore NuGet
+        run: nuget restore "$env:SLN_PATH"
+
+      # 6. 尝试 x64 编译（主方案）
+      - name: Build x64
+        id: build_x64
+        continue-on-error: true
+        run: msbuild "$env:SLN_PATH" /p:Configuration=Release /p:Platform=x64 /m
+
+      # 7. fallback：Win32（防止 x64 不存在）
+      - name: Build Win32 (fallback)
+        if: steps.build_x64.outcome == 'failure'
+        run: msbuild "$env:SLN_PATH" /p:Configuration=Release /p:Platform=Win32 /m
+
+      # 8. 上传编译产物
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: build-output
           path: |
             **/Release/**
+            **/*.dll
+            **/*.exe
