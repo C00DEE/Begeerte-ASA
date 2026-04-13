@@ -3,27 +3,21 @@ name: Build Solution
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
-      # 1. 拉代码
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      # 2. 设置 MSBuild
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
 
-      # 3. 还原 NuGet（如果有依赖）
-      - name: Restore NuGet packages
-        run: nuget restore Begeerte-ASA/src/begeerte_ark_survival_ascended.sln
+      - name: Restore NuGet
+        run: nuget restore src/begeerte_ark_survival_ascended.sln
 
-      # 4. 编译
       - name: Build
         run: |
           msbuild src/begeerte_ark_survival_ascended.sln ^
@@ -31,8 +25,7 @@ jobs:
             /p:Platform=x64 ^
             /m
 
-      # 5. 上传产物（可选）
-      - name: Upload build artifacts
+      - name: Upload
         uses: actions/upload-artifact@v4
         with:
           name: build-output
