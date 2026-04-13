@@ -26,7 +26,7 @@ jobs:
       # 4. 编译
       - name: Build
         run: |
-          msbuild Begeerte-ASA/src/begeerte_ark_survival_ascended.sln ^
+          msbuild src/begeerte_ark_survival_ascended.sln ^
             /p:Configuration=Release ^
             /p:Platform=x64 ^
             /m
