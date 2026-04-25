@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass WeapGlowStick_Base.WeapGlowStick_Base_C
 // 0x0000 (0x1270 - 0x1270)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_AWeapGlowStick_Base_C;
 
-}
-
+SDK_NAMESPACE_END

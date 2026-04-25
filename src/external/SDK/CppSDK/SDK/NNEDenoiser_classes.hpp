@@ -15,8 +15,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class NNEDenoiser.NNEDenoiserAsset
 // 0x0088 (0x00B8 - 0x0030)
@@ -97,5 +96,4 @@ public:
 };
 DUMPER7_ASSERTS_UNNEDenoiserSettings;
 
-}
-
+SDK_NAMESPACE_END

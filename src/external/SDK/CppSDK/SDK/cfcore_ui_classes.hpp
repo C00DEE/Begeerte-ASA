@@ -21,8 +21,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class cfcore_ui.BindButtonSystem
 // 0x0028 (0x0058 - 0x0030)
@@ -166,7 +165,7 @@ DUMPER7_ASSERTS_UCFCoreRichText;
 
 // Class cfcore_ui.CFCoreRichTextBlockImageDecorator
 // 0x0028 (0x0058 - 0x0030)
-class UCFCoreRichTextBlockImageDecorator : public URichTextBlockImageDecorator
+class UCFCoreRichTextBlockImageDecorator final : public URichTextBlockImageDecorator
 {
 public:
 	class UCFCoreRichText*                        CoreRichText;                                      // 0x0030(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -457,5 +456,4 @@ public:
 };
 DUMPER7_ASSERTS_UCFCoreVirtualCursorFunctionLibrary;
 
-}
-
+SDK_NAMESPACE_END

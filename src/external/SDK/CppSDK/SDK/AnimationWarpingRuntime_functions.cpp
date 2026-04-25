@@ -14,8 +14,7 @@
 #include "AnimationWarpingRuntime_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AnimationWarpingRuntime.AnimationWarpingLibrary.GetCurveValueFromAnimation
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
@@ -80,5 +79,5 @@ struct FTransform UAnimationWarpingLibrary::GetOffsetRootTransform(const struct 
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

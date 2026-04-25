@@ -13,8 +13,7 @@
 #include "BaseHumanAnimBP_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass TPV_ClimbPick_MaleAnimBP.TPV_ClimbPick_MaleAnimBP_C
 // 0x0000 (0x1E0A0 - 0x1E0A0)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UTPV_ClimbPick_MaleAnimBP_C;
 
-}
-
+SDK_NAMESPACE_END

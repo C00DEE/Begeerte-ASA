@@ -17,8 +17,7 @@
 #include "PropertyBindingUtils_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum SmartObjectsModule.ESmartObjectChangeReason
 // NumValues: 0x000E
@@ -473,7 +472,7 @@ DUMPER7_ASSERTS_FSmartObjectClaimHandle;
 // ScriptStruct SmartObjectsModule.SmartObjectSlotStateData
 // 0x0000 (0x0000 - 0x0000)
 #pragma pack(push, 0x1)
-struct alignas(0x01) FSmartObjectSlotStateData
+struct SDK_ALIGN(0x01) FSmartObjectSlotStateData
 {
 };
 #pragma pack(pop)
@@ -701,5 +700,4 @@ public:
 };
 DUMPER7_ASSERTS_FWorldCondition_SmartObjectActorTagQuery;
 
-}
-
+SDK_NAMESPACE_END

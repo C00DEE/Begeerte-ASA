@@ -14,8 +14,7 @@
 #include "IKRig_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function IKRig.IKGoalCreatorInterface.AddIKGoals
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -648,5 +647,5 @@ TArray<class UIKRig_FBIKEffector*> UIKRigFBIKSolver::GetEffectors()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

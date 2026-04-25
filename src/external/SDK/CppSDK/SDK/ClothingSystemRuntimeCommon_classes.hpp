@@ -16,8 +16,7 @@
 #include "ClothingSystemRuntimeCommon_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ClothingSystemRuntimeCommon.ClothConfigCommon
 // 0x0000 (0x0028 - 0x0028)
@@ -135,5 +134,4 @@ public:
 };
 DUMPER7_ASSERTS_UClothLODDataCommon_Legacy;
 
-}
-
+SDK_NAMESPACE_END

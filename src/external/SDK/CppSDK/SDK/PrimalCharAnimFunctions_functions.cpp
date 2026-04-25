@@ -14,8 +14,7 @@
 #include "PrimalCharAnimFunctions_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PrimalCharAnimFunctions.PrimalCharAnimFunctions_C.UpdateGroundConformingVariables
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -60,5 +59,5 @@ void UPrimalCharAnimFunctions_C::UpdateGroundConformingVariables(class APrimalCh
 		*Interpolate = Parms.Interpolate;
 }
 
-}
 
+SDK_NAMESPACE_END

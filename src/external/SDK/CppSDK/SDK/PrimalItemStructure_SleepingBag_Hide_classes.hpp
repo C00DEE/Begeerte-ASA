@@ -13,8 +13,7 @@
 #include "PrimalItemStructure_SleepingBag_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemStructure_SleepingBag_Hide.PrimalItemStructure_SleepingBag_Hide_C
 // 0x0000 (0x0B60 - 0x0B60)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemStructure_SleepingBag_Hide_C;
 
-}
-
+SDK_NAMESPACE_END

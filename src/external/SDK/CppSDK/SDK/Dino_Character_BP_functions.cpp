@@ -14,8 +14,7 @@
 #include "Dino_Character_BP_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Dino_Character_BP.Dino_Character_BP_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
@@ -549,5 +548,5 @@ void ADino_Character_BP_C::BPControlRigNotify(class FName NotifyName, class FNam
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

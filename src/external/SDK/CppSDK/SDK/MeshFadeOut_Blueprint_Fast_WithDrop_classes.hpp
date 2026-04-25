@@ -13,8 +13,7 @@
 #include "MeshFadeOut_Blueprint_WithDrop_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass MeshFadeOut_Blueprint_Fast_WithDrop.MeshFadeOut_Blueprint_Fast_WithDrop_C
 // 0x0000 (0x0518 - 0x0518)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_AMeshFadeOut_Blueprint_Fast_WithDrop_C;
 
-}
-
+SDK_NAMESPACE_END

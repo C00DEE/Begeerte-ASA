@@ -14,8 +14,7 @@
 #include "AudioWidgets_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AudioWidgets.AudioMaterialButton.SetIsPressed
 // (Final, Native, Public, BlueprintCallable)
@@ -1757,5 +1756,5 @@ void UAudioVectorscope::StopProcessing()
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

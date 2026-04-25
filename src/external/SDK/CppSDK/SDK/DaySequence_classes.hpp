@@ -20,8 +20,7 @@
 #include "MovieScene_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class DaySequence.DaySequenceActor
 // 0x0168 (0x05F0 - 0x0488)
@@ -671,5 +670,4 @@ public:
 };
 DUMPER7_ASSERTS_AEnvironmentLightingActor;
 
-}
-
+SDK_NAMESPACE_END

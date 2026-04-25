@@ -13,12 +13,11 @@
 #include "DmgType_Melee_Dino_Herbivore_Medium_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DmgType_Melee_Dino_Herbivore_Medium_MineStone.DmgType_Melee_Dino_Herbivore_Medium_MineStone_C
 // 0x0000 (0x0178 - 0x0178)
-class UDmgType_Melee_Dino_Herbivore_Medium_MineStone_C final : public UDmgType_Melee_Dino_Herbivore_Medium_C
+class UDmgType_Melee_Dino_Herbivore_Medium_MineStone_C : public UDmgType_Melee_Dino_Herbivore_Medium_C
 {
 public:
 	static class UClass* StaticClass()
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UDmgType_Melee_Dino_Herbivore_Medium_MineStone_C;
 
-}
-
+SDK_NAMESPACE_END

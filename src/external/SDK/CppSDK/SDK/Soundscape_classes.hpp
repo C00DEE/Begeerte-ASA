@@ -19,8 +19,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class Soundscape.SoundscapeBPFunctionLibrary
 // 0x0000 (0x0028 - 0x0028)
@@ -386,5 +385,4 @@ public:
 };
 DUMPER7_ASSERTS_USoundscapeSubsystem;
 
-}
-
+SDK_NAMESPACE_END

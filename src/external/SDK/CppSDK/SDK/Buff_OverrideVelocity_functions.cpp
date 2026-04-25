@@ -14,8 +14,7 @@
 #include "Buff_OverrideVelocity_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Buff_OverrideVelocity.Buff_OverrideVelocity_C.BPDeactivated
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -63,5 +62,5 @@ struct FVector ABuff_OverrideVelocity_C::BPOverrideCharacterNewFallVelocity(cons
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

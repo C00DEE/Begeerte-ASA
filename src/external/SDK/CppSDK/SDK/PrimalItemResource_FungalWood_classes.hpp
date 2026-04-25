@@ -13,12 +13,11 @@
 #include "PrimalItemResource_Wood_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemResource_FungalWood.PrimalItemResource_FungalWood_C
 // 0x0000 (0x0B60 - 0x0B60)
-class UPrimalItemResource_FungalWood_C final : public UPrimalItemResource_Wood_C
+class UPrimalItemResource_FungalWood_C : public UPrimalItemResource_Wood_C
 {
 public:
 	static class UClass* StaticClass()
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemResource_FungalWood_C;
 
-}
-
+SDK_NAMESPACE_END

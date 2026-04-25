@@ -14,8 +14,8 @@
 #include "USDClasses_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function USDClasses.UsdAssetCache2.AddAssetReference
 // 0x0018 (0x0018 - 0x0000)
@@ -475,5 +475,5 @@ public:
 };
 DUMPER7_ASSERTS_UsdDrawModeComponent_GetTextureForFace;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

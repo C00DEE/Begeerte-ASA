@@ -14,8 +14,7 @@
 #include "OnlineSubsystemRedpointEOS_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function OnlineSubsystemRedpointEOS.EOSUserInterface_EnterDevicePinCode_Context.CancelLogin
 // (Native, Public, BlueprintCallable)
@@ -245,5 +244,5 @@ void IEOSUserInterface_SwitchToCrossPlatformAccount::SetupUserInterface(class UE
 	AsUObject()->ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

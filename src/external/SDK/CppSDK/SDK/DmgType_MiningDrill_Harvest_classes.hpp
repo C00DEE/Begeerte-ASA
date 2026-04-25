@@ -13,8 +13,7 @@
 #include "DmgType_UseHarvest_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DmgType_MiningDrill_Harvest.DmgType_MiningDrill_Harvest_C
 // 0x0000 (0x0178 - 0x0178)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UDmgType_MiningDrill_Harvest_C;
 
-}
-
+SDK_NAMESPACE_END

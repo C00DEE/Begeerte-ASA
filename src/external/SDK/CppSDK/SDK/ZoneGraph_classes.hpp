@@ -15,8 +15,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ZoneGraph.ZoneGraphData
 // 0x0130 (0x05B8 - 0x0488)
@@ -191,5 +190,4 @@ public:
 };
 DUMPER7_ASSERTS_UZoneShapeComponent;
 
-}
-
+SDK_NAMESPACE_END

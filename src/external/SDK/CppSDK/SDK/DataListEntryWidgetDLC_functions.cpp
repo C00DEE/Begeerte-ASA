@@ -14,8 +14,7 @@
 #include "DataListEntryWidgetDLC_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function DataListEntryWidgetDLC.DataListEntryWidgetDLC_C.BndEvt__DataListEntryWidgetDLC_MyDataListButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -86,5 +85,5 @@ void UDataListEntryWidgetDLC_C::OnPaint(struct FPaintContext& Context) const
 	Context = std::move(Parms.Context);
 }
 
-}
 
+SDK_NAMESPACE_END

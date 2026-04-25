@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum AIModule.EPathFollowingResult
 // NumValues: 0x0007
@@ -1219,5 +1218,4 @@ public:
 };
 DUMPER7_ASSERTS_FAITouchEvent;
 
-}
-
+SDK_NAMESPACE_END

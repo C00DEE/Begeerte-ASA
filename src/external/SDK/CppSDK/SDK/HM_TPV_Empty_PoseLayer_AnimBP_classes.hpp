@@ -14,8 +14,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass HM_TPV_Empty_PoseLayer_AnimBP.HM_TPV_Empty_PoseLayer_AnimBP_C
 // 0x00F0 (0x04B0 - 0x03C0)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_UHM_TPV_Empty_PoseLayer_AnimBP_C;
 
-}
-
+SDK_NAMESPACE_END

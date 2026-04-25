@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GenericStructurePlacementEmitter.GenericStructurePlacementEmitter_C
 // 0x0000 (0x05A8 - 0x05A8)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_AGenericStructurePlacementEmitter_C;
 
-}
-
+SDK_NAMESPACE_END

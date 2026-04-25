@@ -13,8 +13,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum NNEDenoiser.EInputResourceName
 // NumValues: 0x0005
@@ -142,5 +141,4 @@ public:
 };
 DUMPER7_ASSERTS_FTilingConfig;
 
-}
-
+SDK_NAMESPACE_END

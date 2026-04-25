@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "ArrayOfStrings_structs.hpp"
+#include "Engine_structs.hpp"
 #include "PrimalItem_Note_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItem_StartingNote.PrimalItem_StartingNote_C
 // 0x00E0 (0x0C40 - 0x0B60)
@@ -74,5 +73,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItem_StartingNote_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "ASAUIWidget_Button_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass ASAUIWidget_Button_Style2A.ASAUIWidget_Button_Style2A_C
 // 0x0000 (0x0950 - 0x0950)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UASAUIWidget_Button_Style2A_C;
 
-}
-
+SDK_NAMESPACE_END

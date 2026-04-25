@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum NitradoGameServerQuery.EPortType
 // NumValues: 0x0004
@@ -85,5 +84,4 @@ public:
 };
 DUMPER7_ASSERTS_FGameServerState;
 
-}
-
+SDK_NAMESPACE_END

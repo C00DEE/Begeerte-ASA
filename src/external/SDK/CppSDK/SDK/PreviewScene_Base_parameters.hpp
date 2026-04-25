@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function PreviewScene_Base.PreviewScene_Base_C.BPCanUseFemaleBoneModifiers
 // 0x0050 (0x0050 - 0x0000)
@@ -129,5 +129,5 @@ public:
 };
 DUMPER7_ASSERTS_PreviewScene_Base_C_UpdateFloorLocation;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass SavePaintingEntryUI.SavePaintingEntryUI_C
 // 0x0020 (0x0838 - 0x0818)
@@ -42,5 +41,4 @@ public:
 };
 DUMPER7_ASSERTS_USavePaintingEntryUI_C;
 
-}
-
+SDK_NAMESPACE_END

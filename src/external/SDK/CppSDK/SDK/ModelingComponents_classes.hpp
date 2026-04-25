@@ -20,8 +20,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ModelingComponents.MeshTopologySelectionMechanic
 // 0x0B10 (0x0B40 - 0x0030)
@@ -2056,5 +2055,4 @@ public:
 };
 DUMPER7_ASSERTS_UMultiTransformer;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Buff_OverrideVelocity.Buff_OverrideVelocity_C
 // 0x0028 (0x0BE8 - 0x0BC0)
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_ABuff_OverrideVelocity_C;
 
-}
-
+SDK_NAMESPACE_END

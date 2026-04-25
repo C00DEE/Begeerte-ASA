@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum AudioMixer.EAudioDeviceChangedRole
 // NumValues: 0x0006
@@ -309,5 +308,4 @@ public:
 };
 DUMPER7_ASSERTS_FSubmixEffectSubmixEQSettings;
 
-}
-
+SDK_NAMESPACE_END

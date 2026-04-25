@@ -14,8 +14,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function Human_Male_TPV_GroundConform_AnimBP.Human_Male_TPV_GroundConform_AnimBP_C.AnimGraph
 // 0x0020 (0x0020 - 0x0000)
@@ -69,5 +69,5 @@ public:
 };
 DUMPER7_ASSERTS_Human_Male_TPV_GroundConform_AnimBP_C_ExecuteUbergraph_Human_Male_TPV_GroundConform_AnimBP;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

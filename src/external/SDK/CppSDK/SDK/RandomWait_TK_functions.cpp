@@ -14,8 +14,7 @@
 #include "RandomWait_TK_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function RandomWait_TK.RandomWait_TK_C.ExecuteUbergraph_RandomWait_TK
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void URandomWait_TK_C::ReceiveExecute(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

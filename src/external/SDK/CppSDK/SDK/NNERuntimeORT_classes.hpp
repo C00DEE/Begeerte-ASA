@@ -15,8 +15,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class NNERuntimeORT.NNERuntimeORTSettings
 // 0x0020 (0x0058 - 0x0038)
@@ -88,5 +87,4 @@ public:
 };
 DUMPER7_ASSERTS_UNNERuntimeORTDml;
 
-}
-
+SDK_NAMESPACE_END

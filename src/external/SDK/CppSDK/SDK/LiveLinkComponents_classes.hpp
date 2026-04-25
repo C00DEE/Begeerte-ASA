@@ -18,8 +18,7 @@
 #include "LiveLinkInterface_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class LiveLinkComponents.LiveLinkComponentSettings
 // 0x0058 (0x0080 - 0x0028)
@@ -155,5 +154,4 @@ public:
 };
 DUMPER7_ASSERTS_ULiveLinkComponentController;
 
-}
-
+SDK_NAMESPACE_END

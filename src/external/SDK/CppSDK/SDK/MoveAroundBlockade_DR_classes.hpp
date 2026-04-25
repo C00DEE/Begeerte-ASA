@@ -15,8 +15,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass MoveAroundBlockade_DR.MoveAroundBlockade_DR_C
 // 0x0030 (0x00D0 - 0x00A0)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_UMoveAroundBlockade_DR_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "FinalCreditsUI_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function FinalCreditsUI.FinalCreditsUI_C.AddedToViewport
 // (Event, Public, BlueprintEvent)
@@ -192,5 +191,5 @@ void UFinalCreditsUI_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTi
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

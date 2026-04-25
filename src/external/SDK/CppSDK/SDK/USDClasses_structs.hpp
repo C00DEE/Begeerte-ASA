@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum USDClasses.EUsdDrawMode
 // NumValues: 0x0006
@@ -167,5 +166,4 @@ public:
 };
 DUMPER7_ASSERTS_FUsdUnrealAssetInfo;
 
-}
-
+SDK_NAMESPACE_END

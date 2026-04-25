@@ -14,8 +14,7 @@
 #include "Interface_PlayerData_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Interface_PlayerData.Interface_PlayerData_C.Interface_PlayerData Progress Abb Sigil Count
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -68,5 +67,5 @@ void IInterface_PlayerData_C::Interface_PlayerData_Progress_Crimson_Sigil_Count(
 		*success = Parms.success;
 }
 
-}
 
+SDK_NAMESPACE_END

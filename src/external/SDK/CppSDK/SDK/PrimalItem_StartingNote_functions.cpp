@@ -14,8 +14,7 @@
 #include "PrimalItem_StartingNote_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PrimalItem_StartingNote.PrimalItem_StartingNote_C.BlueprintUsed
 // (Event, Public, BlueprintEvent)
@@ -260,5 +259,5 @@ void UPrimalItem_StartingNote_C::IsLocalImplant(class AShooterPlayerController* 
 		*IsLocal = Parms.IsLocal;
 }
 
-}
 
+SDK_NAMESPACE_END

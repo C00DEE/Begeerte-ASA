@@ -14,8 +14,7 @@
 #include "PrimalItemResource_Element_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PrimalItemResource_Element.PrimalItemResource_Element_C.BPCanUse
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -147,5 +146,5 @@ void UPrimalItemResource_Element_C::FindShapeshifter(class APrimalDinoCharacter*
 		*RetMounted = Parms.RetMounted;
 }
 
-}
 
+SDK_NAMESPACE_END

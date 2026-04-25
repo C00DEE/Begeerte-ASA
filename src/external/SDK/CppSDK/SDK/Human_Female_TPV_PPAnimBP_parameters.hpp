@@ -13,8 +13,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function Human_Female_TPV_PPAnimBP.Human_Female_TPV_PPAnimBP_C.AnimGraph
 // 0x0020 (0x0020 - 0x0000)
@@ -99,5 +99,5 @@ public:
 };
 DUMPER7_ASSERTS_Human_Female_TPV_PPAnimBP_C_ExecuteUbergraph_Human_Female_TPV_PPAnimBP;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

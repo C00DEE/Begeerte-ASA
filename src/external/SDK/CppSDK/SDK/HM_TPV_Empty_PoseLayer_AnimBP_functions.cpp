@@ -14,8 +14,7 @@
 #include "HM_TPV_Empty_PoseLayer_AnimBP_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function HM_TPV_Empty_PoseLayer_AnimBP.HM_TPV_Empty_PoseLayer_AnimBP_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -40,5 +39,5 @@ void UHM_TPV_Empty_PoseLayer_AnimBP_C::AnimGraph(const struct FPoseLink& InPose,
 		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -16,8 +16,8 @@
 #include "DinoContentData_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function Dino_Character_BP.Dino_Character_BP_C.ExecuteUbergraph_Dino_Character_BP
 // 0x0240 (0x0240 - 0x0000)
@@ -369,5 +369,5 @@ public:
 };
 DUMPER7_ASSERTS_Dino_Character_BP_C_BPControlRigNotify;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

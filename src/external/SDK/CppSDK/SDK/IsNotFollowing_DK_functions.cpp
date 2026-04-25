@@ -14,8 +14,7 @@
 #include "IsNotFollowing_DK_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function IsNotFollowing_DK.IsNotFollowing_DK_C.ExecuteUbergraph_IsNotFollowing_DK
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UIsNotFollowing_DK_C::ReceiveConditionCheck(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

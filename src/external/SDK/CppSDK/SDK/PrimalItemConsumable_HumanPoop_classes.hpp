@@ -13,8 +13,7 @@
 #include "PrimalItemConsumablePoop_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemConsumable_HumanPoop.PrimalItemConsumable_HumanPoop_C
 // 0x0000 (0x0B60 - 0x0B60)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemConsumable_HumanPoop_C;
 
-}
-
+SDK_NAMESPACE_END

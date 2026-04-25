@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass ContextMenuItem_SimpleButton.ContextMenuItem_SimpleButton_C
 // 0x0010 (0x0478 - 0x0468)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_UContextMenuItem_SimpleButton_C;
 
-}
-
+SDK_NAMESPACE_END

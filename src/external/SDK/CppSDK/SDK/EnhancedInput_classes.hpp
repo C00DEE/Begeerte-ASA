@@ -20,8 +20,7 @@
 #include "InputCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class EnhancedInput.EnhancedPlayerMappableKeyProfile
 // 0x0070 (0x0098 - 0x0028)
@@ -1189,5 +1188,4 @@ public:
 };
 DUMPER7_ASSERTS_UPlayerMappableKeySettings;
 
-}
-
+SDK_NAMESPACE_END

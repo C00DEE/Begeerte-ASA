@@ -14,8 +14,7 @@
 #include "Chooser_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Chooser.ChooserTable.ResultAssetFilter
 // (Final, Native, Public, HasOutParams, HasDefaults)
@@ -324,5 +323,5 @@ struct FInstancedStruct UChooserFunctionLibrary::MakeEvaluateChooser(class UChoo
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

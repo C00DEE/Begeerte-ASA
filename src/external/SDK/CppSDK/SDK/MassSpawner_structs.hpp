@@ -14,8 +14,7 @@
 #include "MassEntity_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum MassSpawner.EMassTranslationDirection
 // NumValues: 0x0006
@@ -135,5 +134,4 @@ public:
 };
 DUMPER7_ASSERTS_FReplicationTemplateIDFragment;
 
-}
-
+SDK_NAMESPACE_END

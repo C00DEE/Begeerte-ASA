@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass GamepadButtonLegend.GamepadButtonLegend_C
 // 0x0008 (0x03B0 - 0x03A8)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_UGamepadButtonLegend_C;
 
-}
-
+SDK_NAMESPACE_END

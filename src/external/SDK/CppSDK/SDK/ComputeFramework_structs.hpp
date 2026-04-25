@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum ComputeFramework.EComputeKernelFlags
 // NumValues: 0x0003
@@ -229,5 +228,4 @@ public:
 };
 DUMPER7_ASSERTS_FShaderFunctionDefinition;
 
-}
-
+SDK_NAMESPACE_END

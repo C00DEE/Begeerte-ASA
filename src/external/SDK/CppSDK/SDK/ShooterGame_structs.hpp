@@ -20,8 +20,7 @@
 #include "Slate_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum ShooterGame.EPrimalCustomCosmeticType
 // NumValues: 0x000F
@@ -12264,5 +12263,4 @@ public:
 };
 DUMPER7_ASSERTS_FVO_TimeData;
 
-}
-
+SDK_NAMESPACE_END

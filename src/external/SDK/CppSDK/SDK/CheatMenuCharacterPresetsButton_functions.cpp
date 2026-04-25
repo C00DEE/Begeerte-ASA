@@ -14,8 +14,7 @@
 #include "CheatMenuCharacterPresetsButton_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CheatMenuCharacterPresetsButton.CheatMenuCharacterPresetsButton_C.BndEvt__SpawnButton_K2Node_ComponentBoundEvent_160_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -74,5 +73,5 @@ void UCheatMenuCharacterPresetsButton_C::SetValues(const class FText& Cheat_Name
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

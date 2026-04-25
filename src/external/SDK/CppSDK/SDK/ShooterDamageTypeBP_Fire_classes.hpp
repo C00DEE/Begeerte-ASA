@@ -13,8 +13,7 @@
 #include "ShooterDamageTypeBP_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass ShooterDamageTypeBP_Fire.ShooterDamageTypeBP_Fire_C
 // 0x0000 (0x0178 - 0x0178)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UShooterDamageTypeBP_Fire_C;
 
-}
-
+SDK_NAMESPACE_END

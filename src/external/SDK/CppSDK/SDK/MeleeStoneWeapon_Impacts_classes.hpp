@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass MeleeStoneWeapon_Impacts.MeleeStoneWeapon_Impacts_C
 // 0x0008 (0x08A8 - 0x08A0)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_AMeleeStoneWeapon_Impacts_C;
 
-}
-
+SDK_NAMESPACE_END

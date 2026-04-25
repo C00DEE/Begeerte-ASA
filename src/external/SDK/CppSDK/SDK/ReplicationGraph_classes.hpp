@@ -15,8 +15,7 @@
 #include "ReplicationGraph_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ReplicationGraph.ReplicationGraph
 // 0x0688 (0x06B0 - 0x0028)
@@ -405,5 +404,4 @@ public:
 };
 DUMPER7_ASSERTS_AReplicationGraphDebugActor;
 
-}
-
+SDK_NAMESPACE_END

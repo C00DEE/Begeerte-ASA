@@ -18,8 +18,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MovieRenderPipelineRenderPasses.MovieGraphImagePassBaseNode
 // 0x0020 (0x00C8 - 0x00A8)
@@ -574,5 +573,4 @@ public:
 };
 DUMPER7_ASSERTS_UMoviePipelineWaveOutput;
 
-}
-
+SDK_NAMESPACE_END

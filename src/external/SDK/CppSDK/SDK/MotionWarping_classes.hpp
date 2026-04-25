@@ -17,8 +17,7 @@
 #include "MotionWarping_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MotionWarping.MotionWarpingBaseAdapter
 // 0x0010 (0x0038 - 0x0028)
@@ -193,7 +192,7 @@ DUMPER7_ASSERTS_UMotionWarpingComponent;
 // Class MotionWarping.RootMotionModifier
 // 0x0138 (0x0160 - 0x0028)
 #pragma pack(push, 0x1)
-class alignas(0x10) URootMotionModifier : public UObject
+class SDK_ALIGN(0x10) URootMotionModifier : public UObject
 {
 public:
 	TWeakObjectPtr<class UAnimSequenceBase>       Animation;                                         // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -370,5 +369,4 @@ public:
 };
 DUMPER7_ASSERTS_URootMotionModifier_SkewWarp;
 
-}
-
+SDK_NAMESPACE_END

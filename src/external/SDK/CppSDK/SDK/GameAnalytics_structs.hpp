@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum GameAnalytics.EGAResourceFlowType
 // NumValues: 0x0004
@@ -100,5 +99,4 @@ public:
 };
 DUMPER7_ASSERTS_FGameAnalyticsCustomEventField;
 
-}
-
+SDK_NAMESPACE_END

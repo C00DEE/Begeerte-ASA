@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum MediaPlate.EMediaPlateResourceType
 // NumValues: 0x0004
@@ -65,5 +64,4 @@ public:
 };
 DUMPER7_ASSERTS_FMediaTextureResourceSettings;
 
-}
-
+SDK_NAMESPACE_END

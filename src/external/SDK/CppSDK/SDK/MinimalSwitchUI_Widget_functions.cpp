@@ -14,8 +14,7 @@
 #include "MinimalSwitchUI_Widget_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MinimalSwitchUI_Widget.MinimalSwitchUI_Widget_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -100,5 +99,5 @@ void UMinimalSwitchUI_Widget_C::UpdateTooltipMoreInfo()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemResource_Element.PrimalItemResource_Element_C
 // 0x0020 (0x0B80 - 0x0B60)
@@ -53,5 +52,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemResource_Element_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -23,8 +23,7 @@
 #include "MovieScene_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class Niagara.NDILandscapeSimCacheData
 // 0x0010 (0x0038 - 0x0028)
@@ -3532,7 +3531,7 @@ DUMPER7_ASSERTS_UNiagaraBakerSettings;
 // Class Niagara.NiagaraComponent
 // 0x0260 (0x0870 - 0x0610)
 #pragma pack(push, 0x1)
-class alignas(0x10) UNiagaraComponent : public UFXSystemComponent
+class SDK_ALIGN(0x10) UNiagaraComponent : public UFXSystemComponent
 {
 public:
 	class UNiagaraSystem*                         Asset;                                             // 0x0608(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, ExperimentalNeverOverriden)
@@ -5901,5 +5900,4 @@ public:
 };
 DUMPER7_ASSERTS_UVolumeCache;
 
-}
-
+SDK_NAMESPACE_END

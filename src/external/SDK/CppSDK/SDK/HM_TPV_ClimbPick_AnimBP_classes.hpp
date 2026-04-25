@@ -13,8 +13,7 @@
 #include "BaseHumanAnimBP_Fists_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass HM_TPV_ClimbPick_AnimBP.HM_TPV_ClimbPick_AnimBP_C
 // 0x0000 (0x1E0A0 - 0x1E0A0)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_UHM_TPV_ClimbPick_AnimBP_C;
 
-}
-
+SDK_NAMESPACE_END

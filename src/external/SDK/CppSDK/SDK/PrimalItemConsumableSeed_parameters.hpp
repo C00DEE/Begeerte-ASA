@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function PrimalItemConsumableSeed.PrimalItemConsumableSeed_C.Interface_PrimalItemConsumableSeed Get Crop Plot Emitter VFX To Be Active
 // 0x0028 (0x0028 - 0x0000)
@@ -29,5 +29,5 @@ public:
 };
 DUMPER7_ASSERTS_PrimalItemConsumableSeed_C_Interface_PrimalItemConsumableSeed_Get_Crop_Plot_Emitter_VFX_To_Be_Active;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

@@ -19,8 +19,7 @@
 #include "SP_Camera_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class SP_Camera.SPCameraMode
 // 0x0128 (0x0150 - 0x0028)
@@ -232,5 +231,4 @@ public:
 };
 DUMPER7_ASSERTS_ASPPlayerCameraManager;
 
-}
-
+SDK_NAMESPACE_END

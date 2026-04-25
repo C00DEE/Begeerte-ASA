@@ -14,8 +14,7 @@
 #include "AnimNotify_PlayPlayerVO_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AnimNotify_PlayPlayerVO.AnimNotify_PlayPlayerVO_C.GetNotifyName
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -87,5 +86,5 @@ void UAnimNotify_PlayPlayerVO_C::SelectSound(class UPDA_VoiceCollection_C* Voice
 		*VoiceSoundReference = Parms.VoiceSoundReference;
 }
 
-}
 
+SDK_NAMESPACE_END

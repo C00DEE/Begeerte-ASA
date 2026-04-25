@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass ToolTipWidgetPrimalDino.ToolTipWidgetPrimalDino_C
 // 0x00C8 (0x0700 - 0x0638)
@@ -63,5 +62,4 @@ public:
 };
 DUMPER7_ASSERTS_UToolTipWidgetPrimalDino_C;
 
-}
-
+SDK_NAMESPACE_END

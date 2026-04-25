@@ -14,8 +14,7 @@
 #include "WeapClimbPick_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WeapClimbPick.WeapClimbPick_C.BPModifyFOV
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -167,5 +166,5 @@ void AWeapClimbPick_C::StartUnequipEvent()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

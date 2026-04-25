@@ -15,8 +15,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class DataflowCore.DataflowSettings
 // 0x00B8 (0x00F0 - 0x0038)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_UDataflowSettings;
 
-}
-
+SDK_NAMESPACE_END

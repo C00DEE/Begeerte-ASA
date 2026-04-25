@@ -14,8 +14,7 @@
 #include "DataListButton_BackupData_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function DataListButton_BackupData.DataListButton_BackupData_C.OnPaint
 // (BlueprintCosmetic, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -38,5 +37,5 @@ void UDataListButton_BackupData_C::OnPaint(struct FPaintContext& Context) const
 	Context = std::move(Parms.Context);
 }
 
-}
 
+SDK_NAMESPACE_END

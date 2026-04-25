@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass WeaponCameraOverride_Base.WeaponCameraOverride_Base_C
 // 0x0000 (0x0078 - 0x0078)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UWeaponCameraOverride_Base_C;
 
-}
-
+SDK_NAMESPACE_END

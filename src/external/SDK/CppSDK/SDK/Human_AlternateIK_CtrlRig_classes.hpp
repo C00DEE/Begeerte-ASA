@@ -15,8 +15,7 @@
 #include "ControlRig_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // RigVMBlueprintGeneratedClass Human_AlternateIK_CtrlRig.Human_AlternateIK_CtrlRig_C
 // 0x0450 (0x0F20 - 0x0AD0)
@@ -70,5 +69,4 @@ public:
 };
 DUMPER7_ASSERTS_UHuman_AlternateIK_CtrlRig_C;
 
-}
-
+SDK_NAMESPACE_END

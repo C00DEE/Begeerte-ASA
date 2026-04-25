@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass NotificationUI.NotificationUI_C
 // 0x0010 (0x0828 - 0x0818)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_UNotificationUI_C;
 
-}
-
+SDK_NAMESPACE_END

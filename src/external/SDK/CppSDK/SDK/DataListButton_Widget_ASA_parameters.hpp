@@ -16,8 +16,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function DataListButton_Widget_ASA.DataListButton_Widget_ASA_C.BndEvt__DataListButton_Widget_ASA_DinoExpirationLabel_K2Node_ComponentBoundEvent_3_OnEditableTextCommittedEvent__DelegateSignature
 // 0x0018 (0x0018 - 0x0000)
@@ -195,5 +195,5 @@ public:
 };
 DUMPER7_ASSERTS_DataListButton_Widget_ASA_C_UpdateColorBrush;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

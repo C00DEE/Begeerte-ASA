@@ -15,8 +15,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BeginLand_TK.BeginLand_TK_C
 // 0x0058 (0x0100 - 0x00A8)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_UBeginLand_TK_C;
 
-}
-
+SDK_NAMESPACE_END

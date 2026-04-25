@@ -14,8 +14,7 @@
 #include "PrimalItem_WeaponMachinedSniper_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PrimalItem_WeaponMachinedSniper.PrimalItem_WeaponMachinedSniper_C.BPPreventWeaponEquip
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -36,5 +35,5 @@ bool UPrimalItem_WeaponMachinedSniper_C::BPPreventWeaponEquip()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "Deco_IsDoingLandToMe_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Deco_IsDoingLandToMe.Deco_IsDoingLandToMe_C.ExecuteUbergraph_Deco_IsDoingLandToMe
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UDeco_IsDoingLandToMe_C::ReceiveConditionCheck(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

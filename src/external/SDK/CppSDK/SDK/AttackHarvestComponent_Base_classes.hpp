@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass AttackHarvestComponent_Base.AttackHarvestComponent_Base_C
 // 0x0000 (0x0230 - 0x0230)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UAttackHarvestComponent_Base_C;
 
-}
-
+SDK_NAMESPACE_END

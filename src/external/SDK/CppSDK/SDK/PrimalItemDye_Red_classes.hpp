@@ -13,8 +13,7 @@
 #include "PrimalItemDyeGeneric_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemDye_Red.PrimalItemDye_Red_C
 // 0x0000 (0x0B70 - 0x0B70)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemDye_Red_C;
 
-}
-
+SDK_NAMESPACE_END

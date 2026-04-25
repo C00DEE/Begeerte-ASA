@@ -14,8 +14,7 @@
 #include "PrimalItemResource_Gasoline_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PrimalItemResource_Gasoline.PrimalItemResource_Gasoline_C.BPSupportUseOntoItem
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -105,5 +104,5 @@ void UPrimalItemResource_Gasoline_C::RefillGasoline(class UPrimalItem* Destinati
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

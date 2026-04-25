@@ -13,8 +13,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function camelsaurus_Character_Base_BP.camelsaurus_Character_Base_BP_C.AddWater
 // 0x0040 (0x0040 - 0x0000)
@@ -62,5 +62,5 @@ public:
 };
 DUMPER7_ASSERTS_camelsaurus_Character_Base_BP_C_UpdateWaterAmount;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

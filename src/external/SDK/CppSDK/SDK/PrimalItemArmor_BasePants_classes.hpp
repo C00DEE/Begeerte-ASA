@@ -13,12 +13,12 @@
 #include "PrimalItemArmorGeneric_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemArmor_BasePants.PrimalItemArmor_BasePants_C
 // 0x0030 (0x0B90 - 0x0B60)
-class UPrimalItemArmor_BasePants_C : public UPrimalItemArmorGeneric_C
+#pragma pack(push, 0x1)
+class SDK_ALIGN(0x10) UPrimalItemArmor_BasePants_C : public UPrimalItemArmorGeneric_C
 {
 public:
 	class USoundBase*                             SoundOverrideProneStart;                           // 0x0B60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
@@ -44,7 +44,7 @@ public:
 		return GetDefaultObjImpl<UPrimalItemArmor_BasePants_C>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_UPrimalItemArmor_BasePants_C;
 
-}
-
+SDK_NAMESPACE_END

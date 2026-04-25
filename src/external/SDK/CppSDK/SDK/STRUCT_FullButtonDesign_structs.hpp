@@ -13,8 +13,7 @@
 #include "STRUCT_4StateColorDesign_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedStruct STRUCT_FullButtonDesign.STRUCT_FullButtonDesign
 // 0x012C (0x012C - 0x0000)
@@ -27,5 +26,4 @@ public:
 };
 DUMPER7_ASSERTS_FSTRUCT_FullButtonDesign;
 
-}
-
+SDK_NAMESPACE_END

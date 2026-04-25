@@ -14,8 +14,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function PreviewScene_InventoryNew.PreviewScene_InventoryNew_C.ExecuteUbergraph_PreviewScene_InventoryNew
 // 0x0030 (0x0030 - 0x0000)
@@ -112,5 +112,5 @@ public:
 };
 DUMPER7_ASSERTS_PreviewScene_InventoryNew_C_UpdateFloorLocation;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum Chaos.ChaosDeformableSimSpace
 // NumValues: 0x0004
@@ -609,5 +608,4 @@ public:
 };
 DUMPER7_ASSERTS_FSolverRemovalFilterSettings;
 
-}
-
+SDK_NAMESPACE_END

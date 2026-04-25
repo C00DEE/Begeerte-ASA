@@ -13,8 +13,7 @@
 #include "Niagara_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass NS_DinoFootprint_BP.NS_DinoFootprint_BP_C
 // 0x0000 (0x0870 - 0x0870)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UNS_DinoFootprint_BP_C;
 
-}
-
+SDK_NAMESPACE_END

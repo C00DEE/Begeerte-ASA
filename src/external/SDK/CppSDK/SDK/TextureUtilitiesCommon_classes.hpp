@@ -14,8 +14,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class TextureUtilitiesCommon.TextureImportSettings
 // 0x0010 (0x0048 - 0x0038)
@@ -70,5 +69,4 @@ public:
 };
 DUMPER7_ASSERTS_UTextureImportUserSettings;
 
-}
-
+SDK_NAMESPACE_END

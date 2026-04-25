@@ -15,8 +15,7 @@
 #include "MovieScene_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class NiagaraSimCaching.MovieSceneNiagaraCacheSection
 // 0x0090 (0x0190 - 0x0100)
@@ -71,5 +70,4 @@ public:
 };
 DUMPER7_ASSERTS_UMovieSceneNiagaraCacheTrack;
 
-}
-
+SDK_NAMESPACE_END

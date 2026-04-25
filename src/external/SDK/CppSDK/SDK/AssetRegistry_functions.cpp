@@ -14,8 +14,7 @@
 #include "AssetRegistry_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AssetRegistry.AssetRegistryHelpers.CreateAssetData
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
@@ -1334,5 +1333,5 @@ void IAssetRegistry::UseFilterToExcludeAssets(TArray<struct FAssetData>& AssetDa
 	AssetDataList = std::move(Parms.AssetDataList);
 }
 
-}
 
+SDK_NAMESPACE_END

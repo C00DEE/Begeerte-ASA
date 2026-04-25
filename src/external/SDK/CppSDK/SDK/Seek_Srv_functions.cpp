@@ -14,8 +14,7 @@
 #include "Seek_Srv_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Seek_Srv.Seek_Srv_C.ExecuteUbergraph_Seek_Srv
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void USeek_Srv_C::ReceiveActivation(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -15,8 +15,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class HoldoutComposite.HoldoutCompositeSubsystem
 // 0x0010 (0x0040 - 0x0030)
@@ -101,5 +100,4 @@ public:
 };
 DUMPER7_ASSERTS_UHoldoutCompositeSettings;
 
-}
-
+SDK_NAMESPACE_END

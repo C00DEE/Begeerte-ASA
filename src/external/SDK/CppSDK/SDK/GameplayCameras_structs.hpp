@@ -15,8 +15,7 @@
 #include "StateTreeModule_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum GameplayCameras.EBuiltInDoubleCameraVariable
 // NumValues: 0x0006
@@ -906,5 +905,4 @@ public:
 };
 DUMPER7_ASSERTS_FBlueprintCameraVariableTable;
 
-}
-
+SDK_NAMESPACE_END

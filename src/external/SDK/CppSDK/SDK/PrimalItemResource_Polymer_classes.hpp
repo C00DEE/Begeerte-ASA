@@ -13,12 +13,11 @@
 #include "PrimalItemResource_Craftable_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemResource_Polymer.PrimalItemResource_Polymer_C
 // 0x0000 (0x0B60 - 0x0B60)
-class UPrimalItemResource_Polymer_C final : public UPrimalItemResource_Craftable_C
+class UPrimalItemResource_Polymer_C : public UPrimalItemResource_Craftable_C
 {
 public:
 	static class UClass* StaticClass()
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemResource_Polymer_C;
 
-}
-
+SDK_NAMESPACE_END

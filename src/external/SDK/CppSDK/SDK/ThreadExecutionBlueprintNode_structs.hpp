@@ -13,8 +13,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum ThreadExecutionBlueprintNode.EThreadTickTiming
 // NumValues: 0x0007
@@ -71,5 +70,4 @@ public:
 };
 DUMPER7_ASSERTS_FThreadExecTimingPair;
 
-}
-
+SDK_NAMESPACE_END

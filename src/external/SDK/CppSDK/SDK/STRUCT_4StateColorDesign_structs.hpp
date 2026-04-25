@@ -13,8 +13,7 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedStruct STRUCT_4StateColorDesign.STRUCT_4StateColorDesign
 // 0x0064 (0x0064 - 0x0000)
@@ -29,5 +28,4 @@ public:
 };
 DUMPER7_ASSERTS_FSTRUCT_4StateColorDesign;
 
-}
-
+SDK_NAMESPACE_END

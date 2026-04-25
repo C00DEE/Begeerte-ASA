@@ -13,8 +13,7 @@
 #include "PrimalItemWeaponGenericAmmolessConsumeSelf_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItem_TekGrenade.PrimalItem_TekGrenade_C
 // 0x0000 (0x0B60 - 0x0B60)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItem_TekGrenade_C;
 
-}
-
+SDK_NAMESPACE_END

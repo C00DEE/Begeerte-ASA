@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedEnum Enum_VoiceCollectionLine.Enum_VoiceCollectionLine
 // NumValues: 0x0036
@@ -74,5 +73,4 @@ enum class Enum_VoiceCollectionLine : uint8
 	Enum_MAX                                 = 53,
 };
 
-}
-
+SDK_NAMESPACE_END

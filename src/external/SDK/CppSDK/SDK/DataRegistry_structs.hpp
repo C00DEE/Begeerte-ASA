@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum DataRegistry.EDataRegistryAcquireStatus
 // NumValues: 0x0008
@@ -160,5 +159,4 @@ public:
 };
 DUMPER7_ASSERTS_FDataRegistryOrTableRow;
 
-}
-
+SDK_NAMESPACE_END

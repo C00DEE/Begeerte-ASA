@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum PCGGeometryScriptInterop.EPCGAppendMeshesFromPointsMode
 // NumValues: 0x0004
@@ -65,5 +64,4 @@ enum class EPCGColorChannel : uint32
 	EPCGColorChannel_MAX                     = 4,
 };
 
-}
-
+SDK_NAMESPACE_END

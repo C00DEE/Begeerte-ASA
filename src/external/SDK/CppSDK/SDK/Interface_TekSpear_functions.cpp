@@ -14,8 +14,7 @@
 #include "Interface_TekSpear_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Interface_TekSpear.Interface_TekSpear_C.Interface_ProjSpear_Tek get damage multiplier for attack
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -693,5 +692,5 @@ void IInterface_TekSpear_C::Interface_TekSpear_SetLastSelectedTeleportSpot(const
 		*success = Parms.success;
 }
 
-}
 
+SDK_NAMESPACE_END

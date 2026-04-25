@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass Slider_ASA_Widget.Slider_ASA_Widget_C
 // 0x0030 (0x03A8 - 0x0378)
@@ -53,5 +52,4 @@ public:
 };
 DUMPER7_ASSERTS_USlider_ASA_Widget_C;
 
-}
-
+SDK_NAMESPACE_END

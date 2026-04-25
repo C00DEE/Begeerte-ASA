@@ -14,8 +14,7 @@
 #include "ShooterGame_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ShooterGame.PrimalTargetableActor.BPAdjustDamage
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -217033,5 +217032,5 @@ void UWorldBuffEntryWidget::SyncData(const struct FWorldBuffPersistantData& Worl
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

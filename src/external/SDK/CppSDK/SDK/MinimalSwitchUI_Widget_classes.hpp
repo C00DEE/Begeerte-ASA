@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass MinimalSwitchUI_Widget.MinimalSwitchUI_Widget_C
 // 0x0048 (0x03C0 - 0x0378)
@@ -53,5 +52,4 @@ public:
 };
 DUMPER7_ASSERTS_UMinimalSwitchUI_Widget_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "SP_Camera_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function SP_Camera.SPCameraMode.ResetToDefaultSettings
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
@@ -392,5 +391,5 @@ bool ASPPlayerCameraManager::IsUsingAlternateCamera() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

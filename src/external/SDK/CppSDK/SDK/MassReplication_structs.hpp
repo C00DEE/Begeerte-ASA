@@ -18,8 +18,7 @@
 #include "MassSpawner_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct MassReplication.MassReplicatedAgentHandle
 // 0x0000 (0x0004 - 0x0004)
@@ -177,5 +176,4 @@ public:
 };
 DUMPER7_ASSERTS_FReplicatedAgentBase;
 
-}
-
+SDK_NAMESPACE_END

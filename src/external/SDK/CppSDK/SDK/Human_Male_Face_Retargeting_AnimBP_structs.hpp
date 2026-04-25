@@ -13,8 +13,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct Human_Male_Face_Retargeting_AnimBP.Human_Male_Face_Retargeting_AnimBP_C.AnimBlueprintGeneratedConstantData
 // 0x0137 (0x0138 - 0x0001)
@@ -34,5 +33,4 @@ public:
 };
 DUMPER7_ASSERTS_Human_Male_Face_Retargeting_AnimBP__FAnimBlueprintGeneratedConstantData;
 
-}
-
+SDK_NAMESPACE_END

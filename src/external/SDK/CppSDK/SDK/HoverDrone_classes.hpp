@@ -16,8 +16,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class HoverDrone.HoverDroneMovementComponent
 // 0x03C0 (0x0570 - 0x01B0)
@@ -220,5 +219,4 @@ public:
 };
 DUMPER7_ASSERTS_UHoverDroneVolumeManager;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function GlobalUIData_BP.GlobalUIData_BP_C.BPGetHUDElements_Module_FuelOrAmmo
 // 0x07A0 (0x07A0 - 0x0000)
@@ -237,5 +237,5 @@ public:
 };
 DUMPER7_ASSERTS_GlobalUIData_BP_C_BPGetHUDElements_Module_Struggle;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

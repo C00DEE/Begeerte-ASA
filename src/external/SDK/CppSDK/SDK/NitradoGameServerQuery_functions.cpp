@@ -14,8 +14,7 @@
 #include "NitradoGameServerQuery_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function NitradoGameServerQuery.GameServerQuerySubsystem.AddListenPortInfo
 // (Final, Native, Public, BlueprintCallable)
@@ -479,5 +478,5 @@ bool UGameServerQuerySubsystem::Start()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

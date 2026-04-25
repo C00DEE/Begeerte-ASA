@@ -14,8 +14,7 @@
 #include "ThreadExecutionBlueprintNode_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ThreadExecutionBlueprintNode.AsyncExecutionBlueprintTypes.Conv_ThreadTickTimingToTickingGroup
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
@@ -1187,5 +1186,5 @@ TSet<class UThreadAsyncExecTickBase*> UThreadNodeSubsystem::GetAllThreadExecTick
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

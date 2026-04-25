@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct ReplicationGraph.ConnectionAlwaysRelevantNodePair
 // 0x0010 (0x0010 - 0x0000)
@@ -80,5 +79,4 @@ public:
 };
 DUMPER7_ASSERTS_FClassReplicationInfo;
 
-}
-
+SDK_NAMESPACE_END

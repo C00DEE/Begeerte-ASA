@@ -14,8 +14,7 @@
 #include "ConfirmationDialogGeneric_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ConfirmationDialogGeneric.ConfirmationDialogGeneric_C.BPEscapeClosed
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -110,5 +109,5 @@ void UConfirmationDialogGeneric_C::OverrideCancelButtonText(const class FText& C
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

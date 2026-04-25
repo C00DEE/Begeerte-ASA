@@ -15,8 +15,7 @@
 #include "UMG_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass DyeRegionButton.DyeRegionButton_C
 // 0x0028 (0x0828 - 0x0800)
@@ -50,5 +49,4 @@ public:
 };
 DUMPER7_ASSERTS_UDyeRegionButton_C;
 
-}
-
+SDK_NAMESPACE_END

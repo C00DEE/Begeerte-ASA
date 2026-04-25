@@ -14,8 +14,7 @@
 #include "ContextMenu_PrimalItem_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ContextMenu_PrimalItem.ContextMenu_PrimalItem_C.ExecuteUbergraph_ContextMenu_PrimalItem
 // (Final, UbergraphFunction, HasDefaults)
@@ -58,5 +57,5 @@ void UContextMenu_PrimalItem_C::Tick(const struct FGeometry& MyGeometry, float I
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

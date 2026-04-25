@@ -14,8 +14,7 @@
 #include "SetRunning_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function SetRunning.SetRunning_C.ExecuteUbergraph_SetRunning
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void USetRunning_C::ReceiveExecute(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

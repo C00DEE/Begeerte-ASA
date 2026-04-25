@@ -13,8 +13,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct HM_TPV_Empty_PoseLayer_AnimBP.HM_TPV_Empty_PoseLayer_AnimBP_C.AnimBlueprintGeneratedConstantData
 // 0x012F (0x0130 - 0x0001)
@@ -33,5 +32,4 @@ public:
 };
 DUMPER7_ASSERTS_HM_TPV_Empty_PoseLayer_AnimBP__FAnimBlueprintGeneratedConstantData;
 
-}
-
+SDK_NAMESPACE_END

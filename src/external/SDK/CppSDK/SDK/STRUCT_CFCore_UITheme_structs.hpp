@@ -14,8 +14,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedStruct STRUCT_CFCore_UITheme.STRUCT_CFCore_UITheme
 // 0x0070 (0x0070 - 0x0000)
@@ -32,5 +31,4 @@ public:
 };
 DUMPER7_ASSERTS_FSTRUCT_CFCore_UITheme;
 
-}
-
+SDK_NAMESPACE_END

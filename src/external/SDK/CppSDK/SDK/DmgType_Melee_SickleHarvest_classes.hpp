@@ -13,8 +13,7 @@
 #include "DmgType_Melee_Torpidity_Low_MetalWeapon_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DmgType_Melee_SickleHarvest.DmgType_Melee_SickleHarvest_C
 // 0x0000 (0x0178 - 0x0178)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UDmgType_Melee_SickleHarvest_C;
 
-}
-
+SDK_NAMESPACE_END

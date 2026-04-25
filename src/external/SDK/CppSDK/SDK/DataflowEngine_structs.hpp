@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum DataflowEngine.EDataflowType
 // NumValues: 0x0003
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_FDataflowPreviewCacheParams;
 
-}
-
+SDK_NAMESPACE_END

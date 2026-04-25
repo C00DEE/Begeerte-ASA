@@ -14,8 +14,7 @@
 #include "GameplayCameras_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GameplayCameras.BlueprintCameraDirectorEvaluator.ActivateCameraDirector
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -2390,5 +2389,5 @@ class AActor* UBlueprintCameraNodeEvaluator::FindEvaluationContextOwnerActor(TSu
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

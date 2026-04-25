@@ -13,12 +13,12 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass ShooterDamageTypeBP_Base.ShooterDamageTypeBP_Base_C
 // 0x0018 (0x0178 - 0x0160)
-class UShooterDamageTypeBP_Base_C : public UShooterDamageType
+#pragma pack(push, 0x1)
+class SDK_ALIGN(0x08) UShooterDamageTypeBP_Base_C : public UShooterDamageType
 {
 public:
 	bool                                          bCauseRaidTorpor;                                  // 0x0160(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -40,7 +40,7 @@ public:
 		return GetDefaultObjImpl<UShooterDamageTypeBP_Base_C>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_UShooterDamageTypeBP_Base_C;
 
-}
-
+SDK_NAMESPACE_END

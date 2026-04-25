@@ -13,8 +13,7 @@
 #include "GlobalUIData_BP_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GlobalUIData_PS5.GlobalUIData_PS5_C
 // 0x0000 (0x0E20 - 0x0E20)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UGlobalUIData_PS5_C;
 
-}
-
+SDK_NAMESPACE_END

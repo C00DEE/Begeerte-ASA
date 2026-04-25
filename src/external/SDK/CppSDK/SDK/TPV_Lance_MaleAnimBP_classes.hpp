@@ -13,8 +13,7 @@
 #include "BaseHumanAnimBP_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass TPV_Lance_MaleAnimBP.TPV_Lance_MaleAnimBP_C
 // 0x0000 (0x1E0A0 - 0x1E0A0)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_UTPV_Lance_MaleAnimBP_C;
 
-}
-
+SDK_NAMESPACE_END

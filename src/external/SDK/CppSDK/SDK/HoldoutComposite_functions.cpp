@@ -14,8 +14,7 @@
 #include "HoldoutComposite_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function HoldoutComposite.HoldoutCompositeSubsystem.RegisterPrimitive
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
@@ -120,5 +119,5 @@ bool UHoldoutCompositeComponent::IsEnabled() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

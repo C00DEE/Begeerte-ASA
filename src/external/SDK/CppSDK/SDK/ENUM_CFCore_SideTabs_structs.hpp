@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedEnum ENUM_CFCore_SideTabs.ENUM_CFCore_SideTabs
 // NumValues: 0x0005
@@ -25,5 +24,4 @@ enum class ENUM_CFCore_SideTabs : uint8
 	ENUM_CFCore_MAX                          = 4,
 };
 
-}
-
+SDK_NAMESPACE_END

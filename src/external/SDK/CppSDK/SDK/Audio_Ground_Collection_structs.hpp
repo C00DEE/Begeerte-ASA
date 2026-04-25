@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedStruct Audio_Ground_Collection.Audio_Ground_Collection
 // 0x0018 (0x0018 - 0x0000)
@@ -25,5 +24,4 @@ public:
 };
 DUMPER7_ASSERTS_FAudio_Ground_Collection;
 
-}
-
+SDK_NAMESPACE_END

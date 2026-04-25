@@ -14,8 +14,7 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum TypedElementFramework.FTypedElementAlertColumnType
 // NumValues: 0x0003
@@ -40,7 +39,7 @@ enum class ESCCModification : uint32
 // ScriptStruct TypedElementFramework.EditorDataStorageColumn
 // 0x0000 (0x0000 - 0x0000)
 #pragma pack(push, 0x1)
-struct alignas(0x01) FEditorDataStorageColumn
+struct SDK_ALIGN(0x01) FEditorDataStorageColumn
 {
 };
 #pragma pack(pop)
@@ -758,5 +757,4 @@ public:
 };
 DUMPER7_ASSERTS_FTypedElementViewportOverlayColorColumn;
 
-}
-
+SDK_NAMESPACE_END

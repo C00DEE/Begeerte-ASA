@@ -14,8 +14,7 @@
 #include "MovieRenderPipelineSettings_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MovieRenderPipelineSettings.MoviePipelineBurnInWidget.OnOutputFrameStarted
 // (Event, Public, BlueprintEvent)
@@ -181,5 +180,5 @@ TArray<struct FMoviePipelineConsoleVariableEntry> UMoviePipelineConsoleVariableS
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

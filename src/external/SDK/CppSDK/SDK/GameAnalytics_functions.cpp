@@ -14,8 +14,7 @@
 #include "GameAnalytics_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GameAnalytics.GameAnalytics.AddAdEvent
 // (Final, Native, Static, Public, BlueprintCallable)
@@ -2042,5 +2041,5 @@ void UGameAnalytics::SetCustomDimension03(const class FString& CustomDimension)
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

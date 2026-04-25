@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function HoverDrone.HoverDroneMovementComponent.AddRotationalVelocity
 // 0x0018 (0x0018 - 0x0000)
@@ -135,5 +135,5 @@ public:
 };
 DUMPER7_ASSERTS_HoverDronePawn_IsMaintainingConstantAltitude;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

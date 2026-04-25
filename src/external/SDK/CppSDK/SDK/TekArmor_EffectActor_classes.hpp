@@ -15,8 +15,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass TekArmor_EffectActor.TekArmor_EffectActor_C
 // 0x0060 (0x04E8 - 0x0488)
@@ -67,5 +66,4 @@ public:
 };
 DUMPER7_ASSERTS_ATekArmor_EffectActor_C;
 
-}
-
+SDK_NAMESPACE_END

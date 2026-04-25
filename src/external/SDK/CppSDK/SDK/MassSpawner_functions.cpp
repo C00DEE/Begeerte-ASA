@@ -14,8 +14,7 @@
 #include "MassSpawner_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MassSpawner.MassSpawner.ClearTemplates
 // (Final, Native, Public, BlueprintCallable)
@@ -167,5 +166,5 @@ float AMassSpawner::GetSpawningCountScale() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

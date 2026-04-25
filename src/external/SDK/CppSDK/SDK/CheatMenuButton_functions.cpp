@@ -14,8 +14,7 @@
 #include "CheatMenuButton_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CheatMenuButton.CheatMenuButton_C.BndEvt__SpawnButton_K2Node_ComponentBoundEvent_160_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -90,5 +89,5 @@ void UCheatMenuButton_C::OnLoaded_E74A95AD4E858FEFB820B09140E2E827(TSubclassOf<c
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

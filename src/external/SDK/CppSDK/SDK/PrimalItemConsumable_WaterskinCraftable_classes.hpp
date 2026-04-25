@@ -13,12 +13,11 @@
 #include "PrimalItemConsumableEatable_WaterContainer_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemConsumable_WaterskinCraftable.PrimalItemConsumable_WaterskinCraftable_C
 // 0x0000 (0x0B60 - 0x0B60)
-class UPrimalItemConsumable_WaterskinCraftable_C final : public UPrimalItemConsumableEatable_WaterContainer_C
+class UPrimalItemConsumable_WaterskinCraftable_C : public UPrimalItemConsumableEatable_WaterContainer_C
 {
 public:
 	static class UClass* StaticClass()
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemConsumable_WaterskinCraftable_C;
 
-}
-
+SDK_NAMESPACE_END

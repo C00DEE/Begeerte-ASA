@@ -13,8 +13,7 @@
 #include "GeometryCache_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class GeometryCacheUSD.GeometryCacheTrackUsd
 // 0x0120 (0x0178 - 0x0058)
@@ -59,5 +58,4 @@ public:
 };
 DUMPER7_ASSERTS_UGeometryCacheUsdComponent;
 
-}
-
+SDK_NAMESPACE_END

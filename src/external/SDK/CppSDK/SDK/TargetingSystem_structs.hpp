@@ -14,8 +14,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum TargetingSystem.ETargetingAOEShape
 // NumValues: 0x0006
@@ -137,5 +136,4 @@ public:
 };
 DUMPER7_ASSERTS_FTargetingDebugData;
 
-}
-
+SDK_NAMESPACE_END

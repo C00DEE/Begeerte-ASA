@@ -14,8 +14,7 @@
 #include "MoveAroundBlockade_DR_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MoveAroundBlockade_DR.MoveAroundBlockade_DR_C.ExecuteUbergraph_MoveAroundBlockade_DR
 // (Final, UbergraphFunction)
@@ -98,5 +97,5 @@ void UMoveAroundBlockade_DR_C::ReceiveExecutionStart(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "ShooterGame_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PDA_VoiceCollection.PDA_VoiceCollection_C
 // 0x0208 (0x0238 - 0x0030)
@@ -23,13 +22,13 @@ class UPDA_VoiceCollection_C final : public UPrimaryDataAsset
 {
 public:
 	TArray<struct FPlayerStatusStateCharacterSound> CharacterStatusStateSounds;                      // 0x0030(0x0010)(Edit, BlueprintVisible)
-	class USoundBase*                             Climb;                                             // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class USoundBase*                             climb;                                             // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class USoundBase*                             Melee;                                             // 0x0048(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class USoundBase*                             Swing;                                             // 0x0050(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class USoundBase*                             Run;                                               // 0x0058(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class USoundBase*                             Winded;                                            // 0x0060(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class USoundBase*                             Jump;                                              // 0x0068(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class USoundBase*                             Land;                                              // 0x0070(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class USoundBase*                             land;                                              // 0x0070(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class USoundBase*                             Hurt;                                              // 0x0078(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class USoundBase*                             Death;                                             // 0x0080(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class USoundBase*                             Eat;                                               // 0x0088(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
@@ -94,5 +93,4 @@ public:
 };
 DUMPER7_ASSERTS_UPDA_VoiceCollection_C;
 
-}
-
+SDK_NAMESPACE_END

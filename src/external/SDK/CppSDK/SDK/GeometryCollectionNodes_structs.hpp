@@ -18,8 +18,7 @@
 #include "FractureEngine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum GeometryCollectionNodes.EFloatArrayToIntArrayFunctionEnum
 // NumValues: 0x0007
@@ -3955,5 +3954,4 @@ public:
 };
 DUMPER7_ASSERTS_FSetVertexColorFromVertexSelectionDataflowNode;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "DyeRegionButton_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function DyeRegionButton.DyeRegionButton_C.BndEvt__DyeRegionButton_Button_25_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -70,5 +69,5 @@ ESlateVisibility UDyeRegionButton_C::GetVisibility_0()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

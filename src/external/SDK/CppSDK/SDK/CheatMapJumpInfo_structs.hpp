@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedStruct CheatMapJumpInfo.CheatMapJumpInfo
 // 0x0040 (0x0040 - 0x0000)
@@ -29,5 +28,4 @@ public:
 };
 DUMPER7_ASSERTS_FCheatMapJumpInfo;
 
-}
-
+SDK_NAMESPACE_END

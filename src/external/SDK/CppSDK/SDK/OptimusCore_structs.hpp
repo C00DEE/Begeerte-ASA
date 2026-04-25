@@ -16,8 +16,7 @@
 #include "ControlRig_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum OptimusCore.EOptimusPinMutability
 // NumValues: 0x0004
@@ -1289,5 +1288,4 @@ public:
 };
 DUMPER7_ASSERTS_FOptimusVariableMetaDataEntry;
 
-}
-
+SDK_NAMESPACE_END

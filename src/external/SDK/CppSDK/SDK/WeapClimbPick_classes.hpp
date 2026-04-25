@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass WeapClimbPick.WeapClimbPick_C
 // 0x0070 (0x18D0 - 0x1860)
@@ -60,5 +59,4 @@ public:
 };
 DUMPER7_ASSERTS_AWeapClimbPick_C;
 
-}
-
+SDK_NAMESPACE_END

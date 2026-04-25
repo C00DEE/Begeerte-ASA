@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass DataListEntryWidgetGeneric_DyeResources.DataListEntryWidgetGeneric_DyeResources_C
 // 0x0010 (0x07D8 - 0x07C8)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_UDataListEntryWidgetGeneric_DyeResources_C;
 
-}
-
+SDK_NAMESPACE_END

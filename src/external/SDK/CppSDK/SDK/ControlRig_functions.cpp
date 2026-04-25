@@ -14,8 +14,7 @@
 #include "ControlRig_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ControlRig.ControlRigShapeLibraryLink.SetShapeLibrary
 // (Final, Native, Public, BlueprintCallable)
@@ -9766,5 +9765,5 @@ TArray<struct FRigVMUserWorkflow> UControlRigTransformWorkflowOptions::ProvideWo
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

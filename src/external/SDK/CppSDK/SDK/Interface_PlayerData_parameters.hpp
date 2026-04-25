@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function Interface_PlayerData.Interface_PlayerData_C.Interface_PlayerData Progress Abb Sigil Count
 // 0x0018 (0x0018 - 0x0000)
@@ -38,5 +38,5 @@ public:
 };
 DUMPER7_ASSERTS_Interface_PlayerData_C_Interface_PlayerData_Progress_Crimson_Sigil_Count;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

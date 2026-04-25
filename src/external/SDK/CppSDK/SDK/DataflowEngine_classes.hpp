@@ -15,8 +15,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class DataflowEngine.Dataflow
 // 0x0060 (0x00C0 - 0x0060)
@@ -206,5 +205,4 @@ public:
 };
 DUMPER7_ASSERTS_UDataflowEdNode;
 
-}
-
+SDK_NAMESPACE_END

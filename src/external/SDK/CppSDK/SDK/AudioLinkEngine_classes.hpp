@@ -13,8 +13,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AudioLinkEngine.AudioLinkBlueprintInterface
 // 0x0000 (0x0000 - 0x0000)
@@ -52,5 +51,4 @@ public:
 };
 DUMPER7_ASSERTS_IAudioLinkBlueprintInterface;
 
-}
-
+SDK_NAMESPACE_END

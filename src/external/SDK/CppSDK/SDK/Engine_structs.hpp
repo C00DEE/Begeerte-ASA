@@ -22,8 +22,7 @@
 #include "Chaos_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum Engine.ETextGender
 // NumValues: 0x0004
@@ -7411,7 +7410,7 @@ DUMPER7_ASSERTS_FVectorAnimationAttribute;
 // ScriptStruct Engine.EmptyPayload
 // 0x0000 (0x0000 - 0x0000)
 #pragma pack(push, 0x1)
-struct alignas(0x01) FEmptyPayload
+struct SDK_ALIGN(0x01) FEmptyPayload
 {
 };
 #pragma pack(pop)
@@ -14186,7 +14185,7 @@ DUMPER7_ASSERTS_FPrimitiveComponentInstanceData;
 // ScriptStruct Engine.StaticMeshComponentInstanceData
 // 0x0040 (0x0170 - 0x0130)
 #pragma pack(push, 0x1)
-struct alignas(0x10) FStaticMeshComponentInstanceData : public FPrimitiveComponentInstanceData
+struct SDK_ALIGN(0x10) FStaticMeshComponentInstanceData : public FPrimitiveComponentInstanceData
 {
 public:
 	class UStaticMesh*                            StaticMesh;                                        // 0x0130(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, ExperimentalNeverOverriden)
@@ -20922,5 +20921,4 @@ public:
 };
 DUMPER7_ASSERTS_FWorldPartitionStreamingQuerySource;
 
-}
-
+SDK_NAMESPACE_END

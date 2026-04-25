@@ -14,8 +14,7 @@
 #include "BinkMediaPlayer_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BinkMediaPlayer.BinkFunctionLibrary.Bink_DrawOverlays
 // (Final, Native, Static, Public, BlueprintCallable)
@@ -915,5 +914,5 @@ void UBinkMediaTexture::SetMediaPlayer(class UBinkMediaPlayer* InMediaPlayer)
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

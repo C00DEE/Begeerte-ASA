@@ -15,12 +15,11 @@
 #include "Enum_VoiceCollectionLine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PlayerPawnTest.PlayerPawnTest_C
 // 0x01D0 (0x2690 - 0x24C0)
-class APlayerPawnTest_C final : public AShooterCharacter
+class APlayerPawnTest_C : public AShooterCharacter
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x24C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -150,5 +149,4 @@ public:
 };
 DUMPER7_ASSERTS_APlayerPawnTest_C;
 
-}
-
+SDK_NAMESPACE_END

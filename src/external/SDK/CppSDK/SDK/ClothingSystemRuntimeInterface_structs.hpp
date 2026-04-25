@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum ClothingSystemRuntimeInterface.EClothingTeleportMode
 // NumValues: 0x0005
@@ -106,5 +105,4 @@ public:
 };
 DUMPER7_ASSERTS_FClothCollisionData;
 
-}
-
+SDK_NAMESPACE_END

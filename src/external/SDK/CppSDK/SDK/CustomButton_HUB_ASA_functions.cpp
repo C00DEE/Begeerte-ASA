@@ -14,8 +14,7 @@
 #include "CustomButton_HUB_ASA_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CustomButton_HUB_ASA.CustomButton_HUB_ASA_C.BPSetToggledState
 // (Event, Public, BlueprintEvent)
@@ -56,5 +55,5 @@ void UCustomButton_HUB_ASA_C::ExecuteUbergraph_CustomButton_HUB_ASA(int32 EntryP
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

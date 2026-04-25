@@ -14,8 +14,7 @@
 #include "Buff_ASAPreventDismount_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Buff_ASAPreventDismount.Buff_ASAPreventDismount_C.BPBypassPreventDinoDismount
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -49,5 +48,5 @@ bool ABuff_ASAPreventDismount_C::BPBypassPreventDinoDismount(bool FromRider, boo
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "AnimNotify_PlayPlayerFoley_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AnimNotify_PlayPlayerFoley.AnimNotify_PlayPlayerFoley_C.SelectSound
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -87,5 +86,5 @@ bool UAnimNotify_PlayPlayerFoley_C::Received_Notify(class USkeletalMeshComponent
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

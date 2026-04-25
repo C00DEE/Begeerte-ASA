@@ -15,8 +15,8 @@
 #include "InputCore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function Buff_TekArmor.Buff_TekArmor_C.AllowPostProcessEffect
 // 0x0001 (0x0001 - 0x0000)
@@ -243,7 +243,7 @@ public:
 	bool                                          CallFunc_LessEqual_IntInt_ReturnValue;             // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UParticleSystem*                        K2Node_CustomEvent_particleTemplate;               // 0x0060(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class USoundBase*                             K2Node_CustomEvent_sound;                          // 0x0068(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class USoundBase*                             K2Node_CustomEvent_Sound;                          // 0x0068(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FTransform                             K2Node_CustomEvent_transform;                      // 0x0070(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        K2Node_CustomEvent_soundVolume;                    // 0x00D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        K2Node_CustomEvent_soundPitch;                     // 0x00D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -768,5 +768,5 @@ public:
 };
 DUMPER7_ASSERTS_Buff_TekArmor_C_GetWeaponMesh;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

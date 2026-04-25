@@ -14,8 +14,7 @@
 #include "Sentry_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Sentry.SentryAttachment.InitializeWithData
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
@@ -5221,5 +5220,5 @@ bool USentryVariantHelper::TryGetString(const struct FSentryVariant& Variant, cl
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

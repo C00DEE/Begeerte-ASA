@@ -14,8 +14,7 @@
 #include "Buff_TekArmor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Buff_TekArmor.Buff_TekArmor_C.AllowPostProcessEffect
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -982,5 +981,5 @@ void ABuff_TekArmor_C::GetWeaponMesh(class USkeletalMeshComponent** OutMesh) con
 		*OutMesh = Parms.OutMesh;
 }
 
-}
 
+SDK_NAMESPACE_END

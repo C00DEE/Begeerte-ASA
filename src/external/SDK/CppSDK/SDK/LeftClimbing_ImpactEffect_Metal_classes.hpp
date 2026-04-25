@@ -13,8 +13,7 @@
 #include "Climbing_ImpactEffect_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass LeftClimbing_ImpactEffect_Metal.LeftClimbing_ImpactEffect_Metal_C
 // 0x0000 (0x04D8 - 0x04D8)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ALeftClimbing_ImpactEffect_Metal_C;
 
-}
-
+SDK_NAMESPACE_END

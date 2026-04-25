@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum BinkMediaPlayer.EBinkMediaPlayerBinkBufferModes
 // NumValues: 0x0004
@@ -89,5 +88,4 @@ enum class EBinkMoviePlayerBinkSoundTrack : uint8
 	MP_Bink_Sound_MAX                        = 7,
 };
 
-}
-
+SDK_NAMESPACE_END

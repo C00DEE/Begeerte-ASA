@@ -15,8 +15,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Attack_SRV.Attack_SRV_C
 // 0x0030 (0x00C8 - 0x0098)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_UAttack_SRV_C;
 
-}
-
+SDK_NAMESPACE_END

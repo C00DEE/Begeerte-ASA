@@ -14,8 +14,7 @@
 #include "Buff_BasedOnDesertKaiju_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Buff_BasedOnDesertKaiju.Buff_BasedOnDesertKaiju_C.BPDeactivated
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -56,5 +55,5 @@ void ABuff_BasedOnDesertKaiju_C::BPSetupForInstigator(class AActor* ForInstigato
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedEnum ENUM_CFCore_ButtonType.ENUM_CFCore_ButtonType
 // NumValues: 0x0003
@@ -23,5 +22,4 @@ enum class ENUM_CFCore_ButtonType : uint8
 	ENUM_CFCore_MAX                          = 2,
 };
 
-}
-
+SDK_NAMESPACE_END

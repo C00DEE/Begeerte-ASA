@@ -14,8 +14,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass AnimNotify_PlayPlayerFoley.AnimNotify_PlayPlayerFoley_C
 // 0x0010 (0x0050 - 0x0040)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_UAnimNotify_PlayPlayerFoley_C;
 
-}
-
+SDK_NAMESPACE_END

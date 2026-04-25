@@ -14,8 +14,7 @@
 #include "BP_VFX_Spawn_on_AnimNotify_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_VFX_Spawn_on_AnimNotify.BP_VFX_Spawn_on_AnimNotify_C.BPOverrideNiagaraSystem
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
@@ -189,5 +188,5 @@ bool UBP_VFX_Spawn_on_AnimNotify_C::Received_NotifyTick(class USkeletalMeshCompo
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

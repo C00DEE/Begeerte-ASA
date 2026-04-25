@@ -14,8 +14,7 @@
 #include "StructureItemContainerBaseBP_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function StructureItemContainerBaseBP.StructureItemContainerBaseBP_C.BPOnTransferAll
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -36,5 +35,5 @@ void AStructureItemContainerBaseBP_C::BPOnTransferAll(class UPrimalInventoryComp
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

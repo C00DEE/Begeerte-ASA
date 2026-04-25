@@ -14,8 +14,7 @@
 #include "ProxyTable_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ProxyTable.ProxyTableFunctionLibrary.EvaluateProxyAsset
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
@@ -138,5 +137,5 @@ struct FInstancedStruct UProxyTableFunctionLibrary::MakeLookupProxyWithOverrideT
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

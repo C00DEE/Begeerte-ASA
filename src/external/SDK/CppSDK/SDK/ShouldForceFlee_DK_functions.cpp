@@ -14,8 +14,7 @@
 #include "ShouldForceFlee_DK_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ShouldForceFlee_DK.ShouldForceFlee_DK_C.ExecuteUbergraph_ShouldForceFlee_DK
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UShouldForceFlee_DK_C::ReceiveConditionCheck(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

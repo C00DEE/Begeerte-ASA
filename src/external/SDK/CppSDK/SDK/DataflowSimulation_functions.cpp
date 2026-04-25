@@ -14,8 +14,7 @@
 #include "DataflowSimulation_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function DataflowSimulation.DataflowSimulationActor.PostDataflowSimulationTick
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
@@ -70,5 +69,5 @@ void IDataflowSimulationActor::PreDataflowSimulationTick(const float SimulationT
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

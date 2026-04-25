@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass DataListEntryWidgetFolder.DataListEntryWidgetFolder_C
 // 0x0010 (0x0450 - 0x0440)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_UDataListEntryWidgetFolder_C;
 
-}
-
+SDK_NAMESPACE_END

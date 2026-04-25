@@ -14,8 +14,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass RandomWaitWander_TK.RandomWaitWander_TK_C
 // 0x0020 (0x00C8 - 0x00A8)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_URandomWaitWander_TK_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum GeometryFramework.EDynamicMeshComponentTangentsMode
 // NumValues: 0x0005
@@ -113,5 +112,4 @@ public:
 };
 DUMPER7_ASSERTS_FDynamicMeshChangeInfo;
 
-}
-
+SDK_NAMESPACE_END

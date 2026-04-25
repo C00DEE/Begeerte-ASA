@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ShooterReplicationGraph.BP_ShooterReplicationGraph_C
 // 0x0000 (0x0700 - 0x0700)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_ShooterReplicationGraph_C;
 
-}
-
+SDK_NAMESPACE_END

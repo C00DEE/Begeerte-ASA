@@ -13,12 +13,12 @@
 #include "DmgType_Melee_Dino_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DmgType_Melee_Dino_Herbivore.DmgType_Melee_Dino_Herbivore_C
 // 0x0000 (0x0178 - 0x0178)
-class UDmgType_Melee_Dino_Herbivore_C : public UDmgType_Melee_Dino_C
+#pragma pack(push, 0x1)
+class SDK_ALIGN(0x08) UDmgType_Melee_Dino_Herbivore_C : public UDmgType_Melee_Dino_C
 {
 public:
 	static class UClass* StaticClass()
@@ -34,7 +34,7 @@ public:
 		return GetDefaultObjImpl<UDmgType_Melee_Dino_Herbivore_C>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_UDmgType_Melee_Dino_Herbivore_C;
 
-}
-
+SDK_NAMESPACE_END

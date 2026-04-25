@@ -14,8 +14,7 @@
 #include "CheatMenuMapOpenButton_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CheatMenuMapOpenButton.CheatMenuMapOpenButton_C.BndEvt__SpawnButton_K2Node_ComponentBoundEvent_160_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -50,5 +49,5 @@ void UCheatMenuMapOpenButton_C::ExecuteUbergraph_CheatMenuMapOpenButton(int32 En
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

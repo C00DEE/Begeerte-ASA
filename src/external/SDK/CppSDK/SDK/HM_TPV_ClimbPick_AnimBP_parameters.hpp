@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function HM_TPV_ClimbPick_AnimBP.HM_TPV_ClimbPick_AnimBP_C.UpdateLayeringValues
 // 0x0003 (0x0003 - 0x0000)
@@ -25,5 +25,5 @@ public:
 };
 DUMPER7_ASSERTS_HM_TPV_ClimbPick_AnimBP_C_UpdateLayeringValues;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

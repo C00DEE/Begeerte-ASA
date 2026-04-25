@@ -24,8 +24,8 @@
 #include "AIModule_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function ShooterGame.PrimalTargetableActor.BPAdjustDamage
 // 0x0150 (0x0150 - 0x0000)
@@ -75218,5 +75218,5 @@ public:
 };
 DUMPER7_ASSERTS_WorldBuffEntryWidget_SyncData;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

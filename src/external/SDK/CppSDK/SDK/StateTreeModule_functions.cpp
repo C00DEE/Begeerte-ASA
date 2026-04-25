@@ -14,8 +14,7 @@
 #include "StateTreeModule_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function StateTreeModule.StateTreeNodeBlueprintBase.RequestTransition
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
@@ -413,5 +412,5 @@ EStateTreeRunStatus UStateTreeTaskBlueprintBase::ReceiveTick(const float DeltaTi
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "PrimalItemConsumableEatable_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemConsumable_Egg.PrimalItemConsumable_Egg_C
 // 0x0030 (0x0B90 - 0x0B60)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemConsumable_Egg_C;
 
-}
-
+SDK_NAMESPACE_END

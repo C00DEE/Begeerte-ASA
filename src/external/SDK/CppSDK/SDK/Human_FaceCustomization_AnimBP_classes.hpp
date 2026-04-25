@@ -17,8 +17,7 @@
 #include "Human_Male_Faces_Enum_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass Human_FaceCustomization_AnimBP.Human_FaceCustomization_AnimBP_C
 // 0x2000 (0x23C0 - 0x03C0)
@@ -198,5 +197,4 @@ public:
 };
 DUMPER7_ASSERTS_UHuman_FaceCustomization_AnimBP_C;
 
-}
-
+SDK_NAMESPACE_END

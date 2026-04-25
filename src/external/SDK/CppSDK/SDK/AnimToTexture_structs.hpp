@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum AnimToTexture.EAnimToTextureMode
 // NumValues: 0x0003
@@ -90,5 +89,4 @@ public:
 };
 DUMPER7_ASSERTS_FAnimToTextureAutoPlayData;
 
-}
-
+SDK_NAMESPACE_END

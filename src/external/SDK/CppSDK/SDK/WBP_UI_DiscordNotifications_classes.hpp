@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_UI_DiscordNotifications.WBP_UI_DiscordNotifications_C
 // 0x0000 (0x08B8 - 0x08B8)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UWBP_UI_DiscordNotifications_C;
 
-}
-
+SDK_NAMESPACE_END

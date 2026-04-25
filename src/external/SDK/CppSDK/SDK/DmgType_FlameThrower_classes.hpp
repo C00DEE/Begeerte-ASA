@@ -13,12 +13,11 @@
 #include "ShooterDamageTypeBP_Fire_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DmgType_FlameThrower.DmgType_FlameThrower_C
 // 0x0000 (0x0178 - 0x0178)
-class UDmgType_FlameThrower_C final : public UShooterDamageTypeBP_Fire_C
+class UDmgType_FlameThrower_C : public UShooterDamageTypeBP_Fire_C
 {
 public:
 	static class UClass* StaticClass()
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UDmgType_FlameThrower_C;
 
-}
-
+SDK_NAMESPACE_END

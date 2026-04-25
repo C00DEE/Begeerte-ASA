@@ -14,8 +14,7 @@
 #include "GeometryScriptingCore_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GeometryScriptingCore.GeometryScriptLibrary_MeshBooleanFunctions.ApplyMeshBoolean
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
@@ -19255,5 +19254,5 @@ bool UGeometryScriptLibrary_VolumeTextureBakeFunctions::BakeSignedDistanceToVolu
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

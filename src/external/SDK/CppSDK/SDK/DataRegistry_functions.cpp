@@ -14,8 +14,7 @@
 #include "DataRegistry_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function DataRegistry.DataRegistrySubsystem.AcquireItemBP
 // (Final, Native, Static, Public, BlueprintCallable)
@@ -478,5 +477,5 @@ bool UDataRegistrySubsystem::NotEqual_DataRegistryType(const struct FDataRegistr
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

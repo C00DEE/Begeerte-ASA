@@ -16,8 +16,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum StateTreeModule.EStateTreeBreakpointType
 // NumValues: 0x0005
@@ -1766,5 +1765,4 @@ struct FStateTreeDelayTask final : public FStateTreeTaskCommonBase
 };
 DUMPER7_ASSERTS_FStateTreeDelayTask;
 
-}
-
+SDK_NAMESPACE_END

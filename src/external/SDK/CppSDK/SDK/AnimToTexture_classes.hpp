@@ -15,8 +15,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AnimToTexture.AnimToTextureDataAsset
 // 0x0230 (0x0260 - 0x0030)
@@ -121,5 +120,4 @@ public:
 };
 DUMPER7_ASSERTS_UAnimToTextureInstancePlaybackLibrary;
 
-}
-
+SDK_NAMESPACE_END

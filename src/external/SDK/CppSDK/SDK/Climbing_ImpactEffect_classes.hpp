@@ -15,8 +15,7 @@
 #include "ShooterGame_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Climbing_ImpactEffect.Climbing_ImpactEffect_C
 // 0x0050 (0x04D8 - 0x0488)
@@ -55,5 +54,4 @@ public:
 };
 DUMPER7_ASSERTS_AClimbing_ImpactEffect_C;
 
-}
-
+SDK_NAMESPACE_END

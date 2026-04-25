@@ -13,14 +13,14 @@
 #include "Buff_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Buff_BasedOnDesertKaiju.Buff_BasedOnDesertKaiju_C
 // 0x0008 (0x0BD8 - 0x0BD0)
 class ABuff_BasedOnDesertKaiju_C final : public ABuff_Base_C
 {
 public:
+	uint8                                         Pad_BC9[0x7];                                      // 0x0BC9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        CachedMaxWalkSpeed;                                // 0x0BD0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
@@ -43,5 +43,4 @@ public:
 };
 DUMPER7_ASSERTS_ABuff_BasedOnDesertKaiju_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "ForceAggro_BT_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ForceAggro_BT.ForceAggro_BT_C.ExecuteUbergraph_ForceAggro_BT
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UForceAggro_BT_C::ReceiveConditionCheck(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

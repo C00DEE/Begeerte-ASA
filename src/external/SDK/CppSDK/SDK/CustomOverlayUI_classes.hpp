@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass CustomOverlayUI.CustomOverlayUI_C
 // 0x0018 (0x0818 - 0x0800)
@@ -53,5 +52,4 @@ public:
 };
 DUMPER7_ASSERTS_UCustomOverlayUI_C;
 
-}
-
+SDK_NAMESPACE_END

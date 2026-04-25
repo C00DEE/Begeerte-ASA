@@ -19,8 +19,7 @@
 #include "HoudiniEngineRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class HoudiniEngineRuntime.HoudiniAsset
 // 0x0028 (0x0050 - 0x0028)
@@ -510,7 +509,7 @@ DUMPER7_ASSERTS_UHoudiniInputGeometryCollection;
 // Class HoudiniEngineRuntime.HoudiniInputSceneComponent
 // 0x0070 (0x0290 - 0x0220)
 #pragma pack(push, 0x1)
-class alignas(0x10) UHoudiniInputSceneComponent : public UHoudiniInputObject
+class SDK_ALIGN(0x10) UHoudiniInputSceneComponent : public UHoudiniInputObject
 {
 public:
 	struct FTransform                             ActorTransform;                                    // 0x0220(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2393,5 +2392,4 @@ public:
 };
 DUMPER7_ASSERTS_IHoudiniAssetStateEvents;
 
-}
-
+SDK_NAMESPACE_END

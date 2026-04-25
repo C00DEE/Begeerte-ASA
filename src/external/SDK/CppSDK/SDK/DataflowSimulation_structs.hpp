@@ -13,8 +13,7 @@
 #include "DataflowCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct DataflowSimulation.DataflowSimulationProxy
 // 0x0078 (0x0078 - 0x0000)
@@ -155,5 +154,4 @@ public:
 };
 DUMPER7_ASSERTS_FSimulationProxiesTerminalDataflowNode;
 
-}
-
+SDK_NAMESPACE_END

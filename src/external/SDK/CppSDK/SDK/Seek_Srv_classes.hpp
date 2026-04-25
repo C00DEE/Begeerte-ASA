@@ -14,8 +14,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Seek_Srv.Seek_Srv_C
 // 0x0008 (0x00A0 - 0x0098)
@@ -44,5 +43,4 @@ public:
 };
 DUMPER7_ASSERTS_USeek_Srv_C;
 
-}
-
+SDK_NAMESPACE_END

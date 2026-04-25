@@ -14,8 +14,7 @@
 #include "AC_FaceCustomization_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AC_FaceCustomization.AC_FaceCustomization_C.ResetFaceWeights
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -207,5 +206,5 @@ void UAC_FaceCustomization_C::ExecuteUbergraph_AC_FaceCustomization(int32 EntryP
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

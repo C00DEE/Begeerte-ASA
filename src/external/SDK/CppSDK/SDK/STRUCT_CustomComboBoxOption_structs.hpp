@@ -13,8 +13,7 @@
 #include "STRUCT_SubOptions_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedStruct STRUCT_CustomComboBoxOption.STRUCT_CustomComboBoxOption
 // 0x0038 (0x0038 - 0x0000)
@@ -28,5 +27,4 @@ public:
 };
 DUMPER7_ASSERTS_FSTRUCT_CustomComboBoxOption;
 
-}
-
+SDK_NAMESPACE_END

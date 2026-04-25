@@ -14,8 +14,7 @@
 #include "UseTamedNoTargetBehavior_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UseTamedNoTargetBehavior.UseTamedNoTargetBehavior_C.ExecuteUbergraph_UseTamedNoTargetBehavior
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UUseTamedNoTargetBehavior_C::ReceiveConditionCheck(class AActor* OwnerActor
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

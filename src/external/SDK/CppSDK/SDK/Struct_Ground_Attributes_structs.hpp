@@ -14,8 +14,7 @@
 #include "Audio_Ground_Collection_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedStruct Struct_Ground_Attributes.Struct_Ground_Attributes
 // 0x0068 (0x0068 - 0x0000)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_FStruct_Ground_Attributes;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "GeometryCollectionEngine_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GeometryCollectionEngine.GeometryCollectionBlueprintLibrary.SetCustomInstanceDataByIndex
 // (Final, Native, Static, Public, BlueprintCallable)
@@ -2223,5 +2222,5 @@ void UGeometryCollection::SetEnableNanite(bool bValue)
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "PrimalItemConsumablePoop_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemConsumable_DinoPoopSmall.PrimalItemConsumable_DinoPoopSmall_C
 // 0x0000 (0x0B60 - 0x0B60)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemConsumable_DinoPoopSmall_C;
 
-}
-
+SDK_NAMESPACE_END

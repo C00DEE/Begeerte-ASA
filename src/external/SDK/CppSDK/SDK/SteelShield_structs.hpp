@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum SteelShield.ESteelShieldEnvironment
 // NumValues: 0x0003
@@ -36,5 +35,4 @@ enum class EJWTCertificateType : uint8
 	EJWTCertificateType_MAX                  = 6,
 };
 
-}
-
+SDK_NAMESPACE_END

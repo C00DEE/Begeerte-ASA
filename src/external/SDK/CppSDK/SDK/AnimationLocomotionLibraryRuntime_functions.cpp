@@ -14,8 +14,7 @@
 #include "AnimationLocomotionLibraryRuntime_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AnimationLocomotionLibraryRuntime.AnimCharacterMovementLibrary.PredictGroundMovementPivotLocation
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
@@ -186,5 +185,5 @@ struct FSequencePlayerReference UAnimDistanceMatchingLibrary::SetPlayrateToMatch
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

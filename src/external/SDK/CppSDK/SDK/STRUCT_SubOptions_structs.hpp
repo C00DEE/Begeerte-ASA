@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedStruct STRUCT_SubOptions.STRUCT_SubOptions
 // 0x0028 (0x0028 - 0x0000)
@@ -25,5 +24,4 @@ public:
 };
 DUMPER7_ASSERTS_FSTRUCT_SubOptions;
 
-}
-
+SDK_NAMESPACE_END

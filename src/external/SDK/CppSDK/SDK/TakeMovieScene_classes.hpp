@@ -16,8 +16,7 @@
 #include "MovieSceneTracks_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class TakeMovieScene.MovieSceneTakeSection
 // 0x0750 (0x0848 - 0x00F8)
@@ -100,5 +99,4 @@ public:
 };
 DUMPER7_ASSERTS_UMovieSceneTakeTrack;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "MovieScene_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class GeometryCollectionTracks.MovieSceneGeometryCollectionSection
 // 0x0038 (0x0130 - 0x00F8)
@@ -64,5 +63,4 @@ public:
 };
 DUMPER7_ASSERTS_UMovieSceneGeometryCollectionTrack;
 
-}
-
+SDK_NAMESPACE_END

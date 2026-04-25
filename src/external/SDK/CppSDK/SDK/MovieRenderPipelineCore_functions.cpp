@@ -14,8 +14,7 @@
 #include "MovieRenderPipelineCore_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MovieRenderPipelineCore.MovieGraphNode.SetDisabled
 // (Final, Native, Public, BlueprintCallable)
@@ -9684,5 +9683,5 @@ bool UMoviePipelineQueueEngineSubsystem::IsRendering() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

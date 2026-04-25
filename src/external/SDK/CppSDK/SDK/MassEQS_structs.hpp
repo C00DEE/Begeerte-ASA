@@ -13,8 +13,7 @@
 #include "AIModule_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum MassEQS.EMassEntityTagsTestMode
 // NumValues: 0x0004
@@ -51,5 +50,4 @@ struct FMassEQSRequestHandle final : public FIndexedHandleBase
 };
 DUMPER7_ASSERTS_FMassEQSRequestHandle;
 
-}
-
+SDK_NAMESPACE_END

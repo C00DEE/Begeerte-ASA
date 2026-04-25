@@ -13,12 +13,12 @@
 #include "PrimalItemWeaponGenericAmmoless_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemWeaponGenericNoStats.PrimalItemWeaponGenericNoStats_C
 // 0x0000 (0x0B60 - 0x0B60)
-class UPrimalItemWeaponGenericNoStats_C : public UPrimalItemWeaponGenericAmmoless_C
+#pragma pack(push, 0x1)
+class SDK_ALIGN(0x10) UPrimalItemWeaponGenericNoStats_C : public UPrimalItemWeaponGenericAmmoless_C
 {
 public:
 	static class UClass* StaticClass()
@@ -34,7 +34,7 @@ public:
 		return GetDefaultObjImpl<UPrimalItemWeaponGenericNoStats_C>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_UPrimalItemWeaponGenericNoStats_C;
 
-}
-
+SDK_NAMESPACE_END

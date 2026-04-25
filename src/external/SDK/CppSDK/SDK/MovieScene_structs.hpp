@@ -15,8 +15,7 @@
 #include "UniversalObjectLocator_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum MovieScene.EMovieSceneKeyInterpolation
 // NumValues: 0x0007
@@ -1881,5 +1880,4 @@ struct FTestMovieSceneEvalTemplate final : public FMovieSceneEvalTemplate
 };
 DUMPER7_ASSERTS_FTestMovieSceneEvalTemplate;
 
-}
-
+SDK_NAMESPACE_END

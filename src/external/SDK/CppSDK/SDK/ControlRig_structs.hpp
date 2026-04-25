@@ -19,8 +19,7 @@
 #include "MovieScene_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum ControlRig.ERigElementType
 // NumValues: 0x000F
@@ -592,7 +591,7 @@ DUMPER7_ASSERTS_FBlendTarget;
 // ScriptStruct ControlRig.RigUnit_HierarchyAddAnimationChannelEmptyLimitSettings
 // 0x0000 (0x0000 - 0x0000)
 #pragma pack(push, 0x1)
-struct alignas(0x01) FRigUnit_HierarchyAddAnimationChannelEmptyLimitSettings
+struct SDK_ALIGN(0x01) FRigUnit_HierarchyAddAnimationChannelEmptyLimitSettings
 {
 };
 #pragma pack(pop)
@@ -996,7 +995,7 @@ DUMPER7_ASSERTS_FControlRigReference;
 // ScriptStruct ControlRig.RigUnit_HierarchyAddControlElement
 // 0x0070 (0x0280 - 0x0210)
 #pragma pack(push, 0x1)
-struct alignas(0x10) FRigUnit_HierarchyAddControlElement : public FRigUnit_HierarchyAddElement
+struct SDK_ALIGN(0x10) FRigUnit_HierarchyAddControlElement : public FRigUnit_HierarchyAddElement
 {
 public:
 	struct FTransform                             OffsetTransform;                                   // 0x0210(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -8118,5 +8117,4 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_SpringInterpV2;
 
-}
-
+SDK_NAMESPACE_END

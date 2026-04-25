@@ -15,8 +15,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class Sentry.SentryAttachment
 // 0x0018 (0x0040 - 0x0028)
@@ -839,5 +838,4 @@ public:
 };
 DUMPER7_ASSERTS_USentryVariantHelper;
 
-}
-
+SDK_NAMESPACE_END

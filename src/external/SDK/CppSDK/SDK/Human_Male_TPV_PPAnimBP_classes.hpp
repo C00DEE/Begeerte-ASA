@@ -17,12 +17,11 @@
 #include "AnimGraphRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass Human_Male_TPV_PPAnimBP.Human_Male_TPV_PPAnimBP_C
 // 0x10B0 (0x1470 - 0x03C0)
-class UHuman_Male_TPV_PPAnimBP_C final : public UAnimInstance
+class UHuman_Male_TPV_PPAnimBP_C : public UAnimInstance
 {
 public:
 	uint8                                         Pad_3B8[0x8];                                      // 0x03B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -113,5 +112,4 @@ public:
 };
 DUMPER7_ASSERTS_UHuman_Male_TPV_PPAnimBP_C;
 
-}
-
+SDK_NAMESPACE_END

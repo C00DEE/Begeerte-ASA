@@ -15,8 +15,7 @@
 #include "StreamlineBlueprint_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class StreamlineDLSSGBlueprint.StreamlineLibraryDLSSG
 // 0x0000 (0x0028 - 0x0028)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_UStreamlineLibraryDLSSG;
 
-}
-
+SDK_NAMESPACE_END

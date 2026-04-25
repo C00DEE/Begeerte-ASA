@@ -16,8 +16,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class DiscordPartnerSDK.DiscordLocalPlayerSubsystem
 // 0x0118 (0x0148 - 0x0030)
@@ -1395,5 +1394,4 @@ public:
 };
 DUMPER7_ASSERTS_UDiscordCallInfoHandle;
 
-}
-
+SDK_NAMESPACE_END

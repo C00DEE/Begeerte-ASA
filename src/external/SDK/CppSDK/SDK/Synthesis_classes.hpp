@@ -19,8 +19,7 @@
 #include "UMG_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class Synthesis.AudioImpulseResponse
 // 0x0030 (0x0058 - 0x0028)
@@ -1284,5 +1283,4 @@ public:
 };
 DUMPER7_ASSERTS_USynthKnob;
 
-}
-
+SDK_NAMESPACE_END

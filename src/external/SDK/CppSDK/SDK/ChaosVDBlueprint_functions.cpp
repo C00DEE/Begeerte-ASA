@@ -14,8 +14,7 @@
 #include "ChaosVDBlueprint_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ChaosVDBlueprint.ChaosVDRuntimeBlueprintLibrary.RecordDebugDrawBox
 // (Final, Native, Static, Private, HasOutParams, HasDefaults, BlueprintCallable)
@@ -146,5 +145,5 @@ void UChaosVDRuntimeBlueprintLibrary::RecordDebugDrawVector(const class UObject*
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

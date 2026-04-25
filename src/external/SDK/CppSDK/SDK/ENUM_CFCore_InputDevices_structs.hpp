@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedEnum ENUM_CFCore_InputDevices.ENUM_CFCore_InputDevices
 // NumValues: 0x0003
@@ -23,5 +22,4 @@ enum class ENUM_CFCore_InputDevices : uint8
 	ENUM_CFCore_MAX                          = 2,
 };
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class WildcardTools.WildcardHelpers
 // 0x0000 (0x0028 - 0x0028)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_UWildcardHelpers;
 
-}
-
+SDK_NAMESPACE_END
