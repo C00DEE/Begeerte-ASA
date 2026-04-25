@@ -14,8 +14,7 @@
 #include "ClothingSystemRuntimeInterface_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum ClothingSystemRuntimeCommon.EClothingWindMethod_Legacy
 // NumValues: 0x0003
@@ -170,5 +169,4 @@ public:
 };
 DUMPER7_ASSERTS_FClothParameterMask_Legacy;
 
-}
-
+SDK_NAMESPACE_END

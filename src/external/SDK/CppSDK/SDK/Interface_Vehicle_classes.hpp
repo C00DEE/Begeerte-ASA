@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Interface_Vehicle.Interface_Vehicle_C
 // 0x0000 (0x0000 - 0x0000)
@@ -82,5 +81,4 @@ public:
 };
 DUMPER7_ASSERTS_IInterface_Vehicle_C;
 
-}
-
+SDK_NAMESPACE_END

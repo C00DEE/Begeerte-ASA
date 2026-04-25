@@ -15,8 +15,8 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function AudioWidgets.AudioMaterialButton.SetIsPressed
 // 0x0001 (0x0001 - 0x0000)
@@ -617,5 +617,5 @@ public:
 };
 DUMPER7_ASSERTS_AudioSliderBase_SetWidgetBackgroundColor;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

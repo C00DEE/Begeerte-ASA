@@ -14,8 +14,7 @@
 #include "CheatMenu_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CheatMenu.CheatMenu_C.AddAllEntriesButtonForItems
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -1039,5 +1038,5 @@ void UCheatMenu_C::SetupOptionsBarForFolder()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

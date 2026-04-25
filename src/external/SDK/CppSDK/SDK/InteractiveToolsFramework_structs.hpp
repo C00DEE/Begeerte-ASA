@@ -14,8 +14,7 @@
 #include "InputCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum InteractiveToolsFramework.EGizmoElementState
 // NumValues: 0x0005
@@ -462,5 +461,4 @@ public:
 };
 DUMPER7_ASSERTS_FActiveGizmo;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "MeshModelingToolsExp_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MeshModelingToolsExp.BakeInputMeshProperties.GetSourceUVLayerNamesFunc
 // (Final, Native, Public, Const)
@@ -1758,5 +1757,5 @@ const TArray<class FString> UTransferMeshToolProperties::GetTargetLODNamesFunc()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "AnimGraphRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct FPVMeleeWeaponAnimBP_Lance.FPVMeleeWeaponAnimBP_Lance_C.AnimBlueprintGeneratedConstantData
 // 0x0677 (0x0678 - 0x0001)
@@ -92,5 +91,4 @@ public:
 };
 DUMPER7_ASSERTS_FPVMeleeWeaponAnimBP_Lance__FAnimBlueprintGeneratedMutableData;
 
-}
-
+SDK_NAMESPACE_END

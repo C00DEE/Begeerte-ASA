@@ -14,8 +14,7 @@
 #include "InputCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum HeadMountedDisplay.EOrientPositionSelector
 // NumValues: 0x0004
@@ -271,5 +270,4 @@ public:
 };
 DUMPER7_ASSERTS_FXRDeviceId;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "GameplayAbilities_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GameplayAbilities.AbilityAsync.EndAction
 // (Native, Public, BlueprintCallable)
@@ -11211,5 +11210,5 @@ void UMovieSceneGameplayCueTrack::SetSequencerTrackHandler(TDelegate<void(class 
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

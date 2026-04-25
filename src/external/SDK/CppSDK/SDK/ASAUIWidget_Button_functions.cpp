@@ -14,8 +14,7 @@
 #include "ASAUIWidget_Button_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ASAUIWidget_Button.ASAUIWidget_Button_C.UpdateInputIcon
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -284,5 +283,5 @@ void UASAUIWidget_Button_C::BndEvt__ASAUIWidget_Button_1_BackButton_K2Node_Compo
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

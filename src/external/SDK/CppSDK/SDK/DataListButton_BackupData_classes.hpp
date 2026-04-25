@@ -14,8 +14,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass DataListButton_BackupData.DataListButton_BackupData_C
 // 0x00A8 (0x09A8 - 0x0900)
@@ -60,5 +59,4 @@ public:
 };
 DUMPER7_ASSERTS_UDataListButton_BackupData_C;
 
-}
-
+SDK_NAMESPACE_END

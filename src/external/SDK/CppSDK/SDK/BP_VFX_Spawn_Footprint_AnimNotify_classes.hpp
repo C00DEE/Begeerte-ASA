@@ -14,8 +14,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_VFX_Spawn_Footprint_AnimNotify.BP_VFX_Spawn_Footprint_AnimNotify_C
 // 0x00B0 (0x00E8 - 0x0038)
@@ -71,5 +70,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_VFX_Spawn_Footprint_AnimNotify_C;
 
-}
-
+SDK_NAMESPACE_END

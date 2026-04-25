@@ -13,8 +13,8 @@
 #include "AIModule_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function IsFlying_DK.IsFlying_DK_C.ExecuteUbergraph_IsFlying_DK
 // 0x00A0 (0x00A0 - 0x0000)
@@ -79,5 +79,5 @@ public:
 };
 DUMPER7_ASSERTS_IsFlying_DK_C_ReceiveExecutionStart;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

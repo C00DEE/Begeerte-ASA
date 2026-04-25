@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass ContextMenu_PrimalItem.ContextMenu_PrimalItem_C
 // 0x0008 (0x0438 - 0x0430)
@@ -44,5 +43,4 @@ public:
 };
 DUMPER7_ASSERTS_UContextMenu_PrimalItem_C;
 
-}
-
+SDK_NAMESPACE_END

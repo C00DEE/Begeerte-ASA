@@ -15,8 +15,7 @@
 #include "AnimationSharing_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AnimationSharing.AnimationSharingStateProcessor
 // 0x0028 (0x0050 - 0x0028)
@@ -221,5 +220,4 @@ public:
 };
 DUMPER7_ASSERTS_UAnimationSharingSetup;
 
-}
-
+SDK_NAMESPACE_END

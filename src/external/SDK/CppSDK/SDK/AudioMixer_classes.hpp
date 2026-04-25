@@ -16,8 +16,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AudioMixer.AudioBusSubsystem
 // 0x00D8 (0x0108 - 0x0030)
@@ -443,5 +442,4 @@ public:
 };
 DUMPER7_ASSERTS_UQuartzSubsystem;
 
-}
-
+SDK_NAMESPACE_END

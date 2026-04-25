@@ -14,8 +14,7 @@
 #include "cfcore_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function cfcore.CFCoreBPLibrary.BreakFileSize
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
@@ -2482,5 +2481,5 @@ void UCFCoreSubsystem::UtilsCompressionZipPaths(const TArray<class FString>& InP
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

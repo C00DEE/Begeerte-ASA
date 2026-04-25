@@ -14,8 +14,7 @@
 #include "PrimalItemArmor_SaddleGeneric_Tek_Interface_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PrimalItemArmor_SaddleGeneric_Tek_Interface.PrimalItemArmor_SaddleGeneric_Tek_Interface_C.IGet Max Ammo
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -51,5 +50,5 @@ void IPrimalItemArmor_SaddleGeneric_Tek_Interface_C::ISetElementToMax()
 	AsUObject()->ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

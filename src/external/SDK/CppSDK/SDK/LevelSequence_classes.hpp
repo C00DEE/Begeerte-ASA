@@ -21,8 +21,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class LevelSequence.DefaultLevelSequenceInstanceData
 // 0x0078 (0x00A0 - 0x0028)
@@ -442,5 +441,4 @@ public:
 };
 DUMPER7_ASSERTS_ALevelSequenceMediaController;
 
-}
-
+SDK_NAMESPACE_END

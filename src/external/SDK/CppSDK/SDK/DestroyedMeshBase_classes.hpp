@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DestroyedMeshBase.DestroyedMeshBase_C
 // 0x0000 (0x04A8 - 0x04A8)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ADestroyedMeshBase_C;
 
-}
-
+SDK_NAMESPACE_END

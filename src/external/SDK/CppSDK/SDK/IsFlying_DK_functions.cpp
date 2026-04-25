@@ -14,8 +14,7 @@
 #include "IsFlying_DK_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function IsFlying_DK.IsFlying_DK_C.ExecuteUbergraph_IsFlying_DK
 // (Final, UbergraphFunction)
@@ -98,5 +97,5 @@ void UIsFlying_DK_C::ReceiveExecutionStart(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

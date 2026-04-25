@@ -14,8 +14,7 @@
 #include "BaseHumanAnimBP_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BaseHumanAnimBP.BaseHumanAnimBP_C.UpdateLayeringValues
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -2544,5 +2543,5 @@ double UBaseHumanAnimBP_C::GetPredictedStopDistance() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

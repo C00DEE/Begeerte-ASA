@@ -14,8 +14,7 @@
 #include "SmartObjectsModule_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function SmartObjectsModule.SmartObjectBlueprintFunctionLibrary.AddMultipleSmartObjects
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
@@ -2206,5 +2205,5 @@ void ASmartObjectTestingActor::RunTests()
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

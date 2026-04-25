@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum AssetRegistry.EAssetRegistrySortOrder
 // NumValues: 0x0003
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_FAssetRegistryDependencyOptions;
 
-}
-
+SDK_NAMESPACE_END

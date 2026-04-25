@@ -14,8 +14,7 @@
 #include "VirtualHeightfieldMesh_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function VirtualHeightfieldMesh.VirtualHeightfieldMeshComponent.GatherHideFlags
 // (Final, Native, Protected, HasOutParams, Const)
@@ -46,5 +45,5 @@ void UVirtualHeightfieldMeshComponent::GatherHideFlags(bool* InOutHidePrimitives
 		*InOutHidePrimitivesInGame = Parms.InOutHidePrimitivesInGame;
 }
 
-}
 
+SDK_NAMESPACE_END

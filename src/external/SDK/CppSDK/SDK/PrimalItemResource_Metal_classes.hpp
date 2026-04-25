@@ -13,8 +13,7 @@
 #include "PrimalItemResourceGeneric_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemResource_Metal.PrimalItemResource_Metal_C
 // 0x0000 (0x0B60 - 0x0B60)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemResource_Metal_C;
 
-}
-
+SDK_NAMESPACE_END

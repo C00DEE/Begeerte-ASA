@@ -13,13 +13,12 @@
 #include "PrimalItemWeaponGeneric_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemWeaponGenericGun.PrimalItemWeaponGenericGun_C
 // 0x0000 (0x0B60 - 0x0B60)
 #pragma pack(push, 0x1)
-class alignas(0x10) UPrimalItemWeaponGenericGun_C : public UPrimalItemWeaponGeneric_C
+class SDK_ALIGN(0x10) UPrimalItemWeaponGenericGun_C : public UPrimalItemWeaponGeneric_C
 {
 public:
 	static class UClass* StaticClass()
@@ -38,5 +37,4 @@ public:
 #pragma pack(pop)
 DUMPER7_ASSERTS_UPrimalItemWeaponGenericGun_C;
 
-}
-
+SDK_NAMESPACE_END

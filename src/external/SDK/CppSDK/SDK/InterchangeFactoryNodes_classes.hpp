@@ -17,8 +17,7 @@
 #include "InterchangeFactoryNodes_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class InterchangeFactoryNodes.InterchangeActorFactoryNode
 // 0x0080 (0x01D0 - 0x0150)
@@ -1495,5 +1494,4 @@ public:
 };
 DUMPER7_ASSERTS_UInterchangeStaticMeshLodDataNode;
 
-}
-
+SDK_NAMESPACE_END

@@ -17,8 +17,7 @@
 #include "ControlRig_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass Human_Male_TPV_GroundConform_AnimBP.Human_Male_TPV_GroundConform_AnimBP_C
 // 0x0990 (0x0D50 - 0x03C0)
@@ -82,5 +81,4 @@ public:
 };
 DUMPER7_ASSERTS_UHuman_Male_TPV_GroundConform_AnimBP_C;
 
-}
-
+SDK_NAMESPACE_END

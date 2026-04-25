@@ -14,8 +14,7 @@
 #include "AnimGraphRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct BaseHumanAnimBP.BaseHumanAnimBP_C.AnimBlueprintGeneratedConstantData
 // 0xC56F (0xC570 - 0x0001)
@@ -1531,5 +1530,4 @@ public:
 };
 DUMPER7_ASSERTS_BaseHumanAnimBP__FAnimBlueprintGeneratedMutableData;
 
-}
-
+SDK_NAMESPACE_END

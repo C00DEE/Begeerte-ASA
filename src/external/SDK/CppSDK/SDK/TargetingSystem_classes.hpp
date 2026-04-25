@@ -19,8 +19,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class TargetingSystem.AbilityTask_PerformTargeting
 // 0x0030 (0x00B0 - 0x0080)
@@ -447,5 +446,4 @@ public:
 };
 DUMPER7_ASSERTS_UTargetingFilterTask_SortByDistance;
 
-}
-
+SDK_NAMESPACE_END

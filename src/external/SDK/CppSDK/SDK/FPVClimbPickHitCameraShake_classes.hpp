@@ -13,8 +13,7 @@
 #include "EngineCameras_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass FPVClimbPickHitCameraShake.FPVClimbPickHitCameraShake_C
 // 0x0000 (0x0200 - 0x0200)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UFPVClimbPickHitCameraShake_C;
 
-}
-
+SDK_NAMESPACE_END

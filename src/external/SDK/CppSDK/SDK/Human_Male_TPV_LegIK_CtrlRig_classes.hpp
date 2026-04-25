@@ -15,8 +15,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // RigVMBlueprintGeneratedClass Human_Male_TPV_LegIK_CtrlRig.Human_Male_TPV_LegIK_CtrlRig_C
 // 0x0450 (0x0F20 - 0x0AD0)
@@ -98,5 +97,4 @@ public:
 };
 DUMPER7_ASSERTS_UHuman_Male_TPV_LegIK_CtrlRig_C;
 
-}
-
+SDK_NAMESPACE_END

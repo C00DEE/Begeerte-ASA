@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum PropertyBindingUtils.EPropertyBindingAccessType
 // NumValues: 0x0008
@@ -59,5 +58,4 @@ public:
 };
 DUMPER7_ASSERTS_FPropertyBindingPath;
 
-}
-
+SDK_NAMESPACE_END

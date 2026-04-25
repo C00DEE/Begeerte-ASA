@@ -32,8 +32,7 @@
 #include "PacketHandler_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class Engine.Subsystem
 // 0x0008 (0x0030 - 0x0028)
@@ -382,7 +381,7 @@ DUMPER7_ASSERTS_USceneComponent;
 // Class Engine.LightComponentBase
 // 0x0070 (0x02E0 - 0x0270)
 #pragma pack(push, 0x1)
-class alignas(0x10) ULightComponentBase : public USceneComponent
+class SDK_ALIGN(0x10) ULightComponentBase : public USceneComponent
 {
 public:
 	struct FGuid                                  OriginalLightGuid;                                 // 0x0268(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -931,7 +930,7 @@ DUMPER7_ASSERTS_UPrimalActor;
 // Class Engine.PointLightComponent
 // 0x0020 (0x0430 - 0x0410)
 #pragma pack(push, 0x1)
-class alignas(0x10) UPointLightComponent : public ULocalLightComponent
+class SDK_ALIGN(0x10) UPointLightComponent : public ULocalLightComponent
 {
 public:
 	uint8                                         bUseInverseSquaredFalloff : 1;                     // 0x0410(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
@@ -1240,7 +1239,7 @@ DUMPER7_ASSERTS_UMaterialExpressionPerInstanceDynamicCustomDataRowIndex;
 // Class Engine.PrimitiveComponent
 // 0x03A0 (0x0610 - 0x0270)
 #pragma pack(push, 0x1)
-class alignas(0x10) UPrimitiveComponent : public USceneComponent
+class SDK_ALIGN(0x10) UPrimitiveComponent : public USceneComponent
 {
 public:
 	uint8                                         Pad_268[0x18];                                     // 0x0268(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
@@ -1608,7 +1607,7 @@ DUMPER7_ASSERTS_UMeshComponent;
 // Class Engine.StaticMeshComponent
 // 0x00C0 (0x0700 - 0x0640)
 #pragma pack(push, 0x1)
-class alignas(0x10) UStaticMeshComponent : public UMeshComponent
+class SDK_ALIGN(0x10) UStaticMeshComponent : public UMeshComponent
 {
 public:
 	int32                                         ForcedLodModel;                                    // 0x0640(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1825,7 +1824,7 @@ DUMPER7_ASSERTS_UInstancedStaticMeshComponent;
 // Class Engine.HierarchicalInstancedStaticMeshComponent
 // 0x01A0 (0x0CC0 - 0x0B20)
 #pragma pack(push, 0x1)
-class alignas(0x10) UHierarchicalInstancedStaticMeshComponent : public UInstancedStaticMeshComponent
+class SDK_ALIGN(0x10) UHierarchicalInstancedStaticMeshComponent : public UInstancedStaticMeshComponent
 {
 public:
 	uint8                                         Pad_B20[0x10];                                     // 0x0B20(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
@@ -4899,7 +4898,7 @@ DUMPER7_ASSERTS_UParticleModuleVectorFieldRotationRate;
 // Class Engine.DebugDrawComponent
 // 0x0050 (0x0660 - 0x0610)
 #pragma pack(push, 0x1)
-class alignas(0x10) UDebugDrawComponent : public UPrimitiveComponent
+class SDK_ALIGN(0x10) UDebugDrawComponent : public UPrimitiveComponent
 {
 public:
 	uint8                                         Pad_608[0x50];                                     // 0x0608(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -6810,7 +6809,7 @@ DUMPER7_ASSERTS_USkinnedMeshComponent;
 // Class Engine.SkeletalMeshComponent
 // 0x09D0 (0x13B0 - 0x09E0)
 #pragma pack(push, 0x1)
-class alignas(0x10) USkeletalMeshComponent : public USkinnedMeshComponent
+class SDK_ALIGN(0x10) USkeletalMeshComponent : public USkinnedMeshComponent
 {
 public:
 	uint8                                         Pad_9E0[0x8];                                      // 0x09E0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -7383,7 +7382,7 @@ DUMPER7_ASSERTS_UActorChannel;
 // Class Engine.ReflectionCaptureComponent
 // 0x0140 (0x03B0 - 0x0270)
 #pragma pack(push, 0x1)
-class alignas(0x10) UReflectionCaptureComponent : public USceneComponent
+class SDK_ALIGN(0x10) UReflectionCaptureComponent : public USceneComponent
 {
 public:
 	class UBillboardComponent*                    CaptureOffsetComponent;                            // 0x0268(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, ExperimentalNeverOverriden)
@@ -11788,13 +11787,11 @@ public:
 	class AActor*                                 OwningActor;                                       // 0x00A0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, ExperimentalNeverOverriden)
 	int32                                         MaxPacket;                                         // 0x00A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         InternalAck : 1;                                   // 0x00AC(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate))
-	// --- 开始手术 ---
 	uint8                                          Pad_AD_To_C0[0x13];                                // 0x00AD(0x0013)(填充到 0xC0)
 	class FString                                  RemoteIPList;                                      // 0x00C0(0x0010)(我们发现的 IP 列表)
 	int32                                          RemotePort;
 	uint8                                          Pad_D4_To_168[0x94];                               // 0x00D4(0x0094)(填充到 PlayerID)
-	// --- 手术结束 ---
-	// uint8                                         Pad_AD[0xBB];                                      // 0x00AD(0x00BB)(Fixing Size After Last Property [ Dumper-7 ])
+	//uint8                                         Pad_AD[0xBB];                                      // 0x00AD(0x00BB)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FUniqueNetIdRepl                       PlayerID;                                          // 0x0168(0x0030)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_198[0x48];                                     // 0x0198(0x0048)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        LastReceiveTime;                                   // 0x01E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -11826,7 +11823,6 @@ public:
 	int32_t GetPort() {
 		return (this) ? RemotePort : 0;
 	}
-
 	static class UClass* StaticClass()
 	{
 		STATIC_CLASS_IMPL("NetConnection")
@@ -12960,7 +12956,7 @@ DUMPER7_ASSERTS_UEngineBaseTypes;
 // Class Engine.ShapeComponent
 // 0x0020 (0x0630 - 0x0610)
 #pragma pack(push, 0x1)
-class alignas(0x10) UShapeComponent : public UPrimitiveComponent
+class SDK_ALIGN(0x10) UShapeComponent : public UPrimitiveComponent
 {
 public:
 	class UBodySetup*                             ShapeBodySetup;                                    // 0x0608(0x0008)(ZeroConstructor, Transient, DuplicateTransient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, ExperimentalNeverOverriden)
@@ -17180,7 +17176,7 @@ DUMPER7_ASSERTS_UWorld;
 // Class Engine.LevelStreamingDynamic
 // 0x0010 (0x01D0 - 0x01C0)
 #pragma pack(push, 0x1)
-class alignas(0x10) ULevelStreamingDynamic : public ULevelStreaming
+class SDK_ALIGN(0x10) ULevelStreamingDynamic : public ULevelStreaming
 {
 public:
 	uint8                                         bInitiallyLoaded : 1;                              // 0x01C0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
@@ -20927,7 +20923,7 @@ DUMPER7_ASSERTS_UMaterialExpressionDepthOfFieldFunction;
 // Class Engine.PlayerCameraManager
 // 0x2838 (0x2CC0 - 0x0488)
 #pragma pack(push, 0x1)
-class alignas(0x10) APlayerCameraManager : public AActor
+class SDK_ALIGN(0x10) APlayerCameraManager : public AActor
 {
 public:
 	class APlayerController*                      PCOwner;                                           // 0x0488(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, ExperimentalNeverOverriden)
@@ -21914,7 +21910,7 @@ DUMPER7_ASSERTS_UMaterialExpressionHairColor;
 // Class Engine.FXSystemComponent
 // 0x0000 (0x0610 - 0x0610)
 #pragma pack(push, 0x1)
-class alignas(0x10) UFXSystemComponent : public UPrimitiveComponent
+class SDK_ALIGN(0x10) UFXSystemComponent : public UPrimitiveComponent
 {
 public:
 	void ReleaseToPool();
@@ -26221,7 +26217,7 @@ DUMPER7_ASSERTS_UMaterialExpressionSubstrateConvertMaterialAttributes;
 // Class Engine.ParticleSystemComponent
 // 0x0350 (0x0960 - 0x0610)
 #pragma pack(push, 0x1)
-class alignas(0x10) UParticleSystemComponent : public UFXSystemComponent
+class SDK_ALIGN(0x10) UParticleSystemComponent : public UFXSystemComponent
 {
 public:
 	class UParticleSystem*                        Template;                                          // 0x0608(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, ExperimentalNeverOverriden)
@@ -29147,7 +29143,7 @@ DUMPER7_ASSERTS_UParticleModuleLight_Seeded;
 // Class Engine.WorldPartitionDestructibleHLODComponent
 // 0x0010 (0x0280 - 0x0270)
 #pragma pack(push, 0x1)
-class alignas(0x10) UWorldPartitionDestructibleHLODComponent : public USceneComponent
+class SDK_ALIGN(0x10) UWorldPartitionDestructibleHLODComponent : public USceneComponent
 {
 public:
 	TArray<class FName>                           DestructibleActors;                                // 0x0268(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
@@ -32132,7 +32128,7 @@ public:
 		return GetDefaultObjImpl<UWorldPartitionRuntimeCellData>();
 	}
 };
-DUMPER7_ASSERTS_UWorldPartitionRuntimeCellData;
+//DUMPER7_ASSERTS_UWorldPartitionRuntimeCellData;
 
 // Class Engine.WorldPartitionRuntimeCellDataHashSet
 // 0x0008 (0x00F0 - 0x00E8)
@@ -42120,7 +42116,7 @@ DUMPER7_ASSERTS_UPackageMapClient;
 
 // Class Engine.PackedLevelActor
 // 0x0000 (0x0530 - 0x0530)
-class APackedLevelActor final : public ALevelInstance
+class APackedLevelActor : public ALevelInstance
 {
 public:
 	static class UClass* StaticClass()
@@ -45593,5 +45589,4 @@ public:
 };
 DUMPER7_ASSERTS_AWorldPartitionVolume;
 
-}
-
+SDK_NAMESPACE_END

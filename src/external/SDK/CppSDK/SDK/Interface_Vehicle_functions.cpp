@@ -14,8 +14,7 @@
 #include "Interface_Vehicle_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Interface_Vehicle.Interface_Vehicle_C.Interface_Vehicle Get Should Be Forced TPV (prevent fpv)
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -813,5 +812,5 @@ void IInterface_Vehicle_C::Interface_Vehicle_SwitchBetweenAttachmentModeAndTurre
 		*success = Parms.success;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "PrimalItemConsumable_Egg_Small_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemConsumable_Egg_Hesperonis.PrimalItemConsumable_Egg_Hesperonis_C
 // 0x0000 (0x0B90 - 0x0B90)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemConsumable_Egg_Hesperonis_C;
 
-}
-
+SDK_NAMESPACE_END

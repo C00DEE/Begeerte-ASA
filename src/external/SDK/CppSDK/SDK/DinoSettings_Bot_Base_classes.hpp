@@ -14,8 +14,7 @@
 #include "DinoSettings_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DinoSettings_Bot_Base.DinoSettings_Bot_Base_C
 // 0x0168 (0x0270 - 0x0108)
@@ -42,5 +41,4 @@ public:
 };
 DUMPER7_ASSERTS_UDinoSettings_Bot_Base_C;
 
-}
-
+SDK_NAMESPACE_END

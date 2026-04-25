@@ -14,8 +14,7 @@
 #include "BP_CFCoreUIModel_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_CFCoreUIModel.BP_CFCoreUIModel_C.OnEventReceived_LibraryProgress
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -74,5 +73,5 @@ bool UBP_CFCoreUIModel_C::OnEventReceived(const EGameModsEvent& evt, const TArra
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

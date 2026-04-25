@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum MeshModelingTools.EPolyEditExtrudeEdgeDirectionMode
 // NumValues: 0x0003
@@ -361,5 +360,4 @@ enum class EUVProjectionToolInitializationMode : uint32
 	EUVProjectionToolInitializationMode_MAX  = 4,
 };
 
-}
-
+SDK_NAMESPACE_END

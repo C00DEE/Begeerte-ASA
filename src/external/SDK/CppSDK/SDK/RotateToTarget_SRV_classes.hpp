@@ -14,8 +14,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass RotateToTarget_SRV.RotateToTarget_SRV_C
 // 0x0008 (0x00A0 - 0x0098)
@@ -45,5 +44,4 @@ public:
 };
 DUMPER7_ASSERTS_URotateToTarget_SRV_C;
 
-}
-
+SDK_NAMESPACE_END

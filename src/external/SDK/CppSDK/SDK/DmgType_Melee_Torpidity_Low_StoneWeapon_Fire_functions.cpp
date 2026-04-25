@@ -14,8 +14,7 @@
 #include "DmgType_Melee_Torpidity_Low_StoneWeapon_Fire_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function DmgType_Melee_Torpidity_Low_StoneWeapon_Fire.DmgType_Melee_Torpidity_Low_StoneWeapon_Fire_C.OverrideBuffToGiveVictimCharacter
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
@@ -47,5 +46,5 @@ TSubclassOf<class APrimalBuff> UDmgType_Melee_Torpidity_Low_StoneWeapon_Fire_C::
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

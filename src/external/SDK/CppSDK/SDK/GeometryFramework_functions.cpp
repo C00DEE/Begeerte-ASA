@@ -14,8 +14,7 @@
 #include "GeometryFramework_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GeometryFramework.BaseDynamicMeshComponent.ClearOverrideRenderMaterial
 // (RequiredAPI, Native, Public, BlueprintCallable)
@@ -1444,5 +1443,5 @@ void UDynamicMeshPool::ReturnMesh(class UDynamicMesh* Mesh)
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

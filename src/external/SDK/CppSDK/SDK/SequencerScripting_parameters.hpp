@@ -17,8 +17,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function SequencerScripting.MovieSceneScriptingActorReferenceKey.SetTime
 // 0x000C (0x000C - 0x0000)
@@ -3388,5 +3388,5 @@ public:
 };
 DUMPER7_ASSERTS_SequencerScriptingRangeExtensions_SetStartSeconds;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

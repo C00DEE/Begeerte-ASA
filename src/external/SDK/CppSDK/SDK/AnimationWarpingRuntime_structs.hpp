@@ -15,8 +15,7 @@
 #include "AnimGraphRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum AnimationWarpingRuntime.EFootPlacementLockType
 // NumValues: 0x0005
@@ -383,5 +382,4 @@ public:
 };
 DUMPER7_ASSERTS_FAnimNode_StrideWarping;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "RotateToTarget_SRV_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function RotateToTarget_SRV.RotateToTarget_SRV_C.ExecuteUbergraph_RotateToTarget_SRV
 // (Final, UbergraphFunction)
@@ -76,5 +75,5 @@ void URotateToTarget_SRV_C::ReceiveDeactivation(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "CheckIsVectorNonZero_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CheckIsVectorNonZero.CheckIsVectorNonZero_C.ExecuteUbergraph_CheckIsVectorNonZero
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UCheckIsVectorNonZero_C::ReceiveExecute(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "MassEntity_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum MassGameplayDebug.EMassEntityDebugShape
 // NumValues: 0x0005
@@ -79,5 +78,4 @@ public:
 };
 DUMPER7_ASSERTS_FAgentDebugVisualization;
 
-}
-
+SDK_NAMESPACE_END

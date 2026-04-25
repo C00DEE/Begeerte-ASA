@@ -14,8 +14,7 @@
 #include "NotWithinDistance_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function NotWithinDistance.NotWithinDistance_C.ExecuteUbergraph_NotWithinDistance
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UNotWithinDistance_C::ReceiveConditionCheck(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

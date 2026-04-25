@@ -14,8 +14,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum Slate.EVirtualKeyboardTrigger
 // NumValues: 0x0004
@@ -379,5 +378,4 @@ public:
 };
 DUMPER7_ASSERTS_FCustomizedToolMenu;
 
-}
-
+SDK_NAMESPACE_END

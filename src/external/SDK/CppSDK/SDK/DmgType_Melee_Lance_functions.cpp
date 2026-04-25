@@ -14,8 +14,7 @@
 #include "DmgType_Melee_Lance_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function DmgType_Melee_Lance.DmgType_Melee_Lance_C.BPAdjustDamage
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
@@ -47,5 +46,5 @@ float UDmgType_Melee_Lance_C::BPAdjustDamage(class AActor* Victim, float Incomin
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -16,8 +16,7 @@
 #include "MassEntity_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum MassActors.ESpawnRequestStatus
 // NumValues: 0x0007
@@ -196,5 +195,4 @@ public:
 };
 DUMPER7_ASSERTS_FDataFragment_BehaviorTreeComponentWrapper;
 
-}
-
+SDK_NAMESPACE_END

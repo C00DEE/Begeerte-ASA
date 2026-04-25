@@ -14,8 +14,7 @@
 #include "AIModule_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum MassLOD.EMassLOD
 // NumValues: 0x0005
@@ -220,5 +219,4 @@ public:
 };
 DUMPER7_ASSERTS_FMassSimulationVariableTickSharedFragment;
 
-}
-
+SDK_NAMESPACE_END

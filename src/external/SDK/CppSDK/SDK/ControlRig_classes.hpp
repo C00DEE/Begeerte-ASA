@@ -27,8 +27,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ControlRig.ControlRigShapeLibraryLink
 // 0x0040 (0x0140 - 0x0100)
@@ -1275,5 +1274,4 @@ public:
 };
 DUMPER7_ASSERTS_UControlRigNumericalValidationPass;
 
-}
-
+SDK_NAMESPACE_END

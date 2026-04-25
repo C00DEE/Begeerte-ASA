@@ -13,12 +13,11 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct Human_Male_TPV_PPAnimBP.Human_Male_TPV_PPAnimBP_C.AnimBlueprintGeneratedConstantData
 // 0x03CF (0x03D0 - 0x0001)
-struct Human_Male_TPV_PPAnimBP::FAnimBlueprintGeneratedConstantData final : public FAnimBlueprintConstantData
+struct Human_Male_TPV_PPAnimBP::FAnimBlueprintGeneratedConstantData : public FAnimBlueprintConstantData
 {
 public:
 	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_Human_Male_TPV_PPAnimBP__FAnimBlueprintGeneratedConstantData;
 
-}
-
+SDK_NAMESPACE_END

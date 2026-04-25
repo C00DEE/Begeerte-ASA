@@ -14,8 +14,7 @@
 #include "DataListButtonVariable_Widget_ASA_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass DataListButtonVariable_Bool_Widget_ASA.DataListButtonVariable_Bool_Widget_ASA_C
 // 0x0028 (0x0500 - 0x04D8)
@@ -27,11 +26,11 @@ public:
 	class FString                                 FalseBoolString;                                   // 0x04F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 
 public:
-	void Construct();
-	void ExecuteUbergraph_DataListButtonVariable_Bool_Widget_ASA(int32 EntryPoint);
-	void ExtraSetupToggledButton(bool Toggle, bool FromSelectOtherOption);
-	void PreConstruct(bool IsDesignTime);
 	void SetupTextValue(const class FText& Text, class FText* ReturnText);
+	void PreConstruct(bool IsDesignTime);
+	void ExtraSetupToggledButton(bool Toggle, bool FromSelectOtherOption);
+	void ExecuteUbergraph_DataListButtonVariable_Bool_Widget_ASA(int32 EntryPoint);
+	void Construct();
 
 public:
 	static class UClass* StaticClass()
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_UDataListButtonVariable_Bool_Widget_ASA_C;
 
-}
-
+SDK_NAMESPACE_END

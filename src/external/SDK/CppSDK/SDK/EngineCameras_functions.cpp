@@ -14,8 +14,7 @@
 #include "EngineCameras_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function EngineCameras.LegacyCameraShake.StartLegacyCameraShake
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
@@ -667,5 +666,5 @@ bool UEngineCamerasSubsystem::IsCameraAnimationActive(class APlayerController* P
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

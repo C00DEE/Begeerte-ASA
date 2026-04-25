@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass PaintingsListUI.PaintingsListUI_C
 // 0x0070 (0x09D8 - 0x0968)
@@ -52,5 +51,4 @@ public:
 };
 DUMPER7_ASSERTS_UPaintingsListUI_C;
 
-}
-
+SDK_NAMESPACE_END

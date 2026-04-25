@@ -14,8 +14,7 @@
 #include "PCG_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PCG.PCGSettings.BP_GetTypeUnionOfIncidentEdges
 // (Final, Native, Protected, HasOutParams, BlueprintCallable, BlueprintPure, Const)
@@ -10238,5 +10237,5 @@ void UPCGDeterminismTestBlueprintBase::ExecuteTest(const class UPCGNode* InPCGNo
 	InOutTestResult = std::move(Parms.InOutTestResult);
 }
 
-}
 
+SDK_NAMESPACE_END

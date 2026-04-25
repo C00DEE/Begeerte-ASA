@@ -17,8 +17,7 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass DataListButton_Widget_ASA.DataListButton_Widget_ASA_C
 // 0x00E8 (0x0460 - 0x0378)
@@ -85,5 +84,4 @@ public:
 };
 DUMPER7_ASSERTS_UDataListButton_Widget_ASA_C;
 
-}
-
+SDK_NAMESPACE_END

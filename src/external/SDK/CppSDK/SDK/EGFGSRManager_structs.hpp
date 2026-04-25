@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum EGFGSRManager.EEGSwapchainProvider
 // NumValues: 0x0005
@@ -76,5 +75,4 @@ enum class EEGFSRQualityMode : uint64
 	EEGFSRQualityMode_MAX                    = 5,
 };
 
-}
-
+SDK_NAMESPACE_END

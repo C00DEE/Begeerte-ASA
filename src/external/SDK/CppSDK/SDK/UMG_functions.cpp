@@ -14,8 +14,7 @@
 #include "UMG_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UMG.AsyncTaskDownloadBinkMovieCached.DownloadVideo
 // (Final, Native, Static, Public, BlueprintCallable)
@@ -20699,5 +20698,5 @@ struct FEventReply UWidgetBlueprintLibrary::UnlockMouse(struct FEventReply& Repl
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

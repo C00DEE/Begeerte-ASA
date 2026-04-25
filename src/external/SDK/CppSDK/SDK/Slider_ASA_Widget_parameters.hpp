@@ -14,8 +14,8 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function Slider_ASA_Widget.Slider_ASA_Widget_C.Tick
 // 0x003C (0x003C - 0x0000)
@@ -111,5 +111,5 @@ public:
 };
 DUMPER7_ASSERTS_Slider_ASA_Widget_C_BPExecutedCommandForPrimalUI;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

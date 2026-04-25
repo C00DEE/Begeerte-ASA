@@ -14,8 +14,7 @@
 #include "PCGGeometryScriptInterop_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PCGGeometryScriptInterop.PCGDynamicMeshData.K2_Initialize
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
@@ -122,5 +121,5 @@ class UPCGDynamicMeshData* UPCGGeometryBlueprintElement::CopyOrStealInputData(co
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

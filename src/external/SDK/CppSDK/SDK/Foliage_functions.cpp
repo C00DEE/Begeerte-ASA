@@ -14,8 +14,7 @@
 #include "Foliage_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Foliage.FoliageType.GetResponseToChannel
 // (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
@@ -260,5 +259,5 @@ void UProceduralFoliageSpawner::Simulate(int32 NumSteps)
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

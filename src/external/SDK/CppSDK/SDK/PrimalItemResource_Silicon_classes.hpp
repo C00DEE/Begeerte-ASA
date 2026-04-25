@@ -13,12 +13,11 @@
 #include "PrimalItemResourceGeneric_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemResource_Silicon.PrimalItemResource_Silicon_C
 // 0x0000 (0x0B60 - 0x0B60)
-class UPrimalItemResource_Silicon_C final : public UPrimalItemResourceGeneric_C
+class UPrimalItemResource_Silicon_C : public UPrimalItemResourceGeneric_C
 {
 public:
 	static class UClass* StaticClass()
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemResource_Silicon_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass WeapGPS.WeapGPS_C
 // 0x0008 (0x1410 - 0x1408)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_AWeapGPS_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -16,8 +16,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class PrimalProgressionTree.PrimalProgressionTreeAsset
 // 0x0048 (0x0078 - 0x0030)
@@ -205,5 +204,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalProgressionTreeGraph_RowsAndTiers;
 
-}
-
+SDK_NAMESPACE_END

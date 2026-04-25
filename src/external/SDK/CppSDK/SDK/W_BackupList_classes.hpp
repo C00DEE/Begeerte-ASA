@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass W_BackupList.W_BackupList_C
 // 0x0030 (0x0860 - 0x0830)
@@ -30,8 +29,8 @@ public:
 	class UTextBlock*                             CreateBackupSaveButtonLabel;                       // 0x0858(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void BndEvt__W_BackupList_CloseBackupSave_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
 	void ExecuteUbergraph_W_BackupList(int32 EntryPoint);
+	void BndEvt__W_BackupList_CloseBackupSave_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
 
 public:
 	static class UClass* StaticClass()
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_UW_BackupList_C;
 
-}
-
+SDK_NAMESPACE_END

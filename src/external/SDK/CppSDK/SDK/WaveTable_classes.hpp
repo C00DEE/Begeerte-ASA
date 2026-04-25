@@ -14,8 +14,7 @@
 #include "WaveTable_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class WaveTable.WaveTableBank
 // 0x0038 (0x0060 - 0x0028)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_UWaveTableBank;
 
-}
-
+SDK_NAMESPACE_END

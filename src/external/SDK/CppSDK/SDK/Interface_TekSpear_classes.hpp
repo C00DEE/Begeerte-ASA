@@ -13,8 +13,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Interface_TekSpear.Interface_TekSpear_C
 // 0x0000 (0x0000 - 0x0000)
@@ -72,5 +71,4 @@ public:
 };
 DUMPER7_ASSERTS_IInterface_TekSpear_C;
 
-}
-
+SDK_NAMESPACE_END

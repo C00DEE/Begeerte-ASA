@@ -14,8 +14,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class DataflowSimulation.DataflowSimulationManager
 // 0x0068 (0x00A8 - 0x0040)
@@ -247,5 +246,4 @@ public:
 };
 DUMPER7_ASSERTS_IDataflowPhysicsObjectInterface;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct Human_Male_TPV_GroundConform_AnimBP.Human_Male_TPV_GroundConform_AnimBP_C.AnimBlueprintGeneratedConstantData
 // 0x02AF (0x02B0 - 0x0001)
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_Human_Male_TPV_GroundConform_AnimBP__FAnimBlueprintGeneratedConstantData;
 
-}
-
+SDK_NAMESPACE_END

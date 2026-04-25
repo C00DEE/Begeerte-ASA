@@ -19,8 +19,7 @@
 #include "ComputeFramework_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class PCG.PCGData
 // 0x0010 (0x0038 - 0x0028)
@@ -1344,7 +1343,7 @@ DUMPER7_ASSERTS_UPCGBlurSettings;
 // Class PCG.PCGSurfaceData
 // 0x00A0 (0x0170 - 0x00D0)
 #pragma pack(push, 0x1)
-class alignas(0x10) UPCGSurfaceData : public UPCGSpatialDataWithPointCache
+class SDK_ALIGN(0x10) UPCGSurfaceData : public UPCGSpatialDataWithPointCache
 {
 public:
 	struct FTransform                             Transform;                                         // 0x00D0(0x0060)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -1370,7 +1369,7 @@ DUMPER7_ASSERTS_UPCGSurfaceData;
 // Class PCG.PCGBaseTextureData
 // 0x00B0 (0x0220 - 0x0170)
 #pragma pack(push, 0x1)
-class alignas(0x10) UPCGBaseTextureData : public UPCGSurfaceData
+class SDK_ALIGN(0x10) UPCGBaseTextureData : public UPCGSurfaceData
 {
 public:
 	bool                                          bUseDensitySourceChannel;                          // 0x0168(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -8145,5 +8144,4 @@ public:
 };
 DUMPER7_ASSERTS_UPCGDeterminismTestBlueprintBase;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "MetasoundFrontend_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MetasoundFrontend.MetaSoundDocumentInterface
 // 0x0000 (0x0000 - 0x0000)
@@ -135,5 +134,4 @@ public:
 };
 DUMPER7_ASSERTS_UMetaSoundBuilderDocument;
 
-}
-
+SDK_NAMESPACE_END

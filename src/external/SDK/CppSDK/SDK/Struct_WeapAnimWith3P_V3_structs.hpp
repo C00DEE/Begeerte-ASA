@@ -13,8 +13,7 @@
 #include "ShooterGame_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedStruct Struct_WeapAnimWith3P_V3.Struct_WeapAnimWith3P_V3
 // 0x0018 (0x0018 - 0x0000)
@@ -26,5 +25,4 @@ public:
 };
 DUMPER7_ASSERTS_FStruct_WeapAnimWith3P_V3;
 
-}
-
+SDK_NAMESPACE_END

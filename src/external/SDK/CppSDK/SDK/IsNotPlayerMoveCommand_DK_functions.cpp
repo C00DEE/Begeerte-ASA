@@ -14,8 +14,7 @@
 #include "IsNotPlayerMoveCommand_DK_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function IsNotPlayerMoveCommand_DK.IsNotPlayerMoveCommand_DK_C.ExecuteUbergraph_IsNotPlayerMoveCommand_DK
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UIsNotPlayerMoveCommand_DK_C::ReceiveConditionCheck(class AActor* OwnerActo
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

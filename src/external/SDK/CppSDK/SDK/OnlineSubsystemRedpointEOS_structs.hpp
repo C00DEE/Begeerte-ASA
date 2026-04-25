@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum OnlineSubsystemRedpointEOS.EEOSUserInterface_SignInOrCreateAccount_Choice
 // NumValues: 0x0003
@@ -43,5 +42,4 @@ public:
 };
 DUMPER7_ASSERTS_FEOSUserInterface_CandidateEOSAccount;
 
-}
-
+SDK_NAMESPACE_END

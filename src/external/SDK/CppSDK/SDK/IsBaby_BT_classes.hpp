@@ -14,8 +14,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass IsBaby_BT.IsBaby_BT_C
 // 0x0008 (0x00A8 - 0x00A0)
@@ -44,5 +43,4 @@ public:
 };
 DUMPER7_ASSERTS_UIsBaby_BT_C;
 
-}
-
+SDK_NAMESPACE_END

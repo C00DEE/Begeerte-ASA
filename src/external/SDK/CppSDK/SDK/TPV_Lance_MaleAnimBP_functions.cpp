@@ -13,8 +13,7 @@
 #include "TPV_Lance_MaleAnimBP_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function TPV_Lance_MaleAnimBP.TPV_Lance_MaleAnimBP_C.UpdateLayeringValues
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -29,5 +28,5 @@ void UTPV_Lance_MaleAnimBP_C::UpdateLayeringValues()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

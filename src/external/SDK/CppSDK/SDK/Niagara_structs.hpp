@@ -17,8 +17,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum Niagara.ENiagaraSimCacheAttributeCaptureMode
 // NumValues: 0x0004
@@ -4235,5 +4234,4 @@ public:
 };
 DUMPER7_ASSERTS_FNiagaraWorldManagerTickFunction;
 
-}
-
+SDK_NAMESPACE_END

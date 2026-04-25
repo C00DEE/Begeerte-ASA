@@ -14,8 +14,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function Climbing_ImpactEffect.Climbing_ImpactEffect_C.DeactivateImpactEffect
 // 0x0010 (0x0010 - 0x0000)
@@ -48,5 +48,5 @@ public:
 };
 DUMPER7_ASSERTS_Climbing_ImpactEffect_C_ExecuteUbergraph_Climbing_ImpactEffect;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

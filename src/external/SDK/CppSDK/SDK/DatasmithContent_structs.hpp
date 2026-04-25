@@ -15,8 +15,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum DatasmithContent.EDatasmithAreaLightActorShape
 // NumValues: 0x0006
@@ -343,5 +342,4 @@ public:
 };
 DUMPER7_ASSERTS_FDatasmithMeshSectionInfoMapTemplate;
 
-}
-
+SDK_NAMESPACE_END

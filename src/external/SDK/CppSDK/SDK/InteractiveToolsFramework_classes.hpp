@@ -16,8 +16,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class InteractiveToolsFramework.InputBehavior
 // 0x0008 (0x0030 - 0x0028)
@@ -4256,5 +4255,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimitiveComponentToolTargetFactory;
 
-}
-
+SDK_NAMESPACE_END

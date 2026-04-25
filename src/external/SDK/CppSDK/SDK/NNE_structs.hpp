@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum NNE.ENNEAttributeDataType
 // NumValues: 0x000A
@@ -140,5 +139,4 @@ public:
 };
 DUMPER7_ASSERTS_FNNERuntimeFormat;
 
-}
-
+SDK_NAMESPACE_END

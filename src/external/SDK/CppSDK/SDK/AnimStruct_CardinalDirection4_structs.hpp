@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedStruct AnimStruct_CardinalDirection4.AnimStruct_CardinalDirection4
 // 0x0020 (0x0020 - 0x0000)
@@ -26,5 +25,4 @@ public:
 };
 DUMPER7_ASSERTS_FAnimStruct_CardinalDirection4;
 
-}
-
+SDK_NAMESPACE_END

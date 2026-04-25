@@ -13,8 +13,8 @@
 #include "GLTFExporter_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function GLTFExporter.GLTFExporter.ExportToGLTF
 // 0x00A8 (0x00A8 - 0x0000)
@@ -31,5 +31,5 @@ public:
 };
 DUMPER7_ASSERTS_GLTFExporter_ExportToGLTF;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

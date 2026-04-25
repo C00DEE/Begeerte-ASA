@@ -13,8 +13,7 @@
 #include "PrimalItemWeaponAttachmentGeneric_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemWeaponAttachment_HoloScope.PrimalItemWeaponAttachment_HoloScope_C
 // 0x0000 (0x0B60 - 0x0B60)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemWeaponAttachment_HoloScope_C;
 
-}
-
+SDK_NAMESPACE_END

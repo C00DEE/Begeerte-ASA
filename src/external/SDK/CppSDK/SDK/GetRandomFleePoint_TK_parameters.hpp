@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function GetRandomFleePoint_TK.GetRandomFleePoint_TK_C.ExecuteUbergraph_GetRandomFleePoint_TK
 // 0x0230 (0x0230 - 0x0000)
@@ -74,5 +74,5 @@ public:
 };
 DUMPER7_ASSERTS_GetRandomFleePoint_TK_C_ReceiveExecute;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

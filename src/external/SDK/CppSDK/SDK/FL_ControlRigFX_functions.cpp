@@ -14,8 +14,7 @@
 #include "FL_ControlRigFX_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function FL_ControlRigFX.FL_ControlRigFX_C.ControlRigNotify
 // (Static, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -88,5 +87,5 @@ void UFL_ControlRigFX_C::Spawn_Phys_Mat_VFX(const class FString& Bone_Name, clas
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

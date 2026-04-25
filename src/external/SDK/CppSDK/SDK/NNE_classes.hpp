@@ -13,8 +13,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class NNE.NNEModelData
 // 0x00E8 (0x0110 - 0x0028)
@@ -184,5 +183,4 @@ public:
 };
 DUMPER7_ASSERTS_INNERuntimeRDG;
 
-}
-
+SDK_NAMESPACE_END

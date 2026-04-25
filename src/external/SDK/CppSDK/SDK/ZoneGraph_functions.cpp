@@ -14,8 +14,7 @@
 #include "ZoneGraph_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ZoneGraph.ZoneShapeComponent.SetPolygonRoutingType
 // (Final, Native, Public, BlueprintCallable)
@@ -194,5 +193,5 @@ bool UZoneShapeComponent::IsLaneProfileReversed() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

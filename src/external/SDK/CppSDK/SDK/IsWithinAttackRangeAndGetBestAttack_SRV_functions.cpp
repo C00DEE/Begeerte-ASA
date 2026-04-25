@@ -14,8 +14,7 @@
 #include "IsWithinAttackRangeAndGetBestAttack_SRV_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function IsWithinAttackRangeAndGetBestAttack_SRV.IsWithinAttackRangeAndGetBestAttack_SRV_C.ExecuteUbergraph_IsWithinAttackRangeAndGetBestAttack_SRV
 // (Final, UbergraphFunction)
@@ -78,5 +77,5 @@ void UIsWithinAttackRangeAndGetBestAttack_SRV_C::UpdateBlackboardKeys(class APri
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

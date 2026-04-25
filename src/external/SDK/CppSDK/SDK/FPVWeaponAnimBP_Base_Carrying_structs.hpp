@@ -14,8 +14,7 @@
 #include "AnimGraphRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct FPVWeaponAnimBP_Base_Carrying.FPVWeaponAnimBP_Base_Carrying_C.AnimBlueprintGeneratedConstantData
 // 0x1117 (0x1118 - 0x0001)
@@ -189,5 +188,4 @@ public:
 };
 DUMPER7_ASSERTS_FPVWeaponAnimBP_Base_Carrying__FAnimBlueprintGeneratedMutableData;
 
-}
-
+SDK_NAMESPACE_END

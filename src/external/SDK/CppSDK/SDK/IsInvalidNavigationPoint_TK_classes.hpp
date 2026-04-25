@@ -15,8 +15,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass IsInvalidNavigationPoint_TK.IsInvalidNavigationPoint_TK_C
 // 0x0030 (0x00D8 - 0x00A8)
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_UIsInvalidNavigationPoint_TK_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,12 +13,11 @@
 #include "DmgType_Melee_BasePick_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DmgType_Melee_MetalPick.DmgType_Melee_MetalPick_C
 // 0x0000 (0x0178 - 0x0178)
-class UDmgType_Melee_MetalPick_C final : public UDmgType_Melee_BasePick_C
+class UDmgType_Melee_MetalPick_C : public UDmgType_Melee_BasePick_C
 {
 public:
 	static class UClass* StaticClass()
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UDmgType_Melee_MetalPick_C;
 
-}
-
+SDK_NAMESPACE_END

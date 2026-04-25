@@ -17,8 +17,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ChaosClothAssetEngine.ChaosClothComponent
 // 0x00D0 (0x0AB0 - 0x09E0)
@@ -164,5 +163,4 @@ public:
 };
 DUMPER7_ASSERTS_UChaosClothAssetInteractor;
 
-}
-
+SDK_NAMESPACE_END

@@ -10,26 +10,26 @@
 
 #include "Basic.hpp"
 
-#include "E_CardinalDirection4_structs.hpp"
-#include "BaseHumanAnimBP_structs.hpp"
+#include "AnimStruct_CardinalDirection2_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "ShooterGame_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "Foot_Locking_IK_structs.hpp"
+#include "E_CardinalDirection4_structs.hpp"
 #include "ControlRig_structs.hpp"
+#include "BaseHumanAnimBP_structs.hpp"
+#include "AnimStruct_CardinalDirection4_structs.hpp"
 #include "AnimationWarpingRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "AnimStruct_CardinalDirection4_structs.hpp"
-#include "AnimStruct_CardinalDirection2_structs.hpp"
+#include "Foot_Locking_IK_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass BaseHumanAnimBP.BaseHumanAnimBP_C
 // 0x1DCE0 (0x1E0A0 - 0x03C0)
-class UBaseHumanAnimBP_C : public UAnimInstance
+#pragma pack(push, 0x1)
+class SDK_ALIGN(0x10) UBaseHumanAnimBP_C : public UAnimInstance
 {
 public:
 	uint8                                         Pad_3B8[0x8];                                      // 0x03B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -2054,7 +2054,7 @@ public:
 		return GetDefaultObjImpl<UBaseHumanAnimBP_C>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_UBaseHumanAnimBP_C;
 
-}
-
+SDK_NAMESPACE_END

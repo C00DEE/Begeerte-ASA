@@ -14,8 +14,7 @@
 #include "PrimalItemConsumable_Egg_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PrimalItemConsumable_Egg.PrimalItemConsumable_Egg_C.BPAllowRemoteAddToInventory
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -63,5 +62,5 @@ class FString UPrimalItemConsumable_Egg_C::BPGetCustomInventoryWidgetText()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

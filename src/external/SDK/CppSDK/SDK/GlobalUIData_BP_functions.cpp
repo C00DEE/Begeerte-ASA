@@ -14,8 +14,7 @@
 #include "GlobalUIData_BP_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GlobalUIData_BP.GlobalUIData_BP_C.BPGetHUDElements_Module_FuelOrAmmo
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -156,5 +155,5 @@ void UGlobalUIData_BP_C::BPGetHUDElements_Module_Struggle(class APlayerControlle
 		*OutHUDRichTextOverlay = std::move(Parms.OutHUDRichTextOverlay);
 }
 
-}
 
+SDK_NAMESPACE_END

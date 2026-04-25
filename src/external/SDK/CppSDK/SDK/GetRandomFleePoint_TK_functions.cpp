@@ -14,8 +14,7 @@
 #include "GetRandomFleePoint_TK_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GetRandomFleePoint_TK.GetRandomFleePoint_TK_C.ExecuteUbergraph_GetRandomFleePoint_TK
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UGetRandomFleePoint_TK_C::ReceiveExecute(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

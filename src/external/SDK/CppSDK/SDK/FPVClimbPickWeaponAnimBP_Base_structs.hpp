@@ -14,8 +14,7 @@
 #include "AnimGraphRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct FPVClimbPickWeaponAnimBP_Base.FPVClimbPickWeaponAnimBP_Base_C.AnimBlueprintGeneratedConstantData
 // 0x070F (0x0710 - 0x0001)
@@ -99,5 +98,4 @@ public:
 };
 DUMPER7_ASSERTS_FPVClimbPickWeaponAnimBP_Base__FAnimBlueprintGeneratedMutableData;
 
-}
-
+SDK_NAMESPACE_END

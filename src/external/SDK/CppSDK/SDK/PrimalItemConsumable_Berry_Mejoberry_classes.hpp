@@ -13,12 +13,11 @@
 #include "PrimalItemConsumable_Berry_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemConsumable_Berry_Mejoberry.PrimalItemConsumable_Berry_Mejoberry_C
 // 0x0000 (0x0B60 - 0x0B60)
-class UPrimalItemConsumable_Berry_Mejoberry_C final : public UPrimalItemConsumable_Berry_Base_C
+class UPrimalItemConsumable_Berry_Mejoberry_C : public UPrimalItemConsumable_Berry_Base_C
 {
 public:
 	static class UClass* StaticClass()
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemConsumable_Berry_Mejoberry_C;
 
-}
-
+SDK_NAMESPACE_END

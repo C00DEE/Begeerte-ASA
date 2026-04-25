@@ -14,8 +14,7 @@
 #include "cfcore_ui_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CFCoreUIModel.BP_CFCoreUIModel_C
 // 0x0000 (0x0080 - 0x0080)
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_CFCoreUIModel_C;
 
-}
-
+SDK_NAMESPACE_END

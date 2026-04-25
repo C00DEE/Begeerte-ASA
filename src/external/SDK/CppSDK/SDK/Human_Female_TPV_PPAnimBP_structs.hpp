@@ -13,8 +13,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct Human_Female_TPV_PPAnimBP.Human_Female_TPV_PPAnimBP_C.AnimBlueprintGeneratedConstantData
 // 0x036F (0x0370 - 0x0001)
@@ -45,5 +44,4 @@ public:
 };
 DUMPER7_ASSERTS_Human_Female_TPV_PPAnimBP__FAnimBlueprintGeneratedConstantData;
 
-}
-
+SDK_NAMESPACE_END

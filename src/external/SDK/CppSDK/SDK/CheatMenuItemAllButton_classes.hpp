@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass CheatMenuItemAllButton.CheatMenuItemAllButton_C
 // 0x0038 (0x03B0 - 0x0378)
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_UCheatMenuItemAllButton_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "ControlRig_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // RigVMBlueprintGeneratedClass Human_Rider_CtrlRig.Human_Rider_CtrlRig_C
 // 0x0460 (0x0F30 - 0x0AD0)
@@ -68,5 +67,4 @@ public:
 };
 DUMPER7_ASSERTS_UHuman_Rider_CtrlRig_C;
 
-}
-
+SDK_NAMESPACE_END

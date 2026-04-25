@@ -17,8 +17,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass SimpleHumanTPoseAnimBP.SimpleHumanTPoseAnimBP_C
 // 0x0370 (0x0730 - 0x03C0)
@@ -70,5 +69,4 @@ public:
 };
 DUMPER7_ASSERTS_USimpleHumanTPoseAnimBP_C;
 
-}
-
+SDK_NAMESPACE_END

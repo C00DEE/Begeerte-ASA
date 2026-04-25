@@ -16,8 +16,7 @@
 #include "PBIK_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // RigVMBlueprintGeneratedClass Human_GroundConform_CtrlRig.Human_GroundConform_CtrlRig_C
 // 0x02E0 (0x0DB0 - 0x0AD0)
@@ -77,5 +76,4 @@ public:
 };
 DUMPER7_ASSERTS_UHuman_GroundConform_CtrlRig_C;
 
-}
-
+SDK_NAMESPACE_END

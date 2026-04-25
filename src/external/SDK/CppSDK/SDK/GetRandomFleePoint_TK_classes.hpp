@@ -15,8 +15,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GetRandomFleePoint_TK.GetRandomFleePoint_TK_C
 // 0x0040 (0x00E8 - 0x00A8)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_UGetRandomFleePoint_TK_C;
 
-}
-
+SDK_NAMESPACE_END

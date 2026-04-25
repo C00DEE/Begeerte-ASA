@@ -15,8 +15,7 @@
 #include "AnimationCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum RigVM.ERigVMPinDirection
 // NumValues: 0x0007
@@ -6102,5 +6101,4 @@ public:
 };
 DUMPER7_ASSERTS_FRigVMFunction_VerletIntegrateVector;
 
-}
-
+SDK_NAMESPACE_END

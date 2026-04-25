@@ -14,8 +14,7 @@
 #include "PreviewScene_InventoryNew_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PreviewScene_InventoryNew.PreviewScene_InventoryNew_C.ExecuteUbergraph_PreviewScene_InventoryNew
 // (Final, UbergraphFunction, HasDefaults)
@@ -128,5 +127,5 @@ void APreviewScene_InventoryNew_C::UpdateFloorLocation(bool IsFemale_0)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

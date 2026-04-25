@@ -20,8 +20,7 @@
 #include "InterchangeImport_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class InterchangeImport.InterchangeAnimationPayloadInterface
 // 0x0000 (0x0000 - 0x0000)
@@ -1778,5 +1777,4 @@ public:
 };
 DUMPER7_ASSERTS_UInterchangeUSDTranslator;
 
-}
-
+SDK_NAMESPACE_END

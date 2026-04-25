@@ -14,8 +14,7 @@
 #include "DinoShouldLand_SRV_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function DinoShouldLand_SRV.DinoShouldLand_SRV_C.ExecuteUbergraph_DinoShouldLand_SRV
 // (Final, UbergraphFunction)
@@ -58,5 +57,5 @@ void UDinoShouldLand_SRV_C::ReceiveTick(class AActor* OwnerActor, float DeltaSec
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

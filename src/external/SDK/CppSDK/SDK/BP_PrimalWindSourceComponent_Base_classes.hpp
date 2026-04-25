@@ -15,12 +15,11 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PrimalWindSourceComponent_Base.BP_PrimalWindSourceComponent_Base_C
 // 0x0118 (0x03B8 - 0x02A0)
-class UBP_PrimalWindSourceComponent_Base_C final : public UPrimalWindSourceComponent
+class UBP_PrimalWindSourceComponent_Base_C : public UPrimalWindSourceComponent
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -81,5 +80,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_PrimalWindSourceComponent_Base_C;
 
-}
-
+SDK_NAMESPACE_END

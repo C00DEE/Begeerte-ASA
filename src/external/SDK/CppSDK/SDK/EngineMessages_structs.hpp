@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct EngineMessages.EngineServicePing
 // 0x0001 (0x0001 - 0x0000)
@@ -323,5 +322,4 @@ public:
 };
 DUMPER7_ASSERTS_FTraceControlSetStatNamedEvents;
 
-}
-
+SDK_NAMESPACE_END

@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function PrimalItem_WeaponMachinedSniper_Cursed.PrimalItem_WeaponMachinedSniper_Cursed_C.BPPreventWeaponEquip
 // 0x0068 (0x0068 - 0x0000)
@@ -37,5 +37,5 @@ public:
 };
 DUMPER7_ASSERTS_PrimalItem_WeaponMachinedSniper_Cursed_C_BPPreventWeaponEquip;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

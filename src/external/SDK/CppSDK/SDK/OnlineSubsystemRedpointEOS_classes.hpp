@@ -16,8 +16,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class OnlineSubsystemRedpointEOS.EOSControlChannel
 // 0x0220 (0x02A8 - 0x0088)
@@ -447,5 +446,4 @@ public:
 };
 DUMPER7_ASSERTS_URecentPlayersWorldSubsystem;
 
-}
-
+SDK_NAMESPACE_END

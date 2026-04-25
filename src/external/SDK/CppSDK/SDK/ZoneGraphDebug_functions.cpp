@@ -13,8 +13,7 @@
 #include "ZoneGraphDebug_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ZoneGraphDebug.ZoneGraphTestingComponent.DisableCustomTests
 // (Final, Native, Public, BlueprintCallable)
@@ -91,5 +90,5 @@ void AZoneGraphTestingActor::EnableCustomTests()
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

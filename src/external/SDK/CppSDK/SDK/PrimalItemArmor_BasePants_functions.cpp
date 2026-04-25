@@ -14,8 +14,7 @@
 #include "PrimalItemArmor_BasePants_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PrimalItemArmor_BasePants.PrimalItemArmor_BasePants_C.OverrideCrouchingSound
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -43,5 +42,5 @@ class USoundBase* UPrimalItemArmor_BasePants_C::OverrideCrouchingSound(class USo
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

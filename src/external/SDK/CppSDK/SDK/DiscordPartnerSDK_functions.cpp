@@ -14,8 +14,7 @@
 #include "DiscordPartnerSDK_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function DiscordPartnerSDK.DiscordLocalPlayerSubsystem.Connect
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
@@ -12091,5 +12090,5 @@ struct FDiscordUniqueID UDiscordCallInfoHandle::GuildId()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

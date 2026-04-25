@@ -16,8 +16,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class EngineCameras.LegacyCameraShake
 // 0x0120 (0x0200 - 0x00E0)
@@ -384,5 +383,4 @@ public:
 };
 DUMPER7_ASSERTS_UConstantCameraShakePattern;
 
-}
-
+SDK_NAMESPACE_END

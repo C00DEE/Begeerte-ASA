@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum ActorSequence.EActorSequenceObjectReferenceType
 // NumValues: 0x0004
@@ -58,5 +57,4 @@ public:
 };
 DUMPER7_ASSERTS_FActorSequenceObjectReferenceMap;
 
-}
-
+SDK_NAMESPACE_END

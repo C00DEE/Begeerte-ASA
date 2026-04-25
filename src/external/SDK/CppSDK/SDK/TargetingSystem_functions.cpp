@@ -14,8 +14,7 @@
 #include "TargetingSystem_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function TargetingSystem.AbilityTask_PerformTargeting.PerformFilteringRequest
 // (Final, Native, Static, Public, BlueprintCallable)
@@ -876,5 +875,5 @@ struct FTargetingSourceContext UTargetingSubsystem::GetTargetingSourceContext(co
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -15,8 +15,7 @@
 #include "MetasoundFrontend_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum MetasoundEngine.EMetaSoundMessageLevel
 // NumValues: 0x0004
@@ -146,5 +145,4 @@ public:
 };
 DUMPER7_ASSERTS_FMetaSoundBuilderOptions;
 
-}
-
+SDK_NAMESPACE_END

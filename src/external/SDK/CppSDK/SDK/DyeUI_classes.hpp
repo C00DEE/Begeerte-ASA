@@ -15,8 +15,7 @@
 #include "UMG_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass DyeUI.DyeUI_C
 // 0x01D8 (0x0C78 - 0x0AA0)
@@ -105,5 +104,4 @@ public:
 };
 DUMPER7_ASSERTS_UDyeUI_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "GameplayStateTreeModule_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GameplayStateTreeModule.StateTreeComponent.SendStateTreeEvent
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
@@ -91,5 +90,5 @@ EStateTreeRunStatus UStateTreeComponent::GetStateTreeRunStatus() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

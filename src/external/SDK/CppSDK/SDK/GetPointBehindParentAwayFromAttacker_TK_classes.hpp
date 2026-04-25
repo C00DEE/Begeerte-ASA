@@ -15,8 +15,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GetPointBehindParentAwayFromAttacker_TK.GetPointBehindParentAwayFromAttacker_TK_C
 // 0x0068 (0x0110 - 0x00A8)
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_UGetPointBehindParentAwayFromAttacker_TK_C;
 
-}
-
+SDK_NAMESPACE_END

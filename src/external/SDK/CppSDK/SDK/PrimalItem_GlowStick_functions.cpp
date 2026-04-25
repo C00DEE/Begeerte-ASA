@@ -14,8 +14,7 @@
 #include "PrimalItem_GlowStick_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PrimalItem_GlowStick.PrimalItem_GlowStick_C.BPItemBroken
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -50,5 +49,5 @@ void UPrimalItem_GlowStick_C::BPPostInitializeItem(class UWorld* OptionalInitWor
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass SkeletalMeshComponent_CharacterSkin.SkeletalMeshComponent_CharacterSkin_C
 // 0x0020 (0x1430 - 0x1410)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_USkeletalMeshComponent_CharacterSkin_C;
 
-}
-
+SDK_NAMESPACE_END

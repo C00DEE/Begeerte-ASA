@@ -14,8 +14,7 @@
 #include "Soundscape_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Soundscape.SoundscapeBPFunctionLibrary.SpawnSoundscapeColor
 // (Final, Native, Static, Private, HasOutParams, BlueprintCallable)
@@ -643,5 +642,5 @@ void USoundscapeSubsystem::SetState(const struct FGameplayTag& SoundscapeState)
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "BaseHumanAnimBP_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct GPSHumanAnimBP.GPSHumanAnimBP_C.AnimBlueprintGeneratedConstantData
 // 0x0000 (0xC570 - 0xC570)
@@ -23,5 +22,4 @@ struct GPSHumanAnimBP::FAnimBlueprintGeneratedConstantData final : public BaseHu
 };
 DUMPER7_ASSERTS_GPSHumanAnimBP__FAnimBlueprintGeneratedConstantData;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "SP_Interpolators_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function SP_Interpolators.SPInterpolatorsBPLibrary.EvalAccelInterpolatorFloat
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
@@ -685,5 +684,5 @@ void USPInterpolatorsBPLibrary::ResetIIRInterpolatorVector(struct FIIRInterpolat
 	Interpolator = std::move(Parms.Interpolator);
 }
 
-}
 
+SDK_NAMESPACE_END

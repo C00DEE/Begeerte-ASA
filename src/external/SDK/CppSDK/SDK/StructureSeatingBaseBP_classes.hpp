@@ -13,17 +13,16 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass StructureSeatingBaseBP.StructureSeatingBaseBP_C
-// 0x0018 (0x1340 - 0x1328)
-class AStructureSeatingBaseBP_C final : public APrimalStructureSeating
+// 0x0018 (0x1348 - 0x1330)
+class AStructureSeatingBaseBP_C : public APrimalStructureSeating
 {
 public:
-	class UChildActorComponent*                   TargetingEmitter;                                  // 0x1328(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USphereComponent*                       StasisComponent;                                   // 0x1330(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	bool                                          bAllowFishing;                                     // 0x1338(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UChildActorComponent*                   TargetingEmitter;                                  // 0x1330(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USphereComponent*                       StasisComponent;                                   // 0x1338(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	bool                                          bAllowFishing;                                     // 0x1340(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_AStructureSeatingBaseBP_C;
 
-}
-
+SDK_NAMESPACE_END

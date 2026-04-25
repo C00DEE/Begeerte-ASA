@@ -16,8 +16,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Buff_BeltTorch.Buff_BeltTorch_C
 // 0x00A8 (0x0C68 - 0x0BC0)
@@ -98,5 +97,4 @@ public:
 };
 DUMPER7_ASSERTS_ABuff_BeltTorch_C;
 
-}
-
+SDK_NAMESPACE_END

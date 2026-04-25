@@ -18,8 +18,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MetasoundEngine.MetasoundFrontendLiteralBlueprintAccess
 // 0x0000 (0x0028 - 0x0028)
@@ -531,5 +530,4 @@ public:
 };
 DUMPER7_ASSERTS_UMetaSoundSource;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "AttackMove_DR_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AttackMove_DR.AttackMove_DR_C.ExecuteUbergraph_AttackMove_DR
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UAttackMove_DR_C::ReceiveConditionCheck(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

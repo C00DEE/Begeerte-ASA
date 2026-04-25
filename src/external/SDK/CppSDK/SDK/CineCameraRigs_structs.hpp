@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum CineCameraRigs.ECineCameraRigRailDriveMode
 // NumValues: 0x0004
@@ -63,5 +62,4 @@ public:
 };
 DUMPER7_ASSERTS_FCineSplineInstanceData;
 
-}
-
+SDK_NAMESPACE_END

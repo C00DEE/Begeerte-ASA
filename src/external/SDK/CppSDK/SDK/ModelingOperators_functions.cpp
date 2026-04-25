@@ -14,8 +14,7 @@
 #include "ModelingOperators_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ModelingOperators.UVEditorTexelDensitySettings.InSamplingMode
 // (Native, Public, Const)
@@ -41,5 +40,5 @@ bool UUVEditorTexelDensitySettings::InSamplingMode() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

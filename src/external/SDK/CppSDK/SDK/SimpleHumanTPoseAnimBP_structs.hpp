@@ -13,8 +13,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct SimpleHumanTPoseAnimBP.SimpleHumanTPoseAnimBP_C.AnimBlueprintGeneratedConstantData
 // 0x02AF (0x02B0 - 0x0001)
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_SimpleHumanTPoseAnimBP__FAnimBlueprintGeneratedConstantData;
 
-}
-
+SDK_NAMESPACE_END

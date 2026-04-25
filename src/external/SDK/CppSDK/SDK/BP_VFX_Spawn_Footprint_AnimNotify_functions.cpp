@@ -14,8 +14,7 @@
 #include "BP_VFX_Spawn_Footprint_AnimNotify_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_VFX_Spawn_Footprint_AnimNotify.BP_VFX_Spawn_Footprint_AnimNotify_C.LR_FB Offset
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -257,5 +256,5 @@ bool UBP_VFX_Spawn_Footprint_AnimNotify_C::Received_NotifyTick(class USkeletalMe
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -16,8 +16,7 @@
 #include "ImageWriteQueue_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MovieSceneCapture.MovieSceneCaptureProtocolBase
 // 0x0030 (0x0058 - 0x0028)
@@ -542,5 +541,4 @@ public:
 };
 DUMPER7_ASSERTS_UVideoCaptureProtocol;
 
-}
-
+SDK_NAMESPACE_END

@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function UseTamedNoTargetBehavior.UseTamedNoTargetBehavior_C.ExecuteUbergraph_UseTamedNoTargetBehavior
 // 0x0038 (0x0038 - 0x0000)
@@ -43,5 +43,5 @@ public:
 };
 DUMPER7_ASSERTS_UseTamedNoTargetBehavior_C_ReceiveConditionCheck;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "MassActors_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MassActors.MassActorPoolableInterface.CanBePooled
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
@@ -161,5 +160,5 @@ void UMassAgentComponent::OnRep_NetID()
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

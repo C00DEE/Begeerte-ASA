@@ -13,8 +13,7 @@
 #include "AttackHarvestComponent_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass WoodHardHarvestComponent.WoodHardHarvestComponent_C
 // 0x0000 (0x0230 - 0x0230)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UWoodHardHarvestComponent_C;
 
-}
-
+SDK_NAMESPACE_END

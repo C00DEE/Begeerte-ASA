@@ -14,8 +14,7 @@
 #include "OptimusCore_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function OptimusCore.OptimusNode.SetGraphPosition
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
@@ -2162,5 +2161,5 @@ TArray<class FName> UOptimusFunctionNodeGraph::GetAccessSpecifierOptions() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -17,8 +17,7 @@
 #include "MassReplication_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MassReplication.MassClientBubbleInfoBase
 // 0x0018 (0x04A0 - 0x0488)
@@ -231,5 +230,4 @@ public:
 };
 DUMPER7_ASSERTS_UMassReplicationTrait;
 
-}
-
+SDK_NAMESPACE_END

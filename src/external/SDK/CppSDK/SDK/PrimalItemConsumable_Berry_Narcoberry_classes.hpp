@@ -13,12 +13,12 @@
 #include "PrimalItemConsumable_Berry_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemConsumable_Berry_Narcoberry.PrimalItemConsumable_Berry_Narcoberry_C
 // 0x0000 (0x0B60 - 0x0B60)
-class UPrimalItemConsumable_Berry_Narcoberry_C final : public UPrimalItemConsumable_Berry_Base_C
+#pragma pack(push, 0x1)
+class SDK_ALIGN(0x10) UPrimalItemConsumable_Berry_Narcoberry_C : public UPrimalItemConsumable_Berry_Base_C
 {
 public:
 	static class UClass* StaticClass()
@@ -34,7 +34,7 @@ public:
 		return GetDefaultObjImpl<UPrimalItemConsumable_Berry_Narcoberry_C>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_UPrimalItemConsumable_Berry_Narcoberry_C;
 
-}
-
+SDK_NAMESPACE_END

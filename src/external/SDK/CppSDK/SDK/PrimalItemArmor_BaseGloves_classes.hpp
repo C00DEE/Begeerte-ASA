@@ -13,8 +13,7 @@
 #include "PrimalItemArmorGeneric_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemArmor_BaseGloves.PrimalItemArmor_BaseGloves_C
 // 0x0000 (0x0B60 - 0x0B60)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemArmor_BaseGloves_C;
 
-}
-
+SDK_NAMESPACE_END

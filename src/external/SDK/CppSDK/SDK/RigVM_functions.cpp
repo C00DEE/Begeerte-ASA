@@ -14,8 +14,7 @@
 #include "RigVM_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function RigVM.RigVM.AddRigVMFunction
 // (Native, Public, HasOutParams)
@@ -1527,5 +1526,5 @@ struct FRigVMTag URigVMProjectSettings::GetTag(class FName InTagName) const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

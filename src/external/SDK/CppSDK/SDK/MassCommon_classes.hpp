@@ -13,8 +13,7 @@
 #include "MassEntity_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MassCommon.MassGameplaySettings
 // 0x0008 (0x0030 - 0x0028)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_UMassGameplaySettings;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,8 @@
 #include "ShooterGame_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function CheatMenuCharacterPresetsButton.CheatMenuCharacterPresetsButton_C.ExecuteUbergraph_CheatMenuCharacterPresetsButton
 // 0x0090 (0x0090 - 0x0000)
@@ -61,5 +61,5 @@ public:
 };
 DUMPER7_ASSERTS_CheatMenuCharacterPresetsButton_C_SetValues;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

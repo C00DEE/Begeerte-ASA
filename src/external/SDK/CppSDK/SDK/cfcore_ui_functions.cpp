@@ -14,8 +14,7 @@
 #include "cfcore_ui_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function cfcore_ui.BindButtonSystem.ControllerAction
 // (Final, Native, Public, BlueprintCallable)
@@ -1679,5 +1678,5 @@ bool UCFCoreVirtualCursorFunctionLibrary::IsCursorOverInteractableWidget()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

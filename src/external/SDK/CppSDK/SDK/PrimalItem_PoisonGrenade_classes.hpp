@@ -13,12 +13,11 @@
 #include "PrimalItemWeaponGenericAmmolessConsumeSelf_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItem_PoisonGrenade.PrimalItem_PoisonGrenade_C
 // 0x0000 (0x0B60 - 0x0B60)
-class UPrimalItem_PoisonGrenade_C final : public UPrimalItemWeaponGenericAmmolessConsumeSelf_C
+class UPrimalItem_PoisonGrenade_C : public UPrimalItemWeaponGenericAmmolessConsumeSelf_C
 {
 public:
 	static class UClass* StaticClass()
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItem_PoisonGrenade_C;
 
-}
-
+SDK_NAMESPACE_END

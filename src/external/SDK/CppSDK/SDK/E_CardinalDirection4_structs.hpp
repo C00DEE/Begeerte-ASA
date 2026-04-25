@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedEnum E_CardinalDirection4.E_CardinalDirection4
 // NumValues: 0x0005
@@ -25,5 +24,4 @@ enum class E_CardinalDirection4 : uint8
 	E_MAX                                    = 4,
 };
 
-}
-
+SDK_NAMESPACE_END

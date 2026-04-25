@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass RagdollKinematicActor_BP.RagdollKinematicActor_BP_C
 // 0x0000 (0x0498 - 0x0498)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ARagdollKinematicActor_BP_C;
 
-}
-
+SDK_NAMESPACE_END

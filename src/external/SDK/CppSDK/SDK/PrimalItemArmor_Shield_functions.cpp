@@ -14,8 +14,7 @@
 #include "PrimalItemArmor_Shield_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PrimalItemArmor_Shield.PrimalItemArmor_Shield_C.BPClientHandleItemNetExecCommand
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -117,5 +116,5 @@ void UPrimalItemArmor_Shield_C::PlayHitShieldEffect(bool LocalOnly, const struct
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

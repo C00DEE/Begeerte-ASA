@@ -13,8 +13,7 @@
 #include "BaseHumanAnimBP_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct TPV_ClimbPick_MaleAnimBP.TPV_ClimbPick_MaleAnimBP_C.AnimBlueprintGeneratedConstantData
 // 0x0000 (0xC570 - 0xC570)
@@ -23,5 +22,4 @@ struct TPV_ClimbPick_MaleAnimBP::FAnimBlueprintGeneratedConstantData final : pub
 };
 DUMPER7_ASSERTS_TPV_ClimbPick_MaleAnimBP__FAnimBlueprintGeneratedConstantData;
 
-}
-
+SDK_NAMESPACE_END

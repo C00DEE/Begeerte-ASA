@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass CheatMenuMapOpenButton.CheatMenuMapOpenButton_C
 // 0x0028 (0x03A0 - 0x0378)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_UCheatMenuMapOpenButton_C;
 
-}
-
+SDK_NAMESPACE_END

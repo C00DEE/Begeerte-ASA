@@ -14,8 +14,7 @@
 #include "IsFlyingBool_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function IsFlyingBool.IsFlyingBool_C.ExecuteUbergraph_IsFlyingBool
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UIsFlyingBool_C::ReceiveConditionCheck(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

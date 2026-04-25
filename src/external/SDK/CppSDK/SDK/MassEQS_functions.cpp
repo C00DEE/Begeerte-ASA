@@ -14,8 +14,7 @@
 #include "MassEQS_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MassEQS.MassEQSBlueprintLibrary.ContainsEntity
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
@@ -219,5 +218,5 @@ void UMassEQSBlueprintLibrary::SendSignalToEntity(const class AActor* Owner, con
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

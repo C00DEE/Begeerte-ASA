@@ -17,8 +17,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class GameplayDebugger.GameplayDebuggerCategoryReplicator
 // 0x00C0 (0x0548 - 0x0488)
@@ -209,5 +208,4 @@ public:
 };
 DUMPER7_ASSERTS_UGameplayDebuggerRenderingComponent;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "InputCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum GameplayDebugger.EGameplayDebuggerOverrideMode
 // NumValues: 0x0004
@@ -186,5 +185,4 @@ public:
 };
 DUMPER7_ASSERTS_FGameplayDebuggerPlayerData;
 
-}
-
+SDK_NAMESPACE_END

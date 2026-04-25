@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedEnum Enum_FoleyCollection.Enum_FoleyCollection
 // NumValues: 0x000D
@@ -33,5 +32,4 @@ enum class Enum_FoleyCollection : uint8
 	Enum_MAX                                 = 12,
 };
 
-}
-
+SDK_NAMESPACE_END

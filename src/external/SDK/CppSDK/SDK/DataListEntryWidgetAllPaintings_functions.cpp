@@ -14,8 +14,7 @@
 #include "DataListEntryWidgetAllPaintings_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function DataListEntryWidgetAllPaintings.DataListEntryWidgetAllPaintings_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -72,5 +71,5 @@ void UDataListEntryWidgetAllPaintings_C::OnPaint(struct FPaintContext& Context) 
 	Context = std::move(Parms.Context);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedStruct Foot_Locking_IK.Foot_Locking_IK
 // 0x0260 (0x0260 - 0x0000)
@@ -67,5 +66,4 @@ public:
 };
 DUMPER7_ASSERTS_FFoot_Locking_IK;
 
-}
-
+SDK_NAMESPACE_END

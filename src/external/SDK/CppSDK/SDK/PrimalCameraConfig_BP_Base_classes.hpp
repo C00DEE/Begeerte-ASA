@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalCameraConfig_BP_Base.PrimalCameraConfig_BP_Base_C
 // 0x0000 (0x0110 - 0x0110)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalCameraConfig_BP_Base_C;
 
-}
-
+SDK_NAMESPACE_END

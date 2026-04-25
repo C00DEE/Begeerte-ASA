@@ -10,17 +10,16 @@
 
 #include "Basic.hpp"
 
-#include "CheatMapJumpInfo_structs.hpp"
 #include "ShooterGame_classes.hpp"
-#include "Engine_structs.hpp"
-#include "UMG_structs.hpp"
-#include "CheatMenuCharacterLevelPreset_structs.hpp"
 #include "CheatMenuOptionTypes_structs.hpp"
+#include "Engine_structs.hpp"
+#include "CheatMenuCharacterLevelPreset_structs.hpp"
+#include "UMG_structs.hpp"
+#include "CheatMapJumpInfo_structs.hpp"
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass CheatMenu.CheatMenu_C
 // 0x0438 (0x0F10 - 0x0AD8)
@@ -176,5 +175,4 @@ public:
 };
 DUMPER7_ASSERTS_UCheatMenu_C;
 
-}
-
+SDK_NAMESPACE_END

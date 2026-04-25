@@ -14,8 +14,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function PrimalPlayerDataBP_Base.PrimalPlayerDataBP_Base_C.BPForceDefeatedBoss
 // 0x00F0 (0x00F0 - 0x0000)
@@ -292,5 +292,5 @@ public:
 };
 DUMPER7_ASSERTS_PrimalPlayerDataBP_Base_C_Shared_Adding_Sigil_Count_Function;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

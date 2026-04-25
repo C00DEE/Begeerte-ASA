@@ -14,8 +14,7 @@
 #include "NitradoGameServerQuery_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class NitradoGameServerQuery.GameServerQuerySubsystem
 // 0x00C8 (0x00F8 - 0x0030)
@@ -66,5 +65,4 @@ public:
 };
 DUMPER7_ASSERTS_UGameServerQuerySubsystem;
 
-}
-
+SDK_NAMESPACE_END

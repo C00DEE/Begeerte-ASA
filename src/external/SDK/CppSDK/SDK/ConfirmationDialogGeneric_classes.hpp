@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass ConfirmationDialogGeneric.ConfirmationDialogGeneric_C
 // 0x0040 (0x0878 - 0x0838)
@@ -54,5 +53,4 @@ public:
 };
 DUMPER7_ASSERTS_UConfirmationDialogGeneric_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "PrimalItem_WeaponBaseClub_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItem_WeaponSword.PrimalItem_WeaponSword_C
 // 0x0000 (0x0B60 - 0x0B60)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItem_WeaponSword_C;
 
-}
-
+SDK_NAMESPACE_END

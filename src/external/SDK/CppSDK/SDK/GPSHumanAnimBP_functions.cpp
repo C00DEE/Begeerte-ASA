@@ -14,8 +14,7 @@
 #include "GPSHumanAnimBP_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GPSHumanAnimBP.GPSHumanAnimBP_C.UpdateLayeringValues
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -30,5 +29,5 @@ void UGPSHumanAnimBP_C::UpdateLayeringValues()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

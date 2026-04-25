@@ -16,8 +16,8 @@
 #include "ArrayOfStrings_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function PrimalItem_StartingNote.PrimalItem_StartingNote_C.BPCanUse
 // 0x0030 (0x0030 - 0x0000)
@@ -468,5 +468,5 @@ public:
 };
 DUMPER7_ASSERTS_PrimalItem_StartingNote_C_IsLocalImplant;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

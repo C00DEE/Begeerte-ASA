@@ -14,8 +14,7 @@
 #include "WildcardTools_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WildcardTools.WildcardHelpers.CreateJIRABug
 // (Final, Native, Static, Public, BlueprintCallable)
@@ -45,5 +44,5 @@ void UWildcardHelpers::CreateJIRABug(const class FString& Args, const class FStr
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

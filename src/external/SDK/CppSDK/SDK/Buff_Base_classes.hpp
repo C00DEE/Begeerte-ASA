@@ -14,12 +14,12 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Buff_Base.Buff_Base_C
 // 0x0010 (0x0BD0 - 0x0BC0)
-class ABuff_Base_C : public APrimalBuff
+#pragma pack(push, 0x1)
+class SDK_ALIGN(0x08) ABuff_Base_C : public APrimalBuff
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0BC0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -47,7 +47,7 @@ public:
 		return GetDefaultObjImpl<ABuff_Base_C>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_ABuff_Base_C;
 
-}
-
+SDK_NAMESPACE_END

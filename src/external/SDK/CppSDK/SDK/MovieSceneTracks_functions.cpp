@@ -14,8 +14,7 @@
 #include "MovieSceneTracks_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MovieSceneTracks.MovieSceneTransformOrigin.BP_GetTransformOrigin
 // (RequiredAPI, Event, Protected, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
@@ -1709,5 +1708,5 @@ ESwapRootBone UMovieSceneSkeletalAnimationTrack::GetSwapRootBone() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

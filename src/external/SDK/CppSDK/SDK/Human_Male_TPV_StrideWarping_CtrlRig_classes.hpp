@@ -14,8 +14,7 @@
 #include "ControlRig_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ControlRigBlueprintGeneratedClass Human_Male_TPV_StrideWarping_CtrlRig.Human_Male_TPV_StrideWarping_CtrlRig_C
 // 0x0050 (0x0B20 - 0x0AD0)
@@ -43,5 +42,4 @@ public:
 };
 DUMPER7_ASSERTS_UHuman_Male_TPV_StrideWarping_CtrlRig_C;
 
-}
-
+SDK_NAMESPACE_END

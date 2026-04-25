@@ -16,8 +16,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MediaPlate.MediaPlate
 // 0x0010 (0x0498 - 0x0488)
@@ -146,5 +145,4 @@ public:
 };
 DUMPER7_ASSERTS_UMediaPlateComponent;
 
-}
-
+SDK_NAMESPACE_END

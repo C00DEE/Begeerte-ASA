@@ -14,8 +14,7 @@
 #include "LiveLinkInterface_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct LiveLinkAnimationCore.AnimNode_LiveLinkPose
 // 0x0058 (0x0068 - 0x0010)
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_FLiveLinkInstanceProxy;
 
-}
-
+SDK_NAMESPACE_END

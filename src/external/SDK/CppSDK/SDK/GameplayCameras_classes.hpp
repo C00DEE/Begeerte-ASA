@@ -21,8 +21,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class GameplayCameras.HasCameraBuildStatus
 // 0x0000 (0x0000 - 0x0000)
@@ -2392,5 +2391,4 @@ public:
 };
 DUMPER7_ASSERTS_UIIRValueInterpolator;
 
-}
-
+SDK_NAMESPACE_END

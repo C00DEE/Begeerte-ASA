@@ -14,8 +14,7 @@
 #include "Slider_ASA_Widget_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Slider_ASA_Widget.Slider_ASA_Widget_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -144,5 +143,5 @@ void USlider_ASA_Widget_C::BPExecutedCommandForPrimalUI(class FName CommandName,
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

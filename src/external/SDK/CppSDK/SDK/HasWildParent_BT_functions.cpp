@@ -14,8 +14,7 @@
 #include "HasWildParent_BT_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function HasWildParent_BT.HasWildParent_BT_C.ExecuteUbergraph_HasWildParent_BT
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UHasWildParent_BT_C::ReceiveConditionCheck(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

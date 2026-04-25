@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function CheatMenuButton.CheatMenuButton_C.ExecuteUbergraph_CheatMenuButton
 // 0x01C0 (0x01C0 - 0x0000)
@@ -97,5 +97,5 @@ public:
 };
 DUMPER7_ASSERTS_CheatMenuButton_C_OnLoaded_E74A95AD4E858FEFB820B09140E2E827;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

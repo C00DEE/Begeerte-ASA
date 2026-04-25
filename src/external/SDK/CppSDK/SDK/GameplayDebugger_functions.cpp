@@ -14,8 +14,7 @@
 #include "GameplayDebugger_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GameplayDebugger.GameplayDebuggerCategoryReplicator.ClientDataPackPacket
 // (RequiredAPI, Net, NetReliable, Native, Event, Protected, NetClient)
@@ -239,5 +238,5 @@ void AGameplayDebuggerCategoryReplicator::ServerSetViewPoint(const struct FVecto
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

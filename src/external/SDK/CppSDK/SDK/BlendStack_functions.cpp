@@ -14,8 +14,7 @@
 #include "BlendStack_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BlendStack.BlendStackAnimNodeLibrary.BlendTo
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
@@ -464,5 +463,5 @@ void UBlendStackInputAnimNodeLibrary::GetProperties(const struct FBlendStackInpu
 		*AccumulatedTime = Parms.AccumulatedTime;
 }
 
-}
 
+SDK_NAMESPACE_END

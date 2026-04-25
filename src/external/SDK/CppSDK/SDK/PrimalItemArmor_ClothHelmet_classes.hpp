@@ -13,8 +13,7 @@
 #include "PrimalItemArmor_BaseHelmet_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemArmor_ClothHelmet.PrimalItemArmor_ClothHelmet_C
 // 0x0000 (0x0B70 - 0x0B70)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemArmor_ClothHelmet_C;
 
-}
-
+SDK_NAMESPACE_END

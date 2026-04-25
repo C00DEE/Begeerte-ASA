@@ -13,8 +13,7 @@
 #include "PrimalItemWeaponGenericGun_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItem_WeaponMachinedSniper.PrimalItem_WeaponMachinedSniper_C
 // 0x0010 (0x0B70 - 0x0B60)
@@ -43,5 +42,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItem_WeaponMachinedSniper_C;
 
-}
-
+SDK_NAMESPACE_END

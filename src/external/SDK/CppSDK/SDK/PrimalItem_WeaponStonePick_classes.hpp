@@ -13,8 +13,7 @@
 #include "PrimalItem_WeaponBasePick_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItem_WeaponStonePick.PrimalItem_WeaponStonePick_C
 // 0x0000 (0x0B60 - 0x0B60)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItem_WeaponStonePick_C;
 
-}
-
+SDK_NAMESPACE_END

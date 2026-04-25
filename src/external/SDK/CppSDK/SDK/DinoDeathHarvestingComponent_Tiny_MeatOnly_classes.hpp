@@ -13,8 +13,7 @@
 #include "DinoDeathHarvestingComponent_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DinoDeathHarvestingComponent_Tiny_MeatOnly.DinoDeathHarvestingComponent_Tiny_MeatOnly_C
 // 0x0000 (0x0230 - 0x0230)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UDinoDeathHarvestingComponent_Tiny_MeatOnly_C;
 
-}
-
+SDK_NAMESPACE_END

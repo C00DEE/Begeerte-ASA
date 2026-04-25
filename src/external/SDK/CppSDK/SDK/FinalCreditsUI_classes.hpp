@@ -14,8 +14,7 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass FinalCreditsUI.FinalCreditsUI_C
 // 0x00A0 (0x0858 - 0x07B8)
@@ -75,5 +74,4 @@ public:
 };
 DUMPER7_ASSERTS_UFinalCreditsUI_C;
 
-}
-
+SDK_NAMESPACE_END

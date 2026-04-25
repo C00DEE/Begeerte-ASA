@@ -11,13 +11,12 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct IrisStub.NetSerializerConfig
 // 0x0000 (0x0000 - 0x0000)
 #pragma pack(push, 0x1)
-struct alignas(0x01) FNetSerializerConfig
+struct SDK_ALIGN(0x01) FNetSerializerConfig
 {
 };
 #pragma pack(pop)
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_FPolymorphicArrayStructNetSerializerConfig;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass AttackTargetMove_DR.AttackTargetMove_DR_C
 // 0x0008 (0x00A8 - 0x00A0)
@@ -44,5 +43,4 @@ public:
 };
 DUMPER7_ASSERTS_UAttackTargetMove_DR_C;
 
-}
-
+SDK_NAMESPACE_END

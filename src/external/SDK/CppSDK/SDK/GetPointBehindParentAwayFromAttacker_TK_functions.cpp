@@ -14,8 +14,7 @@
 #include "GetPointBehindParentAwayFromAttacker_TK_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function GetPointBehindParentAwayFromAttacker_TK.GetPointBehindParentAwayFromAttacker_TK_C.ExecuteUbergraph_GetPointBehindParentAwayFromAttacker_TK
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UGetPointBehindParentAwayFromAttacker_TK_C::ReceiveExecute(class AActor* Ow
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -17,8 +17,7 @@
 #include "AnimGraphRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass Human_Female_TPV_PPAnimBP.Human_Female_TPV_PPAnimBP_C
 // 0x14D0 (0x1890 - 0x03C0)
@@ -112,5 +111,4 @@ public:
 };
 DUMPER7_ASSERTS_UHuman_Female_TPV_PPAnimBP_C;
 
-}
-
+SDK_NAMESPACE_END

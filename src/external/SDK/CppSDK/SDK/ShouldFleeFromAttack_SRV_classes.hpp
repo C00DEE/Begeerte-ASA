@@ -15,8 +15,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass ShouldFleeFromAttack_SRV.ShouldFleeFromAttack_SRV_C
 // 0x0060 (0x00F8 - 0x0098)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_UShouldFleeFromAttack_SRV_C;
 
-}
-
+SDK_NAMESPACE_END

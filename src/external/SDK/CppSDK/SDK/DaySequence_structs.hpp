@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum DaySequence.EDayNightCycleMode
 // NumValues: 0x0006
@@ -169,5 +168,4 @@ public:
 };
 DUMPER7_ASSERTS_FSunPositionSequence;
 
-}
-
+SDK_NAMESPACE_END

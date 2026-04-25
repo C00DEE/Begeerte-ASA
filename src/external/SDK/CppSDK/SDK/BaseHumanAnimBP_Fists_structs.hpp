@@ -13,8 +13,7 @@
 #include "BaseHumanAnimBP_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct BaseHumanAnimBP_Fists.BaseHumanAnimBP_Fists_C.AnimBlueprintGeneratedConstantData
 // 0x0000 (0xC570 - 0xC570)
@@ -23,5 +22,4 @@ struct BaseHumanAnimBP_Fists::FAnimBlueprintGeneratedConstantData : public BaseH
 };
 DUMPER7_ASSERTS_BaseHumanAnimBP_Fists__FAnimBlueprintGeneratedConstantData;
 
-}
-
+SDK_NAMESPACE_END

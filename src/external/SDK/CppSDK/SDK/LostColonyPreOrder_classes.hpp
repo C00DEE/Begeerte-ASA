@@ -13,8 +13,7 @@
 #include "DLCBase_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass LostColonyPreOrder.LostColonyPreOrder_C
 // 0x0000 (0x0098 - 0x0098)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ULostColonyPreOrder_C;
 
-}
-
+SDK_NAMESPACE_END

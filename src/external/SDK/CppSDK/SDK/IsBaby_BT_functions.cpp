@@ -14,8 +14,7 @@
 #include "IsBaby_BT_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function IsBaby_BT.IsBaby_BT_C.ExecuteUbergraph_IsBaby_BT
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UIsBaby_BT_C::ReceiveConditionCheck(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -18,8 +18,7 @@
 #include "MediaAssets_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MediaAssets.MediaPlayer
 // 0x0140 (0x0168 - 0x0028)
@@ -571,5 +570,4 @@ public:
 };
 DUMPER7_ASSERTS_UMediaBlueprintFunctionLibrary;
 
-}
-
+SDK_NAMESPACE_END

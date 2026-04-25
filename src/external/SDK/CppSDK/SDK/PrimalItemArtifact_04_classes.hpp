@@ -13,8 +13,7 @@
 #include "PrimalItemArtifactGeneric_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemArtifact_04.PrimalItemArtifact_04_C
 // 0x0000 (0x0B60 - 0x0B60)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemArtifact_04_C;
 
-}
-
+SDK_NAMESPACE_END

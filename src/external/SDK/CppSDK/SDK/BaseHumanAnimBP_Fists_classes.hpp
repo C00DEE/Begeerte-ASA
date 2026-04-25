@@ -13,12 +13,12 @@
 #include "BaseHumanAnimBP_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass BaseHumanAnimBP_Fists.BaseHumanAnimBP_Fists_C
 // 0x0000 (0x1E0A0 - 0x1E0A0)
-class UBaseHumanAnimBP_Fists_C : public UBaseHumanAnimBP_C
+#pragma pack(push, 0x1)
+class SDK_ALIGN(0x10) UBaseHumanAnimBP_Fists_C : public UBaseHumanAnimBP_C
 {
 public:
 	void UpdateLayeringValues();
@@ -37,7 +37,7 @@ public:
 		return GetDefaultObjImpl<UBaseHumanAnimBP_Fists_C>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_UBaseHumanAnimBP_Fists_C;
 
-}
-
+SDK_NAMESPACE_END

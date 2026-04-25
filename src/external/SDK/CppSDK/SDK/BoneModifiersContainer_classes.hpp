@@ -14,12 +14,11 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BoneModifiersContainer.BoneModifiersContainer_C
 // 0x0018 (0x0040 - 0x0028)
-class UBoneModifiersContainer_C final : public UObject
+class UBoneModifiersContainer_C : public UObject
 {
 public:
 	TArray<struct FBoneModifierNamed>             BoneModifiers;                                     // 0x0028(0x0010)(Edit, BlueprintVisible)
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_UBoneModifiersContainer_C;
 
-}
-
+SDK_NAMESPACE_END

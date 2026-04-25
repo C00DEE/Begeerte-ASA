@@ -13,12 +13,12 @@
 #include "PrimalItemConsumableEatable_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemConsumableEatable_WaterContainer.PrimalItemConsumableEatable_WaterContainer_C
 // 0x0000 (0x0B60 - 0x0B60)
-class UPrimalItemConsumableEatable_WaterContainer_C : public UPrimalItemConsumableEatable_C
+#pragma pack(push, 0x1)
+class SDK_ALIGN(0x10) UPrimalItemConsumableEatable_WaterContainer_C : public UPrimalItemConsumableEatable_C
 {
 public:
 	static class UClass* StaticClass()
@@ -34,7 +34,7 @@ public:
 		return GetDefaultObjImpl<UPrimalItemConsumableEatable_WaterContainer_C>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_UPrimalItemConsumableEatable_WaterContainer_C;
 
-}
-
+SDK_NAMESPACE_END

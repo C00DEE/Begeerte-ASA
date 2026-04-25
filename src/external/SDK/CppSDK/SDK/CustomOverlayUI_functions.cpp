@@ -14,8 +14,7 @@
 #include "CustomOverlayUI_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CustomOverlayUI.CustomOverlayUI_C.AddChildToCanvas
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -202,5 +201,5 @@ void UCustomOverlayUI_C::Tick(const struct FGeometry& MyGeometry, float InDeltaT
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

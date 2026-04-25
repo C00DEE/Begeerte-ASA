@@ -14,8 +14,7 @@
 #include "DmgType_Melee_Torpidity_None_StoneWeapon_AutoDrag_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function DmgType_Melee_Torpidity_None_StoneWeapon_AutoDrag.DmgType_Melee_Torpidity_None_StoneWeapon_AutoDrag_C.BPAdjustHarvestingDamage
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
@@ -47,5 +46,5 @@ float UDmgType_Melee_Torpidity_None_StoneWeapon_AutoDrag_C::BPAdjustHarvestingDa
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

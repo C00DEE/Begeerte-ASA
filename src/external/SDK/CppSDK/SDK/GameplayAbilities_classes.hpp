@@ -21,8 +21,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class GameplayAbilities.AbilitySystemDebugHUD
 // 0x0000 (0x0580 - 0x0580)
@@ -1087,7 +1086,7 @@ DUMPER7_ASSERTS_AGameplayAbilityTargetActor;
 // Class GameplayAbilities.GameplayAbilityTargetActor_Trace
 // 0x0020 (0x05E0 - 0x05C0)
 #pragma pack(push, 0x1)
-class alignas(0x10) AGameplayAbilityTargetActor_Trace : public AGameplayAbilityTargetActor
+class SDK_ALIGN(0x10) AGameplayAbilityTargetActor_Trace : public AGameplayAbilityTargetActor
 {
 public:
 	float                                         MaxRange;                                          // 0x05C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1115,7 +1114,7 @@ DUMPER7_ASSERTS_AGameplayAbilityTargetActor_Trace;
 // Class GameplayAbilities.GameplayAbilityTargetActor_GroundTrace
 // 0x0020 (0x0600 - 0x05E0)
 #pragma pack(push, 0x1)
-class alignas(0x10) AGameplayAbilityTargetActor_GroundTrace : public AGameplayAbilityTargetActor_Trace
+class SDK_ALIGN(0x10) AGameplayAbilityTargetActor_GroundTrace : public AGameplayAbilityTargetActor_Trace
 {
 public:
 	float                                         CollisionRadius;                                   // 0x05D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3730,5 +3729,4 @@ public:
 };
 DUMPER7_ASSERTS_ITickableAttributeSetInterface;
 
-}
-
+SDK_NAMESPACE_END

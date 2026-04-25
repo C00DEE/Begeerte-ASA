@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedEnum Human_Male_Faces_Enum.Human_Male_Faces_Enum
 // NumValues: 0x0020
@@ -52,5 +51,4 @@ enum class EHuman_Male_Faces_Enum : uint8
 	Human_Male_Faces_MAX                     = 31,
 };
 
-}
-
+SDK_NAMESPACE_END

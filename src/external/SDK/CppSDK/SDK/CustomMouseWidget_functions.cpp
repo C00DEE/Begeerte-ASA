@@ -14,8 +14,7 @@
 #include "CustomMouseWidget_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CustomMouseWidget.CustomMouseWidget_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -186,5 +185,5 @@ void UCustomMouseWidget_C::UseCircle()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

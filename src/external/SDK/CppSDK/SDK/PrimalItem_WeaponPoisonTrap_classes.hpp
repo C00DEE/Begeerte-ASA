@@ -13,8 +13,7 @@
 #include "PrimalItemWeaponGenericAmmolessConsumeSelf_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItem_WeaponPoisonTrap.PrimalItem_WeaponPoisonTrap_C
 // 0x0000 (0x0B60 - 0x0B60)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItem_WeaponPoisonTrap_C;
 
-}
-
+SDK_NAMESPACE_END

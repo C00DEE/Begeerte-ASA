@@ -14,8 +14,7 @@
 #include "Engine_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Engine.PrimalActorComponent.IsStasisComponent
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
@@ -137679,5 +137678,5 @@ void UWorldPartitionRuntimeLevelStreamingCell::OnLevelShown()
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

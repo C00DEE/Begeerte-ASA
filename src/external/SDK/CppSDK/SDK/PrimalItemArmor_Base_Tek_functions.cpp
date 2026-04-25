@@ -14,8 +14,7 @@
 #include "PrimalItemArmor_Base_Tek_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PrimalItemArmor_Base_Tek.PrimalItemArmor_Base_Tek_C.ApplyingSkinOntoItem
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -376,5 +375,5 @@ void UPrimalItemArmor_Base_Tek_C::TryToDecreaseElement(int32 AmountToDecreaseBy)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

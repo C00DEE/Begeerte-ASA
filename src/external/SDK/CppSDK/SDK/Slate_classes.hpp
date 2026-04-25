@@ -15,8 +15,7 @@
 #include "SlateCore_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class Slate.PrimalWidgetInterface
 // 0x0000 (0x0000 - 0x0000)
@@ -344,5 +343,4 @@ public:
 };
 DUMPER7_ASSERTS_UTextBlockWidgetStyle;
 
-}
-
+SDK_NAMESPACE_END

@@ -17,8 +17,7 @@
 #include "PCGGeometryScriptInterop_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class PCGGeometryScriptInterop.PCGDynamicMeshBaseSettings
 // 0x0000 (0x00B8 - 0x00B8)
@@ -435,5 +434,4 @@ public:
 };
 DUMPER7_ASSERTS_UPCGStaticMeshToDynamicMeshSettings;
 
-}
-
+SDK_NAMESPACE_END

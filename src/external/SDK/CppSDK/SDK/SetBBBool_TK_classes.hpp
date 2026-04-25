@@ -15,8 +15,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass SetBBBool_TK.SetBBBool_TK_C
 // 0x0038 (0x00E0 - 0x00A8)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_USetBBBool_TK_C;
 
-}
-
+SDK_NAMESPACE_END

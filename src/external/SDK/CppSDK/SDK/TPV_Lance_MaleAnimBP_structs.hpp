@@ -13,8 +13,7 @@
 #include "BaseHumanAnimBP_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct TPV_Lance_MaleAnimBP.TPV_Lance_MaleAnimBP_C.AnimBlueprintGeneratedConstantData
 // 0x0000 (0xC570 - 0xC570)
@@ -23,5 +22,4 @@ struct TPV_Lance_MaleAnimBP::FAnimBlueprintGeneratedConstantData final : public 
 };
 DUMPER7_ASSERTS_TPV_Lance_MaleAnimBP__FAnimBlueprintGeneratedConstantData;
 
-}
-
+SDK_NAMESPACE_END
