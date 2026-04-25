@@ -18,11 +18,11 @@ namespace g_CheatData {
 
 			// 2026/4/3
 			// push rbp push r14 push r15 sub rsp, offset mov rax, [rdx + offset] mov eax, [rdx + offset] mov [rsp + offset], rbx mov ebp, ecx mov [rsp + offset], rsi mov rax, [rdx]
-			std::string Tick = "40 55 41 56 41 57 48 83 EC ? 48 8B 42 ? ? 8B ? 48 89 5C 24 ? ? 8B E9 48 89 74 24 ? 48 8B";
+			std::string Tick = "40 53 55 56 57 41 54 41 56 41 57 48 81 EC ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 84 24 ?? ?? ?? ?? 4C 8B F1 4D 8B F8 48 8D 4C 24 30 48";
 
 			namespace UNetDriver {
 				namespace UNetConnection {
-					// 7FF7A8D25520
+					// 7FF7A8D25520z
 					std::string HandleDisconnect = "? ? ? ? ? ? ? 55 57 48 8D 68 A1 48 81 EC D8 00 00 00 48 89 58 E8 48 8D 55 E7 48 89 70 E0";
 				}
 			}
