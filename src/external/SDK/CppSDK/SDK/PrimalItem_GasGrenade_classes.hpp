@@ -17,7 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItem_GasGrenade.PrimalItem_GasGrenade_C
 // 0x0000 (0x0B60 - 0x0B60)
-class UPrimalItem_GasGrenade_C : public UPrimalItemWeaponGenericAmmolessConsumeSelf_C
+class UPrimalItem_GasGrenade_C final : public UPrimalItemWeaponGenericAmmolessConsumeSelf_C
 {
 public:
 	static class UClass* StaticClass()

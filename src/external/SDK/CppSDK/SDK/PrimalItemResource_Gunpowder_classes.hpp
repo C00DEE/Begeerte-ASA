@@ -17,7 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemResource_Gunpowder.PrimalItemResource_Gunpowder_C
 // 0x0000 (0x0B60 - 0x0B60)
-class UPrimalItemResource_Gunpowder_C : public UPrimalItemResource_Craftable_C
+class UPrimalItemResource_Gunpowder_C final : public UPrimalItemResource_Craftable_C
 {
 public:
 	static class UClass* StaticClass()

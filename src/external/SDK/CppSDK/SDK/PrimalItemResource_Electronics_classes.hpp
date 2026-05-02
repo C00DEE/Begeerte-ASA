@@ -17,7 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemResource_Electronics.PrimalItemResource_Electronics_C
 // 0x0000 (0x0B60 - 0x0B60)
-class UPrimalItemResource_Electronics_C : public UPrimalItemResource_Craftable_C
+class UPrimalItemResource_Electronics_C final : public UPrimalItemResource_Craftable_C
 {
 public:
 	static class UClass* StaticClass()

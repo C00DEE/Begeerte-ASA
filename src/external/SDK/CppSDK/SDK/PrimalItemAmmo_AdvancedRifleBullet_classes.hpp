@@ -17,7 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemAmmo_AdvancedRifleBullet.PrimalItemAmmo_AdvancedRifleBullet_C
 // 0x0000 (0x0B60 - 0x0B60)
-class UPrimalItemAmmo_AdvancedRifleBullet_C : public UPrimalItemAmmo_Base_C
+class UPrimalItemAmmo_AdvancedRifleBullet_C final : public UPrimalItemAmmo_Base_C
 {
 public:
 	static class UClass* StaticClass()

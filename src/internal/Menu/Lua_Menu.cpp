@@ -62,7 +62,7 @@ namespace g_DrawImGui {
                 // 脚本列表子窗口
                 if (ImGui::BeginChild("##LuaScriptListChild", ImVec2(0, 300), true)) {
                     if (scripts.empty()) {
-                        ImGui::SetCursorPosY(ImGui::GetWindowHeight() * 0.5f - 10);
+                        // ImGui::SetCursorPosY(ImGui::GetWindowHeight() * 0.5f - 10);
                         // 可以显示提示文本
                     }
                     else {

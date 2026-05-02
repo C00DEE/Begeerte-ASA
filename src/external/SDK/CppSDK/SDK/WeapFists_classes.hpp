@@ -17,7 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass WeapFists.WeapFists_C
 // 0x0010 (0x1128 - 0x1118)
-class AWeapFists_C : public AShooterWeapon_Melee
+class AWeapFists_C final : public AShooterWeapon_Melee
 {
 public:
 	class UBP_PrimalWindSourceComponent_Base_C*   BP_PrimalWindSourceComponent_Base1;                // 0x1118(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)

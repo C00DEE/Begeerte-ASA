@@ -17,7 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DinoCameraConfig_Base_BP.DinoCameraConfig_Base_BP_C
 // 0x0000 (0x0110 - 0x0110)
-class UDinoCameraConfig_Base_BP_C : public UPrimalCameraConfig_BP_Base_C
+class UDinoCameraConfig_Base_BP_C final : public UPrimalCameraConfig_BP_Base_C
 {
 public:
 	static class UClass* StaticClass()

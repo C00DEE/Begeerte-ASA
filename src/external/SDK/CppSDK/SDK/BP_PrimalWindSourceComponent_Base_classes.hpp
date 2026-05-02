@@ -10,16 +10,16 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PrimalWindSourceComponent_Base.BP_PrimalWindSourceComponent_Base_C
 // 0x0118 (0x03B8 - 0x02A0)
-class UBP_PrimalWindSourceComponent_Base_C : public UPrimalWindSourceComponent
+class UBP_PrimalWindSourceComponent_Base_C final : public UPrimalWindSourceComponent
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)

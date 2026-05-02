@@ -17,7 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemResource_Sparkpowder.PrimalItemResource_Sparkpowder_C
 // 0x0000 (0x0B60 - 0x0B60)
-class UPrimalItemResource_Sparkpowder_C : public UPrimalItemResource_Craftable_C
+class UPrimalItemResource_Sparkpowder_C final : public UPrimalItemResource_Craftable_C
 {
 public:
 	static class UClass* StaticClass()

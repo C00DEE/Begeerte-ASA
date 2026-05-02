@@ -17,7 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemArmor_RexSaddle.PrimalItemArmor_RexSaddle_C
 // 0x0000 (0x0B80 - 0x0B80)
-class UPrimalItemArmor_RexSaddle_C : public UPrimalItemArmor_SaddleGeneric_C
+class UPrimalItemArmor_RexSaddle_C final : public UPrimalItemArmor_SaddleGeneric_C
 {
 public:
 	static class UClass* StaticClass()

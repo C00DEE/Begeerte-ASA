@@ -17,7 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemAmmo_RefinedTranqDart.PrimalItemAmmo_RefinedTranqDart_C
 // 0x0000 (0x0B60 - 0x0B60)
-class UPrimalItemAmmo_RefinedTranqDart_C : public UPrimalItemAmmo_TranqDart_C
+class UPrimalItemAmmo_RefinedTranqDart_C final : public UPrimalItemAmmo_TranqDart_C
 {
 public:
 	static class UClass* StaticClass()

@@ -17,7 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemAmmo_CompoundBowArrow.PrimalItemAmmo_CompoundBowArrow_C
 // 0x0000 (0x0B60 - 0x0B60)
-class UPrimalItemAmmo_CompoundBowArrow_C : public UPrimalItemAmmo_ArrowBase_C
+class UPrimalItemAmmo_CompoundBowArrow_C final : public UPrimalItemAmmo_ArrowBase_C
 {
 public:
 	static class UClass* StaticClass()

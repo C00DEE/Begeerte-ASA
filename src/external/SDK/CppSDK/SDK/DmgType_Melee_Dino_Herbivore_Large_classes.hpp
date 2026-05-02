@@ -17,8 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DmgType_Melee_Dino_Herbivore_Large.DmgType_Melee_Dino_Herbivore_Large_C
 // 0x0000 (0x0178 - 0x0178)
-#pragma pack(push, 0x1)
-class SDK_ALIGN(0x08) UDmgType_Melee_Dino_Herbivore_Large_C : public UDmgType_Melee_Dino_Herbivore_C
+class UDmgType_Melee_Dino_Herbivore_Large_C : public UDmgType_Melee_Dino_Herbivore_C
 {
 public:
 	static class UClass* StaticClass()
@@ -34,7 +33,6 @@ public:
 		return GetDefaultObjImpl<UDmgType_Melee_Dino_Herbivore_Large_C>();
 	}
 };
-#pragma pack(pop)
 DUMPER7_ASSERTS_UDmgType_Melee_Dino_Herbivore_Large_C;
 
 SDK_NAMESPACE_END

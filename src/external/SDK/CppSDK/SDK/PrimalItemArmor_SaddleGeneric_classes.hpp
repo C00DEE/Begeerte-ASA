@@ -18,8 +18,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemArmor_SaddleGeneric.PrimalItemArmor_SaddleGeneric_C
 // 0x0020 (0x0B80 - 0x0B60)
-#pragma pack(push, 0x1)
-class SDK_ALIGN(0x10) UPrimalItemArmor_SaddleGeneric_C : public UPrimalItemArmorGeneric_C
+class UPrimalItemArmor_SaddleGeneric_C : public UPrimalItemArmorGeneric_C
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0B60(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -49,7 +48,6 @@ public:
 		return GetDefaultObjImpl<UPrimalItemArmor_SaddleGeneric_C>();
 	}
 };
-#pragma pack(pop)
 DUMPER7_ASSERTS_UPrimalItemArmor_SaddleGeneric_C;
 
 SDK_NAMESPACE_END

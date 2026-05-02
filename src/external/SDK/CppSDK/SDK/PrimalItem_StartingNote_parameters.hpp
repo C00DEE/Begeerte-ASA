@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
 #include "ShooterGame_structs.hpp"
 #include "ArrayOfStrings_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START

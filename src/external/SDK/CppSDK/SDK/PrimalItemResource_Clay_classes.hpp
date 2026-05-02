@@ -17,7 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemResource_Clay.PrimalItemResource_Clay_C
 // 0x0000 (0x0B60 - 0x0B60)
-class UPrimalItemResource_Clay_C : public UPrimalItemResourceGeneric_C
+class UPrimalItemResource_Clay_C final : public UPrimalItemResourceGeneric_C
 {
 public:
 	static class UClass* StaticClass()

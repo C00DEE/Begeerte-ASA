@@ -17,7 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass StructureSeatingBaseBP.StructureSeatingBaseBP_C
 // 0x0018 (0x1348 - 0x1330)
-class AStructureSeatingBaseBP_C : public APrimalStructureSeating
+class AStructureSeatingBaseBP_C final : public APrimalStructureSeating
 {
 public:
 	class UChildActorComponent*                   TargetingEmitter;                                  // 0x1330(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)

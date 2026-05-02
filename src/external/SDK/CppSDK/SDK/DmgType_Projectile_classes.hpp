@@ -17,8 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DmgType_Projectile.DmgType_Projectile_C
 // 0x0000 (0x0178 - 0x0178)
-#pragma pack(push, 0x1)
-class SDK_ALIGN(0x08) UDmgType_Projectile_C : public UShooterDamageTypeBP_Base_C
+class UDmgType_Projectile_C : public UShooterDamageTypeBP_Base_C
 {
 public:
 	static class UClass* StaticClass()
@@ -34,7 +33,6 @@ public:
 		return GetDefaultObjImpl<UDmgType_Projectile_C>();
 	}
 };
-#pragma pack(pop)
 DUMPER7_ASSERTS_UDmgType_Projectile_C;
 
 SDK_NAMESPACE_END

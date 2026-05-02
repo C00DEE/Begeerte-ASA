@@ -17,7 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemC4Ammo.PrimalItemC4Ammo_C
 // 0x0000 (0x0B60 - 0x0B60)
-class UPrimalItemC4Ammo_C : public UPrimalItemAmmo_Base_C
+class UPrimalItemC4Ammo_C final : public UPrimalItemAmmo_Base_C
 {
 public:
 	static class UClass* StaticClass()
