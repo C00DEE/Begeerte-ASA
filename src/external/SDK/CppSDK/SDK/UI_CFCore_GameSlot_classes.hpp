@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "CFCoreWidget_classes.hpp"
 #include "cfcore_ui_structs.hpp"
+#include "CFCoreWidget_classes.hpp"
 #include "UMG_structs.hpp"
 #include "ENUM_CFCore_SideTabs_structs.hpp"
 

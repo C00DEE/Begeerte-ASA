@@ -13,10 +13,10 @@
 #include "InputCore_structs.hpp"
 #include "cfcore_structs.hpp"
 #include "cfcore_ui_structs.hpp"
-#include "ENUM_CFCore_InputDevices_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "ENUM_CFCore_SideTabs_structs.hpp"
 #include "Engine_structs.hpp"
+#include "ENUM_CFCore_InputDevices_structs.hpp"
+#include "SlateCore_structs.hpp"
 
 
 SDK_NAMESPACE_START
