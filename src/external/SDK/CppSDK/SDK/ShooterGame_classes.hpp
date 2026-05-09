@@ -11092,25 +11092,25 @@ public:
 	uint8                                         Pad_C9A[0x2];                                      // 0x0C9A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         FilledRowsBeforeEnablingScrolling;                 // 0x0C9C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class UDataListEntryWidget*>           EntryWidgets;                                      // 0x0CA0(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	uint8                                         Pad_CB0[0xD0];                                     // 0x0CB0(0x00D0)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UUserWidget>                CustomFolderBlueprint;                             // 0x0D80(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOnlySkins;                                        // 0x0D88(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsSkinSelectorMode;                               // 0x0D89(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIncludeSkins;                                     // 0x0D8A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int8                                          SkinFilterMode;                                    // 0x0D8B(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCreateFolders;                                    // 0x0D8C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int8                                          FolderLevel;                                       // 0x0D8D(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D8E[0x2];                                      // 0x0D8E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CustomFolderFilter;                                // 0x0D90(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int8                                          SortType;                                          // 0x0DA0(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_DA1[0x7];                                      // 0x0DA1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 NameFilter;                                        // 0x0DA8(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_DB8[0x28];                                     // 0x0DB8(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         MyDataListType;                                    // 0x0DE0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_DE4[0x4];                                      // 0x0DE4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UDataListEntryWidget*>           CurrentCustomFolders;                              // 0x0DE8(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	class UDataListEntryWidget*                   BackWidget;                                        // 0x0DF8(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E00[0x30];                                     // 0x0E00(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_CB0[0xD8];                                     // 0x0CB0(0x00D8)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UUserWidget>                CustomFolderBlueprint;                             // 0x0D88(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOnlySkins;                                        // 0x0D90(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsSkinSelectorMode;                               // 0x0D91(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIncludeSkins;                                     // 0x0D92(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int8                                          SkinFilterMode;                                    // 0x0D93(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCreateFolders;                                    // 0x0D94(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int8                                          FolderLevel;                                       // 0x0D95(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D96[0x2];                                      // 0x0D96(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CustomFolderFilter;                                // 0x0D98(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int8                                          SortType;                                          // 0x0DA8(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DA9[0x7];                                      // 0x0DA9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 NameFilter;                                        // 0x0DB0(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DC0[0x28];                                     // 0x0DC0(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         MyDataListType;                                    // 0x0DE8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DEC[0x4];                                      // 0x0DEC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UDataListEntryWidget*>           CurrentCustomFolders;                              // 0x0DF0(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	class UDataListEntryWidget*                   BackWidget;                                        // 0x0E00(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E08[0x28];                                     // 0x0E08(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool PreemptiveRequestLoadAllEntries();
@@ -16725,7 +16725,7 @@ public:
 DUMPER7_ASSERTS_UFallDamageType;
 
 // Class ShooterGame.ShooterGraphNode_AlwaysRelevantBase
-// 0x0000 (0x04D0 - 0x04D0)
+// 0x0000 (0x07A0 - 0x07A0)
 class UShooterGraphNode_AlwaysRelevantBase : public UReplicationGraphNode_ActorList
 {
 public:
@@ -16745,7 +16745,7 @@ public:
 DUMPER7_ASSERTS_UShooterGraphNode_AlwaysRelevantBase;
 
 // Class ShooterGame.ShooterGraphNode_GlobalAlwaysRelevant
-// 0x0000 (0x04D0 - 0x04D0)
+// 0x0000 (0x07A0 - 0x07A0)
 class UShooterGraphNode_GlobalAlwaysRelevant final : public UShooterGraphNode_AlwaysRelevantBase
 {
 public:
@@ -17194,7 +17194,7 @@ public:
 DUMPER7_ASSERTS_UGamepadButtonLegendWidget;
 
 // Class ShooterGame.ShooterGraphNode_BaseSpatialGrid
-// 0x0000 (0x02E0 - 0x02E0)
+// 0x0000 (0x0330 - 0x0330)
 class UShooterGraphNode_BaseSpatialGrid : public UReplicationGraphNode_GridSpatialization2D
 {
 public:
@@ -17214,7 +17214,7 @@ public:
 DUMPER7_ASSERTS_UShooterGraphNode_BaseSpatialGrid;
 
 // Class ShooterGame.ShooterGraphNode_DynamicSpatialGrid
-// 0x0000 (0x02E0 - 0x02E0)
+// 0x0000 (0x0330 - 0x0330)
 class UShooterGraphNode_DynamicSpatialGrid final : public UShooterGraphNode_BaseSpatialGrid
 {
 public:
@@ -17259,7 +17259,7 @@ public:
 DUMPER7_ASSERTS_UMountedDLCManager;
 
 // Class ShooterGame.ShooterGraphNode_ConnectionSpecificAlwaysRelevant
-// 0x0000 (0x04D0 - 0x04D0)
+// 0x0000 (0x07A0 - 0x07A0)
 class UShooterGraphNode_ConnectionSpecificAlwaysRelevant final : public UShooterGraphNode_AlwaysRelevantBase
 {
 public:
@@ -26521,7 +26521,7 @@ public:
 DUMPER7_ASSERTS_APrimalPatrolPoint;
 
 // Class ShooterGame.ShooterGraphNode_DynamicGridCell
-// 0x0000 (0x0520 - 0x0520)
+// 0x0000 (0x07F0 - 0x07F0)
 class UShooterGraphNode_DynamicGridCell final : public UReplicationGraphNode_GridCell
 {
 public:
@@ -26849,11 +26849,11 @@ public:
 DUMPER7_ASSERTS_AShooterProjectile;
 
 // Class ShooterGame.ShooterGraphNode_StaggeredByDistance
-// 0x0050 (0x0520 - 0x04D0)
+// 0x0050 (0x07F0 - 0x07A0)
 class UShooterGraphNode_StaggeredByDistance final : public UReplicationGraphNode_ActorList
 {
 public:
-	uint8                                         Pad_4D0[0x50];                                     // 0x04D0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_7A0[0x50];                                     // 0x07A0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -27106,11 +27106,11 @@ public:
 DUMPER7_ASSERTS_APrimalProjectileFlare;
 
 // Class ShooterGame.ShooterGraphNode_DormantGridCell
-// 0x0050 (0x0570 - 0x0520)
+// 0x0050 (0x0840 - 0x07F0)
 class UShooterGraphNode_DormantGridCell final : public UReplicationGraphNode_GridCell
 {
 public:
-	TSet<class AActor*>                           ActorSet;                                          // 0x0520(0x0050)(NativeAccessSpecifierPublic)
+	TSet<class AActor*>                           ActorSet;                                          // 0x07F0(0x0050)(NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -31047,7 +31047,7 @@ public:
 DUMPER7_ASSERTS_AShooterProjectile_Swarm;
 
 // Class ShooterGame.ShooterGraphNode_TeamSpecificAlwaysRelevant
-// 0x0000 (0x04D0 - 0x04D0)
+// 0x0000 (0x07A0 - 0x07A0)
 class UShooterGraphNode_TeamSpecificAlwaysRelevant final : public UShooterGraphNode_AlwaysRelevantBase
 {
 public:
@@ -31067,11 +31067,11 @@ public:
 DUMPER7_ASSERTS_UShooterGraphNode_TeamSpecificAlwaysRelevant;
 
 // Class ShooterGame.ShooterGraphNode_Default
-// 0x0050 (0x0520 - 0x04D0)
+// 0x0050 (0x07F0 - 0x07A0)
 class UShooterGraphNode_Default final : public UReplicationGraphNode_ActorList
 {
 public:
-	uint8                                         Pad_4D0[0x50];                                     // 0x04D0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_7A0[0x50];                                     // 0x07A0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -31090,11 +31090,11 @@ public:
 DUMPER7_ASSERTS_UShooterGraphNode_Default;
 
 // Class ShooterGame.ShooterGraphNode_DormantSpatialGrid
-// 0x0050 (0x0330 - 0x02E0)
+// 0x0050 (0x0380 - 0x0330)
 class UShooterGraphNode_DormantSpatialGrid final : public UShooterGraphNode_BaseSpatialGrid
 {
 public:
-	uint8                                         Pad_2E0[0x50];                                     // 0x02E0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_330[0x50];                                     // 0x0330(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

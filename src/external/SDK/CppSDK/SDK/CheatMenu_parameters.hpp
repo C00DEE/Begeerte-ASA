@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CheatMenuCharacterLevelPreset_structs.hpp"
 #include "CheatMapJumpInfo_structs.hpp"
+#include "CheatMenuCharacterLevelPreset_structs.hpp"
 #include "CheatMenuOptionTypes_structs.hpp"
 #include "UMG_structs.hpp"
 #include "ShooterGame_structs.hpp"

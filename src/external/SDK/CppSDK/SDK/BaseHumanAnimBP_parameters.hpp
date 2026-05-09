@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
+#include "E_CardinalDirection4_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "E_CardinalDirection4_structs.hpp"
 #include "ShooterGame_structs.hpp"
 
 
