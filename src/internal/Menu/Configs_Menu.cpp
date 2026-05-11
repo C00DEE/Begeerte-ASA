@@ -67,25 +67,22 @@ namespace g_DrawImGui {
 			ImGui::Spacing();
 
 			static int selectedConfigIdx = -1;
-			if (ImGui::BeginChild("##ConfigListChild", ImVec2(0, 300), true)) {
-				if (configs.empty()) {
-					ImGui::SetCursorPosY(ImGui::GetWindowHeight() / 2 - 10);
-					ImGui::TextDisabled(noConfigs);
-				}
-				else {
-					for (int i = 0; i < (int)configs.size(); i++) {
-						auto& config = configs[i];
-						ImGui::PushID(i);
+	        if (configs.empty()) {
+				ImGui::SetCursorPosY(ImGui::GetWindowHeight() / 2 - 10);
+				ImGui::TextDisabled(noConfigs);
+			}
+			else {
+				for (int i = 0; i < (int)configs.size(); i++) {
+					auto& config = configs[i];
+					ImGui::PushID(i);
 
-						bool isSelected = (selectedConfigIdx == i);
-						if (CustomSelectable(config.name.c_str(), isSelected, 8.0f) /*ImGui::Selectable(config.name.c_str(), isSelected, ImGuiSelectableFlags_SpanAllColumns)*/) {
-							selectedConfigIdx = i;
-						}
-
-						ImGui::PopID();
+					bool isSelected = (selectedConfigIdx == i);
+					if (CustomSelectable(config.name.c_str(), isSelected, 8.0f) /*ImGui::Selectable(config.name.c_str(), isSelected, ImGuiSelectableFlags_SpanAllColumns)*/) {
+						selectedConfigIdx = i;
 					}
+
+					ImGui::PopID();
 				}
-				ImGui::EndChild();
 			}
 
 			ImGui::Spacing();

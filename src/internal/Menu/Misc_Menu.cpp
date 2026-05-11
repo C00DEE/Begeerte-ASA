@@ -47,9 +47,13 @@ namespace g_DrawImGui {
 			ImGui::TextColored(ThemeColors::GetAccent(), secMisc);
 			DrawAnimatedSeparator();
 
-			if (DrawCustomButton(btnSuicide)) {
-				g_Config::bSuicide = true;
+			ImGui::BeginDisabled(!g_Hook::UWorldTickOK);
+			{
+				if (DrawCustomButton(btnSuicide)) {
+					g_Config::bSuicide = true;
+				}
 			}
+			ImGui::EndDisabled();
 
 			ImGui::SameLine();
 			if (DrawCustomButton(btnUnload)) {
@@ -63,10 +67,19 @@ namespace g_DrawImGui {
 
 			DrawAnimatedSeparator();
 
-			DrawCustomCheckbox(chkNotes, &g_Config::bUnlockExplorerNotes);
-			DrawCustomCheckbox(chkFeed, &g_Config::bAutoFeed);
-			DrawCustomCheckbox(chkFlyer, &g_Config::bSuperFlyer);
-            DrawCustomCheckbox(chkTurn, &g_Config::bForceTurn);
+			ImGui::BeginDisabled(!g_Hook::UWorldTickOK);
+			{
+				DrawCustomCheckbox(chkNotes, &g_Config::bUnlockExplorerNotes);
+				DrawCustomCheckbox(chkFeed, &g_Config::bAutoFeed);
+				DrawCustomCheckbox(chkFlyer, &g_Config::bSuperFlyer);
+			}
+			ImGui::EndDisabled();
+
+			ImGui::BeginDisabled(!g_Hook::PhysicsRotationOK);
+			{
+				DrawCustomCheckbox(chkTurn, &g_Config::bForceTurn);
+			}
+			ImGui::EndDisabled();
 
 			DrawAnimatedSeparator();
 

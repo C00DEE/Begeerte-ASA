@@ -59,64 +59,60 @@ namespace g_DrawImGui {
 
                 ImGui::Spacing();
 
-                // 脚本列表子窗口
-                if (ImGui::BeginChild("##LuaScriptListChild", ImVec2(0, 300), true)) {
-                    if (scripts.empty()) {
-                        // ImGui::SetCursorPosY(ImGui::GetWindowHeight() * 0.5f - 10);
-                        // 可以显示提示文本
-                    }
-                    else {
-                        for (int i = 0; i < (int)scripts.size(); i++) {
-                            auto& script = scripts[i];
-                            if (script.isLibrary) continue;
-                            ImGui::PushID(i);
+                if (scripts.empty()) {
+                    // ImGui::SetCursorPosY(ImGui::GetWindowHeight() * 0.5f - 10);
+                    // 可以显示提示文本
+                }
+                else {
+                    for (int i = 0; i < (int)scripts.size(); i++) {
+                        auto& script = scripts[i];
+                        if (script.isLibrary) continue;
+                        ImGui::PushID(i);
 
-                            // 决定显示颜色：如果脚本已加载且总开关开启，则高亮，否则变灰
-                            bool isActive = script.isLoaded;
-                            if (isActive && isEnabled) {
-                                ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 1.0f, 1.0f, 1.0f));
-                            }
-                            else {
-                                ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.5f, 0.5f, 0.5f, 1.0f));
-                            }
-
-                            std::string prefix = (isActive && isEnabled) ? U8("* ") : U8("");
-                            std::string displayName = prefix + script.name;
-
-                            // 选择脚本进行加载/卸载
-                            if (CustomSelectable(displayName.c_str(), false, 8.0f)) {
-                                bool targetState = !script.isLoaded;
-                                mgr.SetScriptState(i, targetState);
-                            }
-
-                            ImGui::PopStyleColor();
-
-                            // 错误状态图标
-                            if (script.hasError) {
-                                ImGui::SameLine(ImGui::GetWindowWidth() - 35);
-                                ImGui::TextDisabled("[!] ");
-
-                                if (ImGui::IsItemHovered()) {
-                                    ImGui::BeginTooltip();
-                                    ImGui::TextUnformatted(errorHint);
-                                    ImGui::Separator();
-                                    ImGui::TextUnformatted(script.lastError.c_str());
-                                    ImGui::EndTooltip();
-                                }
-
-                                std::string popupId = "ErrorPopup_" + std::to_string(i);
-                                if (ImGui::BeginPopupContextItem(popupId.c_str())) {
-                                    if (CustomSelectable(copyError, false, 8.0f)) {
-                                        ImGui::SetClipboardText(script.lastError.c_str());
-                                    }
-                                    ImGui::EndPopup();
-                                }
-                            }
-
-                            ImGui::PopID();
+                        // 决定显示颜色：如果脚本已加载且总开关开启，则高亮，否则变灰
+                        bool isActive = script.isLoaded;
+                        if (isActive && isEnabled) {
+                            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 1.0f, 1.0f, 1.0f));
                         }
+                        else {
+                            ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.5f, 0.5f, 0.5f, 1.0f));
+                        }
+
+                        std::string prefix = (isActive && isEnabled) ? U8("* ") : U8("");
+                        std::string displayName = prefix + script.name;
+
+                        // 选择脚本进行加载/卸载
+                        if (CustomSelectable(displayName.c_str(), false, 8.0f)) {
+                            bool targetState = !script.isLoaded;
+                            mgr.SetScriptState(i, targetState);
+                        }
+
+                        ImGui::PopStyleColor();
+
+                        // 错误状态图标
+                        if (script.hasError) {
+                            ImGui::SameLine(ImGui::GetWindowWidth() - 35);
+                            ImGui::TextDisabled("[!] ");
+
+                            if (ImGui::IsItemHovered()) {
+                                ImGui::BeginTooltip();
+                                ImGui::TextUnformatted(errorHint);
+                                ImGui::Separator();
+                                ImGui::TextUnformatted(script.lastError.c_str());
+                                ImGui::EndTooltip();
+                            }
+
+                            std::string popupId = "ErrorPopup_" + std::to_string(i);
+                            if (ImGui::BeginPopupContextItem(popupId.c_str())) {
+                                if (CustomSelectable(copyError, false, 8.0f)) {
+                                    ImGui::SetClipboardText(script.lastError.c_str());
+                                }
+                                ImGui::EndPopup();
+                            }
+                        }
+
+                        ImGui::PopID();
                     }
-                    ImGui::EndChild();
                 }
             }
             ImGui::EndDisabled(); // 结束受控禁用区域

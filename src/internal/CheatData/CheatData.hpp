@@ -25,7 +25,12 @@ namespace g_CheatData {
 			
 			// 2026/5/2 @zetsr
 			// mov r1x, [mem] | push rbp | push r14 | push r15 | sub rsp, alloc | mov rax, [rip+offset]
-			std::string Tick = "4C 8B ? 55 41 56 41 57 48 81 EC ? ? 00 00 48 8B 05";
+			// 4C 8B ? 55 41 56 41 57 48 81 EC ? ? 00 00 48 8B 05
+
+			// 2026/5/11 @zetsr
+			// push rbp; push r13; push r15; sub rsp, 0x40; mov rax, [rdx+0x20]; mov r11, [r8]
+			// 40 55 41 55 41 57 48 83 EC ? 48 8B ? ? 49 8B
+			std::string Tick = "40 55 41 55 41 57 48 83 EC ? 48 8B ? ? 49 8B";
 
 			namespace UNetDriver {
 				namespace UNetConnection {
@@ -49,7 +54,12 @@ namespace g_CheatData {
 					// 48 8B C4 ? ? 48 83 EC ? 48 89 58 ? 48 8B DA 2026/4/3 过期了
 					
 					// mov [rsp + offset], rbx push rbp push rsi push rdi push r12 push r13 push r14 push r15 mov rax, [rcx] sub rsp, offset movsxd rax, [rdx + offset] xor r14d, r14d mov rax, [rcx]
-					std::string OutputTextLine = "48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8B ? 48 83 EC ? 48 63 ? ? 45 33 F6 48 8B";
+					// 48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8B ? 48 83 EC ? 48 63 ? ? 45 33 F6 48 8B
+
+					// 2026/5/11 @zetsr
+					// mov rax, rsp; push r12; sub rsp, 0x60; mov [rax+0x08], rbx; mov rbx, rdx
+					// 48 8B C4 41 54 48 83 EC ? 48 89 58 ? 48 8B ?
+					std::string OutputTextLine = "48 8B C4 41 54 48 83 EC ? 48 89 58 ? 48 8B ?";
 				}
 			}
 		}

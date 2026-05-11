@@ -9,4 +9,10 @@
 namespace g_Hook {
     void StartAllHooks();
     void StopAllHooks();
+
+    inline bool UWorldTickOK = false;
+	inline bool HandleDisconnectOK = false;
+	inline bool OutputTextLineOK = false;
+	inline bool PostRenderOK = false;
+	inline bool PhysicsRotationOK = false;
 }

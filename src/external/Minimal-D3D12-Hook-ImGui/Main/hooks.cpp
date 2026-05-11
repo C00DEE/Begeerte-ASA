@@ -115,6 +115,7 @@ namespace g_Hook {
 
             if (MH_CreateHook(targetAddr, &hkUWorldTick, reinterpret_cast<LPVOID*>(&oWorldTick)) == MH_OK) {
                 MH_EnableHook(targetAddr);
+                UWorldTickOK = true;
             }
         }
     }
@@ -128,6 +129,7 @@ namespace g_Hook {
 
             if (MH_CreateHook(targetAddr, &hkHandleDisconnect, reinterpret_cast<LPVOID*>(&oHandleDisconnect)) == MH_OK) {
                 MH_EnableHook(targetAddr);
+				HandleDisconnectOK = true;
             }
         }
     }
@@ -141,6 +143,7 @@ namespace g_Hook {
 
             if (MH_CreateHook(targetAddr, &hkOutputTextLine, reinterpret_cast<LPVOID*>(&oOutputTextLine)) == MH_OK) {
                 MH_EnableHook(targetAddr);
+				OutputTextLineOK = true;
             }
         }
     }
@@ -154,6 +157,7 @@ namespace g_Hook {
 
             if (MH_CreateHook(targetAddr, &hkPostRender, reinterpret_cast<LPVOID*>(&oPostRender)) == MH_OK) {
                 MH_EnableHook(targetAddr);
+                PostRenderOK = true;
             }
         }
     }
@@ -167,6 +171,7 @@ namespace g_Hook {
 
             if (MH_CreateHook(targetAddr, &hkPhysicsRotation, reinterpret_cast<LPVOID*>(&oPhysicsRotation)) == MH_OK) {
                 MH_EnableHook(targetAddr);
+				PhysicsRotationOK = true;
             }
         }
     }

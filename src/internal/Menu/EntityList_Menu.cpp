@@ -53,57 +53,53 @@ namespace g_DrawImGui {
 			}
 
 			ImGui::Spacing();
-			if (ImGui::BeginChild("##EntityListChild", ImVec2(0, 0), true)) {
+			SDK::UWorld* World = SDK::UWorld::GetWorld();
+			SDK::APlayerController* LocalPC = g_Util::GetLocalPC();
 
-				SDK::UWorld* World = SDK::UWorld::GetWorld();
-				SDK::APlayerController* LocalPC = g_Util::GetLocalPC();
+			if (World && World->PersistentLevel && LocalPC && LocalPC->Pawn) {
+				SDK::TArray<SDK::AActor*>& Actors = World->PersistentLevel->Actors;
+				SDK::AActor* LocalPawn = LocalPC->Pawn;
 
-				if (World && World->PersistentLevel && LocalPC && LocalPC->Pawn) {
-					SDK::TArray<SDK::AActor*>& Actors = World->PersistentLevel->Actors;
-					SDK::AActor* LocalPawn = LocalPC->Pawn;
+				for (int i = 0; i < Actors.Num(); i++) {
+					SDK::AActor* TargetActor = Actors[i];
 
-					for (int i = 0; i < Actors.Num(); i++) {
-						SDK::AActor* TargetActor = Actors[i];
+					if (!TargetActor || TargetActor == LocalPawn || TargetActor->bHidden) continue;
+					if (!TargetActor->IsA(SDK::APrimalCharacter::StaticClass())) continue;
 
-						if (!TargetActor || TargetActor == LocalPawn || TargetActor->bHidden) continue;
-						if (!TargetActor->IsA(SDK::APrimalCharacter::StaticClass())) continue;
+					SDK::APrimalCharacter* TargetChar = (SDK::APrimalCharacter*)TargetActor;
+					if (!TargetChar) continue;
+					if (TargetChar->IsDead()) continue;
 
-						SDK::APrimalCharacter* TargetChar = (SDK::APrimalCharacter*)TargetActor;
-						if (!TargetChar) continue;
-						if (TargetChar->IsDead()) continue;
+					std::string gender = "?";
+					if (LocalPC->Pawn && TargetActor && TargetChar) {
+						gender = TargetActor->IsFemale() ? "F" : "M";
+					}
 
-						std::string gender = "?";
-						if (LocalPC->Pawn && TargetActor && TargetChar) {
-							gender = TargetActor->IsFemale() ? "F" : "M";
-						}
+					std::string displayName;
+					if (gender != "?") {
+						displayName = TargetChar->PlayerState ? TargetChar->PlayerState->GetPlayerName().ToString() + "-" + gender : TargetChar->GetDescriptiveName().ToString() + "-" + gender;
+					}
+					else {
+						displayName = TargetChar->PlayerState ? TargetChar->PlayerState->GetPlayerName().ToString() : TargetChar->GetDescriptiveName().ToString();
+					}
 
-						std::string displayName;
-						if (gender != "?") {
-							displayName = TargetChar->PlayerState ? TargetChar->PlayerState->GetPlayerName().ToString() + "-" + gender : TargetChar->GetDescriptiveName().ToString() + "-" + gender;
-						}
-						else {
-							displayName = TargetChar->PlayerState ? TargetChar->PlayerState->GetPlayerName().ToString() : TargetChar->GetDescriptiveName().ToString();
-						}
+					if (displayName.empty() || displayName == "None") continue;
 
-						if (displayName.empty() || displayName == "None") continue;
+					// 使用多关键词 OR 匹配替换原有的单关键词匹配
+					if (g_Util::IsEntityMatchMulti(displayName, g_Config::entitySearchBuf)) {
+						float dist = (LocalPC && LocalPC->Pawn && TargetActor) ? LocalPC->Pawn->GetDistanceTo(TargetActor) * 0.01f : 0.0f;
+						float curHP = TargetChar->GetHealth();
+						float maxHP = TargetChar->GetMaxHealth();
+						int hpPercent = (maxHP > 0) ? (int)((curHP / maxHP) * 100.0f) : 0;
 
-						// 使用多关键词 OR 匹配替换原有的单关键词匹配
-						if (g_Util::IsEntityMatchMulti(displayName, g_Config::entitySearchBuf)) {
-							float dist = (LocalPC && LocalPC->Pawn && TargetActor) ? LocalPC->Pawn->GetDistanceTo(TargetActor) * 0.01f : 0.0f;
-							float curHP = TargetChar->GetHealth();
-							float maxHP = TargetChar->GetMaxHealth();
-							int hpPercent = (maxHP > 0) ? (int)((curHP / maxHP) * 100.0f) : 0;
-
-							ImGui::Text("[%dm] %s (%d%s)",
-								(int)dist,
-								displayName.c_str(),
-								hpPercent,
-								"%"
-							);
-						}
+						ImGui::Text("[%dm] %s (%d%s)",
+							(int)dist,
+							displayName.c_str(),
+							hpPercent,
+							"%"
+						);
 					}
 				}
-				ImGui::EndChild();
 			}
 
 			DrawAnimatedSeparator();
