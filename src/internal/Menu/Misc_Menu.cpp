@@ -25,6 +25,7 @@ namespace g_DrawImGui {
 		const char* chkFeed = LanguageManager::Misc_Menu::AutoFeed;
 		const char* chkFlyer = LanguageManager::Misc_Menu::SuperFlyer;
 		const char* chkTurn = LanguageManager::Misc_Menu::ForceTurn;
+		const char* chkLogDamage = LanguageManager::Misc_Menu::LogDamage;
 
 		if (ImGui::BeginTabItem(tabLabel)) {
 			ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(14.0f, 14.0f));
@@ -41,7 +42,11 @@ namespace g_DrawImGui {
 			if (DrawCustomButton(resetLayout)) {
 				g_Config::bMenuNeedReset = true;
 			}
+			ImGui::SameLine();
 
+			if (DrawCustomButton(btnUnload)) {
+				g_Hook::StopAllHooks();
+			}
 			DrawAnimatedSeparator();
 
 			ImGui::TextColored(ThemeColors::GetAccent(), secMisc);
@@ -54,11 +59,6 @@ namespace g_DrawImGui {
 				}
 			}
 			ImGui::EndDisabled();
-
-			ImGui::SameLine();
-			if (DrawCustomButton(btnUnload)) {
-				g_Hook::StopAllHooks();
-			}
 
 			ImGui::SameLine();
 			if (DrawCustomButton(btnDump)) {
@@ -78,6 +78,12 @@ namespace g_DrawImGui {
 			ImGui::BeginDisabled(!g_Hook::PhysicsRotationOK);
 			{
 				DrawCustomCheckbox(chkTurn, &g_Config::bForceTurn);
+			}
+			ImGui::EndDisabled();
+
+			ImGui::BeginDisabled(!g_Hook::TakeDamageOK);
+			{
+				DrawColorPickerRow(chkLogDamage, &g_Config::bLogDamage, "LogDamageCol", g_Config::LogDamageColor);
 			}
 			ImGui::EndDisabled();
 

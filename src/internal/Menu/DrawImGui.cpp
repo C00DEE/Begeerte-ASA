@@ -98,7 +98,7 @@ namespace g_DrawImGui {
 		if (g_MenuAlpha > 0.001f) {
 			LuaManager::Get().Lua_OnPaintMenu(g_MenuAlpha);
 
-			const float menu_size_w = 960.f;
+			const float menu_size_w = 1020.f;
 			const float menu_size_h = 720.f;
 
 			ImGui::GetStyle().WindowMinSize = ImVec2(menu_size_w, menu_size_h);

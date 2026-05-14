@@ -110,6 +110,9 @@ bool ConfigManager::SaveConfig(const std::string& filename) {
         // 2026/4/3 @zetsr
         // 考虑到跟一键自杀那种类型的功能不一样，保存到配置应该没有问题
         CONFIG_BOOL(g_Config::bForceTurn);
+
+        CONFIG_BOOL(g_Config::bLogDamage);
+        CONFIG_COLOR(g_Config::LogDamageColor);
         file << "\n";
 
         // 生物列表
@@ -288,6 +291,9 @@ bool ConfigManager::LoadConfig(const std::string& filename) {
         // 2026/4/3 @zetsr
         // 考虑到跟一键自杀那种类型的功能不一样，保存到配置应该没有问题
         LOAD_BOOL(g_Config::bForceTurn);
+
+        LOAD_BOOL(g_Config::bLogDamage);
+        LOAD_COLOR(g_Config::LogDamageColor);
 
         // 生物列表
         LOAD_STRING(g_Config::entitySearchBuf, 256);

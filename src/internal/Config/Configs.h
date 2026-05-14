@@ -19,6 +19,9 @@ namespace g_Config {
     inline bool bUseItem = false;
     inline SDK::FItemNetID useItemID;
 
+    inline bool bLogDamage = true;
+    inline float LogDamageColor[4] = { 1.0f, 1.0f, 1.0f, 0.80f };
+
     // 生物列表
     inline char entitySearchBuf[256] = { 0 };
     inline bool bEnableFilter = false;

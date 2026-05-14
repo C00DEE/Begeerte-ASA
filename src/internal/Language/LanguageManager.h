@@ -124,6 +124,7 @@ public:
         static const char* AutoFeed;
         static const char* SuperFlyer;
         static const char* ForceTurn;
+        static const char* LogDamage;
     };
 
     struct StructureList_Menu {

@@ -8,10 +8,12 @@
 // #include "../Font/Alibaba-PuHuiTi-Light.h"
 #include "../Font/Alibaba-PuHuiTi-Medium.h"
 // #include "../Font/Alibaba-PuHuiTi-Regular.h"
+#include "../Font/HarmonyOS_Sans_SC_Regular.h"
 
 #include "../MinHook/include/MinHook.h"
 
 #include "../../../internal/Util/Util.h"
+#include "../../../internal/Log/LogManager.h"
 
 #pragma warning(push)
 #pragma warning(disable: 26451)
@@ -34,6 +36,16 @@ namespace g_Hook {
 
     typedef void(__fastcall* tPhysicsRotation)(SDK::UMovementComponent* rcx, float DeltaTime);
     tPhysicsRotation oPhysicsRotation = nullptr;
+
+    typedef float(__fastcall* tTakeDamage)(
+        SDK::AActor* _this,             // RCX
+        float DamageAmount,             // XMM1
+        SDK::FDamageEvent* DamageEvent, // R8
+        SDK::AController* Instigator,   // R9
+        SDK::AActor* DamageCauser       // 栈上
+        );
+
+    tTakeDamage oTakeDamage = nullptr;
 
     void* __fastcall hkUWorldTick(SDK::UWorld* rcx, void* rdx, void* r8, void* r9) {
         g_MDX12::SetupUWorldTick(rcx);
@@ -76,12 +88,23 @@ namespace g_Hook {
         */
     }
 
-
     void __fastcall hkPhysicsRotation(SDK::UMovementComponent* rcx, float DeltaTime)
     {
         g_MDX12::SetupPhysicsRotation(rcx, DeltaTime);
 
         return oPhysicsRotation(rcx, DeltaTime);
+    }
+
+    float __fastcall hkTakeDamage(
+        SDK::AActor* _this,
+        float DamageAmount,
+        SDK::FDamageEvent* DamageEvent,
+        SDK::AController* Instigator,
+        SDK::AActor* DamageCauser)
+    {
+        g_MDX12::SetupTakeDamage(_this, DamageAmount, DamageEvent, Instigator, DamageCauser);
+
+        return oTakeDamage(_this, DamageAmount, DamageEvent, Instigator, DamageCauser);
     }
 
     // 2026/3/29 @zetsr
@@ -175,6 +198,20 @@ namespace g_Hook {
             }
         }
     }
+
+    void initTakeDamage() {
+        std::string pattern = g_CheatData::Signature::AActor::TakeDamage;
+        AOB::Result ok = AOB::Scan(pattern);
+
+        if (ok && ok.size() > 0) {
+            void* targetAddr = ok[0];
+
+            if (MH_CreateHook(targetAddr, &hkTakeDamage, reinterpret_cast<LPVOID*>(&oTakeDamage)) == MH_OK) {
+                MH_EnableHook(targetAddr);
+                TakeDamageOK = true;
+            }
+        }
+    }
 }
 
 // 应该不需要每个都单独检查一次
@@ -193,6 +230,7 @@ void g_Hook::StartAllHooks() {
         g_Hook::initOutputTextLine();
         g_Hook::initPostRender();
         g_Hook::initPhysicsRotation();
+        g_Hook::initTakeDamage();
     }
 }
 
@@ -362,12 +400,18 @@ namespace g_MDX12 {
 
             // Alibaba-PuHuiTi-Bold
             // g_MDX12::g_Alibaba_PuHuiTi_Bold = io.Fonts->AddFontFromMemoryTTF(g_Fonts::Alibaba_PuHuiTi_Bold, sizeof(g_Fonts::Alibaba_PuHuiTi_Bold), 18.0f, NULL, range);
+            
             // Alibaba-PuHuiTi-Heavy
             // g_MDX12::g_Alibaba_PuHuiTi_Heavy = io.Fonts->AddFontFromMemoryTTF(g_Fonts::Alibaba_PuHuiTi_Heavy, sizeof(g_Fonts::Alibaba_PuHuiTi_Heavy), 18.0f, NULL, range);
+            
             // Alibaba-PuHuiTi-Light
             // g_MDX12::g_Alibaba_PuHuiTi_Light = io.Fonts->AddFontFromMemoryTTF(g_Fonts::Alibaba_PuHuiTi_Light, sizeof(g_Fonts::Alibaba_PuHuiTi_Light), 18.0f, NULL, range);
+            
             // Alibaba-PuHuiTi-Medium
-            g_MDX12::g_Alibaba_PuHuiTi_Medium = io.Fonts->AddFontFromMemoryTTF(g_Fonts::Alibaba_PuHuiTi_Medium, sizeof(g_Fonts::Alibaba_PuHuiTi_Medium), 18.0f, NULL, range);
+            // g_MDX12::g_Alibaba_PuHuiTi_Medium = io.Fonts->AddFontFromMemoryTTF(g_Fonts::Alibaba_PuHuiTi_Medium, sizeof(g_Fonts::Alibaba_PuHuiTi_Medium), 18.0f, NULL, range);
+            
+            // HarmonyOS_Sans_SC_Regular
+            g_MDX12::g_HarmonyOS_Sans_SC_Regular = io.Fonts->AddFontFromMemoryTTF(g_Fonts::HarmonyOS_Sans_SC_Regular, sizeof(g_Fonts::HarmonyOS_Sans_SC_Regular), 18.0f, NULL, range);
 
             // DX12 后端必须重新初始化，因为 resize 可能会让之前的 backend 对象失效
             ImGui_ImplDX12_Init(g_D3D12Resources::g_pd3dDevice, g_D3D12Resources::g_bufferCount, desc.BufferDesc.Format, g_D3D12Resources::g_pd3dSrvDescHeap, g_D3D12Resources::g_pd3dSrvDescHeap->GetCPUDescriptorHandleForHeapStart(), g_D3D12Resources::g_pd3dSrvDescHeap->GetGPUDescriptorHandleForHeapStart());

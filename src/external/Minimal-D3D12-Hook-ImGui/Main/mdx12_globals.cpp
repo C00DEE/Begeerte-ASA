@@ -7,6 +7,7 @@ namespace g_MDX12 {
     // ImFont* g_Alibaba_PuHuiTi_Heavy = nullptr;
     // ImFont* g_Alibaba_PuHuiTi_Light = nullptr;
     ImFont* g_Alibaba_PuHuiTi_Medium = nullptr;
+    ImFont* g_HarmonyOS_Sans_SC_Regular = nullptr;
 
     // Hook original function pointers
     namespace g_HookFunctions {
@@ -108,5 +109,7 @@ namespace g_MDX12 {
         SetupOutputTextLineCallback g_setupOutputTextLineCallback = nullptr;
         SetupPostRenderCallback g_setupPostRenderCallback = nullptr;
         SetupPhysicsRotationCallback g_setupPhysicsRotationCallback = nullptr;
+        SetupTakeDamageCallback g_setupTakeDamageCallback = nullptr;
+        SetupPostDamageCallback g_setupPostDamageCallback = nullptr;
     }
 }

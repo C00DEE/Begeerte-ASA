@@ -15,4 +15,5 @@ namespace g_Hook {
 	inline bool OutputTextLineOK = false;
 	inline bool PostRenderOK = false;
 	inline bool PhysicsRotationOK = false;
+	inline bool TakeDamageOK = false;
 }

@@ -12,6 +12,7 @@
 #include "internal/UWorld/UNetDriver/UNetConnection/HandleDisconnect.h"
 #include "internal/UEngine/UGameViewportClient/UConsole/OutputTextLine.h"
 #include "internal/UEngine/UGameViewportClient/PostRender.h"
+#include "internal/AActor/TakeDamage.h"
 
 void init(LPVOID lpParam) {
     g_MDX12::Initialize(lpParam);
@@ -21,6 +22,7 @@ void init(LPVOID lpParam) {
     g_MDX12::SetSetupOutputTextLineCallback(g_UEngine::UGameViewportClient::UConsole::OutputTextLine);
     g_MDX12::SetSetupPostRenderCallback(g_UEngine::UGameViewportClient::PostRender);
     g_MDX12::SetSetupPhysicsRotationCallback(g_UWorld::UMovementComponent::PhysicsRotation);
+    g_MDX12::SetSetupTakeDamageCallback(g_AActor::TakeDamage);
 
     ConfigManager::Get().Initialize("cfg");
     LanguageManager::Get().Initialize("language");
