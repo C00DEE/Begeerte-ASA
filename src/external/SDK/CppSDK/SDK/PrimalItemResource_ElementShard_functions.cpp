@@ -14,8 +14,7 @@
 #include "PrimalItemResource_ElementShard_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PrimalItemResource_ElementShard.PrimalItemResource_ElementShard_C.BPSupportUseOntoItem
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -105,5 +104,5 @@ void UPrimalItemResource_ElementShard_C::RefillElementShard(class UPrimalItem* D
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

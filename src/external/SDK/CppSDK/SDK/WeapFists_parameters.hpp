@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function WeapFists.WeapFists_C.BPOverrideMeleeSwingSocket
 // 0x0070 (0x0070 - 0x0000)
@@ -37,5 +37,5 @@ public:
 };
 DUMPER7_ASSERTS_WeapFists_C_BPOverrideMeleeSwingSocket;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

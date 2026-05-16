@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
+#include "ProceduralMeshComponent_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "ProceduralMeshComponent_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ProceduralMeshComponent.KismetProceduralMeshLibrary
 // 0x0000 (0x0028 - 0x0028)
@@ -96,5 +95,4 @@ public:
 };
 DUMPER7_ASSERTS_UProceduralMeshComponent;
 
-}
-
+SDK_NAMESPACE_END

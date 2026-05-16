@@ -11,8 +11,26 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
+
+// Function HoldoutComposite.HoldoutCompositeComponent.SetEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct HoldoutCompositeComponent_SetEnabled final
 {
+public:
+	bool                                          bInEnabled;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_HoldoutCompositeComponent_SetEnabled;
+
+// Function HoldoutComposite.HoldoutCompositeComponent.IsEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct HoldoutCompositeComponent_IsEnabled final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_HoldoutCompositeComponent_IsEnabled;
 
 // Function HoldoutComposite.HoldoutCompositeSubsystem.RegisterPrimitive
 // 0x0030 (0x0030 - 0x0000)
@@ -36,23 +54,5 @@ public:
 };
 DUMPER7_ASSERTS_HoldoutCompositeSubsystem_UnregisterPrimitive;
 
-// Function HoldoutComposite.HoldoutCompositeComponent.SetEnabled
-// 0x0001 (0x0001 - 0x0000)
-struct HoldoutCompositeComponent_SetEnabled final
-{
-public:
-	bool                                          bInEnabled;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_HoldoutCompositeComponent_SetEnabled;
-
-// Function HoldoutComposite.HoldoutCompositeComponent.IsEnabled
-// 0x0001 (0x0001 - 0x0000)
-struct HoldoutCompositeComponent_IsEnabled final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_HoldoutCompositeComponent_IsEnabled;
-
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

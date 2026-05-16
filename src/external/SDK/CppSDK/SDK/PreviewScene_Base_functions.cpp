@@ -14,8 +14,7 @@
 #include "PreviewScene_Base_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PreviewScene_Base.PreviewScene_Base_C.BPCanUseFemaleBoneModifiers
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -177,5 +176,5 @@ void APreviewScene_Base_C::UpdateFloorLocation(bool IsFemale_0)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

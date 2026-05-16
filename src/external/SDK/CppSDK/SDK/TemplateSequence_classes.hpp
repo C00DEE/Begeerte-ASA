@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "TemplateSequence_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "MovieScene_structs.hpp"
@@ -17,11 +18,9 @@
 #include "CinematicCamera_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "TemplateSequence_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class TemplateSequence.TemplateSequence
 // 0x0088 (0x00F0 - 0x0068)
@@ -449,5 +448,4 @@ public:
 };
 DUMPER7_ASSERTS_UTemplateSequenceTrack;
 
-}
-
+SDK_NAMESPACE_END

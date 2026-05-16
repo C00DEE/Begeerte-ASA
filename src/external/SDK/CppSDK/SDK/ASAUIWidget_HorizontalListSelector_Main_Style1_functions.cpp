@@ -14,8 +14,7 @@
 #include "ASAUIWidget_HorizontalListSelector_Main_Style1_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ASAUIWidget_HorizontalListSelector_Main_Style1.ASAUIWidget_HorizontalListSelector_Main_Style1_C.UpdateWidget
 // (BlueprintCallable, BlueprintEvent)
@@ -490,5 +489,5 @@ void UASAUIWidget_HorizontalListSelector_Main_Style1_C::BndEvt__ASAUI_ListSessio
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

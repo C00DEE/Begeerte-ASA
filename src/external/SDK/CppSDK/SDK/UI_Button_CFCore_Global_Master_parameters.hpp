@@ -15,8 +15,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.ExecuteUbergraph_UI_Button_CFCore_Global_Master
 // 0x00D0 (0x00D0 - 0x0000)
@@ -137,5 +137,5 @@ public:
 };
 DUMPER7_ASSERTS_UI_Button_CFCore_Global_Master_C_Tick;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

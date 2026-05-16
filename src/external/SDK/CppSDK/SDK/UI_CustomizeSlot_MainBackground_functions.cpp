@@ -14,8 +14,7 @@
 #include "UI_CustomizeSlot_MainBackground_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CustomizeSlot_MainBackground.UI_CustomizeSlot_MainBackground_C.GetColor
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -57,5 +56,5 @@ void UUI_CustomizeSlot_MainBackground_C::SetColor(const struct FLinearColor& Col
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

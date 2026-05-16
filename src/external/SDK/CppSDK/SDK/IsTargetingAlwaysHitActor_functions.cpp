@@ -14,8 +14,7 @@
 #include "IsTargetingAlwaysHitActor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function IsTargetingAlwaysHitActor.IsTargetingAlwaysHitActor_C.ExecuteUbergraph_IsTargetingAlwaysHitActor
 // (Final, UbergraphFunction, HasDefaults)
@@ -56,5 +55,5 @@ void UIsTargetingAlwaysHitActor_C::ReceiveConditionCheck(class AActor* OwnerActo
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

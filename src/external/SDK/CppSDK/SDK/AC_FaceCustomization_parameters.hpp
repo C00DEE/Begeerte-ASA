@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "Human_Male_Faces_Enum_structs.hpp"
 #include "STRUCT_DeltaMapData_structs.hpp"
+#include "Human_Male_Faces_Enum_structs.hpp"
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function AC_FaceCustomization.AC_FaceCustomization_C.ResetFaceWeights
 // 0x0048 (0x0048 - 0x0000)
@@ -288,5 +288,5 @@ public:
 };
 DUMPER7_ASSERTS_AC_FaceCustomization_C_ExecuteUbergraph_AC_FaceCustomization;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

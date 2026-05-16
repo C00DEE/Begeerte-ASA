@@ -14,8 +14,7 @@
 #include "Buff_Base_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Buff_Base.Buff_Base_C.BPDeactivated
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -119,5 +118,5 @@ bool ABuff_Base_C::BPCustomAllowAddBuff(class APrimalCharacter* ForCharacter, cl
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

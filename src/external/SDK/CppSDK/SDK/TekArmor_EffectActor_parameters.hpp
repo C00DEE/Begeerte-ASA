@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function TekArmor_EffectActor.TekArmor_EffectActor_C.ExecuteUbergraph_TekArmor_EffectActor
 // 0x00A0 (0x00A0 - 0x0000)
@@ -162,5 +162,5 @@ public:
 };
 DUMPER7_ASSERTS_TekArmor_EffectActor_C_SetTekFX;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

@@ -14,8 +14,8 @@
 #include "Struct_WeapAnimWith3P_V3_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function Interface_TekSpear.Interface_TekSpear_C.Interface_ProjSpear_Tek get damage multiplier for attack
 // 0x0010 (0x0010 - 0x0000)
@@ -288,5 +288,5 @@ public:
 };
 DUMPER7_ASSERTS_Interface_TekSpear_C_Interface_TekSpear_SetLastSelectedTeleportSpot;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

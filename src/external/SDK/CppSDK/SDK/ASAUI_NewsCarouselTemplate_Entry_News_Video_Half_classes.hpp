@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
+#include "ShooterGame_classes.hpp"
 #include "UMG_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass ASAUI_NewsCarouselTemplate_Entry_News_Video_Half.ASAUI_NewsCarouselTemplate_Entry_News_Video_Half_C
 // 0x00C8 (0x0478 - 0x03B0)
@@ -85,5 +84,4 @@ public:
 };
 DUMPER7_ASSERTS_UASAUI_NewsCarouselTemplate_Entry_News_Video_Half_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_Half_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_Half.ASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_Half_C.BlueprintInit
 // (Event, Public, BlueprintEvent)
@@ -118,5 +117,5 @@ void UASAUI_NewsCarouselTemplate_Entry_NewsTextOnly_Half_C::ExecuteUbergraph_ASA
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

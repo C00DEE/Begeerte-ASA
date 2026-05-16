@@ -14,8 +14,7 @@
 #include "W_BackupList_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function W_BackupList.W_BackupList_C.ExecuteUbergraph_W_BackupList
 // (Final, UbergraphFunction)
@@ -50,5 +49,5 @@ void UW_BackupList_C::BndEvt__W_BackupList_CloseBackupSave_K2Node_ComponentBound
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

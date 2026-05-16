@@ -14,8 +14,7 @@
 #include "DaySequence_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function DaySequence.DaySequenceActor.ContainsDaySequence
 // (Final, Native, Public, BlueprintCallable)
@@ -2270,5 +2269,5 @@ class ADaySequenceActor* UDaySequenceSubsystem::GetDaySequenceActor(bool bFindFa
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

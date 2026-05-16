@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "cfcore_ui_structs.hpp"
 #include "cfcore_structs.hpp"
+#include "cfcore_ui_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_CFCoreUIModel.BP_CFCoreUIModel_C.OnEventReceived_LibraryProgress
 // 0x0078 (0x0078 - 0x0000)
@@ -49,5 +49,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_CFCoreUIModel_C_OnEventReceived;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

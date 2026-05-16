@@ -14,8 +14,7 @@
 #include "ASAUI_NewsCarouselTemplate_Entry_CTA_Half_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ASAUI_NewsCarouselTemplate_Entry_CTA_Half.ASAUI_NewsCarouselTemplate_Entry_CTA_Half_C.ExecuteUbergraph_ASAUI_NewsCarouselTemplate_Entry_CTA_Half
 // (Final, UbergraphFunction)
@@ -118,5 +117,5 @@ void UASAUI_NewsCarouselTemplate_Entry_CTA_Half_C::BlueprintInit(const class FSt
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

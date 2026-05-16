@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedStruct Struct_MinMaxVectors.Struct_MinMaxVectors
 // 0x0030 (0x0030 - 0x0000)
@@ -26,5 +25,4 @@ public:
 };
 DUMPER7_ASSERTS_FStruct_MinMaxVectors;
 
-}
-
+SDK_NAMESPACE_END

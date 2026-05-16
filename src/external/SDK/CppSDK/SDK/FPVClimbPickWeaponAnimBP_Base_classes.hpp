@@ -17,8 +17,7 @@
 #include "AnimGraphRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass FPVClimbPickWeaponAnimBP_Base.FPVClimbPickWeaponAnimBP_Base_C
 // 0x0910 (0x0CD0 - 0x03C0)
@@ -106,5 +105,4 @@ public:
 };
 DUMPER7_ASSERTS_UFPVClimbPickWeaponAnimBP_Base_C;
 
-}
-
+SDK_NAMESPACE_END

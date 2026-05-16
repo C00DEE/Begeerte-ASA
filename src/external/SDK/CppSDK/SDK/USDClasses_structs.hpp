@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum USDClasses.EUsdDrawMode
 // NumValues: 0x0006
@@ -117,15 +116,6 @@ public:
 };
 DUMPER7_ASSERTS_FUsdPrimMetadata;
 
-// ScriptStruct USDClasses.UsdCombinedPrimMetadata
-// 0x0050 (0x0050 - 0x0000)
-struct FUsdCombinedPrimMetadata final
-{
-public:
-	TMap<class FString, struct FUsdPrimMetadata>  PrimPathToMetadata;                                // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUsdCombinedPrimMetadata;
-
 // ScriptStruct USDClasses.UsdMetadataImportOptions
 // 0x0020 (0x0020 - 0x0000)
 struct FUsdMetadataImportOptions final
@@ -140,6 +130,15 @@ public:
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FUsdMetadataImportOptions;
+
+// ScriptStruct USDClasses.UsdCombinedPrimMetadata
+// 0x0050 (0x0050 - 0x0000)
+struct FUsdCombinedPrimMetadata final
+{
+public:
+	TMap<class FString, struct FUsdPrimMetadata>  PrimPathToMetadata;                                // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUsdCombinedPrimMetadata;
 
 // ScriptStruct USDClasses.UsdStageOptions
 // 0x0008 (0x0008 - 0x0000)
@@ -167,5 +166,4 @@ public:
 };
 DUMPER7_ASSERTS_FUsdUnrealAssetInfo;
 
-}
-
+SDK_NAMESPACE_END

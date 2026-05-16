@@ -14,8 +14,7 @@
 #include "UI_CustomComboBoxOption_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CustomComboBoxOption.UI_CustomComboBoxOption_C.BndEvt__CustomComboBoxOption_OptionButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature
 // (BlueprintEvent)
@@ -542,5 +541,5 @@ void UUI_CustomComboBoxOption_C::UpdateHoveredOption()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

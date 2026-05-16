@@ -14,8 +14,7 @@
 #include "ScriptableToolsFramework_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ScriptableToolsFramework.ScriptableInteractiveTool.AddLineSet
 // (Final, Native, Public, BlueprintCallable)
@@ -3641,5 +3640,5 @@ void UScriptableToolTriangleSet::SetAllTrianglesMaterial(class UMaterialInterfac
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

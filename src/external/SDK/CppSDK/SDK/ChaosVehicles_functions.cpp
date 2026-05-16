@@ -14,8 +14,7 @@
 #include "ChaosVehicles_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ChaosVehicles.ChaosVehicleMovementComponent.AddForce
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
@@ -2878,5 +2877,5 @@ class AWheeledVehiclePawn* UVehicleAnimationInstance::GetVehicle()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

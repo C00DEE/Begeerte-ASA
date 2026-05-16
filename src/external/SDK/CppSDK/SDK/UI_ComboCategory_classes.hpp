@@ -14,16 +14,15 @@
 #include "UI_CustomComboBoxOption_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_ComboCategory.UI_ComboCategory_C
-// 0x0010 (0x1450 - 0x1440)
+// 0x0010 (0x1480 - 0x1470)
 class UUI_ComboCategory_C final : public UUI_CustomComboBoxOption_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_UI_ComboCategory_C;                 // 0x1440(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UUI_Sub_Categories_Scroll_C*            SubCategoriesScroll_0;                             // 0x1448(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_UI_ComboCategory_C;                 // 0x1470(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UUI_Sub_Categories_Scroll_C*            SubCategoriesScroll_0;                             // 0x1478(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_UI_ComboCategory(int32 EntryPoint);
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_UUI_ComboCategory_C;
 
-}
-
+SDK_NAMESPACE_END

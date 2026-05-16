@@ -13,17 +13,16 @@
 #include "CFCoreWidget_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_CFCore_Tooltip.UI_CFCore_Tooltip_C
-// 0x0018 (0x0848 - 0x0830)
+// 0x0018 (0x0878 - 0x0860)
 class UUI_CFCore_Tooltip_C final : public UCFCoreWidget_C
 {
 public:
-	class UOverlay*                               Overlay_0;                                         // 0x0830(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UTextBlock*                             Text_Tooltip;                                      // 0x0838(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UUI_CFCore_Overlay_C*                   UI_Overlay;                                        // 0x0840(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UOverlay*                               Overlay_0;                                         // 0x0860(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             Text_Tooltip;                                      // 0x0868(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UUI_CFCore_Overlay_C*                   UI_Overlay;                                        // 0x0870(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
@@ -44,5 +43,4 @@ public:
 };
 DUMPER7_ASSERTS_UUI_CFCore_Tooltip_C;
 
-}
-
+SDK_NAMESPACE_END

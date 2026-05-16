@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Buff_Base.Buff_Base_C
 // 0x0010 (0x0BD0 - 0x0BC0)
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_ABuff_Base_C;
 
-}
-
+SDK_NAMESPACE_END

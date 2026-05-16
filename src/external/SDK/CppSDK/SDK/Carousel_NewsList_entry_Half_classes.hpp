@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass Carousel_NewsList_entry_Half.Carousel_NewsList_entry_Half_C
 // 0x0010 (0x0388 - 0x0378)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_UCarousel_NewsList_entry_Half_C;
 
-}
-
+SDK_NAMESPACE_END

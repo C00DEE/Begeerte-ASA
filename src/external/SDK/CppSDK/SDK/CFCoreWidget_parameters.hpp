@@ -14,8 +14,8 @@
 #include "STRUCT_CFCore_UITheme_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function CFCoreWidget.CFCoreWidget_C.ExecuteUbergraph_CFCoreWidget
 // 0x0080 (0x0080 - 0x0000)
@@ -105,5 +105,5 @@ public:
 };
 DUMPER7_ASSERTS_CFCoreWidget_C_Recursive_ApplyFontToAllWidgets;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

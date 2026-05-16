@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_CFCore_Tag_WhiteCategory.UI_CFCore_Tag_WhiteCategory_C
 // 0x0030 (0x03A8 - 0x0378)
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_UUI_CFCore_Tag_WhiteCategory_C;
 
-}
-
+SDK_NAMESPACE_END

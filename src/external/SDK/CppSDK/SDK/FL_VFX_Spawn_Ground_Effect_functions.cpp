@@ -14,8 +14,7 @@
 #include "FL_VFX_Spawn_Ground_Effect_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function FL_VFX_Spawn_Ground_Effect.FL_VFX_Spawn_Ground_Effect_C.Find Ground Attributes
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -348,5 +347,5 @@ void UFL_VFX_Spawn_Ground_Effect_C::Trace_Ground_VFX_Parameters(class UNiagaraCo
 		*Show_Footprints = Parms.Show_Footprints;
 }
 
-}
 
+SDK_NAMESPACE_END

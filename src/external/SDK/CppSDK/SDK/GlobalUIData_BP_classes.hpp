@@ -15,8 +15,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GlobalUIData_BP.GlobalUIData_BP_C
 // 0x0CF0 (0x0E20 - 0x0130)
@@ -81,5 +80,4 @@ public:
 };
 DUMPER7_ASSERTS_UGlobalUIData_BP_C;
 
-}
-
+SDK_NAMESPACE_END

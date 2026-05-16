@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum PropertyPath.EPropertyPathTestEnum
 // NumValues: 0x0005
@@ -109,5 +108,4 @@ public:
 };
 DUMPER7_ASSERTS_FPropertyPathTestBed;
 
-}
-
+SDK_NAMESPACE_END

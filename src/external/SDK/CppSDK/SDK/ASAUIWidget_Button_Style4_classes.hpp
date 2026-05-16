@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "SlateCore_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass ASAUIWidget_Button_Style4.ASAUIWidget_Button_Style4_C
 // 0x0268 (0x05E0 - 0x0378)
@@ -70,5 +69,4 @@ public:
 };
 DUMPER7_ASSERTS_UASAUIWidget_Button_Style4_C;
 
-}
-
+SDK_NAMESPACE_END

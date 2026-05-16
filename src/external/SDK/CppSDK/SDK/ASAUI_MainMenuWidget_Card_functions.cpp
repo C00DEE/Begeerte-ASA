@@ -14,8 +14,7 @@
 #include "ASAUI_MainMenuWidget_Card_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ASAUI_MainMenuWidget_Card.ASAUI_MainMenuWidget_Card_C.BndEvt__ASAUI_MainMenuWidget_Card_Button_99_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -196,5 +195,5 @@ void UASAUI_MainMenuWidget_Card_C::StopAnims()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

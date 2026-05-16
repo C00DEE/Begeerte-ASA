@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PrimalWindSourceComponent_Base.BP_PrimalWindSourceComponent_Base_C
 // 0x0118 (0x03B8 - 0x02A0)
@@ -81,5 +80,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_PrimalWindSourceComponent_Base_C;
 
-}
-
+SDK_NAMESPACE_END

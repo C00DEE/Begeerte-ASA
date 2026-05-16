@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "cfcore_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "cfcore_ui_structs.hpp"
+#include "cfcore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CFCorePluginManager.BP_CFCorePluginManager_C
 // 0x0938 (0x0DC0 - 0x0488)
@@ -146,5 +145,4 @@ public:
 };
 DUMPER7_ASSERTS_ABP_CFCorePluginManager_C;
 
-}
-
+SDK_NAMESPACE_END

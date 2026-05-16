@@ -14,8 +14,7 @@
 #include "SteelShield_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function SteelShield.SteelShieldSubsystem.SetTokenProvider
 // (Final, Native, Public, BlueprintCallable)
@@ -166,5 +165,5 @@ bool USteelShieldSubsystem::IsRolloverInProgress() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

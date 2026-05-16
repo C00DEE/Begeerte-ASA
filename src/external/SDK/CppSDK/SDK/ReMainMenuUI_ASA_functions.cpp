@@ -14,8 +14,7 @@
 #include "ReMainMenuUI_ASA_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ReMainMenuUI_ASA.ReMainMenuUI_ASA_C.BndEvt__CreditsButton_K2Node_ComponentBoundEvent_116_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -674,5 +673,5 @@ void UReMainMenuUI_ASA_C::UpdateLeftTextPosition(bool isCTAVisible)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "UI_CFCore_ThemeCustomizer_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_ThemeCustomizer.UI_CFCore_ThemeCustomizer_C.AddToHistory
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -347,5 +346,5 @@ void UUI_CFCore_ThemeCustomizer_C::UpdateSliderActivated()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

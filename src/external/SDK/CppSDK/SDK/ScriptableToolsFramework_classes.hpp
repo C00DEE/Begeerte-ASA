@@ -10,16 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "ScriptableToolsFramework_structs.hpp"
-#include "CoreUObject_classes.hpp"
 #include "InteractiveToolsFramework_structs.hpp"
 #include "InteractiveToolsFramework_classes.hpp"
+#include "CoreUObject_classes.hpp"
+#include "Engine_classes.hpp"
 #include "InputCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ScriptableToolsFramework.ScriptableInteractiveTool
 // 0x0250 (0x02E8 - 0x0098)
@@ -1095,5 +1094,4 @@ public:
 };
 DUMPER7_ASSERTS_UScriptableToolTriangleSet;
 
-}
-
+SDK_NAMESPACE_END

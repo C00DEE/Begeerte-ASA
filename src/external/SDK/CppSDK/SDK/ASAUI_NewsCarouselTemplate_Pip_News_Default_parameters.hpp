@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function ASAUI_NewsCarouselTemplate_Pip_News_Default.ASAUI_NewsCarouselTemplate_Pip_News_Default_C.ExecuteUbergraph_ASAUI_NewsCarouselTemplate_Pip_News_Default
 // 0x0020 (0x0020 - 0x0000)
@@ -47,5 +47,5 @@ public:
 };
 DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Pip_News_Default_C_EntryFocusEnd;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

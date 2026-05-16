@@ -14,8 +14,7 @@
 #include "UI_PaginationLeftRight_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_PaginationLeftRight.UI_PaginationLeftRight_C.ApplyThemeSettingsToAll
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -85,5 +84,5 @@ void UUI_PaginationLeftRight_C::GetRootCFWidget(class UPanelWidget** RootPanelWi
 		*RootPanelWidget = Parms.RootPanelWidget;
 }
 
-}
 
+SDK_NAMESPACE_END

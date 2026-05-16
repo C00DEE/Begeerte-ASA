@@ -10,19 +10,18 @@
 
 #include "Basic.hpp"
 
-#include "DeveloperSettings_classes.hpp"
-#include "SmartObjectsModule_structs.hpp"
-#include "AIModule_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "SmartObjectsModule_structs.hpp"
+#include "AIModule_classes.hpp"
+#include "DeveloperSettings_classes.hpp"
 #include "Engine_classes.hpp"
 #include "GameplayTags_structs.hpp"
 #include "WorldConditions_structs.hpp"
 #include "WorldConditions_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class SmartObjectsModule.EnvQueryGenerator_SmartObjects
 // 0x0100 (0x0150 - 0x0050)
@@ -760,5 +759,4 @@ public:
 };
 DUMPER7_ASSERTS_USmartObjectWorldConditionSchema;
 
-}
-
+SDK_NAMESPACE_END

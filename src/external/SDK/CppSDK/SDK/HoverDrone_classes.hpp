@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
+#include "Engine_classes.hpp"
 #include "HoverDrone_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "SP_Interpolators_structs.hpp"
-#include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class HoverDrone.HoverDroneMovementComponent
 // 0x03C0 (0x0570 - 0x01B0)
@@ -220,5 +219,4 @@ public:
 };
 DUMPER7_ASSERTS_UHoverDroneVolumeManager;
 
-}
-
+SDK_NAMESPACE_END

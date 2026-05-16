@@ -13,11 +13,10 @@
 #include "DeathItemCache_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DeathItemCache_PlayerDeath.DeathItemCache_PlayerDeath_C
-// 0x0000 (0x11F8 - 0x11F8)
+// 0x0000 (0x1200 - 0x1200)
 class ADeathItemCache_PlayerDeath_C final : public ADeathItemCache_C
 {
 public:
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ADeathItemCache_PlayerDeath_C;
 
-}
-
+SDK_NAMESPACE_END

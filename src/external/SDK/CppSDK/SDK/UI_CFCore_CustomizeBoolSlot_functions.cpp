@@ -14,8 +14,7 @@
 #include "UI_CFCore_CustomizeBoolSlot_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_CustomizeBoolSlot.UI_CFCore_CustomizeBoolSlot_C.BndEvt__UI_CustomizeBoolSlot_CheckBox_285_K2Node_ComponentBoundEvent_0_OnCheckBoxComponentStateChanged__DelegateSignature
 // (BlueprintEvent)
@@ -152,5 +151,5 @@ void UUI_CFCore_CustomizeBoolSlot_C::SetColor(const struct FLinearColor& Color)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

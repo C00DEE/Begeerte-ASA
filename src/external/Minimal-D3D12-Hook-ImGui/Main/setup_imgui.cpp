@@ -1,6 +1,26 @@
 #include "mdx12_api.h"
 
 namespace g_MDX12 {
+    void SetSetupPostDamageCallback(SetupPostDamageCallback callback) {
+        g_Callbacks::g_setupPostDamageCallback = callback;
+    }
+
+    void SetupPostDamage(SDK::AActor* _this, float DamageAmount, SDK::FDamageEvent* DamageEvent, SDK::AController* Instigator, SDK::AActor* DamageCauser) {
+        if (g_Callbacks::g_setupPostDamageCallback) {
+            g_Callbacks::g_setupPostDamageCallback(_this, DamageAmount, DamageEvent, Instigator, DamageCauser);
+        }
+    }
+
+    void SetSetupTakeDamageCallback(SetupTakeDamageCallback callback) {
+        g_Callbacks::g_setupTakeDamageCallback = callback;
+    }
+
+    void SetupTakeDamage(SDK::AActor* _this, float DamageAmount, SDK::FDamageEvent* DamageEvent, SDK::AController* Instigator, SDK::AActor* DamageCauser) {
+        if (g_Callbacks::g_setupTakeDamageCallback) {
+            g_Callbacks::g_setupTakeDamageCallback(_this, DamageAmount, DamageEvent, Instigator, DamageCauser);
+        }
+    }
+
     void SetSetupPhysicsRotationCallback(SetupPhysicsRotationCallback callback) {
         g_Callbacks::g_setupPhysicsRotationCallback = callback;
     }

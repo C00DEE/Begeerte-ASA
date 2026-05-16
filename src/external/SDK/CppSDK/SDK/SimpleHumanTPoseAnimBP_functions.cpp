@@ -14,8 +14,7 @@
 #include "SimpleHumanTPoseAnimBP_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function SimpleHumanTPoseAnimBP.SimpleHumanTPoseAnimBP_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -91,5 +90,5 @@ void USimpleHumanTPoseAnimBP_C::ExecuteUbergraph_SimpleHumanTPoseAnimBP(int32 En
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

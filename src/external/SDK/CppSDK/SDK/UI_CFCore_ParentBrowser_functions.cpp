@@ -14,8 +14,7 @@
 #include "UI_CFCore_ParentBrowser_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_ParentBrowser.UI_CFCore_ParentBrowser_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -1462,5 +1461,5 @@ void UUI_CFCore_ParentBrowser_C::BndEvt__UI_CFCore_ParentBrowser_UI_Button_CFCor
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

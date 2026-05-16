@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum DataflowCore.EDataflowMathConstantsEnum
 // NumValues: 0x000E
@@ -39,7 +38,7 @@ enum class EDataflowMathConstantsEnum : uint8
 // ScriptStruct DataflowCore.DataflowAnyType
 // 0x0000 (0x0000 - 0x0000)
 #pragma pack(push, 0x1)
-struct alignas(0x01) FDataflowAnyType
+struct SDK_ALIGN(0x01) FDataflowAnyType
 {
 };
 #pragma pack(pop)
@@ -700,5 +699,4 @@ struct FDataflowTerminalNode : public FDataflowNode
 };
 DUMPER7_ASSERTS_FDataflowTerminalNode;
 
-}
-
+SDK_NAMESPACE_END

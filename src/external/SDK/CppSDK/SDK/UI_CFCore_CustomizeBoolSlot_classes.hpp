@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
+#include "ShooterGame_classes.hpp"
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_CFCore_CustomizeBoolSlot.UI_CFCore_CustomizeBoolSlot_C
 // 0x0038 (0x03B0 - 0x0378)
@@ -55,5 +54,4 @@ public:
 };
 DUMPER7_ASSERTS_UUI_CFCore_CustomizeBoolSlot_C;
 
-}
-
+SDK_NAMESPACE_END

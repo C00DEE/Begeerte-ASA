@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function UI_CFCore_Tag_WhiteCategory.UI_CFCore_Tag_WhiteCategory_C.ExecuteUbergraph_UI_CFCore_Tag_WhiteCategory
 // 0x0008 (0x0008 - 0x0000)
@@ -43,5 +43,5 @@ public:
 };
 DUMPER7_ASSERTS_UI_CFCore_Tag_WhiteCategory_C_UpdateText;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

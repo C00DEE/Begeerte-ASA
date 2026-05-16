@@ -14,8 +14,7 @@
 #include "OptionsMenu_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function OptionsMenu.OptionsMenu_C.BndEvt__AntiAliasingComboBox_K2Node_ComponentBoundEvent_13_OnSelectionChangedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -326,5 +325,5 @@ void UOptionsMenu_C::OptionsGraphTick(const struct FGeometry& MyGeometry, float 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "UI_NoModsFoundInCategoty_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_NoModsFoundInCategoty.UI_NoModsFoundInCategoty_C.ExecuteUbergraph_UI_NoModsFoundInCategoty
 // (Final, UbergraphFunction, HasDefaults)
@@ -79,5 +78,5 @@ void UUI_NoModsFoundInCategoty_C::Tick(const struct FGeometry& MyGeometry, float
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

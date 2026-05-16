@@ -14,8 +14,7 @@
 #include "ReplicationGraph_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ReplicationGraph.ReplicationGraphDebugActor.ClientCellInfo
 // (Net, NetReliable, Native, Event, Public, HasDefaults, NetClient)
@@ -225,5 +224,5 @@ void AReplicationGraphDebugActor::ServerStopDebugging()
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

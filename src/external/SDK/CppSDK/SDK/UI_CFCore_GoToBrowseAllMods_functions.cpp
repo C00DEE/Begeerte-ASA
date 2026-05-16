@@ -14,8 +14,7 @@
 #include "UI_CFCore_GoToBrowseAllMods_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_GoToBrowseAllMods.UI_CFCore_GoToBrowseAllMods_C.ApplyThemeSettingsToAll
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -85,5 +84,5 @@ void UUI_CFCore_GoToBrowseAllMods_C::GetRootCFWidget(class UPanelWidget** RootPa
 		*RootPanelWidget = Parms.RootPanelWidget;
 }
 
-}
 
+SDK_NAMESPACE_END

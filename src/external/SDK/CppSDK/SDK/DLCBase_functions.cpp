@@ -14,8 +14,7 @@
 #include "DLCBase_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function DLCBase.DLCBase_C.BPGetEntryDescription
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -36,5 +35,5 @@ class FString UDLCBase_C::BPGetEntryDescription()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

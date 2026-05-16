@@ -14,8 +14,7 @@
 #include "PrimalItem_TaxidermyDermis_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PrimalItem_TaxidermyDermis.PrimalItem_TaxidermyDermis_C.BPInitIconMaterial
 // (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -30,5 +29,5 @@ void UPrimalItem_TaxidermyDermis_C::BPInitIconMaterial()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "UI_Option_ModPageCategory_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_Option_ModPageCategory.UI_Option_ModPageCategory_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -125,5 +124,5 @@ void UUI_Option_ModPageCategory_C::UpdateThemeSettings()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "camelsaurus_Character_Base_BP_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function camelsaurus_Character_Base_BP.camelsaurus_Character_Base_BP_C.AddWater
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -102,5 +101,5 @@ void Acamelsaurus_Character_Base_BP_C::UpdateWaterAmount()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -13,8 +13,8 @@
 #include "cfcore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function UI_CFCore_DiscoveryCategory.UI_CFCore_DiscoveryCategory_C.CreateCategoryList
 // 0x00E8 (0x00E8 - 0x0000)
@@ -94,5 +94,5 @@ public:
 };
 DUMPER7_ASSERTS_UI_CFCore_DiscoveryCategory_C_UpdateShelveTitle;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

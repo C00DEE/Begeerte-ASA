@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PDA_FoleyCollection.PDA_FoleyCollection_C
 // 0x0060 (0x0090 - 0x0030)
@@ -50,5 +49,4 @@ public:
 };
 DUMPER7_ASSERTS_UPDA_FoleyCollection_C;
 
-}
-
+SDK_NAMESPACE_END

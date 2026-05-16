@@ -13,11 +13,10 @@
 #include "BaseHumanAnimBP_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass BaseHumanAnimBP_Fists.BaseHumanAnimBP_Fists_C
-// 0x0000 (0x1E0A0 - 0x1E0A0)
+// 0x0000 (0x1DE10 - 0x1DE10)
 class UBaseHumanAnimBP_Fists_C : public UBaseHumanAnimBP_C
 {
 public:
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_UBaseHumanAnimBP_Fists_C;
 
-}
-
+SDK_NAMESPACE_END

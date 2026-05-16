@@ -14,8 +14,7 @@
 #include "UI_CFCore_Discovery_ViewAllSlot_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Discovery_ViewAllSlot.UI_CFCore_Discovery_ViewAllSlot_C.BndEvt__UI_ShowcaseSlot_Button_GoToModPage_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature
 // (BlueprintEvent)
@@ -99,5 +98,5 @@ void UUI_CFCore_Discovery_ViewAllSlot_C::GetRootCFWidget(class UPanelWidget** Ro
 		*RootPanelWidget = Parms.RootPanelWidget;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "DLSSBlueprint_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "DLSSBlueprint_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function DLSSBlueprint.DLSSLibrary.EnableDLAA
 // 0x0001 (0x0001 - 0x0000)
@@ -231,5 +231,5 @@ public:
 };
 DUMPER7_ASSERTS_DLSSLibrary_SetDLSSSharpness;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "UI_CFCore_TermsAndConditions_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_TermsAndConditions.UI_CFCore_TermsAndConditions_C.BndEvt__TermsAndConditions_Button_OpenTerm_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -252,5 +251,5 @@ void UUI_CFCore_TermsAndConditions_C::UpdateTextByPlatform()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

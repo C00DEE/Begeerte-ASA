@@ -13,8 +13,8 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function UI_Sub-Category.UI_Sub-Category_C.Event Set Button Style
 // 0x0370 (0x0370 - 0x0000)
@@ -73,5 +73,5 @@ public:
 };
 DUMPER7_ASSERTS_UI_Sub_Category_C_OnSuccess_B7C25CB3474DE2A4D0BC4DAA4F40DDC8;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

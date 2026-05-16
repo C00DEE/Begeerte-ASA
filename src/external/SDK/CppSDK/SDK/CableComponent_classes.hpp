@@ -15,8 +15,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class CableComponent.CableActor
 // 0x0008 (0x0490 - 0x0488)
@@ -95,5 +94,4 @@ public:
 };
 DUMPER7_ASSERTS_UCableComponent;
 
-}
-
+SDK_NAMESPACE_END

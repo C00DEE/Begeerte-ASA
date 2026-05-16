@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass DataListEntryWidgetAllPaintings.DataListEntryWidgetAllPaintings_C
 // 0x0040 (0x0480 - 0x0440)
@@ -51,5 +50,4 @@ public:
 };
 DUMPER7_ASSERTS_UDataListEntryWidgetAllPaintings_C;
 
-}
-
+SDK_NAMESPACE_END

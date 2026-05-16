@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function Deco_IsDoingLandToMe.Deco_IsDoingLandToMe_C.ExecuteUbergraph_Deco_IsDoingLandToMe
 // 0x0048 (0x0048 - 0x0000)
@@ -44,5 +44,5 @@ public:
 };
 DUMPER7_ASSERTS_Deco_IsDoingLandToMe_C_ReceiveConditionCheck;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

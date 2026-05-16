@@ -14,8 +14,7 @@
 #include "BP_PrimalWindSourceComponent_Base_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_PrimalWindSourceComponent_Base.BP_PrimalWindSourceComponent_Base_C.BPDeactivateBubbleComponent
 // (Event, Public, BlueprintEvent)
@@ -254,5 +253,5 @@ void UBP_PrimalWindSourceComponent_Base_C::PlayFluidImpactEffectSound(const floa
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

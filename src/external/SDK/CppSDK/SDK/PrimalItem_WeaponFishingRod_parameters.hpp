@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function PrimalItem_WeaponFishingRod.PrimalItem_WeaponFishingRod_C.BPCanUse
 // 0x0040 (0x0040 - 0x0000)
@@ -41,5 +41,5 @@ public:
 };
 DUMPER7_ASSERTS_PrimalItem_WeaponFishingRod_C_BPCanUse;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "ReHostSession_ASA_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ReHostSession_ASA.ReHostSession_ASA_C.Assert Selected Item for Preview
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -816,5 +815,5 @@ void UReHostSession_ASA_C::Tick(const struct FGeometry& MyGeometry, float InDelt
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

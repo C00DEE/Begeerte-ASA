@@ -13,8 +13,7 @@
 #include "FPVWeaponAnimBP_Base_Carrying_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass WeaponFistsAnimBlueprint.WeaponFistsAnimBlueprint_C
 // 0x0000 (0x2180 - 0x2180)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UWeaponFistsAnimBlueprint_C;
 
-}
-
+SDK_NAMESPACE_END

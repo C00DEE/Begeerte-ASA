@@ -14,8 +14,7 @@
 #include "PrimalItem_WeaponFishingRod_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PrimalItem_WeaponFishingRod.PrimalItem_WeaponFishingRod_C.BPCanUse
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -39,5 +38,5 @@ bool UPrimalItem_WeaponFishingRod_C::BPCanUse(bool bIgnoreCooldown)
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

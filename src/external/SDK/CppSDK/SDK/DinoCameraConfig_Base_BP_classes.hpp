@@ -13,8 +13,7 @@
 #include "PrimalCameraConfig_BP_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DinoCameraConfig_Base_BP.DinoCameraConfig_Base_BP_C
 // 0x0000 (0x0110 - 0x0110)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UDinoCameraConfig_Base_BP_C;
 
-}
-
+SDK_NAMESPACE_END

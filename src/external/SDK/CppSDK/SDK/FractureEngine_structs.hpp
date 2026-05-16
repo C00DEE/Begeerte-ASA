@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum FractureEngine.EConvexHullSimplifyMethod
 // NumValues: 0x0003
@@ -102,5 +101,4 @@ enum class EFixTinyGeoGeometrySelectionMethod : uint8
 	EFixTinyGeoGeometrySelectionMethod_MAX   = 2,
 };
 
-}
-
+SDK_NAMESPACE_END

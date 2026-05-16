@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedStruct STRUCT_DeltaMapData.STRUCT_DeltaMapData
 // 0x0018 (0x0018 - 0x0000)
@@ -24,5 +23,4 @@ public:
 };
 DUMPER7_ASSERTS_FSTRUCT_DeltaMapData;
 
-}
-
+SDK_NAMESPACE_END

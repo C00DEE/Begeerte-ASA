@@ -13,13 +13,12 @@
 #include "PrimalItem_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemResourceGeneric.PrimalItemResourceGeneric_C
 // 0x0000 (0x0B60 - 0x0B60)
 #pragma pack(push, 0x1)
-class alignas(0x10) UPrimalItemResourceGeneric_C : public UPrimalItem_Base_C
+class SDK_ALIGN(0x10) UPrimalItemResourceGeneric_C : public UPrimalItem_Base_C
 {
 public:
 	static class UClass* StaticClass()
@@ -38,5 +37,4 @@ public:
 #pragma pack(pop)
 DUMPER7_ASSERTS_UPrimalItemResourceGeneric_C;
 
-}
-
+SDK_NAMESPACE_END

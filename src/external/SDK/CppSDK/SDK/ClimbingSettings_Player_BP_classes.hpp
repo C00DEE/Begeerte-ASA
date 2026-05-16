@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass ClimbingSettings_Player_BP.ClimbingSettings_Player_BP_C
 // 0x0000 (0x0FC8 - 0x0FC8)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UClimbingSettings_Player_BP_C;
 
-}
-
+SDK_NAMESPACE_END

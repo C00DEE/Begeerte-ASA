@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass DataListEntryWidgetGenericDisplayString.DataListEntryWidgetGenericDisplayString_C
 // 0x0008 (0x0448 - 0x0440)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_UDataListEntryWidgetGenericDisplayString_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "WeapGun_Impacts_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass WeapGun_Impacts_TekSword.WeapGun_Impacts_TekSword_C
 // 0x0000 (0x08A8 - 0x08A8)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_AWeapGun_Impacts_TekSword_C;
 
-}
-
+SDK_NAMESPACE_END

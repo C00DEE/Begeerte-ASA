@@ -14,8 +14,7 @@
 #include "PrimalPlayerDataBP_Base_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PrimalPlayerDataBP_Base.PrimalPlayerDataBP_Base_C.BPCreatedNewPlayerData
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -310,5 +309,5 @@ void UPrimalPlayerDataBP_Base_C::Shared_Adding_Sigil_Count_Function(uint8 newly_
 		*Count_After = Parms.Count_After;
 }
 
-}
 
+SDK_NAMESPACE_END

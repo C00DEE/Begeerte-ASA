@@ -15,8 +15,8 @@
 #include "InputCore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function ReListSessions_ASA.ReListSessions_ASA_C.BndEvt__ReListSessions_ASA_ModFilterList_K2Node_ComponentBoundEvent_16_OnSelectionChangedEvent__DelegateSignature
 // 0x0018 (0x0018 - 0x0000)
@@ -291,5 +291,5 @@ public:
 };
 DUMPER7_ASSERTS_ReListSessions_ASA_C_UpdateFavoritesTab;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

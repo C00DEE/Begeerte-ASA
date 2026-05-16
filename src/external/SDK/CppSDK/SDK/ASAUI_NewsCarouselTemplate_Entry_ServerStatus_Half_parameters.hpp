@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function ASAUI_NewsCarouselTemplate_Entry_ServerStatus_Half.ASAUI_NewsCarouselTemplate_Entry_ServerStatus_Half_C.BlueprintInit
 // 0x0010 (0x0010 - 0x0000)
@@ -114,5 +114,5 @@ public:
 };
 DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_ServerStatus_Half_C_ExecuteUbergraph_ASAUI_NewsCarouselTemplate_Entry_ServerStatus_Half;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

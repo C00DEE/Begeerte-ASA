@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum MovieRenderPipelineRenderPasses.EMovieGraphPathTracerDenoiserType
 // NumValues: 0x0003
@@ -54,5 +53,4 @@ public:
 };
 DUMPER7_ASSERTS_FMoviePipelinePostProcessPass;
 
-}
-
+SDK_NAMESPACE_END

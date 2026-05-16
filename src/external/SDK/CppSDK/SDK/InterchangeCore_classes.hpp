@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "InterchangeCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "InterchangeCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class InterchangeCore.InterchangeFactoryBase
 // 0x0008 (0x0030 - 0x0028)
@@ -613,5 +612,4 @@ public:
 };
 DUMPER7_ASSERTS_UInterchangeUserDefinedAttributesAPI;
 
-}
-
+SDK_NAMESPACE_END

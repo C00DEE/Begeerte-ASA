@@ -14,8 +14,8 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function UI_CFCore_Discovery_RectangleCategory.UI_CFCore_Discovery_RectangleCategory_C.ExecuteUbergraph_UI_CFCore_Discovery_RectangleCategory
 // 0x0220 (0x0220 - 0x0000)
@@ -110,5 +110,5 @@ public:
 };
 DUMPER7_ASSERTS_UI_CFCore_Discovery_RectangleCategory_C_PreConstruct;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

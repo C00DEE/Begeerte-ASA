@@ -12,17 +12,16 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "GameplayTags_structs.hpp"
-#include "GameplayCameras_structs.hpp"
-#include "StateTreeModule_structs.hpp"
-#include "StateTreeModule_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "GameplayCameras_structs.hpp"
+#include "GameplayTags_structs.hpp"
+#include "StateTreeModule_structs.hpp"
+#include "StateTreeModule_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class GameplayCameras.HasCameraBuildStatus
 // 0x0000 (0x0000 - 0x0000)
@@ -2392,5 +2391,4 @@ public:
 };
 DUMPER7_ASSERTS_UIIRValueInterpolator;
 
-}
-
+SDK_NAMESPACE_END

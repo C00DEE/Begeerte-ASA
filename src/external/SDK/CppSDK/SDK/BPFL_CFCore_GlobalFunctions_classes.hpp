@@ -11,13 +11,12 @@
 #include "Basic.hpp"
 
 #include "Engine_classes.hpp"
-#include "cfcore_structs.hpp"
 #include "cfcore_ui_structs.hpp"
+#include "cfcore_structs.hpp"
 #include "ENUM_CFCore_InputDevices_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BPFL_CFCore_GlobalFunctions.BPFL_CFCore_GlobalFunctions_C
 // 0x0000 (0x0028 - 0x0028)
@@ -81,5 +80,4 @@ public:
 };
 DUMPER7_ASSERTS_UBPFL_CFCore_GlobalFunctions_C;
 
-}
-
+SDK_NAMESPACE_END

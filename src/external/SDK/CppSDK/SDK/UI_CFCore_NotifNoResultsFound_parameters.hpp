@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function UI_CFCore_NotifNoResultsFound.UI_CFCore_NotifNoResultsFound_C.ExecuteUbergraph_UI_CFCore_NotifNoResultsFound
 // 0x0018 (0x0018 - 0x0000)
@@ -34,5 +34,5 @@ public:
 };
 DUMPER7_ASSERTS_UI_CFCore_NotifNoResultsFound_C_UpdateWidget;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

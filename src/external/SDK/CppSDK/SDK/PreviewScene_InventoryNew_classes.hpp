@@ -14,8 +14,7 @@
 #include "PreviewScene_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PreviewScene_InventoryNew.PreviewScene_InventoryNew_C
 // 0x0090 (0x0660 - 0x05D0)
@@ -65,5 +64,4 @@ public:
 };
 DUMPER7_ASSERTS_APreviewScene_InventoryNew_C;
 
-}
-
+SDK_NAMESPACE_END

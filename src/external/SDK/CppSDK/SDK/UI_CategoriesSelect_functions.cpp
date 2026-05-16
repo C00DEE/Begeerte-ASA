@@ -14,8 +14,7 @@
 #include "UI_CategoriesSelect_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CategoriesSelect.UI_CategoriesSelect_C.CreateAllCategoriesCategory
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -196,5 +195,5 @@ void UUI_CategoriesSelect_C::UpdateOptions(int64 Current_Class_Category_ID)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

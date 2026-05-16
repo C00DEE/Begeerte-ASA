@@ -14,8 +14,7 @@
 #include "MotionWarping_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MotionWarping.AnimNotifyState_MotionWarping.AddRootMotionModifier
 // (Native, Event, Public, BlueprintEvent, Const)
@@ -624,5 +623,5 @@ class URootMotionModifier_SkewWarp* URootMotionModifier_SkewWarp::AddRootMotionM
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

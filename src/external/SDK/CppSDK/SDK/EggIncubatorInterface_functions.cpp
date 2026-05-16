@@ -14,8 +14,7 @@
 #include "EggIncubatorInterface_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function EggIncubatorInterface.EggIncubatorInterface_C.GetItemDisplaySlot
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -118,5 +117,5 @@ void IEggIncubatorInterface_C::IsEggItemAllowed(class UPrimalItem* EggItem, bool
 		*IsAllowed = Parms.IsAllowed;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -12,13 +12,12 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "USDClasses_structs.hpp"
 #include "Engine_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
+#include "USDClasses_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class USDClasses.UsdAssetCache
 // 0x01C0 (0x01E8 - 0x0028)
@@ -528,5 +527,4 @@ public:
 };
 DUMPER7_ASSERTS_UUsdReferenceOptions;
 
-}
-
+SDK_NAMESPACE_END

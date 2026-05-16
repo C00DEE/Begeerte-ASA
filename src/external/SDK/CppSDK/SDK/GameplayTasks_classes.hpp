@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "GameplayTasks_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class GameplayTasks.GameplayTask
 // 0x0040 (0x0068 - 0x0028)
@@ -248,5 +247,4 @@ public:
 };
 DUMPER7_ASSERTS_UGameplayTask_WaitDelay;
 
-}
-
+SDK_NAMESPACE_END

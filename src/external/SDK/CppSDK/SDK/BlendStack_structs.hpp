@@ -15,8 +15,7 @@
 #include "AnimGraphRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum BlendStack.EBlendStack_BlendspaceUpdateMode
 // NumValues: 0x0004
@@ -120,5 +119,4 @@ public:
 };
 DUMPER7_ASSERTS_FAnimNode_BlendStackInput;
 
-}
-
+SDK_NAMESPACE_END

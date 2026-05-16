@@ -14,8 +14,7 @@
 #include "EndLanding_TK_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function EndLanding_TK.EndLanding_TK_C.ExecuteUbergraph_EndLanding_TK
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UEndLanding_TK_C::ReceiveExecute(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

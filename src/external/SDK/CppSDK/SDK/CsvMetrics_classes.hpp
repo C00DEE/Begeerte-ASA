@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "WorldMetricsCore_classes.hpp"
 #include "Engine_classes.hpp"
+#include "WorldMetricsCore_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class CsvMetrics.CsvActorCountMetric
 // 0x0060 (0x0088 - 0x0028)
@@ -64,5 +63,4 @@ public:
 };
 DUMPER7_ASSERTS_UCsvMetricsSubsystem;
 
-}
-
+SDK_NAMESPACE_END

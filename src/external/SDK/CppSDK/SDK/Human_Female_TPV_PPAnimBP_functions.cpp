@@ -14,8 +14,7 @@
 #include "Human_Female_TPV_PPAnimBP_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Human_Female_TPV_PPAnimBP.Human_Female_TPV_PPAnimBP_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -100,5 +99,5 @@ void UHuman_Female_TPV_PPAnimBP_C::ExecuteUbergraph_Human_Female_TPV_PPAnimBP(in
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

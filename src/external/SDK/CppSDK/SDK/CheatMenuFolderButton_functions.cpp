@@ -14,8 +14,7 @@
 #include "CheatMenuFolderButton_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CheatMenuFolderButton.CheatMenuFolderButton_C.BndEvt__SpawnButton_K2Node_ComponentBoundEvent_160_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -74,5 +73,5 @@ void UCheatMenuFolderButton_C::SetFolder(const class FText& FolderName, int32 Sc
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

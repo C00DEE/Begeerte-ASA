@@ -13,11 +13,10 @@
 #include "BaseHumanAnimBP_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass GPSHumanAnimBP.GPSHumanAnimBP_C
-// 0x0000 (0x1E0A0 - 0x1E0A0)
+// 0x0000 (0x1DE10 - 0x1DE10)
 class UGPSHumanAnimBP_C final : public UBaseHumanAnimBP_C
 {
 public:
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_UGPSHumanAnimBP_C;
 
-}
-
+SDK_NAMESPACE_END

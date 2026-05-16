@@ -10,15 +10,14 @@
 
 #include "Basic.hpp"
 
+#include "ChaosVehicles_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "ChaosVehicles_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ChaosVehicles.ChaosVehicleMovementComponent
 // 0x08E0 (0x0A70 - 0x0190)
@@ -400,5 +399,4 @@ public:
 };
 DUMPER7_ASSERTS_AWheeledVehiclePawn;
 
-}
-
+SDK_NAMESPACE_END

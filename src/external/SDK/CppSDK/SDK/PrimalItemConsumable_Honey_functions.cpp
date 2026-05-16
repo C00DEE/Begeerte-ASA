@@ -14,8 +14,7 @@
 #include "PrimalItemConsumable_Honey_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PrimalItemConsumable_Honey.PrimalItemConsumable_Honey_C.BPNotifyDropped
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -38,5 +37,5 @@ void UPrimalItemConsumable_Honey_C::BPNotifyDropped(class APrimalCharacter* From
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

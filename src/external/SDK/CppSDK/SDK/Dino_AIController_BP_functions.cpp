@@ -14,8 +14,7 @@
 #include "Dino_AIController_BP_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Dino_AIController_BP.Dino_AIController_BP_C.ExecuteUbergraph_Dino_AIController_BP
 // (Final, UbergraphFunction)
@@ -50,5 +49,5 @@ void ADino_AIController_BP_C::ReceiveBeginPlay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

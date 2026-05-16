@@ -17,8 +17,7 @@
 #include "MediaAssets_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MediaCompositing.MovieSceneMediaPlayerPropertySection
 // 0x0010 (0x0108 - 0x00F8)
@@ -131,5 +130,4 @@ public:
 };
 DUMPER7_ASSERTS_UMovieSceneMediaTrack;
 
-}
-
+SDK_NAMESPACE_END

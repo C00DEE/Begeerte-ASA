@@ -13,8 +13,7 @@
 #include "Climbing_ImpactEffect_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass RightClimbing_ImpactEffect_Wood.RightClimbing_ImpactEffect_Wood_C
 // 0x0000 (0x04D8 - 0x04D8)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_ARightClimbing_ImpactEffect_Wood_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,8 @@
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function DmgType_Melee_Torpidity_None_StoneWeapon_AutoDrag.DmgType_Melee_Torpidity_None_StoneWeapon_AutoDrag_C.BPAdjustHarvestingDamage
 // 0x0070 (0x0070 - 0x0000)
@@ -38,5 +38,5 @@ public:
 };
 DUMPER7_ASSERTS_DmgType_Melee_Torpidity_None_StoneWeapon_AutoDrag_C_BPAdjustHarvestingDamage;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

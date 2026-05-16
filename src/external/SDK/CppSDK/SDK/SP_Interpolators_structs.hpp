@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct SP_Interpolators.IIRInterpolatorVector
 // 0x0078 (0x0078 - 0x0000)
@@ -139,5 +138,4 @@ public:
 };
 DUMPER7_ASSERTS_FCritDampSpringInterpolatorRotator;
 
-}
-
+SDK_NAMESPACE_END

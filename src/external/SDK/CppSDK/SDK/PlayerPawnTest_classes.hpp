@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
+#include "ShooterGame_classes.hpp"
 #include "Enum_VoiceCollectionLine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PlayerPawnTest.PlayerPawnTest_C
 // 0x01D0 (0x2690 - 0x24C0)
@@ -150,5 +149,4 @@ public:
 };
 DUMPER7_ASSERTS_APlayerPawnTest_C;
 
-}
-
+SDK_NAMESPACE_END

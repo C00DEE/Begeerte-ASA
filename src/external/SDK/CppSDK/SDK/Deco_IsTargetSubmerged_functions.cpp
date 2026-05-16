@@ -14,8 +14,7 @@
 #include "Deco_IsTargetSubmerged_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Deco_IsTargetSubmerged.Deco_IsTargetSubmerged_C.ReceiveConditionCheck
 // (Event, Protected, BlueprintCallable, BlueprintEvent)
@@ -36,5 +35,5 @@ void UDeco_IsTargetSubmerged_C::ReceiveConditionCheck(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

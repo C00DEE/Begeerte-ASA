@@ -14,8 +14,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function DmgType_Melee_Lance.DmgType_Melee_Lance_C.BPAdjustDamage
 // 0x01D8 (0x01D8 - 0x0000)
@@ -54,5 +54,5 @@ public:
 };
 DUMPER7_ASSERTS_DmgType_Melee_Lance_C_BPAdjustDamage;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

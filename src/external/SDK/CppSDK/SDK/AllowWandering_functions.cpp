@@ -14,8 +14,7 @@
 #include "AllowWandering_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AllowWandering.AllowWandering_C.ExecuteUbergraph_AllowWandering
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UAllowWandering_C::ReceiveExecute(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

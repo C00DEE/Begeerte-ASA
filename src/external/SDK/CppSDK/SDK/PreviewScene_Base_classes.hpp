@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "ShooterGame_classes.hpp"
-#include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PreviewScene_Base.PreviewScene_Base_C
 // 0x0148 (0x05D0 - 0x0488)
@@ -82,5 +81,4 @@ public:
 };
 DUMPER7_ASSERTS_APreviewScene_Base_C;
 
-}
-
+SDK_NAMESPACE_END

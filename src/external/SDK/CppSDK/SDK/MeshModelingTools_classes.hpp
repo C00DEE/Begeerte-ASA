@@ -10,17 +10,16 @@
 
 #include "Basic.hpp"
 
-#include "ModelingComponents_structs.hpp"
-#include "ModelingComponents_classes.hpp"
-#include "InteractiveToolsFramework_classes.hpp"
+#include "ModelingOperators_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "ModelingOperators_structs.hpp"
 #include "MeshModelingTools_structs.hpp"
+#include "InteractiveToolsFramework_classes.hpp"
+#include "ModelingComponents_structs.hpp"
+#include "ModelingComponents_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MeshModelingTools.PolyEditActivityContext
 // 0x00F8 (0x0120 - 0x0028)
@@ -2567,5 +2566,4 @@ public:
 };
 DUMPER7_ASSERTS_UUVProjectionTool;
 
-}
-
+SDK_NAMESPACE_END

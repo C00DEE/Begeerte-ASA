@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Weap_Torch_Base.Weap_Torch_Base_C
 // 0x0048 (0x1160 - 0x1118)
@@ -65,5 +64,4 @@ public:
 };
 DUMPER7_ASSERTS_AWeap_Torch_Base_C;
 
-}
-
+SDK_NAMESPACE_END

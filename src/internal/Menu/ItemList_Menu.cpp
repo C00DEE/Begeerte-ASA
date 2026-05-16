@@ -40,96 +40,93 @@ namespace g_DrawImGui {
 
             DrawAnimatedSeparator();
 
-            if (ImGui::BeginChild("##MergedItemList", ImVec2(0, 0), true)) {
-                SDK::AShooterPlayerController* PC = (SDK::AShooterPlayerController*)g_Util::GetLocalPC();
-                SDK::APawn* LocalPawn = PC ? PC->Pawn : nullptr;
-                SDK::APrimalCharacter* Character = (SDK::APrimalCharacter*)LocalPawn;
-                SDK::UPrimalInventoryComponent* Inv = Character ? Character->MyInventoryComponent : nullptr;
+            SDK::AShooterPlayerController* PC = (SDK::AShooterPlayerController*)g_Util::GetLocalPC();
+            SDK::APawn* LocalPawn = PC ? PC->Pawn : nullptr;
+            SDK::APrimalCharacter* Character = (SDK::APrimalCharacter*)LocalPawn;
+            SDK::UPrimalInventoryComponent* Inv = Character ? Character->MyInventoryComponent : nullptr;
 
-                if (PC && LocalPawn && Character && Inv->InventoryItems.Num() > 0) {
+            if (PC && LocalPawn && Character && Inv->InventoryItems.Num() > 0) {
 
-                    // 1. 数据归并处理
-                    std::map<std::string, MergedItem> mergedMap;
-                    SDK::TArray<SDK::UPrimalItem*>& Items = Inv->InventoryItems;
+                // 1. 数据归并处理
+                std::map<std::string, MergedItem> mergedMap;
+                SDK::TArray<SDK::UPrimalItem*>& Items = Inv->InventoryItems;
 
-                    for (int i = 0; i < Items.Num(); i++) {
-                        SDK::UPrimalItem* Item = Items[i];
-                        if (!Item || !Item->DescriptiveNameBase) continue;
+                for (int i = 0; i < Items.Num(); i++) {
+                    SDK::UPrimalItem* Item = Items[i];
+                    if (!Item || !Item->DescriptiveNameBase) continue;
 
-                        std::string name = Item->DescriptiveNameBase.ToString();
-                        if (name.empty() || name == "None") continue;
+                    std::string name = Item->DescriptiveNameBase.ToString();
+                    if (name.empty() || name == "None") continue;
 
-                        // 搜索过滤判断
-                        if (strlen(g_Config::itemSearchBuf) > 0 && name.find(g_Config::itemSearchBuf) == std::string::npos)
-                            continue;
+                    // 搜索过滤判断
+                    if (strlen(g_Config::itemSearchBuf) > 0 && name.find(g_Config::itemSearchBuf) == std::string::npos)
+                        continue;
 
-                        auto& m = mergedMap[name];
-                        m.DisplayName = name;
-                        m.OriginalFName = Item->DescriptiveNameBase;
-                        m.TotalQuantity += Item->ItemQuantity;
-                        m.LastItemPtr = Item; // 存一个指针用于获取描述
+                    auto& m = mergedMap[name];
+                    m.DisplayName = name;
+                    m.OriginalFName = Item->DescriptiveNameBase;
+                    m.TotalQuantity += Item->ItemQuantity;
+                    m.LastItemPtr = Item; // 存一个指针用于获取描述
+                }
+
+                // 2. 渲染归并后的列表
+                int idx = 0;
+                for (auto const& [name, data] : mergedMap) {
+                    idx++;
+                    std::string label = data.DisplayName + " x" + std::to_string(data.TotalQuantity);
+
+                    if (ImGui::Selectable((label + "##" + std::to_string(idx)).c_str())) {
+                        ImGui::OpenPopup(("ItemPopup" + std::to_string(idx)).c_str());
                     }
 
-                    // 2. 渲染归并后的列表
-                    int idx = 0;
-                    for (auto const& [name, data] : mergedMap) {
-                        idx++;
-                        std::string label = data.DisplayName + " x" + std::to_string(data.TotalQuantity);
+                    // 3. 悬浮窗显示详细信息
+                    if (ImGui::IsItemHovered() && data.LastItemPtr && data.LastItemPtr->CustomItemDescription) {
+                        ImGui::BeginTooltip();
+                        SDK::UPrimalItem* p = data.LastItemPtr;
 
-                        if (ImGui::Selectable((label + "##" + std::to_string(idx)).c_str())) {
-                            ImGui::OpenPopup(("ItemPopup" + std::to_string(idx)).c_str());
+                        ImGui::TextColored(ThemeColors::GetAccent(), ttItem, data.DisplayName.c_str());
+                        ImGui::Text(ttTotal, data.TotalQuantity);
+
+                        // 描述信息
+                        std::string desc = p->CustomItemDescription.ToString();
+                        if (desc.empty() || desc == "None") desc = p->ItemDescription.ToString();
+                        if (!desc.empty() && desc != "None") {
+                            ImGui::Separator();
+                            ImGui::PushTextWrapPos(ImGui::GetFontSize() * 20.0f);
+                            ImGui::TextDisabled(ttDesc, desc.c_str());
+                            ImGui::PopTextWrapPos();
                         }
 
-                        // 3. 悬浮窗显示详细信息
-                        if (ImGui::IsItemHovered() && data.LastItemPtr && data.LastItemPtr->CustomItemDescription) {
-                            ImGui::BeginTooltip();
-                            SDK::UPrimalItem* p = data.LastItemPtr;
+                        // 制造者信息
+                        if (!p->CrafterCharacterName.ToString().empty() && p->CrafterCharacterName.ToString() != "None") {
+                            ImGui::Separator();
+                            ImGui::Text(ttCrafter, p->CrafterCharacterName.ToString().c_str());
+                            ImGui::Text(ttTribe, p->CrafterTribeName.ToString().c_str());
+                        }
+                        ImGui::EndTooltip();
+                    }
 
-                            ImGui::TextColored(ThemeColors::GetAccent(), ttItem, data.DisplayName.c_str());
-                            ImGui::Text(ttTotal, data.TotalQuantity);
-
-                            // 描述信息
-                            std::string desc = p->CustomItemDescription.ToString();
-                            if (desc.empty() || desc == "None") desc = p->ItemDescription.ToString();
-                            if (!desc.empty() && desc != "None") {
-                                ImGui::Separator();
-                                ImGui::PushTextWrapPos(ImGui::GetFontSize() * 20.0f);
-                                ImGui::TextDisabled(ttDesc, desc.c_str());
-                                ImGui::PopTextWrapPos();
+                    // 4. 交互菜单
+                    if (ImGui::BeginPopup(("ItemPopup" + std::to_string(idx)).c_str())) {
+                        if (ImGui::MenuItem(actUseOne)) {
+                            if (data.LastItemPtr) {
+                                // 不再直接调用 PC->ServerRequestInventoryUseItem
+                                g_Config::useItemID = data.LastItemPtr->ItemID;
+                                g_Config::bUseItem = true;
                             }
-
-                            // 制造者信息
-                            if (!p->CrafterCharacterName.ToString().empty() && p->CrafterCharacterName.ToString() != "None") {
-                                ImGui::Separator();
-                                ImGui::Text(ttCrafter, p->CrafterCharacterName.ToString().c_str());
-                                ImGui::Text(ttTribe, p->CrafterTribeName.ToString().c_str());
-                            }
-                            ImGui::EndTooltip();
                         }
 
-                        // 4. 交互菜单
-                        if (ImGui::BeginPopup(("ItemPopup" + std::to_string(idx)).c_str())) {
-                            if (ImGui::MenuItem(U8("使用一个 (从当前堆叠)"))) {
-                                if (data.LastItemPtr) {
-                                    // 不再直接调用 PC->ServerRequestInventoryUseItem
-                                    g_Config::useItemID = data.LastItemPtr->ItemID;
-                                    g_Config::bUseItem = true;
-                                }
-                            }
-
-                            if (ImGui::MenuItem(actUseOne)) {
-                                // 不再直接调用 PC->ServerRequestRemoteDropAllItems
-                                g_Config::dropItemID = data.LastItemPtr->ItemID;
-                                g_Config::bDropItem = true;
-                            }
-                            ImGui::EndPopup();
+                        if (ImGui::MenuItem(actDrop)) {
+                            // 不再直接调用 PC->ServerRequestRemoteDropAllItems
+                            g_Config::dropItemID = data.LastItemPtr->ItemID;
+                            g_Config::bDropItem = true;
                         }
+                        ImGui::EndPopup();
                     }
                 }
-                else {
-                    ImGui::TextDisabled(noItems);
-                }
-                ImGui::EndChild();
+            }
+            else {
+                ImGui::TextDisabled(noItems);
             }
 
             DrawAnimatedSeparator();

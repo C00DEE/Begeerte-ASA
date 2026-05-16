@@ -14,8 +14,7 @@
 #include "UI_CFCore_NotificationManager_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_NotificationManager.UI_CFCore_NotificationManager_C.CreateNotify
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -132,5 +131,5 @@ void UUI_CFCore_NotificationManager_C::PlayUnknownError()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

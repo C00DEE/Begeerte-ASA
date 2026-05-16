@@ -14,8 +14,7 @@
 #include "UI_CFCore_BrowseMods_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_BrowseMods.UI_CFCore_BrowseMods_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -174,5 +173,5 @@ void UUI_CFCore_BrowseMods_C::UpdatePageCount(const struct FCFCoreApiResponsePag
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

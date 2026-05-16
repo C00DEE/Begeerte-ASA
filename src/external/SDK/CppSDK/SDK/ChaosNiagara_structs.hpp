@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum ChaosNiagara.EDataSortTypeEnum
 // NumValues: 0x0005
@@ -129,5 +128,4 @@ public:
 };
 DUMPER7_ASSERTS_FChaosDestructionEvent;
 
-}
-
+SDK_NAMESPACE_END

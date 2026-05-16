@@ -13,8 +13,7 @@
 #include "WeapGlowStick_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WeapGlowStick_Base.WeapGlowStick_Base_C.DoMultiFakeReload
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -43,5 +42,5 @@ void AWeapGlowStick_Base_C::DoMultiUnequipGlowStick()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function AttackTargetMove_DR.AttackTargetMove_DR_C.ExecuteUbergraph_AttackTargetMove_DR
 // 0x0038 (0x0038 - 0x0000)
@@ -42,5 +42,5 @@ public:
 };
 DUMPER7_ASSERTS_AttackTargetMove_DR_C_ReceiveConditionCheck;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

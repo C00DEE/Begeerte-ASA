@@ -14,8 +14,8 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function UI_CFCore_Prompt_Uninstall.UI_CFCore_Prompt_Uninstall_C.BPGamepadReleased
 // 0x0020 (0x0020 - 0x0000)
@@ -77,5 +77,5 @@ public:
 };
 DUMPER7_ASSERTS_UI_CFCore_Prompt_Uninstall_C_Tick;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

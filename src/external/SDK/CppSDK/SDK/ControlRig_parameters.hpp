@@ -11,14 +11,14 @@
 #include "Basic.hpp"
 
 #include "ControlRig_structs.hpp"
+#include "RigVM_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "AnimationCore_structs.hpp"
 #include "Engine_structs.hpp"
-#include "RigVM_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function ControlRig.ControlRigShapeLibraryLink.SetShapeLibrary
 // 0x0028 (0x0028 - 0x0000)
@@ -3836,5 +3836,5 @@ public:
 };
 DUMPER7_ASSERTS_ControlRigTransformWorkflowOptions_ProvideWorkflows;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

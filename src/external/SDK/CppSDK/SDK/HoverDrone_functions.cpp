@@ -14,8 +14,7 @@
 #include "HoverDrone_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function HoverDrone.HoverDroneMovementComponent.AddRotationalVelocity
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
@@ -420,5 +419,5 @@ bool AHoverDronePawn::IsMaintainingConstantAltitude() const
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

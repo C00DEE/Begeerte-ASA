@@ -13,8 +13,7 @@
 #include "PrimalItemArmorGeneric_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemArmor_BasePants.PrimalItemArmor_BasePants_C
 // 0x0030 (0x0B90 - 0x0B60)
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemArmor_BasePants_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "HostSession_Switch_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function HostSession_Switch.HostSession_Switch_C.BndEvt__HostSession_Switch_EasyPresetButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -441,5 +440,5 @@ void UHostSession_Switch_C::Tick(const struct FGeometry& MyGeometry, float InDel
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

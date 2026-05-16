@@ -15,8 +15,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // RigVMBlueprintGeneratedClass Human_Male_TPV_LegIK_CtrlRig.Human_Male_TPV_LegIK_CtrlRig_C
 // 0x0450 (0x0F20 - 0x0AD0)
@@ -74,7 +73,7 @@ public:
 	bool                                          bUpdateInstantly;                                  // 0x0DC0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_DC1[0x7];                                      // 0x0DC1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FRigPose                               InitialLegScalePose;                               // 0x0DC8(0x0070)(Edit, BlueprintVisible, DisableEditOnInstance)
-	double                                        Add_3_Result;                                      // 0x0E38(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        HipZOffsetTarget;                                  // 0x0E38(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        HipZOffsetBeforeProne;                             // 0x0E40(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        IKHipHeightPercetage;                              // 0x0E48(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          bIsCrossLegSitting;                                // 0x0E50(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -98,5 +97,4 @@ public:
 };
 DUMPER7_ASSERTS_UHuman_Male_TPV_LegIK_CtrlRig_C;
 
-}
-
+SDK_NAMESPACE_END

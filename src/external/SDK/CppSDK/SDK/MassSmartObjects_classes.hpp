@@ -10,18 +10,17 @@
 
 #include "Basic.hpp"
 
-#include "SmartObjectsModule_classes.hpp"
-#include "MassEntity_classes.hpp"
-#include "MassSignals_classes.hpp"
-#include "ZoneGraph_structs.hpp"
 #include "MassSpawner_classes.hpp"
+#include "SmartObjectsModule_classes.hpp"
+#include "MassSignals_classes.hpp"
+#include "MassEntity_classes.hpp"
+#include "ZoneGraph_structs.hpp"
+#include "ZoneGraphAnnotations_classes.hpp"
 #include "GameplayTags_structs.hpp"
 #include "MassSmartObjects_structs.hpp"
-#include "ZoneGraphAnnotations_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MassSmartObjects.SmartObjectMassBehaviorDefinition
 // 0x0008 (0x0030 - 0x0028)
@@ -343,5 +342,4 @@ public:
 };
 DUMPER7_ASSERTS_USmartObjectZoneAnnotations;
 
-}
-
+SDK_NAMESPACE_END

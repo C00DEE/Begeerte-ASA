@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "Soundscape_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "Soundscape_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function Soundscape.SoundscapeBPFunctionLibrary.SpawnSoundscapeColor
 // 0x0020 (0x0020 - 0x0000)
@@ -220,5 +220,5 @@ public:
 };
 DUMPER7_ASSERTS_SoundscapeSubsystem_SetState;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

@@ -14,8 +14,8 @@
 #include "cfcore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function UI_CFCore_ContextMenu.UI_CFCore_ContextMenu_C.CustomEvent_3
 // 0x0010 (0x0010 - 0x0000)
@@ -178,5 +178,5 @@ public:
 };
 DUMPER7_ASSERTS_UI_CFCore_ContextMenu_C_PreConstruct;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

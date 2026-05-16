@@ -14,8 +14,7 @@
 #include "UI_CFCore_Discovery_BannerSpotlight_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Discovery_BannerSpotlight.UI_CFCore_Discovery_BannerSpotlight_C.BndEvt__UI_CFCore_Discovery_BannerSpotlight_UI_Button_CFCore_Global_VIewAll_K2Node_ComponentBoundEvent_0_OnClick__DelegateSignature
 // (BlueprintEvent)
@@ -179,5 +178,5 @@ void UUI_CFCore_Discovery_BannerSpotlight_C::PreConstruct(bool IsDesignTime)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

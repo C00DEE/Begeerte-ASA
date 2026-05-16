@@ -14,8 +14,7 @@
 #include "BP_CFCorePluginManager_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_CFCorePluginManager.BP_CFCorePluginManager_C.Accept Terms
 // (BlueprintCallable, BlueprintEvent)
@@ -1211,5 +1210,5 @@ void ABP_CFCorePluginManager_C::UpdateMods(const TArray<struct FInstallProgressM
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

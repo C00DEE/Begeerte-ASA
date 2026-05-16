@@ -14,8 +14,7 @@
 #include "PrimalItemArmor_SaddleGeneric_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PrimalItemArmor_SaddleGeneric.PrimalItemArmor_SaddleGeneric_C.BlueprintEquipped
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -141,5 +140,5 @@ void UPrimalItemArmor_SaddleGeneric_C::SaveSaddleDurability()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

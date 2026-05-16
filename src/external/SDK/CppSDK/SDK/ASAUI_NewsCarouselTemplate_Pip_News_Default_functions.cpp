@@ -14,8 +14,7 @@
 #include "ASAUI_NewsCarouselTemplate_Pip_News_Default_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ASAUI_NewsCarouselTemplate_Pip_News_Default.ASAUI_NewsCarouselTemplate_Pip_News_Default_C.ExecuteUbergraph_ASAUI_NewsCarouselTemplate_Pip_News_Default
 // (Final, UbergraphFunction)
@@ -76,5 +75,5 @@ void UASAUI_NewsCarouselTemplate_Pip_News_Default_C::EntryFocusEnd(bool bInstiga
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

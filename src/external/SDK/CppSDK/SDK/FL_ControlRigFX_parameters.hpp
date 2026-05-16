@@ -16,8 +16,8 @@
 #include "Struct_VFX_Body_Drop_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function FL_ControlRigFX.FL_ControlRigFX_C.ControlRigNotify
 // 0x04F8 (0x04F8 - 0x0000)
@@ -178,5 +178,5 @@ public:
 };
 DUMPER7_ASSERTS_FL_ControlRigFX_C_Spawn_Phys_Mat_VFX;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

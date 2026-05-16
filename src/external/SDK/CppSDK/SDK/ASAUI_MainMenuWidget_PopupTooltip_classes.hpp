@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass ASAUI_MainMenuWidget_PopupTooltip.ASAUI_MainMenuWidget_PopupTooltip_C
 // 0x0018 (0x0418 - 0x0400)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_UASAUI_MainMenuWidget_PopupTooltip_C;
 
-}
-
+SDK_NAMESPACE_END

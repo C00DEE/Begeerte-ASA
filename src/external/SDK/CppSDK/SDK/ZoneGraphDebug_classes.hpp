@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "ZoneGraph_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "ZoneGraph_structs.hpp"
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ZoneGraphDebug.ZoneLaneTest
 // 0x0008 (0x0030 - 0x0028)
@@ -115,5 +114,4 @@ public:
 };
 DUMPER7_ASSERTS_AZoneGraphTestingActor;
 
-}
-
+SDK_NAMESPACE_END

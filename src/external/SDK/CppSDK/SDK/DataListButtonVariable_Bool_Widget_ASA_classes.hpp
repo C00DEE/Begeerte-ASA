@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "DataListButtonVariable_Widget_ASA_classes.hpp"
+#include "Engine_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass DataListButtonVariable_Bool_Widget_ASA.DataListButtonVariable_Bool_Widget_ASA_C
 // 0x0028 (0x0500 - 0x04D8)
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_UDataListButtonVariable_Bool_Widget_ASA_C;
 
-}
-
+SDK_NAMESPACE_END

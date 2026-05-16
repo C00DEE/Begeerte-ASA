@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass MainMenuGameMode.MainMenuGameMode_C
 // 0x0008 (0x0618 - 0x0610)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_AMainMenuGameMode_C;
 
-}
-
+SDK_NAMESPACE_END

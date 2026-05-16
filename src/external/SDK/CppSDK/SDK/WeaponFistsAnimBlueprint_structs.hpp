@@ -13,8 +13,7 @@
 #include "FPVWeaponAnimBP_Base_Carrying_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct WeaponFistsAnimBlueprint.WeaponFistsAnimBlueprint_C.AnimBlueprintGeneratedConstantData
 // 0x0000 (0x1118 - 0x1118)
@@ -23,5 +22,4 @@ struct WeaponFistsAnimBlueprint::FAnimBlueprintGeneratedConstantData final : pub
 };
 DUMPER7_ASSERTS_WeaponFistsAnimBlueprint__FAnimBlueprintGeneratedConstantData;
 
-}
-
+SDK_NAMESPACE_END

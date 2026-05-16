@@ -13,8 +13,7 @@
 #include "PrimalItemConsumableEatable_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemConsumable_Honey.PrimalItemConsumable_Honey_C
 // 0x0000 (0x0B60 - 0x0B60)
@@ -43,5 +42,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemConsumable_Honey_C;
 
-}
-
+SDK_NAMESPACE_END

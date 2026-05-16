@@ -14,8 +14,7 @@
 #include "TraceUtilities_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function TraceUtilities.TraceUtilLibrary.GetAllChannels
 // (Final, Native, Static, Public, BlueprintCallable)
@@ -386,5 +385,5 @@ void UTraceUtilLibrary::TraceScreenshot(const class FString& Name_0, bool bShowU
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

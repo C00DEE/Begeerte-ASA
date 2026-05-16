@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum UnrealUSDWrapper.EUsdPurpose
 // NumValues: 0x0005
@@ -119,5 +118,4 @@ public:
 };
 DUMPER7_ASSERTS_FMatrix3D;
 
-}
-
+SDK_NAMESPACE_END

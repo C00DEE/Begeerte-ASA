@@ -13,8 +13,7 @@
 #include "UI_CFCore_CustomizeColorSlot_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_CustomizeSlot_NotifBackground.UI_CustomizeSlot_NotifBackground_C
 // 0x0000 (0x03B8 - 0x03B8)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_UUI_CustomizeSlot_NotifBackground_C;
 
-}
-
+SDK_NAMESPACE_END

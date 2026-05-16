@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
+#include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "UMG_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class AdvancedWidgets.RadialSlider
 // 0x05D0 (0x07D0 - 0x0200)
@@ -99,5 +98,4 @@ public:
 };
 DUMPER7_ASSERTS_URadialSlider;
 
-}
-
+SDK_NAMESPACE_END

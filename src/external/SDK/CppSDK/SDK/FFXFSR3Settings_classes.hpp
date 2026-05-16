@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "DeveloperSettings_classes.hpp"
-#include "FFXFSR3Settings_structs.hpp"
 #include "Engine_structs.hpp"
+#include "FFXFSR3Settings_structs.hpp"
+#include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class FFXFSR3Settings.FFXFSR3Settings
 // 0x0098 (0x00D0 - 0x0038)
@@ -95,5 +94,4 @@ public:
 };
 DUMPER7_ASSERTS_UFFXFSR3Settings;
 
-}
-
+SDK_NAMESPACE_END

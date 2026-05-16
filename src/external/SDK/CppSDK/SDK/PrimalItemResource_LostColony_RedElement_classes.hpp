@@ -13,8 +13,7 @@
 #include "PrimalItemResource_Element_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemResource_LostColony_RedElement.PrimalItemResource_LostColony_RedElement_C
 // 0x0000 (0x0B80 - 0x0B80)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemResource_LostColony_RedElement_C;
 
-}
-
+SDK_NAMESPACE_END

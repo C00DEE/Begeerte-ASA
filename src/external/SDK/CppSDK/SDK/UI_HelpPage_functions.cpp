@@ -14,8 +14,7 @@
 #include "UI_HelpPage_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_HelpPage.UI_HelpPage_C.BPHandleDockedModeChange
 // (Event, Public, BlueprintEvent)
@@ -110,5 +109,5 @@ class UWidget* UUI_HelpPage_C::GetWidgetToScaleForHandheld()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -10,19 +10,18 @@
 
 #include "Basic.hpp"
 
-#include "InputCore_structs.hpp"
-#include "SlateCore_structs.hpp"
+#include "cfcore_structs.hpp"
 #include "cfcore_ui_structs.hpp"
+#include "InputCore_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "SlateCore_structs.hpp"
 #include "UMG_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
-#include "cfcore_structs.hpp"
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class cfcore_ui.BindButtonSystem
 // 0x0028 (0x0058 - 0x0030)
@@ -457,5 +456,4 @@ public:
 };
 DUMPER7_ASSERTS_UCFCoreVirtualCursorFunctionLibrary;
 
-}
-
+SDK_NAMESPACE_END

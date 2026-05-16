@@ -14,8 +14,7 @@
 #include "OptionsMenuNew_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function OptionsMenuNew.OptionsMenuNew_C.ExecuteUbergraph_OptionsMenuNew
 // (Final, UbergraphFunction, HasDefaults)
@@ -138,5 +137,5 @@ void UOptionsMenuNew_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTi
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

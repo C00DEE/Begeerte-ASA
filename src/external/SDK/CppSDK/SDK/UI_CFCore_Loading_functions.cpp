@@ -14,8 +14,7 @@
 #include "UI_CFCore_Loading_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Loading.UI_CFCore_Loading_C.BndEvt__UI_CFCore_Loading_UI_Button_CFCore_Global_BackLoading_K2Node_ComponentBoundEvent_2_OnClick__DelegateSignature
 // (BlueprintEvent)
@@ -212,5 +211,5 @@ void UUI_CFCore_Loading_C::Tick(const struct FGeometry& MyGeometry, float InDelt
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

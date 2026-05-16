@@ -103,6 +103,9 @@
     <Filter Include="internal\Language">
       <UniqueIdentifier>{9faee55d-6dbc-422c-9f6a-89af69678694}</UniqueIdentifier>
     </Filter>
+    <Filter Include="internal\AActor">
+      <UniqueIdentifier>{496969ad-1600-4f8e-b252-26ff8ddabc61}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="external\LuaJIT-2.1\src\lj_vm.h">
@@ -504,6 +507,12 @@
     <ClInclude Include="internal\Menu\Language_Menu.h">
       <Filter>internal\Menu</Filter>
     </ClInclude>
+    <ClInclude Include="internal\AActor\TakeDamage.h">
+      <Filter>internal\AActor</Filter>
+    </ClInclude>
+    <ClInclude Include="external\Minimal-D3D12-Hook-ImGui\Font\HarmonyOS_Sans_SC_Regular.h">
+      <Filter>external\Minimal-D3D12-Hook-ImGui\Font</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Object Include="external\LuaJIT-2.1\src\lj_vm.obj">
@@ -651,6 +660,9 @@
     </ClCompile>
     <ClCompile Include="internal\Language\LanguageManager.cpp">
       <Filter>internal\Language</Filter>
+    </ClCompile>
+    <ClCompile Include="internal\AActor\TakeDamage.cpp">
+      <Filter>internal\AActor</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

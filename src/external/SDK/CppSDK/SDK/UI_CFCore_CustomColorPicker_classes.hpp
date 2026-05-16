@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ShooterGame_classes.hpp"
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_CFCore_CustomColorPicker.UI_CFCore_CustomColorPicker_C
 // 0x0050 (0x03C8 - 0x0378)
@@ -72,5 +71,4 @@ public:
 };
 DUMPER7_ASSERTS_UUI_CFCore_CustomColorPicker_C;
 
-}
-
+SDK_NAMESPACE_END

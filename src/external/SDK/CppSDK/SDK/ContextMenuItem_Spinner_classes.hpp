@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass ContextMenuItem_Spinner.ContextMenuItem_Spinner_C
 // 0x0028 (0x04C8 - 0x04A0)
@@ -43,5 +42,4 @@ public:
 };
 DUMPER7_ASSERTS_UContextMenuItem_Spinner_C;
 
-}
-
+SDK_NAMESPACE_END

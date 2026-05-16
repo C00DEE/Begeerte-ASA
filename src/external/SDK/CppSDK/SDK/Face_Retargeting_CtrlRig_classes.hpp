@@ -14,8 +14,7 @@
 #include "ControlRig_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ControlRigBlueprintGeneratedClass Face_Retargeting_CtrlRig.Face_Retargeting_CtrlRig_C
 // 0x0008 (0x0AD8 - 0x0AD0)
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_UFace_Retargeting_CtrlRig_C;
 
-}
-
+SDK_NAMESPACE_END

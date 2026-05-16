@@ -14,8 +14,7 @@
 #include "ASAUI_MainMenuWidget_SettingsOverlay_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ASAUI_MainMenuWidget_SettingsOverlay.ASAUI_MainMenuWidget_SettingsOverlay_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -190,5 +189,5 @@ void UASAUI_MainMenuWidget_SettingsOverlay_C::BndEvt__ASAUI_MainMenuWidget_Setti
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

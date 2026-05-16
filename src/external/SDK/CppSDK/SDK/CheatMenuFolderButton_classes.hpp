@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass CheatMenuFolderButton.CheatMenuFolderButton_C
 // 0x0048 (0x03C0 - 0x0378)
@@ -52,5 +51,4 @@ public:
 };
 DUMPER7_ASSERTS_UCheatMenuFolderButton_C;
 
-}
-
+SDK_NAMESPACE_END

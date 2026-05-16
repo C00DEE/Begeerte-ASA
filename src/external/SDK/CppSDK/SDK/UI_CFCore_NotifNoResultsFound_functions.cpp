@@ -14,8 +14,7 @@
 #include "UI_CFCore_NotifNoResultsFound_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_NotifNoResultsFound.UI_CFCore_NotifNoResultsFound_C.ApplyThemeSettingsToAll
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -84,5 +83,5 @@ void UUI_CFCore_NotifNoResultsFound_C::UpdateWidget(const class FText& InText)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "Task_ActualStopMovement_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Task_ActualStopMovement.Task_ActualStopMovement_C.ExecuteUbergraph_Task_ActualStopMovement
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UTask_ActualStopMovement_C::ReceiveExecute(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

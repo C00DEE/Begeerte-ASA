@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function ListSessions_OLD.ListSessions_OLD_C.BndEvt__ShowOfficialServersCheckBox_K2Node_ComponentBoundEvent_78_OnCheckBoxComponentStateChanged__DelegateSignature
 // 0x0001 (0x0001 - 0x0000)
@@ -71,5 +71,5 @@ public:
 };
 DUMPER7_ASSERTS_ListSessions_OLD_C_GetWidgetToScaleForHandheld;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

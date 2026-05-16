@@ -10,16 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "MassCommon_structs.hpp"
+#include "MassSpawner_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "AIModule_structs.hpp"
 #include "NetCore_structs.hpp"
 #include "MassEntity_structs.hpp"
-#include "MassSpawner_structs.hpp"
+#include "AIModule_structs.hpp"
+#include "MassCommon_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct MassReplication.MassReplicatedAgentHandle
 // 0x0000 (0x0004 - 0x0004)
@@ -177,5 +176,4 @@ public:
 };
 DUMPER7_ASSERTS_FReplicatedAgentBase;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "MeleeFist_Impacts_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass WeapFlameThrower_Impacts.WeapFlameThrower_Impacts_C
 // 0x0000 (0x08A8 - 0x08A8)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_AWeapFlameThrower_Impacts_C;
 
-}
-
+SDK_NAMESPACE_END

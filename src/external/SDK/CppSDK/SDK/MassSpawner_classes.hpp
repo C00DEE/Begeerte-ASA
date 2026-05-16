@@ -10,17 +10,16 @@
 
 #include "Basic.hpp"
 
-#include "ZoneGraph_structs.hpp"
-#include "AIModule_structs.hpp"
+#include "MassSpawner_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "MassSpawner_structs.hpp"
 #include "Engine_classes.hpp"
 #include "MassEntity_classes.hpp"
+#include "AIModule_structs.hpp"
+#include "ZoneGraph_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MassSpawner.MassEntityTraitBase
 // 0x0000 (0x0028 - 0x0028)
@@ -277,5 +276,4 @@ public:
 };
 DUMPER7_ASSERTS_UMassTranslator;
 
-}
-
+SDK_NAMESPACE_END

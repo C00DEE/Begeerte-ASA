@@ -14,8 +14,7 @@
 #include "UI_Sub_Categories_Scroll_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_Sub-Categories_Scroll.UI_Sub-Categories_Scroll_C.BndEvt__Sub-Categories_Scroll_Btn_Category_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature
 // (BlueprintEvent)
@@ -215,5 +214,5 @@ void UUI_Sub_Categories_Scroll_C::OnRemovedFromFocusPath(const struct FFocusEven
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

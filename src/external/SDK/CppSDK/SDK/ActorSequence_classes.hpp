@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
+#include "Engine_classes.hpp"
 #include "ActorSequence_structs.hpp"
 #include "MovieScene_structs.hpp"
 #include "MovieScene_classes.hpp"
-#include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ActorSequence.ActorSequence
 // 0x0028 (0x0090 - 0x0068)
@@ -93,5 +92,4 @@ public:
 };
 DUMPER7_ASSERTS_UActorSequencePlayer;
 
-}
-
+SDK_NAMESPACE_END

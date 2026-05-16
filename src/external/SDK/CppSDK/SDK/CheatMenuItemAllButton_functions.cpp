@@ -14,8 +14,7 @@
 #include "CheatMenuItemAllButton_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CheatMenuItemAllButton.CheatMenuItemAllButton_C.BndEvt__CheatMenuAllButton_SpawnButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -50,5 +49,5 @@ void UCheatMenuItemAllButton_C::ExecuteUbergraph_CheatMenuItemAllButton(int32 En
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

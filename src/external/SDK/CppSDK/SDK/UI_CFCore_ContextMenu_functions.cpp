@@ -14,8 +14,7 @@
 #include "UI_CFCore_ContextMenu_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_ContextMenu.UI_CFCore_ContextMenu_C.BndEvt__UI_DropdownMenu_UI_Button_Install_K2Node_ComponentBoundEvent_13_Dispatcher_OnClick__DelegateSignature
 // (BlueprintEvent)
@@ -292,5 +291,5 @@ void UUI_CFCore_ContextMenu_C::PreConstruct(bool IsDesignTime)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

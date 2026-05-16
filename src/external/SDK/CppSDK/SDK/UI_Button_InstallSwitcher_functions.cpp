@@ -14,8 +14,7 @@
 #include "UI_Button_InstallSwitcher_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_Button_InstallSwitcher.UI_Button_InstallSwitcher_C.GetRootCFWidget
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -173,5 +172,5 @@ void UUI_Button_InstallSwitcher_C::ExecuteUbergraph_UI_Button_InstallSwitcher(in
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

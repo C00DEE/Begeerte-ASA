@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass CustomMouseWidget.CustomMouseWidget_C
 // 0x0078 (0x03F0 - 0x0378)
@@ -65,5 +64,4 @@ public:
 };
 DUMPER7_ASSERTS_UCustomMouseWidget_C;
 
-}
-
+SDK_NAMESPACE_END

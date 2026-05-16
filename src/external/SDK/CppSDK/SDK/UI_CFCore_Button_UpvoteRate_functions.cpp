@@ -14,8 +14,7 @@
 #include "UI_CFCore_Button_UpvoteRate_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Button_UpvoteRate.UI_CFCore_Button_UpvoteRate_C.GetRootCFWidget
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -37,5 +36,5 @@ void UUI_CFCore_Button_UpvoteRate_C::GetRootCFWidget(class UPanelWidget** RootPa
 		*RootPanelWidget = Parms.RootPanelWidget;
 }
 
-}
 
+SDK_NAMESPACE_END

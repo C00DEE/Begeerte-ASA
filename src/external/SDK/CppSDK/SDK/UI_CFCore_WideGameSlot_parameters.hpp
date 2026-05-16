@@ -11,14 +11,14 @@
 #include "Basic.hpp"
 
 #include "cfcore_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "cfcore_ui_structs.hpp"
 #include "UMG_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function UI_CFCore_WideGameSlot.UI_CFCore_WideGameSlot_C.BndEvt__UI_WideGameSlot_CheckBox_110_K2Node_ComponentBoundEvent_0_OnCheckBoxComponentStateChanged__DelegateSignature
 // 0x0001 (0x0001 - 0x0000)
@@ -453,5 +453,5 @@ public:
 };
 DUMPER7_ASSERTS_UI_CFCore_WideGameSlot_C_UpdateUPDATEButtonStatus;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

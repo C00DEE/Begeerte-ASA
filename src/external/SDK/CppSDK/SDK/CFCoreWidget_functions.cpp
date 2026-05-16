@@ -14,8 +14,7 @@
 #include "CFCoreWidget_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CFCoreWidget.CFCoreWidget_C.ApplyThemeSettingsToAll
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -133,5 +132,5 @@ void UCFCoreWidget_C::Recursive_ApplyFontToAllWidgets()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

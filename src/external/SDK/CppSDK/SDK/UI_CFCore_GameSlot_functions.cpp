@@ -14,8 +14,7 @@
 #include "UI_CFCore_GameSlot_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_GameSlot.UI_CFCore_GameSlot_C.OnEventBroadcasted
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -997,5 +996,5 @@ void UUI_CFCore_GameSlot_C::ExecuteUbergraph_UI_CFCore_GameSlot(int32 EntryPoint
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

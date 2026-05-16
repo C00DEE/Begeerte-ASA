@@ -14,8 +14,7 @@
 #include "UI_CFCore_InstalledMods_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_InstalledMods.UI_CFCore_InstalledMods_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -185,5 +184,5 @@ void UUI_CFCore_InstalledMods_C::UpdatePageAfterUninstallAll()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

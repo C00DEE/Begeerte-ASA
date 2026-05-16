@@ -14,8 +14,7 @@
 #include "UI_CFCore_CustomComboBox_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_CustomComboBox.UI_CFCore_CustomComboBox_C.BndEvt__CustomComboBox_SelectedOption_Button_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -496,5 +495,5 @@ void UUI_CFCore_CustomComboBox_C::Tick(const struct FGeometry& MyGeometry, float
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

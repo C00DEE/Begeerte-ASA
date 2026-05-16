@@ -11,14 +11,14 @@
 #include "Basic.hpp"
 
 #include "SlateCore_structs.hpp"
-#include "STRUCT_SubOptions_structs.hpp"
 #include "Engine_structs.hpp"
+#include "STRUCT_SubOptions_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "UMG_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function UI_CustomComboBoxOption.UI_CustomComboBoxOption_C.CheckIfSubCategorySelected
 // 0x0058 (0x0058 - 0x0000)
@@ -311,5 +311,5 @@ public:
 };
 DUMPER7_ASSERTS_UI_CustomComboBoxOption_C_UpdateHoveredOption;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

@@ -10,15 +10,14 @@
 
 #include "Basic.hpp"
 
-#include "AudioExtensions_classes.hpp"
 #include "ResonanceAudio_structs.hpp"
+#include "AudioExtensions_classes.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ResonanceAudio.ResonanceAudioSoundfieldSettings
 // 0x0008 (0x0030 - 0x0028)
@@ -194,5 +193,4 @@ public:
 };
 DUMPER7_ASSERTS_UResonanceAudioSpatializationSourceSettings;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "OptionsMenu_UWP_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function OptionsMenu_UWP.OptionsMenu_UWP_C.BndEvt__AntiAliasingComboBox_K2Node_ComponentBoundEvent_13_OnSelectionChangedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -332,5 +331,5 @@ void UOptionsMenu_UWP_C::OptionsGraphTick(const struct FGeometry& MyGeometry, fl
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

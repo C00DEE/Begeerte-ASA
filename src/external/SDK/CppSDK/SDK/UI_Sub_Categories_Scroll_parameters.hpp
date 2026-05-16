@@ -12,13 +12,13 @@
 
 #include "UMG_structs.hpp"
 #include "SlateCore_structs.hpp"
-#include "STRUCT_SubOptions_structs.hpp"
 #include "InputCore_structs.hpp"
+#include "STRUCT_SubOptions_structs.hpp"
 #include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function UI_Sub-Categories_Scroll.UI_Sub-Categories_Scroll_C.Event Check If Selected
 // 0x0018 (0x0018 - 0x0000)
@@ -110,5 +110,5 @@ public:
 };
 DUMPER7_ASSERTS_UI_Sub_Categories_Scroll_C_OnRemovedFromFocusPath;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

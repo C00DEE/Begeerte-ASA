@@ -13,8 +13,7 @@
 #include "PrimalItem_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemSkinGeneric.PrimalItemSkinGeneric_C
 // 0x0010 (0x0B70 - 0x0B60)
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemSkinGeneric_C;
 
-}
-
+SDK_NAMESPACE_END

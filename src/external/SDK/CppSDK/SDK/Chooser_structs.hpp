@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "BlendStack_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "Engine_structs.hpp"
+#include "BlendStack_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum Chooser.EBoolColumnCellValue
 // NumValues: 0x0004
@@ -695,5 +694,4 @@ public:
 };
 DUMPER7_ASSERTS_FEvaluateChooser;
 
-}
-
+SDK_NAMESPACE_END

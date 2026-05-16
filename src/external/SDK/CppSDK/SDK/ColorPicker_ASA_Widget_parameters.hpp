@@ -16,8 +16,8 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function ColorPicker_ASA_Widget.ColorPicker_ASA_Widget_C.UpdateSaturationBar
 // 0x0010 (0x0010 - 0x0000)
@@ -143,5 +143,5 @@ public:
 };
 DUMPER7_ASSERTS_ColorPicker_ASA_Widget_C_BndEvt__ColorPicker_ASA_Widget_Synth2DSlider_89_K2Node_ComponentBoundEvent_0_OnFloatValueChangedEventSynth2D__DelegateSignature;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

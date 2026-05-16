@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class CoreUObject.Object
 // 0x0028 (0x0028 - 0x0000)
@@ -194,8 +193,8 @@ DUMPER7_ASSERTS_UTestInstanceDataObjectClass;
 class UStruct : public UField
 {
 public:
-	uint8                                         Pad_30[0x10];                                      // 0x0030(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	class UStruct*                                Super;                                             // 0x0040(0x0008)(NOT AUTO-GENERATED PROPERTY)
+	struct FStructBaseChain                       BaseChain;                                         // 0x0030(0x0010)(NOT AUTO-GENERATED PROPERTY)
+	class UStruct*                                SuperStruct;                                       // 0x0040(0x0008)(NOT AUTO-GENERATED PROPERTY)
 	class UField*                                 Children;                                          // 0x0048(0x0008)(NOT AUTO-GENERATED PROPERTY)
 	class FField*                                 ChildProperties;                                   // 0x0050(0x0008)(NOT AUTO-GENERATED PROPERTY)
 	int32                                         Size;                                              // 0x0058(0x0004)(NOT AUTO-GENERATED PROPERTY)
@@ -204,7 +203,7 @@ public:
 
 public:
 	bool IsSubclassOf(const UStruct* Base) const;
-	bool IsSubclassOf(const FName& baseClassName) const;
+	bool IsSubclassOf(const FName& BaseClassName) const;
 
 public:
 	static class UClass* StaticClass()
@@ -550,7 +549,7 @@ public:
 	uint8                                         Pad_B0[0x30];                                      // 0x00B0(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
 	enum class EClassCastFlags                    CastFlags;                                         // 0x00E0(0x0008)(NOT AUTO-GENERATED PROPERTY)
 	uint8                                         Pad_E8[0x30];                                      // 0x00E8(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                DefaultObject;                                     // 0x0118(0x0008)(NOT AUTO-GENERATED PROPERTY)
+	class UObject*                                ClassDefaultObject;                                // 0x0118(0x0008)(NOT AUTO-GENERATED PROPERTY)
 	uint8                                         Pad_120[0xF8];                                     // 0x0120(0x00F8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -1631,5 +1630,4 @@ public:
 };
 DUMPER7_ASSERTS_UVerseClass;
 
-}
-
+SDK_NAMESPACE_END

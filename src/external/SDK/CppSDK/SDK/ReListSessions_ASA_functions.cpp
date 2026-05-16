@@ -14,8 +14,7 @@
 #include "ReListSessions_ASA_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ReListSessions_ASA.ReListSessions_ASA_C.BndEvt__ReListSessions_ASA_AutoFavoriteButton_K2Node_ComponentBoundEvent_10_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -674,5 +673,5 @@ void UReListSessions_ASA_C::UpdateFavoritesTab()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

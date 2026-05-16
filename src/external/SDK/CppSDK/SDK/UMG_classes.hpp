@@ -13,8 +13,8 @@
 #include "MovieSceneTracks_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "UMG_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "UMG_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
 #include "Slate_structs.hpp"
 #include "Engine_structs.hpp"
@@ -24,8 +24,7 @@
 #include "InputCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class UMG.UIComponent
 // 0x0008 (0x0030 - 0x0028)
@@ -2967,7 +2966,7 @@ DUMPER7_ASSERTS_UHorizontalBoxSlot;
 // Class UMG.Image
 // 0x0140 (0x0340 - 0x0200)
 #pragma pack(push, 0x1)
-class alignas(0x10) UImage : public UWidget
+class SDK_ALIGN(0x10) UImage : public UWidget
 {
 public:
 	struct FSlateBrush                            Brush;                                             // 0x0200(0x00B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -3826,7 +3825,7 @@ DUMPER7_ASSERTS_UScrollBar;
 // Class UMG.ScrollBox
 // 0x0A08 (0x0C20 - 0x0218)
 #pragma pack(push, 0x1)
-class alignas(0x10) UScrollBox : public UPanelWidget
+class SDK_ALIGN(0x10) UScrollBox : public UPanelWidget
 {
 public:
 	float                                         ScrollAnimationInterpolationSpeed;                 // 0x0218(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -4981,5 +4980,4 @@ public:
 };
 DUMPER7_ASSERTS_UWidgetTree;
 
-}
-
+SDK_NAMESPACE_END

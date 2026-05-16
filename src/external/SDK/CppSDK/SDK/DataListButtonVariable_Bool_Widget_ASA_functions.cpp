@@ -14,8 +14,7 @@
 #include "DataListButtonVariable_Bool_Widget_ASA_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function DataListButtonVariable_Bool_Widget_ASA.DataListButtonVariable_Bool_Widget_ASA_C.SetupTextValue
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -116,5 +115,5 @@ void UDataListButtonVariable_Bool_Widget_ASA_C::Construct()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

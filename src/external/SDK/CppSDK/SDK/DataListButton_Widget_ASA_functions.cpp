@@ -14,8 +14,7 @@
 #include "DataListButton_Widget_ASA_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function DataListButton_Widget_ASA.DataListButton_Widget_ASA_C.BndEvt__DataListButton_Widget_ASA_DinoExpirationLabel_K2Node_ComponentBoundEvent_3_OnEditableTextCommittedEvent__DelegateSignature
 // (HasOutParams, BlueprintEvent)
@@ -260,5 +259,5 @@ void UDataListButton_Widget_ASA_C::UpdateColorBrush(const struct FLinearColor& I
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

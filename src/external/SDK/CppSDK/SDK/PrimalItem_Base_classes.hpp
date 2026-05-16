@@ -13,13 +13,12 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItem_Base.PrimalItem_Base_C
 // 0x0010 (0x0B60 - 0x0B50)
 #pragma pack(push, 0x1)
-class alignas(0x10) UPrimalItem_Base_C : public UPrimalItem
+class SDK_ALIGN(0x10) UPrimalItem_Base_C : public UPrimalItem
 {
 public:
 	bool                                          bPreventAnimation_Brows;                           // 0x0B50(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -43,5 +42,4 @@ public:
 #pragma pack(pop)
 DUMPER7_ASSERTS_UPrimalItem_Base_C;
 
-}
-
+SDK_NAMESPACE_END

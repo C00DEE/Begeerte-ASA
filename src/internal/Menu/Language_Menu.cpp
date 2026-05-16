@@ -54,28 +54,25 @@ namespace g_DrawImGui {
             ImGui::Spacing();
 
             static int selectedLangIdx = -1;
-            if (ImGui::BeginChild("##LangListChild", ImVec2(0, 300), true)) {
-                if (languages.empty()) {
-                    ImGui::SetCursorPosY(ImGui::GetWindowHeight() / 2 - 10);
-                    ImGui::TextDisabled(noLanguages);
+            if (languages.empty()) {
+                ImGui::SetCursorPosY(ImGui::GetWindowHeight() / 2 - 10);
+                ImGui::TextDisabled(noLanguages);
+            }
+            else {
+                bool hasWorkshop = false;
+                for (int i = 0; i < (int)languages.size(); i++) {
+                    if (languages[i].isWorkshop) { hasWorkshop = true; break; }
                 }
-                else {
-                    bool hasWorkshop = false;
-                    for (int i = 0; i < (int)languages.size(); i++) {
-                        if (languages[i].isWorkshop) { hasWorkshop = true; break; }
-                    }
 
-                    for (int i = 0; i < (int)languages.size(); i++) {
-                        LanguageFile& lf = languages[i];
-                        ImGui::PushID(i);
-                        bool isSelected = (selectedLangIdx == i);
-                        std::string displayName = lf.isWorkshop ? ("work_shop/" + lf.name) : lf.name;
-                        if (CustomSelectable(displayName.c_str(), isSelected, 8.0f))
-                            selectedLangIdx = i;
-                        ImGui::PopID();
-                    }
+                for (int i = 0; i < (int)languages.size(); i++) {
+                    LanguageFile& lf = languages[i];
+                    ImGui::PushID(i);
+                    bool isSelected = (selectedLangIdx == i);
+                    std::string displayName = lf.isWorkshop ? ("work_shop/" + lf.name) : lf.name;
+                    if (CustomSelectable(displayName.c_str(), isSelected, 8.0f))
+                        selectedLangIdx = i;
+                    ImGui::PopID();
                 }
-                ImGui::EndChild();
             }
 
             ImGui::Spacing();

@@ -14,8 +14,7 @@
 #include "BP_CFCore_ServerModsLoading_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_CFCore_ServerModsLoading.BP_CFCore_ServerModsLoading_C.AddToProgressSize
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -518,5 +517,5 @@ void UBP_CFCore_ServerModsLoading_C::UpdateTexts()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

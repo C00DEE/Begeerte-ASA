@@ -15,8 +15,7 @@
 #include "MediaAssets_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct MediaCompositing.MovieSceneMediaPlayerPropertySectionTemplate
 // 0x0010 (0x0048 - 0x0038)
@@ -62,5 +61,4 @@ public:
 };
 DUMPER7_ASSERTS_FMovieSceneMediaSectionTemplate;
 
-}
-
+SDK_NAMESPACE_END

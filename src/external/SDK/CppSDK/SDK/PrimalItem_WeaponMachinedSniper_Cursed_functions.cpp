@@ -14,8 +14,7 @@
 #include "PrimalItem_WeaponMachinedSniper_Cursed_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PrimalItem_WeaponMachinedSniper_Cursed.PrimalItem_WeaponMachinedSniper_Cursed_C.BPPreventWeaponEquip
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -36,5 +35,5 @@ bool UPrimalItem_WeaponMachinedSniper_Cursed_C::BPPreventWeaponEquip()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

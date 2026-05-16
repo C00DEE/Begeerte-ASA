@@ -10,15 +10,14 @@
 
 #include "Basic.hpp"
 
-#include "ThreadExecutionBlueprintNode_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "ThreadExecutionBlueprintNode_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ThreadExecutionBlueprintNode.AsyncExecutionBlueprintTypes
 // 0x0000 (0x0028 - 0x0028)
@@ -449,5 +448,4 @@ public:
 };
 DUMPER7_ASSERTS_UTickListenerSubsystem;
 
-}
-
+SDK_NAMESPACE_END

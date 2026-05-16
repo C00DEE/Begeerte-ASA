@@ -14,8 +14,7 @@
 #include "UI_NoModProjects_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_NoModProjects.UI_NoModProjects_C.ExecuteUbergraph_UI_NoModProjects
 // (Final, UbergraphFunction, HasDefaults)
@@ -77,5 +76,5 @@ void UUI_NoModProjects_C::PreConstruct(bool IsDesignTime)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
 #include "AIModule_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Dino_AIController_BP.Dino_AIController_BP_C
 // 0x0038 (0x0A60 - 0x0A28)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_ADino_AIController_BP_C;
 
-}
-
+SDK_NAMESPACE_END

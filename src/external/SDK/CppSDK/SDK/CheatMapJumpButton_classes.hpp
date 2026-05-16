@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass CheatMapJumpButton.CheatMapJumpButton_C
 // 0x0050 (0x03C8 - 0x0378)
@@ -52,5 +51,4 @@ public:
 };
 DUMPER7_ASSERTS_UCheatMapJumpButton_C;
 
-}
-
+SDK_NAMESPACE_END

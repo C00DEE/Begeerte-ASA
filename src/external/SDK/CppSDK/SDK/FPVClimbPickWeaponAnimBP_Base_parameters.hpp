@@ -14,8 +14,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function FPVClimbPickWeaponAnimBP_Base.FPVClimbPickWeaponAnimBP_Base_C.AnimGraph
 // 0x0010 (0x0010 - 0x0000)
@@ -75,5 +75,5 @@ public:
 };
 DUMPER7_ASSERTS_FPVClimbPickWeaponAnimBP_Base_C_ExecuteUbergraph_FPVClimbPickWeaponAnimBP_Base;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

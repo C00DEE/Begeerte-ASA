@@ -14,8 +14,7 @@
 #include "UI_Sub_Category_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_Sub-Category.UI_Sub-Category_C.BndEvt__Sub-Category1_Btn_Category_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -145,5 +144,5 @@ void UUI_Sub_Category_C::OnSuccess_B7C25CB3474DE2A4D0BC4DAA4F40DDC8(class UTextu
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

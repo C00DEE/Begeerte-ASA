@@ -14,8 +14,8 @@
 #include "VariantManagerContent_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function VariantManagerContent.LevelVariantSets.GetNumVariantSets
 // 0x0004 (0x0004 - 0x0000)
@@ -405,5 +405,5 @@ public:
 };
 DUMPER7_ASSERTS_VariantSet_GetNumVariants;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

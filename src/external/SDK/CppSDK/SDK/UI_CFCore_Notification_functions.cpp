@@ -14,8 +14,7 @@
 #include "UI_CFCore_Notification_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Notification.UI_CFCore_Notification_C.BndEvt__ModSuccessfullyInsalledWidget_Button_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -345,5 +344,5 @@ void UUI_CFCore_Notification_C::SetSecondaryMessage(const class FText& InText)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "cfcore_ui_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CFCore_RchTextBlockDec.BP_CFCore_RchTextBlockDec_C
 // 0x0000 (0x0058 - 0x0058)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UBP_CFCore_RchTextBlockDec_C;
 
-}
-
+SDK_NAMESPACE_END

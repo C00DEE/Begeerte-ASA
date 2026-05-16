@@ -14,8 +14,8 @@
 #include "SP_Camera_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function SP_Camera.SPCameraMode.GetCustomFocusDistance
 // 0x0080 (0x0080 - 0x0000)
@@ -117,5 +117,5 @@ public:
 };
 DUMPER7_ASSERTS_SPPlayerCameraManager_IsUsingAlternateCamera;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

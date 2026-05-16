@@ -14,8 +14,7 @@
 #include "UI_CFCore_CustomColorPicker_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_CustomColorPicker.UI_CFCore_CustomColorPicker_C.BndEvt__UI_CustomColorPicker_SLIDER_Opacity_K2Node_ComponentBoundEvent_11_OnMouseCaptureEndEvent__DelegateSignature
 // (BlueprintEvent)
@@ -397,5 +396,5 @@ void UUI_CFCore_CustomColorPicker_C::UpdateAllSliders(const struct FLinearColor&
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

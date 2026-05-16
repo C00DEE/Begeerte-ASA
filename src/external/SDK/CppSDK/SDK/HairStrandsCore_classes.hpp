@@ -11,15 +11,14 @@
 #include "Basic.hpp"
 
 #include "Niagara_classes.hpp"
-#include "Engine_classes.hpp"
 #include "HairStrandsCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "Engine_classes.hpp"
 #include "MovieScene_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class HairStrandsCore.GroomCacheImportOptions
 // 0x0068 (0x0090 - 0x0028)
@@ -686,5 +685,4 @@ public:
 };
 DUMPER7_ASSERTS_UNiagaraDataInterfacePressureGrid;
 
-}
-
+SDK_NAMESPACE_END

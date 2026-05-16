@@ -10,16 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "USDClasses_structs.hpp"
 #include "Engine_classes.hpp"
+#include "USDStage_structs.hpp"
+#include "UnrealUSDWrapper_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "UnrealUSDWrapper_structs.hpp"
-#include "USDStage_structs.hpp"
+#include "USDClasses_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class USDStage.UsdDynamicBindingResolverLibrary
 // 0x0000 (0x0028 - 0x0028)
@@ -233,5 +232,4 @@ public:
 };
 DUMPER7_ASSERTS_UUsdTransactor;
 
-}
-
+SDK_NAMESPACE_END

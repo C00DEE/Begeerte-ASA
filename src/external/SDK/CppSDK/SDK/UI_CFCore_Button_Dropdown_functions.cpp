@@ -14,8 +14,7 @@
 #include "UI_CFCore_Button_Dropdown_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Button_Dropdown.UI_CFCore_Button_Dropdown_C.BndEvt__UI_Button_Dropdown_Button_DropDown_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature
 // (BlueprintEvent)
@@ -161,5 +160,5 @@ void UUI_CFCore_Button_Dropdown_C::PreConstruct(bool IsDesignTime)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

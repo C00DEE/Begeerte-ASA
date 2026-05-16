@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass ToolTipWidgetPrimalItem_Inventory.ToolTipWidgetPrimalItem_Inventory_C
 // 0x0160 (0x0810 - 0x06B0)
@@ -87,5 +86,4 @@ public:
 };
 DUMPER7_ASSERTS_UToolTipWidgetPrimalItem_Inventory_C;
 
-}
-
+SDK_NAMESPACE_END

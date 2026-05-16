@@ -14,8 +14,7 @@
 #include "ASAUI_MainMenu_GameModeSelect_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ASAUI_MainMenu_GameModeSelect.ASAUI_MainMenu_GameModeSelect_C.BndEvt__ASAUI_MainMenu_GameModeSelect_BackButton_K2Node_ComponentBoundEvent_8_OnButtonClicked__DelegateSignature
 // (BlueprintEvent)
@@ -259,5 +258,5 @@ void UASAUI_MainMenu_GameModeSelect_C::WidgetAddedToViewport()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

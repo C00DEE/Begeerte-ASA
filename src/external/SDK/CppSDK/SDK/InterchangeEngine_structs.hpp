@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "InterchangeCore_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum InterchangeEngine.EInterchangePipelineConfigurationDialogResult
 // NumValues: 0x0004
@@ -168,5 +167,4 @@ public:
 };
 DUMPER7_ASSERTS_FImportAssetParameters;
 
-}
-
+SDK_NAMESPACE_END

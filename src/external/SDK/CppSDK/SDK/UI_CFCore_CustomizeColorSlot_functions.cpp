@@ -14,8 +14,7 @@
 #include "UI_CFCore_CustomizeColorSlot_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_CustomizeColorSlot.UI_CFCore_CustomizeColorSlot_C.GetColor
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -160,5 +159,5 @@ void UUI_CFCore_CustomizeColorSlot_C::ExecuteUbergraph_UI_CFCore_CustomizeColorS
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

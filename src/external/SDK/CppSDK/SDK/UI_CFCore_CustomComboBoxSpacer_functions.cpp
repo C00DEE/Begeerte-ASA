@@ -14,8 +14,7 @@
 #include "UI_CFCore_CustomComboBoxSpacer_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_CustomComboBoxSpacer.UI_CFCore_CustomComboBoxSpacer_C.ExecuteUbergraph_UI_CFCore_CustomComboBoxSpacer
 // (Final, UbergraphFunction)
@@ -77,5 +76,5 @@ void UUI_CFCore_CustomComboBoxSpacer_C::PreConstruct(bool IsDesignTime)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

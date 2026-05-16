@@ -14,8 +14,7 @@
 #include "BaseHumanAnimBP_Fists_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BaseHumanAnimBP_Fists.BaseHumanAnimBP_Fists_C.UpdateLayeringValues
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -30,5 +29,5 @@ void UBaseHumanAnimBP_Fists_C::UpdateLayeringValues()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

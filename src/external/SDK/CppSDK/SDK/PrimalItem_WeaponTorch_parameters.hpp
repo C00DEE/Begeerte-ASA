@@ -11,12 +11,12 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
 #include "ShooterGame_structs.hpp"
+#include "Engine_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function PrimalItem_WeaponTorch.PrimalItem_WeaponTorch_C.ApplyingSkinOntoItem
 // 0x02F0 (0x02F0 - 0x0000)
@@ -469,5 +469,5 @@ public:
 };
 DUMPER7_ASSERTS_PrimalItem_WeaponTorch_C_IsTorchOnBelt;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

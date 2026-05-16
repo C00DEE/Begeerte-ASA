@@ -14,8 +14,7 @@
 #include "UI_CFCore_DiscoveryCategory_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_DiscoveryCategory.UI_CFCore_DiscoveryCategory_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -146,5 +145,5 @@ void UUI_CFCore_DiscoveryCategory_C::UpdateShelveTitle(struct FShelfContent* Con
 		*Content = std::move(Parms.Content);
 }
 
-}
 
+SDK_NAMESPACE_END

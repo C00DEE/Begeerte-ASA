@@ -14,8 +14,7 @@
 #include "MassLOD_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MassLOD.MassLODSubsystem.OnPlayerControllerEndPlay
 // (Final, Native, Protected)
@@ -43,5 +42,5 @@ void UMassLODSubsystem::OnPlayerControllerEndPlay(class AActor* Actor, EEndPlayR
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

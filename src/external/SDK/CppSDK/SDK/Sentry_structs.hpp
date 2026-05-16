@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum Sentry.ESentryLevel
 // NumValues: 0x0006
@@ -189,5 +188,4 @@ public:
 };
 DUMPER7_ASSERTS_FSentryTransactionOptions;
 
-}
-
+SDK_NAMESPACE_END

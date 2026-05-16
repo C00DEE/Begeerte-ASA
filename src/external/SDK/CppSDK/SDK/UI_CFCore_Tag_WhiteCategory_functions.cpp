@@ -14,8 +14,7 @@
 #include "UI_CFCore_Tag_WhiteCategory_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Tag_WhiteCategory.UI_CFCore_Tag_WhiteCategory_C.ExecuteUbergraph_UI_CFCore_Tag_WhiteCategory
 // (Final, UbergraphFunction)
@@ -76,5 +75,5 @@ void UUI_CFCore_Tag_WhiteCategory_C::UpdateText(const class FText& InText)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

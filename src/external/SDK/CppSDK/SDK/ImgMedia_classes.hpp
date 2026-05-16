@@ -14,8 +14,7 @@
 #include "MediaAssets_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ImgMedia.ImgMediaSource
 // 0x0060 (0x00E8 - 0x0088)
@@ -59,5 +58,4 @@ public:
 };
 DUMPER7_ASSERTS_UImgMediaSource;
 
-}
-
+SDK_NAMESPACE_END

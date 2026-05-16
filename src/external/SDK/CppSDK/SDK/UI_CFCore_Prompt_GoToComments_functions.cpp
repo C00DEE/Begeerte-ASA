@@ -14,8 +14,7 @@
 #include "UI_CFCore_Prompt_GoToComments_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Prompt_GoToComments.UI_CFCore_Prompt_GoToComments_C.BPGamepadReleased
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -150,5 +149,5 @@ void UUI_CFCore_Prompt_GoToComments_C::UpdateThemeSettings()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

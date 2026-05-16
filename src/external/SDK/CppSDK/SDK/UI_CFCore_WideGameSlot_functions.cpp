@@ -14,8 +14,7 @@
 #include "UI_CFCore_WideGameSlot_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_WideGameSlot.UI_CFCore_WideGameSlot_C.ApplyThemeSettingsToAll
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -770,5 +769,5 @@ void UUI_CFCore_WideGameSlot_C::UpdateUPDATEButtonStatus()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

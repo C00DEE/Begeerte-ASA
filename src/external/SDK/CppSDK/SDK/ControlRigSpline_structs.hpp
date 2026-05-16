@@ -11,12 +11,11 @@
 #include "Basic.hpp"
 
 #include "ControlRig_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "RigVM_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum ControlRigSpline.ESplineType
 // NumValues: 0x0003
@@ -325,5 +324,4 @@ public:
 };
 DUMPER7_ASSERTS_FRigUnit_ParameterAtPercentage;
 
-}
-
+SDK_NAMESPACE_END

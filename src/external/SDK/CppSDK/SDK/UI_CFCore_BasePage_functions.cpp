@@ -14,8 +14,7 @@
 #include "UI_CFCore_BasePage_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_BasePage.UI_CFCore_BasePage_C.ReloadPage
 // (BlueprintCallable, BlueprintEvent)
@@ -141,5 +140,5 @@ void UUI_CFCore_BasePage_C::ExecuteUbergraph_UI_CFCore_BasePage(int32 EntryPoint
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

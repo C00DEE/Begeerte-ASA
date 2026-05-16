@@ -14,8 +14,7 @@
 #include "UI_CFCore_Discovery_Spotlight_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Discovery_Spotlight.UI_CFCore_Discovery_Spotlight_C.BndEvt__UI_CFCore_Discovery_Spotlight_UI_Button_Back_K2Node_ComponentBoundEvent_0_OnClick__DelegateSignature
 // (BlueprintEvent)
@@ -266,5 +265,5 @@ void UUI_CFCore_Discovery_Spotlight_C::Tick(const struct FGeometry& MyGeometry, 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

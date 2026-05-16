@@ -10,16 +10,16 @@
 
 #include "Basic.hpp"
 
+#include "SlateCore_structs.hpp"
 #include "CheatMapJumpInfo_structs.hpp"
 #include "CheatMenuOptionTypes_structs.hpp"
 #include "UMG_structs.hpp"
-#include "SlateCore_structs.hpp"
-#include "CheatMenuCharacterLevelPreset_structs.hpp"
 #include "ShooterGame_structs.hpp"
+#include "CheatMenuCharacterLevelPreset_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function CheatMenu.CheatMenu_C.AddAllEntriesButtonForItems
 // 0x0020 (0x0020 - 0x0000)
@@ -785,5 +785,5 @@ public:
 };
 DUMPER7_ASSERTS_CheatMenu_C_SetupOptionsBarForFolder;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

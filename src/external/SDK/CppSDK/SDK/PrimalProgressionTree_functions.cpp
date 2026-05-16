@@ -14,8 +14,7 @@
 #include "PrimalProgressionTree_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PrimalProgressionTree.PrimalProgressionTreeAsset.InitializeGraph
 // (Final, Native, Public, BlueprintCallable)
@@ -883,5 +882,5 @@ int32 UPrimalProgressionTreeGraph_RowsAndTiers::GetPointsSpentInRow(int32 RowInd
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

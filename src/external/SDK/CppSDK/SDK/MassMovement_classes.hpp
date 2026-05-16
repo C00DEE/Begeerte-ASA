@@ -15,8 +15,7 @@
 #include "MassMovement_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MassMovement.MassApplyMovementProcessor
 // 0x0320 (0x03D0 - 0x00B0)
@@ -183,5 +182,4 @@ public:
 };
 DUMPER7_ASSERTS_UMassRandomVelocityInitializer;
 
-}
-
+SDK_NAMESPACE_END

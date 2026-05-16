@@ -14,8 +14,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass MainMenu.MainMenu_C
 // 0x0020 (0x04B0 - 0x0490)
@@ -51,5 +50,4 @@ public:
 };
 DUMPER7_ASSERTS_AMainMenu_C;
 
-}
-
+SDK_NAMESPACE_END

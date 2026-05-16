@@ -14,8 +14,7 @@
 #include "MainMenuUI_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MainMenuUI.MainMenuUI_C.BndEvt__CreditsButton_K2Node_ComponentBoundEvent_116_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -134,5 +133,5 @@ void UMainMenuUI_C::UpdateLeftTextPosition(bool isCTAVisible)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

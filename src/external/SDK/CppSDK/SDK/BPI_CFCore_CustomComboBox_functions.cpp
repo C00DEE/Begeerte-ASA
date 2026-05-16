@@ -14,8 +14,7 @@
 #include "BPI_CFCore_CustomComboBox_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BPI_CFCore_CustomComboBox.BPI_CFCore_CustomComboBox_C.OnOptionSelectedInterface
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -38,5 +37,5 @@ void IBPI_CFCore_CustomComboBox_C::OnOptionSelectedInterface(const class FString
 	AsUObject()->ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

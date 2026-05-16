@@ -14,8 +14,7 @@
 #include "UI_CFCore_Tooltip_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Tooltip.UI_CFCore_Tooltip_C.GetRootCFWidget
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -37,5 +36,5 @@ void UUI_CFCore_Tooltip_C::GetRootCFWidget(class UPanelWidget** RootPanelWidget)
 		*RootPanelWidget = Parms.RootPanelWidget;
 }
 
-}
 
+SDK_NAMESPACE_END

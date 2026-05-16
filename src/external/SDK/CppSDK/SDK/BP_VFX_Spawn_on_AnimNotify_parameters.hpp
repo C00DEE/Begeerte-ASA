@@ -12,13 +12,13 @@
 
 #include "CoreUObject_structs.hpp"
 #include "Audio_Ground_Collection_structs.hpp"
-#include "Niagara_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Niagara_structs.hpp"
 #include "DinoContentData_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BP_VFX_Spawn_on_AnimNotify.BP_VFX_Spawn_on_AnimNotify_C.BPOverrideNiagaraSystem
 // 0x0010 (0x0010 - 0x0000)
@@ -391,5 +391,5 @@ public:
 };
 DUMPER7_ASSERTS_BP_VFX_Spawn_on_AnimNotify_C_Received_NotifyTick;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

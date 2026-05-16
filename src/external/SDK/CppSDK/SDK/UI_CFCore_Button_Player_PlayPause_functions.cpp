@@ -14,8 +14,7 @@
 #include "UI_CFCore_Button_Player_PlayPause_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Button_Player_PlayPause.UI_CFCore_Button_Player_PlayPause_C.BndEvt__UI_Button_ScreenshotNavigation_IMG_PrevImage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -50,5 +49,5 @@ void UUI_CFCore_Button_Player_PlayPause_C::ExecuteUbergraph_UI_CFCore_Button_Pla
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

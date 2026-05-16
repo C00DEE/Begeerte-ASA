@@ -15,8 +15,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass IsWithinAttackRangeAndGetBestAttack_SRV.IsWithinAttackRangeAndGetBestAttack_SRV_C
 // 0x00D0 (0x0168 - 0x0098)
@@ -51,5 +50,4 @@ public:
 };
 DUMPER7_ASSERTS_UIsWithinAttackRangeAndGetBestAttack_SRV_C;
 
-}
-
+SDK_NAMESPACE_END

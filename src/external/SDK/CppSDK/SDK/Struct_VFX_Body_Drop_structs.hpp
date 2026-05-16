@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedStruct Struct_VFX_Body_Drop.Struct_VFX_Body_Drop
 // 0x0010 (0x0010 - 0x0000)
@@ -24,5 +23,4 @@ public:
 };
 DUMPER7_ASSERTS_FStruct_VFX_Body_Drop;
 
-}
-
+SDK_NAMESPACE_END

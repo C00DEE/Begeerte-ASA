@@ -14,8 +14,7 @@
 #include "TekArmor_EffectActor_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function TekArmor_EffectActor.TekArmor_EffectActor_C.ExecuteUbergraph_TekArmor_EffectActor
 // (Final, UbergraphFunction)
@@ -258,5 +257,5 @@ void ATekArmor_EffectActor_C::SetTekFX(class UParticleSystem* particle, const st
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

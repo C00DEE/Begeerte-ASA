@@ -14,8 +14,7 @@
 #include "ZoneGraphAnnotations_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ZoneGraphAnnotations.ZoneGraphAnnotationTestingActor.Trigger
 // (Final, Native, Public, BlueprintCallable)
@@ -68,5 +67,5 @@ void UZoneGraphDisturbanceAnnotationBPLibrary::TriggerDanger(class UObject* Worl
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

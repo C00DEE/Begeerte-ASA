@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass ToolTipWidgetDinoItem_Inventory.ToolTipWidgetDinoItem_Inventory_C
 // 0x0030 (0x05F0 - 0x05C0)
@@ -44,5 +43,4 @@ public:
 };
 DUMPER7_ASSERTS_UToolTipWidgetDinoItem_Inventory_C;
 
-}
-
+SDK_NAMESPACE_END

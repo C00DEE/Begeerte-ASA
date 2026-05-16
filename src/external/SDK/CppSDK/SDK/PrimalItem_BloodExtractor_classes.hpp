@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItem_BloodExtractor.PrimalItem_BloodExtractor_C
 // 0x0000 (0x0B50 - 0x0B50)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItem_BloodExtractor_C;
 
-}
-
+SDK_NAMESPACE_END

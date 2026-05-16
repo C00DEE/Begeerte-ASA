@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass ContextMenuItem_SimpleCaption.ContextMenuItem_SimpleCaption_C
 // 0x0018 (0x0480 - 0x0468)
@@ -41,5 +40,4 @@ public:
 };
 DUMPER7_ASSERTS_UContextMenuItem_SimpleCaption_C;
 
-}
-
+SDK_NAMESPACE_END

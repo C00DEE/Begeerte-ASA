@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass ContextMenuItem_CosmeticEntry.ContextMenuItem_CosmeticEntry_C
 // 0x0010 (0x0498 - 0x0488)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_UContextMenuItem_CosmeticEntry_C;
 
-}
-
+SDK_NAMESPACE_END

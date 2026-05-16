@@ -13,11 +13,10 @@
 #include "UI_Button_CFCore_Global_Master_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_Button_CFCore_Global_Purchase.UI_Button_CFCore_Global_Purchase_C
-// 0x0000 (0x0AC0 - 0x0AC0)
+// 0x0000 (0x0AF0 - 0x0AF0)
 class UUI_Button_CFCore_Global_Purchase_C final : public UUI_Button_CFCore_Global_Master_C
 {
 public:
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UUI_Button_CFCore_Global_Purchase_C;
 
-}
-
+SDK_NAMESPACE_END

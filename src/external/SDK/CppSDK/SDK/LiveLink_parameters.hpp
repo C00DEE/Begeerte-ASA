@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
+#include "LiveLink_structs.hpp"
+#include "Engine_structs.hpp"
 #include "LiveLinkInterface_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
-#include "LiveLink_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function LiveLink.LiveLinkBlueprintLibrary.ChildCount
 // 0x0028 (0x0028 - 0x0000)
@@ -547,5 +547,5 @@ public:
 };
 DUMPER7_ASSERTS_LiveLinkBlueprintVirtualSubject_UpdateVirtualSubjectStaticData_Internal;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

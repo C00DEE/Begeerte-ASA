@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "cfcore_ui_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "SlateCore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function UI_CFCore_CustomizeBoolSlot.UI_CFCore_CustomizeBoolSlot_C.BndEvt__UI_CustomizeBoolSlot_CheckBox_285_K2Node_ComponentBoundEvent_0_OnCheckBoxComponentStateChanged__DelegateSignature
 // 0x0001 (0x0001 - 0x0000)
@@ -83,5 +83,5 @@ public:
 };
 DUMPER7_ASSERTS_UI_CFCore_CustomizeBoolSlot_C_SetColor;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

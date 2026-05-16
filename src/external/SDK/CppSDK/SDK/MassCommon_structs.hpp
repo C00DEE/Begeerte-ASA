@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "AIModule_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "AIModule_structs.hpp"
 #include "MassEntity_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct MassCommon.TransformFragment
 // 0x0060 (0x0060 - 0x0000)
@@ -39,7 +38,7 @@ DUMPER7_ASSERTS_FAgentRadiusFragment;
 // ScriptStruct MassCommon.ObjectWrapperFragment
 // 0x0001 (0x0001 - 0x0000)
 #pragma pack(push, 0x1)
-struct alignas(0x01) FObjectWrapperFragment : public FMassFragment
+struct SDK_ALIGN(0x01) FObjectWrapperFragment : public FMassFragment
 {
 public:
 	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -123,5 +122,4 @@ public:
 };
 DUMPER7_ASSERTS_FMassInt16Vector2D;
 
-}
-
+SDK_NAMESPACE_END

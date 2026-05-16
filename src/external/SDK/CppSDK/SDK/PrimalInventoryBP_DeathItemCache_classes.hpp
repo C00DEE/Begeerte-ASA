@@ -13,8 +13,7 @@
 #include "PrimalInventoryBP_StorageBox_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalInventoryBP_DeathItemCache.PrimalInventoryBP_DeathItemCache_C
 // 0x0000 (0x0790 - 0x0790)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalInventoryBP_DeathItemCache_C;
 
-}
-
+SDK_NAMESPACE_END

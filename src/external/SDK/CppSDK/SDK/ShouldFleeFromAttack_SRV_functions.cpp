@@ -14,8 +14,7 @@
 #include "ShouldFleeFromAttack_SRV_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ShouldFleeFromAttack_SRV.ShouldFleeFromAttack_SRV_C.ExecuteUbergraph_ShouldFleeFromAttack_SRV
 // (Final, UbergraphFunction)
@@ -58,5 +57,5 @@ void UShouldFleeFromAttack_SRV_C::ReceiveTick(class AActor* OwnerActor, float De
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

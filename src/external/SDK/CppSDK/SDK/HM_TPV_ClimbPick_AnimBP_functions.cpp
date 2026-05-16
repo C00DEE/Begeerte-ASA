@@ -14,8 +14,7 @@
 #include "HM_TPV_ClimbPick_AnimBP_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function HM_TPV_ClimbPick_AnimBP.HM_TPV_ClimbPick_AnimBP_C.UpdateLayeringValues
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -30,5 +29,5 @@ void UHM_TPV_ClimbPick_AnimBP_C::UpdateLayeringValues()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

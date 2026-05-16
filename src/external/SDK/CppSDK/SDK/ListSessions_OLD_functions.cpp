@@ -14,8 +14,7 @@
 #include "ListSessions_OLD_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ListSessions_OLD.ListSessions_OLD_C.BndEvt__ShowOfficialServersCheckBox_K2Node_ComponentBoundEvent_78_OnCheckBoxComponentStateChanged__DelegateSignature
 // (BlueprintEvent)
@@ -136,5 +135,5 @@ class UWidget* UListSessions_OLD_C::GetWidgetToScaleForHandheld()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

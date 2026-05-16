@@ -14,8 +14,7 @@
 #include "FPVWeaponAnimBP_Base_Carrying_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function FPVWeaponAnimBP_Base_Carrying.FPVWeaponAnimBP_Base_Carrying_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -259,5 +258,5 @@ void UFPVWeaponAnimBP_Base_Carrying_C::ExecuteUbergraph_FPVWeaponAnimBP_Base_Car
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function ASAUIWidget_HorizontalListSelector_Sub_Style4.ASAUIWidget_HorizontalListSelector_Sub_Style4_C.Tick
 // 0x003C (0x003C - 0x0000)
@@ -313,5 +313,5 @@ public:
 };
 DUMPER7_ASSERTS_ASAUIWidget_HorizontalListSelector_Sub_Style4_C_ExecuteUbergraph_ASAUIWidget_HorizontalListSelector_Sub_Style4;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

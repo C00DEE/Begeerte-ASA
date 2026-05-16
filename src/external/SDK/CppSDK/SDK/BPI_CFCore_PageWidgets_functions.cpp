@@ -14,8 +14,7 @@
 #include "BPI_CFCore_PageWidgets_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BPI_CFCore_PageWidgets.BPI_CFCore_PageWidgets_C.UpdateSearch
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -56,5 +55,5 @@ void IBPI_CFCore_PageWidgets_C::OnSearch(const class FText& Search_Input)
 	AsUObject()->ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

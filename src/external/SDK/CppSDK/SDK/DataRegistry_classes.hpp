@@ -12,14 +12,13 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "DataRegistry_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
+#include "DataRegistry_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class DataRegistry.DataRegistrySettings
 // 0x0018 (0x0050 - 0x0038)
@@ -270,5 +269,4 @@ public:
 };
 DUMPER7_ASSERTS_UDataRegistrySubsystem;
 
-}
-
+SDK_NAMESPACE_END

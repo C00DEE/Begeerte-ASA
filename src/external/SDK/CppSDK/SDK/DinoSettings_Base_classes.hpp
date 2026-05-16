@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Struct_VFX_DinoData_structs.hpp"
 #include "ShooterGame_classes.hpp"
+#include "Struct_VFX_DinoData_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DinoSettings_Base.DinoSettings_Base_C
 // 0x0078 (0x0108 - 0x0090)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_UDinoSettings_Base_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass ASAUI_NewsCarousel_Half.ASAUI_NewsCarousel_Half_C
 // 0x0090 (0x0818 - 0x0788)
@@ -63,5 +62,4 @@ public:
 };
 DUMPER7_ASSERTS_UASAUI_NewsCarousel_Half_C;
 
-}
-
+SDK_NAMESPACE_END

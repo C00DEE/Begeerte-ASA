@@ -14,8 +14,7 @@
 #include "UI_ComboCategory_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_ComboCategory.UI_ComboCategory_C.ExecuteUbergraph_UI_ComboCategory
 // (Final, UbergraphFunction, HasDefaults)
@@ -78,5 +77,5 @@ void UUI_ComboCategory_C::Tick(const struct FGeometry& MyGeometry, float InDelta
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

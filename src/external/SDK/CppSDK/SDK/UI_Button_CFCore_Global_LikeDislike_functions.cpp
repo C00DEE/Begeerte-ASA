@@ -14,8 +14,7 @@
 #include "UI_Button_CFCore_Global_LikeDislike_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_Button_CFCore_Global_LikeDislike.UI_Button_CFCore_Global_LikeDislike_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -98,5 +97,5 @@ void UUI_Button_CFCore_Global_LikeDislike_C::UpdateToNewRatingAction()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

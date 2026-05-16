@@ -14,8 +14,8 @@
 #include "MovieScene_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function LevelSequence.LevelSequence.CopyMetaData
 // 0x0010 (0x0010 - 0x0000)
@@ -332,5 +332,5 @@ public:
 };
 DUMPER7_ASSERTS_LevelSequenceMediaController_GetSequence;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

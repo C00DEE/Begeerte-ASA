@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ShooterGame_classes.hpp"
 #include "UMG_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass DataListButtonVariable_Widget_ASA.DataListButtonVariable_Widget_ASA_C
 // 0x00E0 (0x04D8 - 0x03F8)
@@ -94,5 +93,4 @@ public:
 };
 DUMPER7_ASSERTS_UDataListButtonVariable_Widget_ASA_C;
 
-}
-
+SDK_NAMESPACE_END

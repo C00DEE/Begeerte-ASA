@@ -14,8 +14,7 @@
 #include "SkeletalMeshComponent_CharacterSkin_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function SkeletalMeshComponent_CharacterSkin.SkeletalMeshComponent_CharacterSkin_C.AddedAsPrimalItemAttachment
 // (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -44,5 +43,5 @@ void USkeletalMeshComponent_CharacterSkin_C::BPOnComponentDestroyed()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

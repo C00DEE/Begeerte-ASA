@@ -14,8 +14,7 @@
 #include "OptionsEntryNew_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function OptionsEntryNew.OptionsEntryNew_C.BndEvt__OptionsEntryNew_Button_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -50,5 +49,5 @@ void UOptionsEntryNew_C::ExecuteUbergraph_OptionsEntryNew(int32 EntryPoint)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

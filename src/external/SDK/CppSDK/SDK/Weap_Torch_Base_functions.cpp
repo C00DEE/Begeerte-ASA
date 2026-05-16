@@ -14,8 +14,7 @@
 #include "Weap_Torch_Base_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Weap_Torch_Base.Weap_Torch_Base_C.BPAppliedPrimalItemToWeapon
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -220,5 +219,5 @@ void AWeap_Torch_Base_C::StartUnequipEvent()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -18,8 +18,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class Landscape.MaterialExpressionLandscapeLayerSwitch
 // 0x0060 (0x0110 - 0x00B0)
@@ -1630,5 +1629,4 @@ public:
 };
 DUMPER7_ASSERTS_UMaterialExpressionLandscapeLayerSample;
 
-}
-
+SDK_NAMESPACE_END

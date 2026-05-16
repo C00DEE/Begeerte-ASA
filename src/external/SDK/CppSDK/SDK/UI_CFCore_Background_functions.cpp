@@ -14,8 +14,7 @@
 #include "UI_CFCore_Background_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Background.UI_CFCore_Background_C.ApplyThemeSettingsToAll
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -92,5 +91,5 @@ void UUI_CFCore_Background_C::PreConstruct(bool IsDesignTime)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

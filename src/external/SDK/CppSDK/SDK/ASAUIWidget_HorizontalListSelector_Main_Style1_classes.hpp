@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "SlateCore_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass ASAUIWidget_HorizontalListSelector_Main_Style1.ASAUIWidget_HorizontalListSelector_Main_Style1_C
 // 0x0208 (0x0580 - 0x0378)
@@ -109,5 +108,4 @@ public:
 };
 DUMPER7_ASSERTS_UASAUIWidget_HorizontalListSelector_Main_Style1_C;
 
-}
-
+SDK_NAMESPACE_END

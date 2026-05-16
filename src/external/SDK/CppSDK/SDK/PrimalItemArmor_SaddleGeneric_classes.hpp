@@ -14,8 +14,7 @@
 #include "PrimalItemArmorGeneric_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemArmor_SaddleGeneric.PrimalItemArmor_SaddleGeneric_C
 // 0x0020 (0x0B80 - 0x0B60)
@@ -51,5 +50,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemArmor_SaddleGeneric_C;
 
-}
-
+SDK_NAMESPACE_END

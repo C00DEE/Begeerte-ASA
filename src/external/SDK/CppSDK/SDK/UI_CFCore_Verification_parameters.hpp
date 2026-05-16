@@ -12,13 +12,13 @@
 
 #include "UMG_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "cfcore_structs.hpp"
 #include "InputCore_structs.hpp"
 #include "ENUM_CFCore_InputDevices_structs.hpp"
-#include "cfcore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function UI_CFCore_Verification.UI_CFCore_Verification_C.BndEvt__Verification_UI_Code_UI_K2Node_ComponentBoundEvent_3_OnDigitsFilled__DelegateSignature
 // 0x0010 (0x0010 - 0x0000)
@@ -132,5 +132,5 @@ public:
 };
 DUMPER7_ASSERTS_UI_CFCore_Verification_C_PreConstruct;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

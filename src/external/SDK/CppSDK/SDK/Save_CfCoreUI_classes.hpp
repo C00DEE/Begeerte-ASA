@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Save_CfCoreUI.Save_CfCoreUI_C
 // 0x0008 (0x0030 - 0x0028)
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_USave_CfCoreUI_C;
 
-}
-
+SDK_NAMESPACE_END

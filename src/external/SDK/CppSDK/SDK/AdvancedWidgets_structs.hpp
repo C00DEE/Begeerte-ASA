@@ -13,8 +13,7 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct AdvancedWidgets.ColorGradingSpinBoxStyle
 // 0x02D8 (0x02E0 - 0x0008)
@@ -31,5 +30,4 @@ public:
 };
 DUMPER7_ASSERTS_FColorGradingSpinBoxStyle;
 
-}
-
+SDK_NAMESPACE_END

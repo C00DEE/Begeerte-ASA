@@ -14,8 +14,7 @@
 #include "UI_CFCore_Discovery_RectangleCategory_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Discovery_RectangleCategory.UI_CFCore_Discovery_RectangleCategory_C.BndEvt__UI_CFCore_RectangleCategorieShowcase_Button_GoToModPage_K2Node_ComponentBoundEvent_3_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -187,5 +186,5 @@ void UUI_CFCore_Discovery_RectangleCategory_C::PreConstruct(bool IsDesignTime)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

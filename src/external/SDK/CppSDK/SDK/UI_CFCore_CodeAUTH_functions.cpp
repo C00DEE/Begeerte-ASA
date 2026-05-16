@@ -14,8 +14,7 @@
 #include "UI_CFCore_CodeAUTH_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_CodeAUTH.UI_CFCore_CodeAUTH_C.BackSpace
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -314,5 +313,5 @@ void UUI_CFCore_CodeAUTH_C::SetDigitToText(int32 Index_0, const class FText& Tex
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

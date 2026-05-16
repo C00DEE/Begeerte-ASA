@@ -14,8 +14,7 @@
 #include "UI_CFCore_RedeemCode_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_RedeemCode.UI_CFCore_RedeemCode_C.AttemptClaim
 // (BlueprintCallable, BlueprintEvent)
@@ -431,5 +430,5 @@ void UUI_CFCore_RedeemCode_C::UpdateSlotInformation()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

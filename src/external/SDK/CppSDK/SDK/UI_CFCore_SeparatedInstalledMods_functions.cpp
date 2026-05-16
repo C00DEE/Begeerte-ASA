@@ -14,8 +14,7 @@
 #include "UI_CFCore_SeparatedInstalledMods_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_SeparatedInstalledMods.UI_CFCore_SeparatedInstalledMods_C.AssignFirstModFoundToPreview
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -579,5 +578,5 @@ void UUI_CFCore_SeparatedInstalledMods_C::WipeBothLists()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

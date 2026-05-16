@@ -39,7 +39,7 @@ const char* LanguageManager::Language_Menu::WorkshopSection = U8("Workshop ÓïÑÔ°
 
 // -- Aimbot_Menu --
 const char* LanguageManager::Aimbot_Menu::TabLabel = U8("×ÔÃé");
-const char* LanguageManager::Aimbot_Menu::SectionTitle = U8("¶ÓÓÑÉèÖÃ");
+const char* LanguageManager::Aimbot_Menu::SectionTitle = U8("×Ô¶¯Ãé×¼");
 const char* LanguageManager::Aimbot_Menu::AimbotEnabled = U8("×Ô¶¯Ãé×¼");
 const char* LanguageManager::Aimbot_Menu::AimbotFOV = U8("Ãé×¼·¶Î§");
 const char* LanguageManager::Aimbot_Menu::AimbotSmooth = U8("Ãé×¼ËÙ¶È");
@@ -87,6 +87,7 @@ const char* LanguageManager::Misc_Menu::UnlockExplorerNotes = U8("Ò»¼üÂú¼¶");
 const char* LanguageManager::Misc_Menu::AutoFeed = U8("×Ô¶¯Î¹Èâ");
 const char* LanguageManager::Misc_Menu::SuperFlyer = U8("·ÉĞĞÁú¼ÓÇ¿");
 const char* LanguageManager::Misc_Menu::ForceTurn = U8("Ãë×ªÍ·");
+const char* LanguageManager::Misc_Menu::LogDamage = U8("ÉËº¦ÈÕÖ¾");
 
 // -- StructureList_Menu --
 const char* LanguageManager::StructureList_Menu::TabLabel = U8("½¨ÖşÁĞ±í");
@@ -172,7 +173,7 @@ void LanguageManager::RegisterDefaults(std::unordered_map<std::string, std::stri
 
     // Aimbot_Menu
     d["Aimbot_Menu.TabLabel"] = U8("×ÔÃé");
-    d["Aimbot_Menu.SectionTitle"] = U8("¶ÓÓÑÉèÖÃ");
+    d["Aimbot_Menu.SectionTitle"] = U8("×Ô¶¯Ãé×¼");
     d["Aimbot_Menu.AimbotEnabled"] = U8("×Ô¶¯Ãé×¼");
     d["Aimbot_Menu.AimbotFOV"] = U8("Ãé×¼·¶Î§");
     d["Aimbot_Menu.AimbotSmooth"] = U8("Ãé×¼ËÙ¶È");
@@ -220,6 +221,7 @@ void LanguageManager::RegisterDefaults(std::unordered_map<std::string, std::stri
     d["Misc_Menu.AutoFeed"] = U8("×Ô¶¯Î¹Èâ");
     d["Misc_Menu.SuperFlyer"] = U8("·ÉĞĞÁú¼ÓÇ¿");
     d["Misc_Menu.ForceTurn"] = U8("Ãë×ªÍ·");
+    d["Misc_Menu.LogDamage"] = U8("ÉËº¦ÈÕÖ¾");
 
     // StructureList_Menu
     d["StructureList_Menu.TabLabel"] = U8("½¨ÖşÁĞ±í");
@@ -362,6 +364,7 @@ void LanguageManager::ApplyToStaticMembers() {
     apply("Misc_Menu.AutoFeed", Misc_Menu::AutoFeed);
     apply("Misc_Menu.SuperFlyer", Misc_Menu::SuperFlyer);
     apply("Misc_Menu.ForceTurn", Misc_Menu::ForceTurn);
+    apply("Misc_Menu.LogDamage", Misc_Menu::LogDamage);
 
     // StructureList_Menu
     apply("StructureList_Menu.TabLabel", StructureList_Menu::TabLabel);

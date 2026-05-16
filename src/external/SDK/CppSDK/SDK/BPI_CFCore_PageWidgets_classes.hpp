@@ -13,8 +13,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BPI_CFCore_PageWidgets.BPI_CFCore_PageWidgets_C
 // 0x0000 (0x0000 - 0x0000)
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_IBPI_CFCore_PageWidgets_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "UI_CFCore_Button_SignIn_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Button_SignIn.UI_CFCore_Button_SignIn_C.BndEvt__SignIn_Button_20_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -84,5 +83,5 @@ void UUI_CFCore_Button_SignIn_C::removeMenu()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

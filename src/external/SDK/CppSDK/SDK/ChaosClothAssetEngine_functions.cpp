@@ -14,8 +14,7 @@
 #include "ChaosClothAssetEngine_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ChaosClothAssetEngine.ChaosClothComponent.AddCollisionSource
 // (Final, Native, Public, BlueprintCallable)
@@ -879,5 +878,5 @@ struct FVector2D UChaosClothAssetInteractor::GetWeightedFloatValue(const class F
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "Buff_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Buff_BasedOnDesertKaiju.Buff_BasedOnDesertKaiju_C
 // 0x0008 (0x0BD8 - 0x0BD0)
@@ -43,5 +42,4 @@ public:
 };
 DUMPER7_ASSERTS_ABuff_BasedOnDesertKaiju_C;
 
-}
-
+SDK_NAMESPACE_END

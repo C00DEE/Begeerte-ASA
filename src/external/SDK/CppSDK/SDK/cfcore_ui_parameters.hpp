@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "cfcore_ui_structs.hpp"
-#include "InputCore_structs.hpp"
 #include "cfcore_structs.hpp"
+#include "InputCore_structs.hpp"
+#include "cfcore_ui_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function cfcore_ui.BindButtonSystem.ControllerAction
 // 0x0018 (0x0018 - 0x0000)
@@ -579,5 +579,5 @@ public:
 };
 DUMPER7_ASSERTS_CFCoreVirtualCursorFunctionLibrary_IsCursorOverInteractableWidget;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

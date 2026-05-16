@@ -12,13 +12,12 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "BinkMediaPlayer_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "BinkMediaPlayer_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class BinkMediaPlayer.BinkFunctionLibrary
 // 0x0000 (0x0028 - 0x0028)
@@ -195,5 +194,4 @@ public:
 };
 DUMPER7_ASSERTS_UBinkMoviePlayerSettings;
 
-}
-
+SDK_NAMESPACE_END

@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "ThreadExecutionBlueprintNode_structs.hpp"
 #include "Engine_structs.hpp"
+#include "ThreadExecutionBlueprintNode_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function ThreadExecutionBlueprintNode.AsyncExecutionBlueprintTypes.Conv_ThreadTickTimingToTickingGroup
 // 0x0002 (0x0002 - 0x0000)
@@ -423,5 +423,5 @@ public:
 };
 DUMPER7_ASSERTS_ThreadNodeSubsystem_GetAllThreadExecTicks;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

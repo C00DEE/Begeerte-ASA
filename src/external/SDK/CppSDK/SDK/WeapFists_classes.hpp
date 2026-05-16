@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass WeapFists.WeapFists_C
 // 0x0010 (0x1128 - 0x1118)
@@ -43,5 +42,4 @@ public:
 };
 DUMPER7_ASSERTS_AWeapFists_C;
 
-}
-
+SDK_NAMESPACE_END

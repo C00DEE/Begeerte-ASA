@@ -11,12 +11,12 @@
 #include "Basic.hpp"
 
 #include "UMG_structs.hpp"
-#include "ENUM_CFCore_OverlayProfiles_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ENUM_CFCore_OverlayProfiles_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function UI_CFCore_Overlay.UI_CFCore_Overlay_C.ExecuteUbergraph_UI_CFCore_Overlay
 // 0x0040 (0x0040 - 0x0000)
@@ -61,5 +61,5 @@ public:
 };
 DUMPER7_ASSERTS_UI_CFCore_Overlay_C_PreConstruct;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "DataflowSimulation_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum ChaosSolverEngine.EClusterConnectionTypeEnum
 // NumValues: 0x0008
@@ -107,5 +106,4 @@ public:
 };
 DUMPER7_ASSERTS_FDataflowRigidSolverProxy;
 
-}
-
+SDK_NAMESPACE_END

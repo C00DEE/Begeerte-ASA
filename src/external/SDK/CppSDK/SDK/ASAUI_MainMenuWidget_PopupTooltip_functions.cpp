@@ -14,8 +14,7 @@
 #include "ASAUI_MainMenuWidget_PopupTooltip_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ASAUI_MainMenuWidget_PopupTooltip.ASAUI_MainMenuWidget_PopupTooltip_C.ExecuteUbergraph_ASAUI_MainMenuWidget_PopupTooltip
 // (Final, UbergraphFunction)
@@ -64,5 +63,5 @@ void UASAUI_MainMenuWidget_PopupTooltip_C::show()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
+#include "ShooterGame_classes.hpp"
 #include "ENUM_CFCore_InputDevices_structs.hpp"
 #include "UMG_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_CFCore_Verification.UI_CFCore_Verification_C
 // 0x00F8 (0x0470 - 0x0378)
@@ -96,5 +95,4 @@ public:
 };
 DUMPER7_ASSERTS_UUI_CFCore_Verification_C;
 
-}
-
+SDK_NAMESPACE_END

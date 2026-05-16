@@ -14,8 +14,7 @@
 #include "ControlRig_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // RigVMBlueprintGeneratedClass Human_ModifyPose_CtrlRig.Human_ModifyPose_CtrlRig_C
 // 0x0050 (0x0B20 - 0x0AD0)
@@ -42,5 +41,4 @@ public:
 };
 DUMPER7_ASSERTS_UHuman_ModifyPose_CtrlRig_C;
 
-}
-
+SDK_NAMESPACE_END

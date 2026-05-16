@@ -14,8 +14,7 @@
 #include "MapSelect_Entry_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MapSelect_Entry.MapSelect_Entry_C.BndEvt__MapSelect_Entry_DeleteSinglePlayerData_K2Node_ComponentBoundEvent_2_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -291,5 +290,5 @@ void UMapSelect_Entry_C::UpdateDeleteSaveButton()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

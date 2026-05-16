@@ -14,8 +14,7 @@
 #include "UI_CFCore_Discovery_ShowcaseSlot_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Discovery_ShowcaseSlot.UI_CFCore_Discovery_ShowcaseSlot_C.BndEvt__UI_ShowcaseSlot_Button_GoToModPage_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature
 // (BlueprintEvent)
@@ -290,5 +289,5 @@ void UUI_CFCore_Discovery_ShowcaseSlot_C::Tick(const struct FGeometry& MyGeometr
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

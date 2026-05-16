@@ -14,8 +14,7 @@
 #include "AnimToTexture_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function AnimToTexture.AnimToTextureDataAsset.BP_GetBonePositionTexture
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
@@ -472,5 +471,5 @@ bool UAnimToTextureInstancePlaybackLibrary::UpdateInstanceFrameData(class UInsta
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

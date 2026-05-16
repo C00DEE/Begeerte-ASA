@@ -14,8 +14,7 @@
 #include "UI_CFCore_Button_Sidebar_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Button_Sidebar.UI_CFCore_Button_Sidebar_C.BndEvt__UI_Button_Sidebar_Button_BrowseMods_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -181,5 +180,5 @@ void UUI_CFCore_Button_Sidebar_C::UpdateThemeData()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

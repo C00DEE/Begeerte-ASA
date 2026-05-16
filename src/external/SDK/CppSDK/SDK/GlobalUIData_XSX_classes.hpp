@@ -13,8 +13,7 @@
 #include "GlobalUIData_BP_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GlobalUIData_XSX.GlobalUIData_XSX_C
 // 0x0000 (0x0E20 - 0x0E20)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UGlobalUIData_XSX_C;
 
-}
-
+SDK_NAMESPACE_END

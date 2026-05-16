@@ -10,15 +10,14 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "ShooterGame_structs.hpp"
 #include "ShooterGame_classes.hpp"
-#include "Engine_structs.hpp"
 #include "UMG_structs.hpp"
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass MapSelect_Entry.MapSelect_Entry_C
 // 0x00B8 (0x0430 - 0x0378)
@@ -86,5 +85,4 @@ public:
 };
 DUMPER7_ASSERTS_UMapSelect_Entry_C;
 
-}
-
+SDK_NAMESPACE_END

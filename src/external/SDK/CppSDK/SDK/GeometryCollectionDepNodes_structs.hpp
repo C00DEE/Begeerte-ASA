@@ -11,13 +11,12 @@
 #include "Basic.hpp"
 
 #include "Chaos_structs.hpp"
-#include "DataflowEnginePlugin_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "DataflowCore_structs.hpp"
+#include "DataflowEnginePlugin_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum GeometryCollectionDepNodes.EDataflowTransferNodeFalloff
 // NumValues: 0x0005
@@ -93,5 +92,4 @@ public:
 };
 DUMPER7_ASSERTS_FSetVertexColorInCollectionFromVertexSelectionDataflowNode;
 
-}
-
+SDK_NAMESPACE_END

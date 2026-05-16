@@ -14,8 +14,7 @@
 #include "UI_CFCore_Prompt_UninstallAll_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Prompt_UninstallAll.UI_CFCore_Prompt_UninstallAll_C.BndEvt__UI_Prompt_UninstallAll_UI_Button_Ark_Global_Back_K2Node_ComponentBoundEvent_1_OnClick__DelegateSignature
 // (BlueprintEvent)
@@ -157,5 +156,5 @@ void UUI_CFCore_Prompt_UninstallAll_C::UpdateThemeSettings()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

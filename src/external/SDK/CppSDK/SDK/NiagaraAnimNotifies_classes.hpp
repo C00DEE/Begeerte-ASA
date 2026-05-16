@@ -11,12 +11,11 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "Engine_classes.hpp"
 #include "NiagaraAnimNotifies_structs.hpp"
+#include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class NiagaraAnimNotifies.AnimNotifyState_TimedNiagaraEffect
 // 0x0048 (0x0080 - 0x0038)
@@ -117,5 +116,4 @@ public:
 };
 DUMPER7_ASSERTS_UAnimNotify_PlayNiagaraEffect;
 
-}
-
+SDK_NAMESPACE_END

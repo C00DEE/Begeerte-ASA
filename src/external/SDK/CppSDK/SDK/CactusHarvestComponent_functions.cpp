@@ -14,8 +14,7 @@
 #include "CactusHarvestComponent_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CactusHarvestComponent.CactusHarvestComponent_C.BPCustomHarvestResource
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -45,5 +44,5 @@ int32 UCactusHarvestComponent_C::BPCustomHarvestResource(class UPrimalInventoryC
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

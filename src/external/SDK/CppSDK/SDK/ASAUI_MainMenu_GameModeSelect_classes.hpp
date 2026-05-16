@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass ASAUI_MainMenu_GameModeSelect.ASAUI_MainMenu_GameModeSelect_C
 // 0x00E0 (0x0458 - 0x0378)
@@ -76,5 +75,4 @@ public:
 };
 DUMPER7_ASSERTS_UASAUI_MainMenu_GameModeSelect_C;
 
-}
-
+SDK_NAMESPACE_END

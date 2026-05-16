@@ -10,16 +10,15 @@
 
 #include "Basic.hpp"
 
+#include "LiveLinkMovieScene_structs.hpp"
+#include "LiveLinkInterface_structs.hpp"
 #include "MovieScene_structs.hpp"
 #include "MovieScene_classes.hpp"
-#include "LiveLinkInterface_structs.hpp"
-#include "LiveLinkMovieScene_structs.hpp"
 #include "MovieSceneTracks_classes.hpp"
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class LiveLinkMovieScene.MovieSceneLiveLinkSection
 // 0x0140 (0x0238 - 0x00F8)
@@ -170,5 +169,4 @@ public:
 };
 DUMPER7_ASSERTS_UMovieSceneLiveLinkTrack;
 
-}
-
+SDK_NAMESPACE_END

@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass ASAUI_NewsCarouselTemplate_Entry_ServerStatus.ASAUI_NewsCarouselTemplate_Entry_ServerStatus_C
 // 0x0048 (0x03F8 - 0x03B0)
@@ -55,5 +54,4 @@ public:
 };
 DUMPER7_ASSERTS_UASAUI_NewsCarouselTemplate_Entry_ServerStatus_C;
 
-}
-
+SDK_NAMESPACE_END

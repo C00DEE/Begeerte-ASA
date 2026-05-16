@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass CustomButton_HUB_ASA.CustomButton_HUB_ASA_C
 // 0x06F0 (0x0DE0 - 0x06F0)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_UCustomButton_HUB_ASA_C;
 
-}
-
+SDK_NAMESPACE_END

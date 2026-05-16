@@ -101,6 +101,7 @@
     <ClInclude Include="external\LuaJIT-2.1\src\luajit_rolling.h" />
     <ClInclude Include="external\LuaJIT-2.1\src\lualib.h" />
     <ClInclude Include="external\Minimal-D3D12-Hook-ImGui\Font\Alibaba-PuHuiTi-Medium.h" />
+    <ClInclude Include="external\Minimal-D3D12-Hook-ImGui\Font\HarmonyOS_Sans_SC_Regular.h" />
     <ClInclude Include="external\Minimal-D3D12-Hook-ImGui\ImGui\imconfig.h" />
     <ClInclude Include="external\Minimal-D3D12-Hook-ImGui\ImGui\imgui.h" />
     <ClInclude Include="external\Minimal-D3D12-Hook-ImGui\ImGui\imgui_impl_dx12.h" />
@@ -123,6 +124,7 @@
     <ClInclude Include="external\sol2\config.hpp" />
     <ClInclude Include="external\sol2\forward.hpp" />
     <ClInclude Include="external\sol2\sol.hpp" />
+    <ClInclude Include="internal\AActor\TakeDamage.h" />
     <ClInclude Include="internal\CheatData\CheatData.hpp" />
     <ClInclude Include="internal\Config\ConfigManager.h" />
     <ClInclude Include="internal\Config\Configs.h" />
@@ -189,6 +191,7 @@
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsCpp</CompileAs>
     </ClCompile>
     <ClCompile Include="external\SDK\SDK_Impl.cpp" />
+    <ClCompile Include="internal\AActor\TakeDamage.cpp" />
     <ClCompile Include="internal\Config\ConfigManager.cpp" />
     <ClCompile Include="internal\ESP\DrawESP.cpp" />
     <ClCompile Include="internal\ESP\ESP.cpp" />
@@ -351,6 +354,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
       <MinimalRebuild>false</MinimalRebuild>
+      <AdditionalOptions>/p:StopOnFirstFailure=True %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

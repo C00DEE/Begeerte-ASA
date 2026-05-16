@@ -13,8 +13,7 @@
 #include "DmgType_Explosion_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DmgType_Explosion_NoMetal.DmgType_Explosion_NoMetal_C
 // 0x0000 (0x0178 - 0x0178)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UDmgType_Explosion_NoMetal_C;
 
-}
-
+SDK_NAMESPACE_END

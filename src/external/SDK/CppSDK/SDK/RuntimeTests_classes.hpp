@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class RuntimeTests.EngineTestTickActor
 // 0x0020 (0x04A8 - 0x0488)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_AEngineTestTickActor;
 
-}
-
+SDK_NAMESPACE_END

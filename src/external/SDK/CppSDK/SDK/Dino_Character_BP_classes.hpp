@@ -10,18 +10,17 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
 #include "DinoContentData_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Dino_Character_BP.Dino_Character_BP_C
 // 0x00B0 (0x2A10 - 0x2960)
 #pragma pack(push, 0x1)
-class alignas(0x10) ADino_Character_BP_C : public APrimalDinoCharacter
+class SDK_ALIGN(0x10) ADino_Character_BP_C : public APrimalDinoCharacter
 {
 public:
 	uint8                                         Pad_2958[0x8];                                     // 0x2958(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -83,5 +82,4 @@ public:
 #pragma pack(pop)
 DUMPER7_ASSERTS_ADino_Character_BP_C;
 
-}
-
+SDK_NAMESPACE_END

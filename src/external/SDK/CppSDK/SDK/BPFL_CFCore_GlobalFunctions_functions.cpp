@@ -14,8 +14,7 @@
 #include "BPFL_CFCore_GlobalFunctions_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BPFL_CFCore_GlobalFunctions.BPFL_CFCore_GlobalFunctions_C.GetIsModEnabled
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -1145,5 +1144,5 @@ void UBPFL_CFCore_GlobalFunctions_C::ErrorMessage(class UObject* Object, const c
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

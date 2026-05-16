@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "Buff_OverrideVelocity_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Buff_OverrideVelocity_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass Buff_TekArmor.Buff_TekArmor_C
 // 0x0120 (0x0D08 - 0x0BE8)
@@ -134,5 +133,4 @@ public:
 };
 DUMPER7_ASSERTS_ABuff_TekArmor_C;
 
-}
-
+SDK_NAMESPACE_END

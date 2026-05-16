@@ -14,8 +14,7 @@
 #include "Climbing_ImpactEffect_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Climbing_ImpactEffect.Climbing_ImpactEffect_C.DeactivateImpactEffect
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -78,5 +77,5 @@ void AClimbing_ImpactEffect_C::ReceiveBeginPlay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

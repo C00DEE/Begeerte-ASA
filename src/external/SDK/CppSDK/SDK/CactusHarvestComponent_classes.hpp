@@ -13,8 +13,7 @@
 #include "AttackHarvestComponent_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass CactusHarvestComponent.CactusHarvestComponent_C
 // 0x0018 (0x0248 - 0x0230)
@@ -44,5 +43,4 @@ public:
 };
 DUMPER7_ASSERTS_UCactusHarvestComponent_C;
 
-}
-
+SDK_NAMESPACE_END

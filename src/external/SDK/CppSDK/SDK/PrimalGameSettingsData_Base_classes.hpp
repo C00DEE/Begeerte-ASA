@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalGameSettingsData_Base.PrimalGameSettingsData_Base_C
 // 0x0000 (0x0398 - 0x0398)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalGameSettingsData_Base_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,12 +13,12 @@
 #include "UMG_structs.hpp"
 #include "InputCore_structs.hpp"
 #include "SlateCore_structs.hpp"
-#include "ShooterGame_structs.hpp"
 #include "Engine_structs.hpp"
+#include "ShooterGame_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function ReMainMenuUI_ASA.ReMainMenuUI_ASA_C.BPGamepadReleased
 // 0x0028 (0x0028 - 0x0000)
@@ -274,5 +274,5 @@ public:
 };
 DUMPER7_ASSERTS_ReMainMenuUI_ASA_C_UpdateLeftTextPosition;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

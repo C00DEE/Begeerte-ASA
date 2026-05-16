@@ -12,13 +12,13 @@
 
 #include "UMG_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "cfcore_structs.hpp"
 #include "InputCore_structs.hpp"
 #include "ENUM_CFCore_InputDevices_structs.hpp"
-#include "cfcore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function UI_CFCore_Prompt_SignIn.UI_CFCore_Prompt_SignIn_C.BndEvt__SignIn_UI_EditableTxt_Email_K2Node_ComponentBoundEvent_2_OnEditableTextChangedEvent__DelegateSignature
 // 0x0010 (0x0010 - 0x0000)
@@ -128,5 +128,5 @@ public:
 };
 DUMPER7_ASSERTS_UI_CFCore_Prompt_SignIn_C_PreConstruct;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

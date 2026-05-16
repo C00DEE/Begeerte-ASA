@@ -14,8 +14,7 @@
 #include "UI_Button_CFCore_Global_Master_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_Button_CFCore_Global_Master.UI_Button_CFCore_Global_Master_C.BndEvt__UI_Button_Ark_Blue_Button_BrowseMods_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -283,5 +282,5 @@ void UUI_Button_CFCore_Global_Master_C::Tick(const struct FGeometry& MyGeometry,
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

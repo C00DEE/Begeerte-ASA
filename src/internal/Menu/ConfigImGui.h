@@ -199,9 +199,11 @@ namespace g_DrawImGui {
 		if (enable_anim > 0.0f)
 		{
 			char button_id[256];
-			char popup_id[256];
+			char popup_picker_id[256];
+			char popup_menu_id[256];
 			std::snprintf(button_id, sizeof(button_id), "##ColorBtn_%s", label_id);
-			std::snprintf(popup_id, sizeof(popup_id), "##ColorPopup_%s", label_id);
+			std::snprintf(popup_picker_id, sizeof(popup_picker_id), "##ColorPickerPopup_%s", label_id);
+			std::snprintf(popup_menu_id, sizeof(popup_menu_id), "##ColorMenuPopup_%s", label_id);
 
 			ImVec4 cur = ImVec4(col_ptr[0], col_ptr[1], col_ptr[2], col_ptr[3]);
 			ImDrawList* draw_list = ImGui::GetWindowDrawList();
@@ -219,32 +221,76 @@ namespace g_DrawImGui {
 
 			ImGui::PushStyleVar(ImGuiStyleVar_Alpha, final_alpha);
 			if (ImGui::ColorButton(button_id, cur, ImGuiColorEditFlags_NoBorder | ImGuiColorEditFlags_NoTooltip, btn_size_vec))
-				ImGui::OpenPopup(popup_id);
+			{
+				ImGui::OpenPopup(popup_picker_id);
+			}
 			ImGui::PopStyleVar();
 
 			bool hovered = ImGui::IsItemHovered();
 			hover_anim = hovered ? std::min(hover_anim + g.IO.DeltaTime * 8.0f, 1.0f) : std::max(hover_anim - g.IO.DeltaTime * 8.0f, 0.0f);
 			storage->SetFloat(anim_id, hover_anim);
 
-			if (hovered && ImGui::IsMouseReleased(ImGuiMouseButton_Right)) ImGui::OpenPopup(popup_id);
-
-			const char* popup_items[] = { U8("复制"), U8("粘贴") };
-			float popup_min_w = CalcPopupMinWidthForItems(popup_items, IM_ARRAYSIZE(popup_items));
-			ImGui::SetNextWindowSizeConstraints(ImVec2(std::max(180.0f, popup_min_w), 0.0f), ImVec2(FLT_MAX, FLT_MAX));
-
-			if (ImGui::BeginPopup(popup_id, ImGuiWindowFlags_AlwaysAutoResize))
+			if (hovered && ImGui::IsMouseReleased(ImGuiMouseButton_Right))
 			{
-				if (ImGui::MenuItem(U8("复制"))) {
+				ImGui::OpenPopup(popup_menu_id);
+			}
+
+			// ==================== 弹窗 1：纯右键菜单（复制/粘贴） ====================
+			const char* popup_items[] = { U8("复制"), U8("粘贴") };
+			float padding_w = g.Style.WindowPadding.x * 2.0f;
+
+			// 计算文本宽度，用于完美对齐和匹配
+			float text_only_w = ImGui::CalcTextSize(U8("复制")).x;
+			// 精确计算“复制/粘贴”四个字的实际占用宽度，扣除任何默认对齐边距
+			float tight_w = text_only_w + padding_w + g.Style.FramePadding.x * 2.0f;
+
+			// 严格限制弹窗的最小和最大宽度，使其完美匹配“复制/粘贴”四个字的宽度。
+			ImGui::SetNextWindowSizeConstraints(ImVec2(tight_w, 0.0f), ImVec2(tight_w, FLT_MAX));
+
+			if (ImGui::BeginPopup(popup_menu_id, ImGuiWindowFlags_AlwaysAutoResize))
+			{
+				// 临时消除 Item 内部的额外边距，强制菜单项自适应最窄宽度
+				ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(0.0f, g.Style.ItemSpacing.y));
+
+				// 临时将圆角（FrameRounding）设置为你需要的值，用于此弹出窗口中的所有控件。
+				// 这是解决悬浮效果是方角矩形的核心。
+				float original_frame_rounding = g.Style.FrameRounding;
+				g.Style.FrameRounding = 4.0f; // 强制在此弹出窗口中使用 4.0 的圆角
+
+				// 我们不使用 MenuItem，因为 MenuItem 默认设计就是直角，并且不提供自定义圆角的选项。
+				// 我们自定义一个“圆角、文本居中、宽度匹配”的按钮来替代它。
+
+				// 计算按钮的宽度：窗口的可用宽度扣除窗口内部边距
+				float btn_w = ImGui::GetContentRegionAvail().x;
+
+				// 绘制“复制”按钮
+				if (ImGui::Button(U8("复制"), ImVec2(btn_w, 0))) {
 					g_saved_color[0] = col_ptr[0]; g_saved_color[1] = col_ptr[1];
 					g_saved_color[2] = col_ptr[2]; g_saved_color[3] = col_ptr[3];
+					ImGui::CloseCurrentPopup(); // 点击按钮后关闭弹出窗口
 				}
-				if (ImGui::MenuItem(U8("粘贴"))) {
+
+				// 绘制“粘贴”按钮
+				if (ImGui::Button(U8("粘贴"), ImVec2(btn_w, 0))) {
 					col_ptr[0] = g_saved_color[0]; col_ptr[1] = g_saved_color[1];
 					col_ptr[2] = g_saved_color[2]; col_ptr[3] = g_saved_color[3];
+					ImGui::CloseCurrentPopup(); // 点击按钮后关闭弹出窗口
 				}
-				ImGui::Separator();
-				ImGui::SetNextItemWidth(std::max(180.0f, frame_h * 9.0f));
-				ImGui::ColorPicker4("##Picker", col_ptr, ImGuiColorEditFlags_AlphaBar | ImGuiColorEditFlags_NoInputs | ImGuiColorEditFlags_NoOptions | ImGuiColorEditFlags_NoSmallPreview | ImGuiColorEditFlags_NoLabel | ImGuiColorEditFlags_NoTooltip);
+
+				// 恢复原来的 FrameRounding 设置
+				g.Style.FrameRounding = original_frame_rounding;
+
+				ImGui::PopStyleVar();
+				ImGui::EndPopup();
+			}
+
+			// ==================== 弹窗 2：纯左键菜单（只显示调色盘） ====================
+			ImGui::SetNextWindowSizeConstraints(ImVec2(frame_h * 9.0f, 0.0f), ImVec2(FLT_MAX, FLT_MAX));
+			if (ImGui::BeginPopup(popup_picker_id, ImGuiWindowFlags_AlwaysAutoResize))
+			{
+				ImGui::SetNextItemWidth(frame_h * 9.0f);
+				// 此处加入了 ImGuiColorEditFlags_NoSidePreview 标志，用于干掉右侧的 "Current" 预览区域
+				ImGui::ColorPicker4("##Picker", col_ptr, ImGuiColorEditFlags_AlphaBar | ImGuiColorEditFlags_DisplayHex | ImGuiColorEditFlags_NoOptions | ImGuiColorEditFlags_NoSmallPreview | ImGuiColorEditFlags_NoLabel | ImGuiColorEditFlags_NoTooltip | ImGuiColorEditFlags_NoSidePreview);
 				ImGui::EndPopup();
 			}
 		}
@@ -265,45 +311,109 @@ namespace g_DrawImGui {
 	inline bool DrawCustomCheckbox(const char* label, bool* v)
 	{
 		ImGuiContext& g = *GImGui;
+		ImGuiWindow* window = g.CurrentWindow;
+		if (window->SkipItems) return false;
+
+		ImGuiID id = window->GetID(label);
 		ImGuiStorage* storage = ImGui::GetStateStorage();
-		ImGuiID anim_id = ImGui::GetID(label);
 
-		float check_anim = storage->GetFloat(anim_id, *v ? 1.0f : 0.0f);
+		// 1. 动画状态机
+		float check_anim = storage->GetFloat(id, *v ? 1.0f : 0.0f);
 		check_anim = ImLinearSweep(check_anim, *v ? 1.0f : 0.0f, g.IO.DeltaTime * 8.0f);
-		storage->SetFloat(anim_id, check_anim);
+		storage->SetFloat(id, check_anim);
 
-		ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(5.0f, 5.0f));
+		float hover_anim = storage->GetFloat(id + 1, 0.0f);
 
-		float backup_checkmark_alpha = g.Style.Colors[ImGuiCol_CheckMark].w;
-		g.Style.Colors[ImGuiCol_CheckMark].w = 0.0f;
+		// 2. 尺寸与圆角独立设定 (摆脱全局圆角变成圆形的 BUG)
+		float square_sz = g.FontSize * 1.4f; // 尺寸放大，保证能看清内部层次 (约 20-22px)
+		float box_rounding = square_sz * 0.2f; // 强制保持适度的圆角矩形 (约 4px)
 
-		bool dummy_v = *v;
-		bool pressed = ImGui::Checkbox(label, &dummy_v);
+		const ImVec2 label_size = ImGui::CalcTextSize(label, NULL, true);
+
+		// 3. 完美的垂直居中与包围盒计算
+		float frame_h = ImGui::GetFrameHeight();
+		float pad_y = g.Style.FramePadding.y;
+
+		ImVec2 pos = window->DC.CursorPos;
+		float total_w = square_sz + (label_size.x > 0.0f ? g.Style.ItemInnerSpacing.x + label_size.x : 0.0f);
+		ImRect total_bb(pos, ImVec2(pos.x + total_w, pos.y + frame_h));
+
+		ImGui::ItemSize(total_bb, pad_y);
+		if (!ImGui::ItemAdd(total_bb, id)) return false;
+
+		// 4. 交互逻辑
+		bool hovered, held;
+		bool pressed = ImGui::ButtonBehavior(total_bb, id, &hovered, &held);
 		if (pressed) {
 			*v = !(*v);
+			ImGui::MarkItemEdited(id);
 		}
 
-		g.Style.Colors[ImGuiCol_CheckMark].w = backup_checkmark_alpha;
+		hover_anim = hovered ? std::min(hover_anim + g.IO.DeltaTime * 8.0f, 1.0f) : std::max(hover_anim - g.IO.DeltaTime * 8.0f, 0.0f);
+		storage->SetFloat(id + 1, hover_anim);
 
-		if (check_anim > 0.001f)
-		{
-			ImVec2 item_min = ImGui::GetItemRectMin();
-			float frame_size = g.FontSize + g.Style.FramePadding.y * 2.0f;
+		// ==========================================
+		// 5. 高质感分层渲染 (圆角矩形)
+		// ==========================================
+		ImDrawList* draw_list = window->DrawList;
+		float final_alpha = g_MenuAlpha;
+		ImVec4 accent_color = ThemeColors::GetAccent();
 
-			ImVec2 check_pos;
-			check_pos.x = item_min.x + g.Style.FramePadding.x;
-			check_pos.y = item_min.y + g.Style.FramePadding.y;
+		// 方块的 Y 轴坐标，保证和行高完美居中
+		float box_offset_y = (frame_h - square_sz) * 0.5f;
+		ImVec2 box_min = ImVec2(pos.x, pos.y + box_offset_y);
+		ImVec2 box_max = ImVec2(pos.x + square_sz, pos.y + box_offset_y + square_sz);
 
-			ImVec4 check_col = ThemeColors::GetAccent();
-			check_col.w *= (check_anim * g_MenuAlpha);
-
-			if (check_col.w > 0.001f) {
-				ImU32 col_u32 = ImGui::GetColorU32(check_col);
-				ImGui::RenderCheckMark(ImGui::GetWindowDrawList(), check_pos, col_u32, g.FontSize);
-			}
+		// [背景层 Glow] 悬浮时的外发光圈 (改成矩形发光)
+		if (hover_anim > 0.0f && final_alpha > 0.01f) {
+			float glow_expand = 3.0f * hover_anim;
+			ImVec2 glow_min = ImVec2(box_min.x - glow_expand, box_min.y - glow_expand);
+			ImVec2 glow_max = ImVec2(box_max.x + glow_expand, box_max.y + glow_expand);
+			ImU32 glow_col = ImGui::GetColorU32(ImVec4(accent_color.x, accent_color.y, accent_color.z, 0.25f * hover_anim * final_alpha));
+			draw_list->AddRectFilled(glow_min, glow_max, glow_col, box_rounding + glow_expand);
 		}
 
-		ImGui::PopStyleVar();
+		// [第一层] 底座背景 (解决 OFF 状态黑洞问题)
+		// 未启用时用正常的 WHITE_LOW (像普通的输入框背景)，启用时微微泛出强调色的底光
+		ImVec4 base_col_off = ThemeColors::WHITE_LOW;
+		ImVec4 base_col_on = ImVec4(accent_color.x, accent_color.y, accent_color.z, 0.15f);
+		ImVec4 bg_col = ImVec4(
+			ImLerp(base_col_off.x, base_col_on.x, check_anim),
+			ImLerp(base_col_off.y, base_col_on.y, check_anim),
+			ImLerp(base_col_off.z, base_col_on.z, check_anim),
+			ImLerp(base_col_off.w, base_col_on.w, check_anim)
+		);
+		bg_col.w *= final_alpha;
+		draw_list->AddRectFilled(box_min, box_max, ImGui::GetColorU32(bg_col), box_rounding);
+
+		// [第二层] ON 状态的核心方块 (解决层次感问题)
+		if (check_anim > 0.001f) {
+			// 内缩距离设置为整体尺寸的 10%，保证中心方块和外框之间有明显的间隙
+			float inset = square_sz * 0.10f;
+			ImVec2 inner_min = ImVec2(box_min.x + inset, box_min.y + inset);
+			ImVec2 inner_max = ImVec2(box_max.x - inset, box_max.y - inset);
+
+			ImVec4 core_col = accent_color;
+			core_col.w *= check_anim * final_alpha;
+
+			float inner_rounding = std::max(1.0f, box_rounding - inset * 0.5f);
+			draw_list->AddRectFilled(inner_min, inner_max, ImGui::GetColorU32(core_col), inner_rounding);
+		}
+
+		// [第三层] 玻璃边框
+		ImVec4 border_col_vec = ThemeColors::GLASS_BORDER;
+		border_col_vec.x = ImLerp(border_col_vec.x, accent_color.x, check_anim * 0.5f);
+		border_col_vec.y = ImLerp(border_col_vec.y, accent_color.y, check_anim * 0.5f);
+		border_col_vec.z = ImLerp(border_col_vec.z, accent_color.z, check_anim * 0.5f);
+		border_col_vec.w *= final_alpha;
+		draw_list->AddRect(box_min, box_max, ImGui::GetColorU32(border_col_vec), box_rounding, 0, 1.0f);
+
+		// 6. 渲染文本 (完美垂直对齐基线)
+		if (label_size.x > 0.0f) {
+			ImVec2 text_pos = ImVec2(pos.x + square_sz + g.Style.ItemInnerSpacing.x, pos.y + pad_y);
+			ImGui::RenderText(text_pos, label);
+		}
+
 		return pressed;
 	}
 

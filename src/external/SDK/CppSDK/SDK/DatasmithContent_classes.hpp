@@ -17,8 +17,7 @@
 #include "DatasmithContent_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class DatasmithContent.DatasmithObjectTemplate
 // 0x0008 (0x0030 - 0x0028)
@@ -1079,5 +1078,4 @@ public:
 };
 DUMPER7_ASSERTS_UDatasmithStaticMeshTemplate;
 
-}
-
+SDK_NAMESPACE_END

@@ -10,17 +10,16 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "CoreUObject_classes.hpp"
-#include "CinematicCamera_structs.hpp"
-#include "SP_Interpolators_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "SP_Camera_structs.hpp"
+#include "CinematicCamera_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "CoreUObject_classes.hpp"
+#include "SP_Interpolators_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class SP_Camera.SPCameraMode
 // 0x0128 (0x0150 - 0x0028)
@@ -232,5 +231,4 @@ public:
 };
 DUMPER7_ASSERTS_ASPPlayerCameraManager;
 
-}
-
+SDK_NAMESPACE_END

@@ -10,20 +10,19 @@
 
 #include "Basic.hpp"
 
-#include "ZoneGraphAnnotations_structs.hpp"
 #include "Engine_classes.hpp"
-#include "ZoneGraph_structs.hpp"
+#include "ZoneGraphAnnotations_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "ZoneGraph_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class ZoneGraphAnnotations.ZoneGraphAnnotationComponent
 // 0x0020 (0x0680 - 0x0660)
 #pragma pack(push, 0x1)
-class alignas(0x10) UZoneGraphAnnotationComponent : public UDebugDrawComponent
+class SDK_ALIGN(0x10) UZoneGraphAnnotationComponent : public UDebugDrawComponent
 {
 public:
 	uint8                                         Pad_658[0x18];                                     // 0x0658(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
@@ -225,5 +224,4 @@ public:
 };
 DUMPER7_ASSERTS_UZoneGraphDisturbanceAnnotationBPLibrary;
 
-}
-
+SDK_NAMESPACE_END

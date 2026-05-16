@@ -14,8 +14,7 @@
 #include "UI_CustomizeSlot_MainFont_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CustomizeSlot_MainFont.UI_CustomizeSlot_MainFont_C.GetColor
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -57,5 +56,5 @@ void UUI_CustomizeSlot_MainFont_C::SetColor(const struct FLinearColor& Color)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -12,13 +12,12 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "NavigationSystem_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "NavigationSystem_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class NavigationSystem.BaseGeneratedNavLinksProxy
 // 0x0018 (0x0040 - 0x0028)
@@ -1268,5 +1267,4 @@ public:
 };
 DUMPER7_ASSERTS_USplineNavModifierComponent;
 
-}
-
+SDK_NAMESPACE_END

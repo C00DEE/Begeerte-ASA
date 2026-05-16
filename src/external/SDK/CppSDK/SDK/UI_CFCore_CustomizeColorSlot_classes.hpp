@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_CFCore_CustomizeColorSlot.UI_CFCore_CustomizeColorSlot_C
 // 0x0040 (0x03B8 - 0x0378)
@@ -56,5 +55,4 @@ public:
 };
 DUMPER7_ASSERTS_UUI_CFCore_CustomizeColorSlot_C;
 
-}
-
+SDK_NAMESPACE_END

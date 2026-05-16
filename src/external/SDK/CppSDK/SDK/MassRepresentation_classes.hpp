@@ -11,14 +11,13 @@
 #include "Basic.hpp"
 
 #include "MassEntity_classes.hpp"
-#include "Engine_classes.hpp"
 #include "MassRepresentation_structs.hpp"
-#include "MassSpawner_classes.hpp"
 #include "CoreUObject_classes.hpp"
+#include "MassSpawner_classes.hpp"
+#include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MassRepresentation.MassDistanceLODProcessor
 // 0x0970 (0x0A20 - 0x00B0)
@@ -425,5 +424,4 @@ public:
 };
 DUMPER7_ASSERTS_AMassVisualizer;
 
-}
-
+SDK_NAMESPACE_END

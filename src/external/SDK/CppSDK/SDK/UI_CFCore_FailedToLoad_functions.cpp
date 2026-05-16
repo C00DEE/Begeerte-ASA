@@ -14,8 +14,7 @@
 #include "UI_CFCore_FailedToLoad_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_FailedToLoad.UI_CFCore_FailedToLoad_C.BndEvt__UI_CFCore_FailedToLoad_UI_Button_CFCore_Global_BackFailed_K2Node_ComponentBoundEvent_1_OnClick__DelegateSignature
 // (BlueprintEvent)
@@ -99,5 +98,5 @@ void UUI_CFCore_FailedToLoad_C::GetRootCFWidget(class UPanelWidget** RootPanelWi
 		*RootPanelWidget = Parms.RootPanelWidget;
 }
 
-}
 
+SDK_NAMESPACE_END

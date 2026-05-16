@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "OnlineSubsystemRedpointEOS_structs.hpp"
 #include "Engine_classes.hpp"
 #include "OnlineSubsystemUtils_classes.hpp"
 #include "CoreUObject_classes.hpp"
+#include "OnlineSubsystemRedpointEOS_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class OnlineSubsystemRedpointEOS.EOSControlChannel
 // 0x0220 (0x02A8 - 0x0088)
@@ -43,7 +42,7 @@ public:
 DUMPER7_ASSERTS_UEOSControlChannel;
 
 // Class OnlineSubsystemRedpointEOS.EOSIpNetConnection
-// 0x0000 (0x1FE0 - 0x1FE0)
+// 0x0000 (0x1FE8 - 0x1FE8)
 class UEOSIpNetConnection final : public UIpConnection
 {
 public:
@@ -63,11 +62,11 @@ public:
 DUMPER7_ASSERTS_UEOSIpNetConnection;
 
 // Class OnlineSubsystemRedpointEOS.EOSNetConnection
-// 0x0010 (0x1F20 - 0x1F10)
+// 0x0010 (0x1F28 - 0x1F18)
 class UEOSNetConnection final : public UNetConnection
 {
 public:
-	uint8                                         Pad_1F10[0x10];                                    // 0x1F10(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1F18[0x10];                                    // 0x1F18(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -447,5 +446,4 @@ public:
 };
 DUMPER7_ASSERTS_URecentPlayersWorldSubsystem;
 
-}
-
+SDK_NAMESPACE_END

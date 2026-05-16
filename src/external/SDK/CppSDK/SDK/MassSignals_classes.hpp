@@ -13,8 +13,7 @@
 #include "MassEntity_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MassSignals.MassSignalProcessorBase
 // 0x03E0 (0x0490 - 0x00B0)
@@ -63,5 +62,4 @@ public:
 };
 DUMPER7_ASSERTS_UMassSignalSubsystem;
 
-}
-
+SDK_NAMESPACE_END

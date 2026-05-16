@@ -14,8 +14,7 @@
 #include "UI_CFCore_Tag_PreviewSale_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Tag_PreviewSale.UI_CFCore_Tag_PreviewSale_C.GetRootCFWidget
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -57,5 +56,5 @@ void UUI_CFCore_Tag_PreviewSale_C::UpdateText(const class FText& InText)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "PrimalItemAmmo_ArrowBase_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemAmmo_ExplosiveArrow.PrimalItemAmmo_ExplosiveArrow_C
 // 0x0000 (0x0B60 - 0x0B60)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemAmmo_ExplosiveArrow_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "ASAUI_NewsCarousel_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ASAUI_NewsCarousel.ASAUI_NewsCarousel_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -112,5 +111,5 @@ void UASAUI_NewsCarousel_C::PreConstruct(bool IsDesignTime)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

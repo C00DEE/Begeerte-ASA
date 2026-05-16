@@ -15,8 +15,7 @@
 #include "ControlRig_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass Human_Male_Face_Retargeting_AnimBP.Human_Male_Face_Retargeting_AnimBP_C
 // 0x05D0 (0x0990 - 0x03C0)
@@ -51,5 +50,4 @@ public:
 };
 DUMPER7_ASSERTS_UHuman_Male_Face_Retargeting_AnimBP_C;
 
-}
-
+SDK_NAMESPACE_END

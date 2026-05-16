@@ -17,8 +17,7 @@
 #include "AnimGraphRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass FPVMeleeWeaponAnimBP_Lance.FPVMeleeWeaponAnimBP_Lance_C
 // 0x0A60 (0x0E20 - 0x03C0)
@@ -93,5 +92,4 @@ public:
 };
 DUMPER7_ASSERTS_UFPVMeleeWeaponAnimBP_Lance_C;
 
-}
-
+SDK_NAMESPACE_END

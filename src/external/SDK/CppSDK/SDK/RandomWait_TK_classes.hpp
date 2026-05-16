@@ -14,8 +14,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass RandomWait_TK.RandomWait_TK_C
 // 0x0028 (0x00D0 - 0x00A8)
@@ -48,5 +47,4 @@ public:
 };
 DUMPER7_ASSERTS_URandomWait_TK_C;
 
-}
-
+SDK_NAMESPACE_END

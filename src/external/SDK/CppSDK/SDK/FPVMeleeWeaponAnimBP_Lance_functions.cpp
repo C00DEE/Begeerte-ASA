@@ -14,8 +14,7 @@
 #include "FPVMeleeWeaponAnimBP_Lance_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function FPVMeleeWeaponAnimBP_Lance.FPVMeleeWeaponAnimBP_Lance_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -77,5 +76,5 @@ void UFPVMeleeWeaponAnimBP_Lance_C::ExecuteUbergraph_FPVMeleeWeaponAnimBP_Lance(
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

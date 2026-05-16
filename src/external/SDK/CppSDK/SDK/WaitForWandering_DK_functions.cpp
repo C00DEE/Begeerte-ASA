@@ -14,8 +14,7 @@
 #include "WaitForWandering_DK_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WaitForWandering_DK.WaitForWandering_DK_C.ExecuteUbergraph_WaitForWandering_DK
 // (Final, UbergraphFunction)
@@ -56,5 +55,5 @@ void UWaitForWandering_DK_C::ReceiveConditionCheck(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

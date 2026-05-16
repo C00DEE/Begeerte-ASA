@@ -13,8 +13,8 @@
 #include "ShooterGame_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function PrimalItemResource_ElementShard.PrimalItemResource_ElementShard_C.BPSupportUseOntoItem
 // 0x0010 (0x0010 - 0x0000)
@@ -83,5 +83,5 @@ public:
 };
 DUMPER7_ASSERTS_PrimalItemResource_ElementShard_C_RefillElementShard;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

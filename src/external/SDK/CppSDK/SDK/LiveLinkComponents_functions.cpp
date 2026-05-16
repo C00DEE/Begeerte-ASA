@@ -14,8 +14,7 @@
 #include "LiveLinkComponents_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function LiveLinkComponents.LiveLinkComponentController.SetControlledComponent
 // (Final, Native, Public, BlueprintCallable)
@@ -121,5 +120,5 @@ struct FLiveLinkSubjectRepresentation ULiveLinkComponentController::GetSubjectRe
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

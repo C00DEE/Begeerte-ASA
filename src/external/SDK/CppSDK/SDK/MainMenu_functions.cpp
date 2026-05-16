@@ -14,8 +14,7 @@
 #include "MainMenu_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MainMenu.MainMenu_C.ExecuteUbergraph_MainMenu
 // (Final, UbergraphFunction)
@@ -106,5 +105,5 @@ void AMainMenu_C::ShowVisualSettingsPP()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

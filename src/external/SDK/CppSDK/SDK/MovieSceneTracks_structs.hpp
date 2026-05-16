@@ -16,8 +16,7 @@
 #include "MovieScene_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum MovieSceneTracks.EMovieSceneScalabilityConditionGroup
 // NumValues: 0x000C
@@ -825,5 +824,4 @@ public:
 };
 DUMPER7_ASSERTS_FMovieSceneSkeletalAnimRootMotionTrackParams;
 
-}
-
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "ModelingComponents_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ModelingComponents.MeshTopologySelectionMechanicProperties.InvertSelection
 // (Final, Native, Public)
@@ -970,5 +969,5 @@ TArray<class FString> UWeightMapSetProperties::GetWeightMapsFunc()
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "Buff_BeltTorch_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Buff_BeltTorch.Buff_BeltTorch_C.ActivateVFX
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -558,5 +557,5 @@ void ABuff_BeltTorch_C::UpdateTorchType(bool FPV)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

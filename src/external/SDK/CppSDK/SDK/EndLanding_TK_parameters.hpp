@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function EndLanding_TK.EndLanding_TK_C.ExecuteUbergraph_EndLanding_TK
 // 0x0070 (0x0070 - 0x0000)
@@ -50,5 +50,5 @@ public:
 };
 DUMPER7_ASSERTS_EndLanding_TK_C_ReceiveExecute;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

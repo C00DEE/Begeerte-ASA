@@ -14,8 +14,7 @@
 #include "UI_CFCore_Button_ScreenshotNavigation_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Button_ScreenshotNavigation.UI_CFCore_Button_ScreenshotNavigation_C.BndEvt__UI_Button_ScreenshotNavigation_IMG_PrevImage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -84,5 +83,5 @@ void UUI_CFCore_Button_ScreenshotNavigation_C::SimulateDisabled(bool Disabled)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum Landmass.EBrushFalloffMode
 // NumValues: 0x0003
@@ -87,6 +86,20 @@ public:
 };
 DUMPER7_ASSERTS_FBrushEffectDisplacement;
 
+// ScriptStruct Landmass.LandmassFalloffSettings
+// 0x0014 (0x0014 - 0x0000)
+struct FLandmassFalloffSettings final
+{
+public:
+	EBrushFalloffMode                             FalloffMode;                                       // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         FalloffAngle;                                      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FalloffWidth;                                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EdgeOffset;                                        // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ZOffset;                                           // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLandmassFalloffSettings;
+
 // ScriptStruct Landmass.BrushEffectSmoothBlending
 // 0x0008 (0x0008 - 0x0000)
 struct FBrushEffectSmoothBlending final
@@ -124,20 +137,6 @@ public:
 };
 DUMPER7_ASSERTS_FLandmassBrushEffectsList;
 
-// ScriptStruct Landmass.LandmassFalloffSettings
-// 0x0014 (0x0014 - 0x0000)
-struct FLandmassFalloffSettings final
-{
-public:
-	EBrushFalloffMode                             FalloffMode;                                       // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         FalloffAngle;                                      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FalloffWidth;                                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         EdgeOffset;                                        // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ZOffset;                                           // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLandmassFalloffSettings;
-
 // ScriptStruct Landmass.LandmassTerrainCarvingSettings
 // 0x0080 (0x0080 - 0x0000)
 struct FLandmassTerrainCarvingSettings final
@@ -153,5 +152,4 @@ public:
 };
 DUMPER7_ASSERTS_FLandmassTerrainCarvingSettings;
 
-}
-
+SDK_NAMESPACE_END

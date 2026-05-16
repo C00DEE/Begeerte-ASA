@@ -14,8 +14,7 @@
 #include "UI_CFCore_Button_GoToHorizontal_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Button_GoToHorizontal.UI_CFCore_Button_GoToHorizontal_C.BndEvt__UI_Button_ScreenshotNavigation_IMG_PrevImage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -50,5 +49,5 @@ void UUI_CFCore_Button_GoToHorizontal_C::ExecuteUbergraph_UI_CFCore_Button_GoToH
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

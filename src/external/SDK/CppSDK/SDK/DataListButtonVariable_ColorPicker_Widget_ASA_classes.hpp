@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "DataListButtonVariable_Widget_ASA_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "DataListButtonVariable_Widget_ASA_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass DataListButtonVariable_ColorPicker_Widget_ASA.DataListButtonVariable_ColorPicker_Widget_ASA_C
 // 0x0030 (0x0508 - 0x04D8)
@@ -54,5 +53,4 @@ public:
 };
 DUMPER7_ASSERTS_UDataListButtonVariable_ColorPicker_Widget_ASA_C;
 
-}
-
+SDK_NAMESPACE_END

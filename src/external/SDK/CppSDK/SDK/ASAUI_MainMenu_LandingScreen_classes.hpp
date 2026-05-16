@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass ASAUI_MainMenu_LandingScreen.ASAUI_MainMenu_LandingScreen_C
 // 0x0090 (0x0408 - 0x0378)
@@ -65,5 +64,4 @@ public:
 };
 DUMPER7_ASSERTS_UASAUI_MainMenu_LandingScreen_C;
 
-}
-
+SDK_NAMESPACE_END

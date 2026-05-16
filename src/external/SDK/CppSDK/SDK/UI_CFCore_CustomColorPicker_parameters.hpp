@@ -14,8 +14,8 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function UI_CFCore_CustomColorPicker.UI_CFCore_CustomColorPicker_C.BndEvt__UI_CustomColorPicker_SLIDER_Opacity_K2Node_ComponentBoundEvent_4_OnFloatValueChangedEvent__DelegateSignature
 // 0x0004 (0x0004 - 0x0000)
@@ -245,5 +245,5 @@ public:
 };
 DUMPER7_ASSERTS_UI_CFCore_CustomColorPicker_C_UpdateAllSliders;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

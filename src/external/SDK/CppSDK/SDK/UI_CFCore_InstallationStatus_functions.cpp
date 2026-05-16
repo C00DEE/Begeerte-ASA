@@ -14,8 +14,7 @@
 #include "UI_CFCore_InstallationStatus_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_InstallationStatus.UI_CFCore_InstallationStatus_C.Event Set Bindings To Game Slot
 // (BlueprintCallable, BlueprintEvent)
@@ -192,5 +191,5 @@ void UUI_CFCore_InstallationStatus_C::UpdateModProgress(int32 progress, EInstall
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

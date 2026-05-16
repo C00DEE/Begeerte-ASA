@@ -14,8 +14,7 @@
 #include "UI_CFCore_Verification_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Verification.UI_CFCore_Verification_C.BndEvt__Verification_UI_Btn_DifferentAccount_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -424,5 +423,5 @@ void UUI_CFCore_Verification_C::PreConstruct(bool IsDesignTime)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

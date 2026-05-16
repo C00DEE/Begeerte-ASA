@@ -18,8 +18,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class CineCameraRigs.CineCameraAttachMount
 // 0x0058 (0x04E0 - 0x0488)
@@ -246,5 +245,4 @@ public:
 };
 DUMPER7_ASSERTS_UCineSplineMetadata;
 
-}
-
+SDK_NAMESPACE_END

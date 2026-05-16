@@ -14,8 +14,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass ForceAggro_BT.ForceAggro_BT_C
 // 0x0010 (0x00B0 - 0x00A0)
@@ -45,5 +44,4 @@ public:
 };
 DUMPER7_ASSERTS_UForceAggro_BT_C;
 
-}
-
+SDK_NAMESPACE_END

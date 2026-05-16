@@ -12,13 +12,12 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "FPVWeaponAnimBP_Base_Carrying_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
+#include "FPVWeaponAnimBP_Base_Carrying_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass FPVWeaponAnimBP_Base_Carrying.FPVWeaponAnimBP_Base_Carrying_C
 // 0x1DC0 (0x2180 - 0x03C0)
@@ -194,5 +193,4 @@ public:
 };
 DUMPER7_ASSERTS_UFPVWeaponAnimBP_Base_Carrying_C;
 
-}
-
+SDK_NAMESPACE_END

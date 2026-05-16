@@ -14,8 +14,7 @@
 #include "PrimalItem_WeaponTorch_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PrimalItem_WeaponTorch.PrimalItem_WeaponTorch_C.ApplyingSkinOntoItem
 // (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -464,5 +463,5 @@ void UPrimalItem_WeaponTorch_C::IsTorchOnBelt(bool* bIsOnBelt) const
 		*bIsOnBelt = Parms.bIsOnBelt;
 }
 
-}
 
+SDK_NAMESPACE_END

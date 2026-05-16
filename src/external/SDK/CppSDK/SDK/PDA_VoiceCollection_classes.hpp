@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "ShooterGame_structs.hpp"
+#include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PDA_VoiceCollection.PDA_VoiceCollection_C
 // 0x0208 (0x0238 - 0x0030)
@@ -94,5 +93,4 @@ public:
 };
 DUMPER7_ASSERTS_UPDA_VoiceCollection_C;
 
-}
-
+SDK_NAMESPACE_END

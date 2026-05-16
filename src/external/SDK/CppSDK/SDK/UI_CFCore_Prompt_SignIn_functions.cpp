@@ -14,8 +14,7 @@
 #include "UI_CFCore_Prompt_SignIn_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_Prompt_SignIn.UI_CFCore_Prompt_SignIn_C.BndEvt__SignIn_UI_Btn_Continue_K2Node_ComponentBoundEvent_4_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -427,5 +426,5 @@ void UUI_CFCore_Prompt_SignIn_C::PreConstruct(bool IsDesignTime)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

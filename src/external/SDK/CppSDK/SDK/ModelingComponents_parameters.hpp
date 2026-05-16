@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "ModelingComponents_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ModelingComponents_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function ModelingComponents.OctreeDynamicMeshComponent.SetDynamicMesh
 // 0x0008 (0x0008 - 0x0000)
@@ -343,5 +343,5 @@ public:
 };
 DUMPER7_ASSERTS_WeightMapSetProperties_GetWeightMapsFunc;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

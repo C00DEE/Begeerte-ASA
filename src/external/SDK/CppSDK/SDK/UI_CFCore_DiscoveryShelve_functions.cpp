@@ -14,8 +14,7 @@
 #include "UI_CFCore_DiscoveryShelve_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_DiscoveryShelve.UI_CFCore_DiscoveryShelve_C.AddViewAllModSlot
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -311,5 +310,5 @@ void UUI_CFCore_DiscoveryShelve_C::Tick(const struct FGeometry& MyGeometry, floa
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

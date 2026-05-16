@@ -14,8 +14,7 @@
 #include "CineCameraRigs_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CineCameraRigs.CineCameraAttachMount.GetConstraint
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
@@ -845,5 +844,5 @@ struct FCineSplinePointData UCineSplineComponent::GetSplineDataAtPosition(const 
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

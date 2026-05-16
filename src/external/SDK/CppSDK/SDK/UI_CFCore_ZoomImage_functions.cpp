@@ -14,8 +14,7 @@
 #include "UI_CFCore_ZoomImage_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_ZoomImage.UI_CFCore_ZoomImage_C.BindControllerAction
 // (BlueprintCallable, BlueprintEvent)
@@ -446,5 +445,5 @@ void UUI_CFCore_ZoomImage_C::UpdateToCurrentImage()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

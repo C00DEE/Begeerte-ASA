@@ -14,8 +14,7 @@
 #include "WeapFists_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function WeapFists.WeapFists_C.BPOverrideMeleeSwingSocket
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -39,5 +38,5 @@ class FName AWeapFists_C::BPOverrideMeleeSwingSocket(class FName FromSocket)
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

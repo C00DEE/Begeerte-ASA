@@ -14,8 +14,7 @@
 #include "ASACameraFunctionLibrary_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ASACameraFunctionLibrary.ASACameraFunctionLibrary_C.ApplyModifiersToInterpParams
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -498,5 +497,5 @@ void UASACameraFunctionLibrary_C::WorldLocationToScreenArea(class APrimalCharact
 		*ScreenRawPosY = Parms.ScreenRawPosY;
 }
 
-}
 
+SDK_NAMESPACE_END

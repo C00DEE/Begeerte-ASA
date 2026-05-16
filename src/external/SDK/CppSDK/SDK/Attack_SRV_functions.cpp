@@ -14,8 +14,7 @@
 #include "Attack_SRV_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Attack_SRV.Attack_SRV_C.ExecuteUbergraph_Attack_SRV
 // (Final, UbergraphFunction)
@@ -76,5 +75,5 @@ void UAttack_SRV_C::ReceiveDeactivation(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

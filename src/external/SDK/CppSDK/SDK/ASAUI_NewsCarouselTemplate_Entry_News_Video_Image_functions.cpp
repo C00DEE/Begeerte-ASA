@@ -14,8 +14,7 @@
 #include "ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.AllowAutoscrollNavFrom
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -282,5 +281,5 @@ void UASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C::RebootVideo()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

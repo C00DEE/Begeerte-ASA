@@ -13,8 +13,7 @@
 #include "PrimalItemAmmo_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemAmmo_RocketHomingMissile.PrimalItemAmmo_RocketHomingMissile_C
 // 0x0000 (0x0B60 - 0x0B60)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemAmmo_RocketHomingMissile_C;
 
-}
-
+SDK_NAMESPACE_END

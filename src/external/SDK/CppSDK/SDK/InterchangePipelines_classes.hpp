@@ -11,18 +11,17 @@
 #include "Basic.hpp"
 
 #include "InterchangePipelines_structs.hpp"
-#include "InterchangeCommon_structs.hpp"
+#include "InterchangeCore_structs.hpp"
+#include "InterchangeCore_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
-#include "InterchangeCore_structs.hpp"
-#include "InterchangeCore_classes.hpp"
 #include "InterchangeFactoryNodes_structs.hpp"
 #include "InterchangeNodes_structs.hpp"
+#include "InterchangeCommon_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class InterchangePipelines.InterchangeGenericCommonMeshesProperties
 // 0x0018 (0x0160 - 0x0148)
@@ -485,5 +484,4 @@ public:
 };
 DUMPER7_ASSERTS_UInterchangePipelineMeshesUtilities;
 
-}
-
+SDK_NAMESPACE_END

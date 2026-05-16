@@ -14,8 +14,7 @@
 #include "ASAUIWidget_Button_Style4_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ASAUIWidget_Button_Style4.ASAUIWidget_Button_Style4_C.UpdateButton
 // (BlueprintCallable, BlueprintEvent)
@@ -146,5 +145,5 @@ void UASAUIWidget_Button_Style4_C::BndEvt__ASAUIWidget_Button_1_BackButton_K2Nod
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

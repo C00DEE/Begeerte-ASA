@@ -13,8 +13,8 @@
 #include "cfcore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function UI_Button_CFCore_Global_LikeDislike.UI_Button_CFCore_Global_LikeDislike_C.ExecuteUbergraph_UI_Button_CFCore_Global_LikeDislike
 // 0x0078 (0x0078 - 0x0000)
@@ -48,5 +48,5 @@ public:
 };
 DUMPER7_ASSERTS_UI_Button_CFCore_Global_LikeDislike_C_IsCurrentButtonEnabled;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

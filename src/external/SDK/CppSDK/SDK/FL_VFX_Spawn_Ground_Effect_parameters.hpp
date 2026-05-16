@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
+#include "Struct_Ground_Attributes_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Audio_Ground_Collection_structs.hpp"
 #include "Engine_structs.hpp"
-#include "Struct_Ground_Attributes_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function FL_VFX_Spawn_Ground_Effect.FL_VFX_Spawn_Ground_Effect_C.Find Ground Attributes
 // 0x0170 (0x0170 - 0x0000)
@@ -451,5 +451,5 @@ public:
 };
 DUMPER7_ASSERTS_FL_VFX_Spawn_Ground_Effect_C_Trace_Ground_VFX_Parameters;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

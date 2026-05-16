@@ -15,8 +15,8 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function HostSession_Switch.HostSession_Switch_C.BPPopulateMods
 // 0x0010 (0x0010 - 0x0000)
@@ -198,5 +198,5 @@ public:
 };
 DUMPER7_ASSERTS_HostSession_Switch_C_Tick;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

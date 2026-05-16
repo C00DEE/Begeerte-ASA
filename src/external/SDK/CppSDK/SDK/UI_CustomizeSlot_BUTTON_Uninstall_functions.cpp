@@ -14,8 +14,7 @@
 #include "UI_CustomizeSlot_BUTTON_Uninstall_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CustomizeSlot_BUTTON_Uninstall.UI_CustomizeSlot_BUTTON_Uninstall_C.GetColor
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
@@ -57,5 +56,5 @@ void UUI_CustomizeSlot_BUTTON_Uninstall_C::SetColor(const struct FLinearColor& C
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "Human_Male_TPV_GroundConform_AnimBP_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Human_Male_TPV_GroundConform_AnimBP.Human_Male_TPV_GroundConform_AnimBP_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -136,5 +135,5 @@ void UHuman_Male_TPV_GroundConform_AnimBP_C::ExecuteUbergraph_Human_Male_TPV_Gro
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

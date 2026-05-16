@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
 #include "cfcore_ui_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass UI_CFCore_ThemeCustomizer.UI_CFCore_ThemeCustomizer_C
 // 0x00E8 (0x0460 - 0x0378)
@@ -89,5 +88,4 @@ public:
 };
 DUMPER7_ASSERTS_UUI_CFCore_ThemeCustomizer_C;
 
-}
-
+SDK_NAMESPACE_END

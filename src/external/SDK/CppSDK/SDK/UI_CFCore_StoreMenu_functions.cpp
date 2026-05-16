@@ -14,8 +14,7 @@
 #include "UI_CFCore_StoreMenu_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_StoreMenu.UI_CFCore_StoreMenu_C.ApplyThemeSettingsToAll
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -1132,5 +1131,5 @@ void UUI_CFCore_StoreMenu_C::UpdateSearchFilter()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "VisualSettings_MainMenuUI_ASA_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function VisualSettings_MainMenuUI_ASA.VisualSettings_MainMenuUI_ASA_C.UpdateHDR
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -318,5 +317,5 @@ void UVisualSettings_MainMenuUI_ASA_C::AddedToViewport()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

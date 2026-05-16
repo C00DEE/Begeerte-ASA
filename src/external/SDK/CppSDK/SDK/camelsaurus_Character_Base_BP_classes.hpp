@@ -14,8 +14,7 @@
 #include "Dino_Character_BP_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass camelsaurus_Character_Base_BP.camelsaurus_Character_Base_BP_C
 // 0x0010 (0x2A20 - 0x2A10)
@@ -49,5 +48,4 @@ public:
 };
 DUMPER7_ASSERTS_Acamelsaurus_Character_Base_BP_C;
 
-}
-
+SDK_NAMESPACE_END

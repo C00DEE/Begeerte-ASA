@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Enum NNERuntimeORT.EExecutionMode
 // NumValues: 0x0003
@@ -37,5 +36,4 @@ public:
 };
 DUMPER7_ASSERTS_FThreadingOptions;
 
-}
-
+SDK_NAMESPACE_END

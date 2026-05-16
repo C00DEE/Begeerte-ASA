@@ -13,15 +13,14 @@
 #include "StructureItemContainerBaseBP_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DeathItemCache.DeathItemCache_C
-// 0x0008 (0x11F8 - 0x11F0)
+// 0x0008 (0x1200 - 0x11F8)
 class ADeathItemCache_C : public AStructureItemContainerBaseBP_C
 {
 public:
-	class UPrimalInventoryBP_DeathItemCache_C*    PrimalInventoryBP_DeathItemCache_C1;               // 0x11F0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UPrimalInventoryBP_DeathItemCache_C*    PrimalInventoryBP_DeathItemCache_C1;               // 0x11F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -39,5 +38,4 @@ public:
 };
 DUMPER7_ASSERTS_ADeathItemCache_C;
 
-}
-
+SDK_NAMESPACE_END

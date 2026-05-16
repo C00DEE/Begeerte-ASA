@@ -14,8 +14,8 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function MainMenuUI.MainMenuUI_C.ExecuteUbergraph_MainMenuUI
 // 0x0D10 (0x0D10 - 0x0000)
@@ -107,5 +107,5 @@ public:
 };
 DUMPER7_ASSERTS_MainMenuUI_C_UpdateLeftTextPosition;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

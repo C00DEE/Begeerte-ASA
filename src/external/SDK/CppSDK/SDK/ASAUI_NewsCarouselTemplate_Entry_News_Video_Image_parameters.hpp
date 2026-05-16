@@ -14,8 +14,8 @@
 #include "UMG_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function ASAUI_NewsCarouselTemplate_Entry_News_Video_Image.ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C.AllowAutoscrollNavFrom
 // 0x0008 (0x0008 - 0x0000)
@@ -225,5 +225,5 @@ public:
 };
 DUMPER7_ASSERTS_ASAUI_NewsCarouselTemplate_Entry_News_Video_Image_C_OnSuccess_72594C78445BE3B711D3C9A5F43E4038;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

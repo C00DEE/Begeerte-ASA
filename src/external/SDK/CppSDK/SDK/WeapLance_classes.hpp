@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass WeapLance.WeapLance_C
 // 0x00B8 (0x11D0 - 0x1118)
@@ -72,5 +71,4 @@ public:
 };
 DUMPER7_ASSERTS_AWeapLance_C;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "PrimalItemAmmo_Base_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemC4Ammo.PrimalItemC4Ammo_C
 // 0x0000 (0x0B60 - 0x0B60)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemC4Ammo_C;
 
-}
-
+SDK_NAMESPACE_END

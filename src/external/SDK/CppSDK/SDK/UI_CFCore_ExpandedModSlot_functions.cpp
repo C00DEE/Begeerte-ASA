@@ -14,8 +14,7 @@
 #include "UI_CFCore_ExpandedModSlot_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_ExpandedModSlot.UI_CFCore_ExpandedModSlot_C.Animation_UpdateModImage
 // (BlueprintCallable, BlueprintEvent)
@@ -756,5 +755,5 @@ void UUI_CFCore_ExpandedModSlot_C::UpdatePaidPremiumStatus()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

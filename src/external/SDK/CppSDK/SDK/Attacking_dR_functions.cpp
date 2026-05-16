@@ -14,8 +14,7 @@
 #include "Attacking_dR_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Attacking_dR.Attacking_DR_C.ExecuteUbergraph_Attacking_DR
 // (Final, UbergraphFunction)
@@ -98,5 +97,5 @@ void UAttacking_DR_C::ReceiveExecutionStart(class AActor* OwnerActor)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

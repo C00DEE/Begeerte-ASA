@@ -14,8 +14,7 @@
 #include "Human_FaceCustomization_AnimBP_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function Human_FaceCustomization_AnimBP.Human_FaceCustomization_AnimBP_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -334,5 +333,5 @@ void UHuman_FaceCustomization_AnimBP_C::OnUpdate_FaceC(const struct FAnimUpdateC
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

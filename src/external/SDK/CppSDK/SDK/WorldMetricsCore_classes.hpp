@@ -14,8 +14,7 @@
 #include "CoreUObject_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class WorldMetricsCore.WorldMetricsSubsystem
 // 0x2A10 (0x2A40 - 0x0030)
@@ -137,5 +136,4 @@ public:
 };
 DUMPER7_ASSERTS_UWorldMetricsActorTracker;
 
-}
-
+SDK_NAMESPACE_END

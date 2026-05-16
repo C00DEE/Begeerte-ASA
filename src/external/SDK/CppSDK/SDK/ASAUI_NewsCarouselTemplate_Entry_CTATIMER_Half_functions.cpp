@@ -14,8 +14,7 @@
 #include "ASAUI_NewsCarouselTemplate_Entry_CTATIMER_Half_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ASAUI_NewsCarouselTemplate_Entry_CTATIMER_Half.ASAUI_NewsCarouselTemplate_Entry_CTATIMER_Half_C.ShouldHideEntry
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -286,5 +285,5 @@ void UASAUI_NewsCarouselTemplate_Entry_CTATIMER_Half_C::BlueprintInit(const clas
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "DmgType_Melee_StonePick_Gauntlet_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function DmgType_Melee_StonePick_Gauntlet.DmgType_Melee_StonePick_Gauntlet_C.BPAdjustDamage
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
@@ -47,5 +46,5 @@ float UDmgType_Melee_StonePick_Gauntlet_C::BPAdjustDamage(class AActor* Victim, 
 	return Parms.ReturnValue;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "PrimalItemArmor_SaddleGeneric_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass PrimalItemArmor_RexSaddle.PrimalItemArmor_RexSaddle_C
 // 0x0000 (0x0B80 - 0x0B80)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UPrimalItemArmor_RexSaddle_C;
 
-}
-
+SDK_NAMESPACE_END

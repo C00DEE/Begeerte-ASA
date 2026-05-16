@@ -14,8 +14,7 @@
 #include "UI_CFCore_NoModsInstalledFound_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_NoModsInstalledFound.UI_CFCore_NoModsInstalledFound_C.ApplyThemeSettingsToAll
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -51,5 +50,5 @@ void UUI_CFCore_NoModsInstalledFound_C::GetRootCFWidget(class UPanelWidget** Roo
 		*RootPanelWidget = Parms.RootPanelWidget;
 }
 
-}
 
+SDK_NAMESPACE_END

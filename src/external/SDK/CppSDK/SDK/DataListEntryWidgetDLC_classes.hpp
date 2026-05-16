@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass DataListEntryWidgetDLC.DataListEntryWidgetDLC_C
 // 0x0020 (0x0460 - 0x0440)
@@ -50,5 +49,4 @@ public:
 };
 DUMPER7_ASSERTS_UDataListEntryWidgetDLC_C;
 
-}
-
+SDK_NAMESPACE_END

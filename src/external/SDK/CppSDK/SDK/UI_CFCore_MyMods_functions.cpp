@@ -14,8 +14,7 @@
 #include "UI_CFCore_MyMods_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_MyMods.UI_CFCore_MyMods_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -119,5 +118,5 @@ void UUI_CFCore_MyMods_C::UpdatePagination()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "PrimalItemConsumableSeed_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PrimalItemConsumableSeed.PrimalItemConsumableSeed_C.Interface_PrimalItemConsumableSeed Get Crop Plot Emitter VFX To Be Active
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
@@ -46,5 +45,5 @@ void UPrimalItemConsumableSeed_C::Interface_PrimalItemConsumableSeed_Get_Crop_Pl
 		*Location_Offset = std::move(Parms.Location_Offset);
 }
 
-}
 
+SDK_NAMESPACE_END

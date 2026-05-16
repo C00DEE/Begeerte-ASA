@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function DataListButtonVariable_Bool_Widget_ASA.DataListButtonVariable_Bool_Widget_ASA_C.SetupTextValue
 // 0x0058 (0x0058 - 0x0000)
@@ -64,5 +64,5 @@ public:
 };
 DUMPER7_ASSERTS_DataListButtonVariable_Bool_Widget_ASA_C_ExecuteUbergraph_DataListButtonVariable_Bool_Widget_ASA;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

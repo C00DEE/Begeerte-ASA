@@ -14,8 +14,7 @@
 #include "UI_CFCore_ModPage_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function UI_CFCore_ModPage.UI_CFCore_ModPage_C.ActionSwitch
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -2393,5 +2392,5 @@ void UUI_CFCore_ModPage_C::VideoPlayback()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

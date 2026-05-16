@@ -14,8 +14,7 @@
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct ProxyTable.ChooserParameterProxyTableBase
 // 0x0000 (0x0008 - 0x0008)
@@ -86,5 +85,4 @@ public:
 };
 DUMPER7_ASSERTS_FRuntimeProxyValue;
 
-}
-
+SDK_NAMESPACE_END

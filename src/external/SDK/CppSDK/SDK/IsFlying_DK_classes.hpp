@@ -15,8 +15,7 @@
 #include "AIModule_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass IsFlying_DK.IsFlying_DK_C
 // 0x0008 (0x00A8 - 0x00A0)
@@ -47,5 +46,4 @@ public:
 };
 DUMPER7_ASSERTS_UIsFlying_DK_C;
 
-}
-
+SDK_NAMESPACE_END

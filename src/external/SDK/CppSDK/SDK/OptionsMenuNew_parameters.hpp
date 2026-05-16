@@ -14,8 +14,8 @@
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function OptionsMenuNew.OptionsMenuNew_C.ExecuteUbergraph_OptionsMenuNew
 // 0x0048 (0x0048 - 0x0000)
@@ -82,5 +82,5 @@ public:
 };
 DUMPER7_ASSERTS_OptionsMenuNew_C_Tick;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

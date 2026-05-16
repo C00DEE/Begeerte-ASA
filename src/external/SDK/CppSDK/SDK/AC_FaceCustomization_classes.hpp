@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "Human_Male_Faces_Enum_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "Human_Male_Faces_Enum_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass AC_FaceCustomization.AC_FaceCustomization_C
 // 0x0308 (0x03C8 - 0x00C0)
@@ -107,5 +106,4 @@ public:
 };
 DUMPER7_ASSERTS_UAC_FaceCustomization_C;
 
-}
-
+SDK_NAMESPACE_END

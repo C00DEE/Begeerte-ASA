@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedEnum ENUM_CFCore_Install.ENUM_CFCore_Install
 // NumValues: 0x0007
@@ -27,5 +26,4 @@ enum class ENUM_CFCore_Install : uint8
 	ENUM_CFCore_MAX                          = 6,
 };
 
-}
-
+SDK_NAMESPACE_END

@@ -10,18 +10,17 @@
 
 #include "Basic.hpp"
 
-#include "DeveloperSettings_classes.hpp"
+#include "MovieScene_structs.hpp"
+#include "MovieScene_classes.hpp"
 #include "DaySequence_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "MovieScene_structs.hpp"
-#include "MovieScene_classes.hpp"
+#include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class DaySequence.DaySequenceActor
 // 0x0168 (0x05F0 - 0x0488)
@@ -671,5 +670,4 @@ public:
 };
 DUMPER7_ASSERTS_AEnvironmentLightingActor;
 
-}
-
+SDK_NAMESPACE_END

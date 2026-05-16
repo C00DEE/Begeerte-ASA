@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass ColorPicker_ASA_Widget.ColorPicker_ASA_Widget_C
 // 0x0070 (0x03E8 - 0x0378)
@@ -69,5 +68,4 @@ public:
 };
 DUMPER7_ASSERTS_UColorPicker_ASA_Widget_C;
 
-}
-
+SDK_NAMESPACE_END

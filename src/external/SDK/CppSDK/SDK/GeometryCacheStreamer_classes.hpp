@@ -13,8 +13,7 @@
 #include "DeveloperSettings_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class GeometryCacheStreamer.GeometryCacheStreamerSettings
 // 0x0008 (0x0040 - 0x0038)
@@ -40,5 +39,4 @@ public:
 };
 DUMPER7_ASSERTS_UGeometryCacheStreamerSettings;
 
-}
-
+SDK_NAMESPACE_END

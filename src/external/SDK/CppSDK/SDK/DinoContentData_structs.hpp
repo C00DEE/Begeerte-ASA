@@ -11,8 +11,7 @@
 #include "Basic.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // UserDefinedStruct DinoContentData.DinoContentData
 // 0x0020 (0x0020 - 0x0000)
@@ -26,5 +25,4 @@ public:
 };
 DUMPER7_ASSERTS_FDinoContentData;
 
-}
-
+SDK_NAMESPACE_END

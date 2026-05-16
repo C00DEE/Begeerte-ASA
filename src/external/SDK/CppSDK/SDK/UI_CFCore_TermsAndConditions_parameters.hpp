@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
+#include "cfcore_structs.hpp"
 #include "InputCore_structs.hpp"
 #include "UMG_structs.hpp"
-#include "cfcore_structs.hpp"
 #include "SlateCore_structs.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function UI_CFCore_TermsAndConditions.UI_CFCore_TermsAndConditions_C.BPGamepadReleased
 // 0x0020 (0x0020 - 0x0000)
@@ -133,5 +133,5 @@ public:
 };
 DUMPER7_ASSERTS_UI_CFCore_TermsAndConditions_C_UpdateTextByPlatform;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

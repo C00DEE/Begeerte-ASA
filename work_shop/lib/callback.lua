@@ -21,6 +21,7 @@ local EVENT_NAMES = {
     "OnDisconnect",
     "OnMenuOpen",
     "OnShutDown",
+    "OnPostRender"
 }
 
 local function ensure_event(name)

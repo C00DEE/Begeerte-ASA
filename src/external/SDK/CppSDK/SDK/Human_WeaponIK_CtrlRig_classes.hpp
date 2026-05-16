@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "ControlRig_structs.hpp"
 #include "ControlRig_classes.hpp"
-#include "CoreUObject_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // RigVMBlueprintGeneratedClass Human_WeaponIK_CtrlRig.Human_WeaponIK_CtrlRig_C
 // 0x02F8 (0x0DC8 - 0x0AD0)
@@ -72,5 +71,4 @@ public:
 };
 DUMPER7_ASSERTS_UHuman_WeaponIK_CtrlRig_C;
 
-}
-
+SDK_NAMESPACE_END

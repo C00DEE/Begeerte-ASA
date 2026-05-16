@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "ShooterGame_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass OverallFaceMorphPicker.OverallFaceMorphPicker_C
 // 0x0078 (0x03F0 - 0x0378)
@@ -65,5 +64,4 @@ public:
 };
 DUMPER7_ASSERTS_UOverallFaceMorphPicker_C;
 
-}
-
+SDK_NAMESPACE_END

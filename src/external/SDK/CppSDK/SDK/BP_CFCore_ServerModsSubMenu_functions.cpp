@@ -14,8 +14,7 @@
 #include "BP_CFCore_ServerModsSubMenu_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_CFCore_ServerModsSubMenu.BP_CFCore_ServerModsSubMenu_C.BndEvt__BP_ServerModsSubMenu_BUTTON_FAV_K2Node_ComponentBoundEvent_0_OnButtonPressedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -162,5 +161,5 @@ void UBP_CFCore_ServerModsSubMenu_C::ReportServer()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "CFCoreUIWidget_MainModShop_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CFCoreUIWidget_MainModShop.CFCoreUIWidget_MainModShop_C.ApplyThemeSettingsToAll
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -282,5 +281,5 @@ void UCFCoreUIWidget_MainModShop_C::WaitDeeplinkToSpotlight()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

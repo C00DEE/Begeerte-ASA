@@ -10,15 +10,31 @@ namespace g_CheatData {
 	}
 
 	namespace Signature {
+		namespace AActor {
+			std::string TakeDamage = "C2 00 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 48 8B 01 41 B0 01 33 D2 48 FF A0 ?? ?? ?? ??";
+		}
+
 		namespace UWorld {
 			// 7FF7A935DA20 World Tick?
 			// 7FF7A935DC40 World Post Tick?
 			// 2026/4/3 @zetsr
 			// ? ? ? ? ? 57 48 83 EC ? 48 8B 42 ? 49 8B E8 48 89 5C 24 ? 4C 8B E9 48 89 74 24 ? 48 8B 2026/4/3 过期了
 
-			// 2026/4/3
+			// 2026/4/3 @zetsr
 			// push rbp push r14 push r15 sub rsp, offset mov rax, [rdx + offset] mov eax, [rdx + offset] mov [rsp + offset], rbx mov ebp, ecx mov [rsp + offset], rsi mov rax, [rdx]
-			std::string Tick = "40 55 41 56 41 57 48 83 EC ? 48 8B 42 ? ? 8B ? 48 89 5C 24 ? ? 8B E9 48 89 74 24 ? 48 8B";
+
+            // 2026/4/26 @zetsr & @Lynneren
+            // push rbx; push rbp; push rsi; push rdi; push r12; push r14; push r15; sub rsp, sz; mov rax, [cookie]; xor rax, rsp; mov [rsp+sz], rax; mov r14, rcx; mov r15, r8; lea rcx, [rsp+30h]
+            // 40 53 55 56 57 41 54 41 56 41 57 48 81 EC ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 84 24 ?? ?? ?? ?? 4C 8B F1 4D 8B F8 48 8D 4C 24 30 48
+			
+			// 2026/5/2 @zetsr
+			// mov r1x, [mem] | push rbp | push r14 | push r15 | sub rsp, alloc | mov rax, [rip+offset]
+			// 4C 8B ? 55 41 56 41 57 48 81 EC ? ? 00 00 48 8B 05
+
+			// 2026/5/11 @zetsr
+			// push rbp; push r13; push r15; sub rsp, 0x40; mov rax, [rdx+0x20]; mov r11, [r8]
+			// 40 55 41 55 41 57 48 83 EC ? 48 8B ? ? 49 8B
+			std::string Tick = "40 55 41 55 41 57 48 83 EC ? 48 8B ? ? 49 8B";
 
 			namespace UNetDriver {
 				namespace UNetConnection {
@@ -42,7 +58,12 @@ namespace g_CheatData {
 					// 48 8B C4 ? ? 48 83 EC ? 48 89 58 ? 48 8B DA 2026/4/3 过期了
 					
 					// mov [rsp + offset], rbx push rbp push rsi push rdi push r12 push r13 push r14 push r15 mov rax, [rcx] sub rsp, offset movsxd rax, [rdx + offset] xor r14d, r14d mov rax, [rcx]
-					std::string OutputTextLine = "48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8B ? 48 83 EC ? 48 63 ? ? 45 33 F6 48 8B";
+					// 48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8B ? 48 83 EC ? 48 63 ? ? 45 33 F6 48 8B
+
+					// 2026/5/11 @zetsr
+					// mov rax, rsp; push r12; sub rsp, 0x60; mov [rax+0x08], rbx; mov rbx, rdx
+					// 48 8B C4 41 54 48 83 EC ? 48 89 58 ? 48 8B ?
+					std::string OutputTextLine = "48 8B C4 41 54 48 83 EC ? 48 89 58 ? 48 8B ?";
 				}
 			}
 		}

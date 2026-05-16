@@ -1,6 +1,7 @@
 #pragma once
 #define NOMINMAX  
 #include "../../external/Minimal-D3D12-Hook-ImGui/Main/mdx12_api.h"
+#include "../../external/Minimal-D3D12-Hook-ImGui/Main/hooks.h"
 #include "../Config/Configs.h"
 #include "ConfigImGui.h"
 #include "Aimbot_Menu.h"
@@ -23,10 +24,16 @@ namespace g_DrawImGui {
 
             ImGui::TextColored(ThemeColors::GetAccent(), secTitle);
             DrawAnimatedSeparator();
-            DrawCustomCheckbox(aimEnabled, &g_Config::bAimbotEnabled);
-            DrawCustomSliderFloat(aimFOV, &g_Config::AimbotFOV, 0.1f, 180.0f, "%.1f", 0.1f, U8("бу"));
-            DrawCustomSliderFloat(aimSmooth, &g_Config::AimbotSmooth, 0.1f, 100.0f, "%.1f", 0.1f, "%");
-            DrawCustomCheckbox(trigEnabled, &g_Config::bTriggerbotEnabled);
+
+            ImGui::BeginDisabled(!g_Hook::UWorldTickOK);
+            {
+                DrawCustomCheckbox(aimEnabled, &g_Config::bAimbotEnabled);
+                DrawCustomSliderFloat(aimFOV, &g_Config::AimbotFOV, 0.1f, 180.0f, "%.1f", 0.1f, U8("бу"));
+                DrawCustomSliderFloat(aimSmooth, &g_Config::AimbotSmooth, 0.1f, 100.0f, "%.1f", 0.1f, "%");
+                DrawCustomCheckbox(trigEnabled, &g_Config::bTriggerbotEnabled);
+            }
+            ImGui::EndDisabled();
+
             DrawAnimatedSeparator();
 
             EndTabRegion();

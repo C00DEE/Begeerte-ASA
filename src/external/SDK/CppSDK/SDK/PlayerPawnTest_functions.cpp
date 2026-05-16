@@ -14,8 +14,7 @@
 #include "PlayerPawnTest_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function PlayerPawnTest.PlayerPawnTest_C.AscensionCheck
 // (BlueprintCallable, BlueprintEvent)
@@ -1046,5 +1045,5 @@ void APlayerPawnTest_C::SelectVOSound(class UPDA_VoiceCollection_C* VoiceCollect
 		*VoiceSoundReference = Parms.VoiceSoundReference;
 }
 
-}
 
+SDK_NAMESPACE_END

@@ -14,8 +14,7 @@
 #include "OverallFatMusclePicker_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function OverallFatMusclePicker.OverallFatMusclePicker_C.UpdateSaturationBar
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -164,5 +163,5 @@ void UOverallFatMusclePicker_C::BndEvt__ColorPicker_ASA_Widget_Synth2DSlider_89_
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

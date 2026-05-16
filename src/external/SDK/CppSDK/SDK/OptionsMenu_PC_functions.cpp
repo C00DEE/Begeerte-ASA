@@ -14,8 +14,7 @@
 #include "OptionsMenu_PC_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function OptionsMenu_PC.OptionsMenu_PC_C.BndEvt__AntiAliasingComboBox_K2Node_ComponentBoundEvent_13_OnSelectionChangedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -1705,5 +1704,5 @@ void UOptionsMenu_PC_C::UpdateGamepadControlsTab()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

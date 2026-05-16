@@ -14,8 +14,7 @@
 #include "DataListButtonVariable_Widget_ASA_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function DataListButtonVariable_Widget_ASA.DataListButtonVariable_Widget_ASA_C.UpdateColorPicker
 // (Event, Public, BlueprintCallable, BlueprintEvent)
@@ -541,5 +540,5 @@ void UDataListButtonVariable_Widget_ASA_C::BndEvt__DataListButtonVariable_Widget
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

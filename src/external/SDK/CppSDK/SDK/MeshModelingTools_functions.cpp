@@ -14,8 +14,7 @@
 #include "MeshModelingTools_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function MeshModelingTools.PolyEditTopologyProperties.RegenerateExtraCorners
 // (Final, Native, Public)
@@ -1073,5 +1072,5 @@ void UUVProjectionToolEditActions::Reset()
 	Func->FunctionFlags = Flgs;
 }
 
-}
 
+SDK_NAMESPACE_END

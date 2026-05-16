@@ -11,6 +11,30 @@
 #define VC_EXTRALEAN
 #define WIN32_LEAN_AND_MEAN
 
+
+/*
+* Macros for opening and closing namespaces, in order to allow to remove the SDK namespace when importing the SDK into IDA.
+*
+* In IDA under "Options>Compiler" set "SourceParser" to "clang" and add the following arguments 
+* 
+*	-std=c++20 -Wno-invalid-offsetof -Wno-c++11-narrowing -D IMPORT_CPP_SDK_INTO_IDA=1 
+* 
+* Omit the '-D IMPORT_CPP_SDK_INTO_IDA=1' if you want to keep the SDK namespace in IDA
+*/
+#ifndef IMPORT_CPP_SDK_INTO_IDA
+	#define SDK_NAMESPACE_START namespace SDK {
+	#define SDK_NAMESPACE_END }
+	#define SDK_ALIGN(x) alignas(x)
+#else
+	#define SDK_NAMESPACE_START
+	#define SDK_NAMESPACE_END
+	#define SDK_ALIGN(x)
+#endif
+
+#define SDK_PARAM_NAMESPACE_START namespace Params {
+#define SDK_PARAM_NAMESPACE_END }
+
+
 #include <string>
 #include <functional>
 #include <type_traits>
@@ -19,8 +43,7 @@
 #include "../UnrealContainers.hpp"
 #include "../Assertions.inl"
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 using namespace UC;
 
@@ -33,12 +56,11 @@ using namespace UC;
 */
 namespace Offsets
 {
-	constexpr int32 GObjects          = 0x0E0B7170;
-	constexpr int32 AppendString      = 0x01665500;
-	constexpr int32 GetNameEntry      = 0x01666230;
-	constexpr int32 GNames            = 0x0E438AC0;
-	constexpr int32 GWorld            = 0x0E400598;
-	constexpr int32 ProcessEvent      = 0x01921DA0;
+	constexpr int32 GObjects          = 0x0DB6D1B0;
+	constexpr int32 AppendString      = 0x00000000;
+	constexpr int32 GNames            = 0x0DEEDC80;
+	constexpr int32 GWorld            = 0x0DEB4BE8;
+	constexpr int32 ProcessEvent      = 0x017DAC80;
 	constexpr int32 ProcessEventIdx   = 0x00000050;
 }
 
@@ -70,7 +92,7 @@ class UFunction;
 
 class FName;
 
-namespace BasicFilesImpleUtils
+namespace BasicFilesImplUtils
 {
 	// Helper functions for GetStaticClass and GetStaticBPGeneratedClass
 	UClass* FindClassByName(const std::string& Name, bool bByFullName = false);
@@ -87,6 +109,8 @@ namespace BasicFilesImpleUtils
 	UFunction* FindFunctionByFName(const FName* Name);
 
 	FName StringToName(const wchar_t* Name);
+
+	UObject* GetDefaultObjectImpl(UClass* ClassInstance);
 }
 
 const FName& GetStaticName(const wchar_t* Name, FName& StaticName);
@@ -97,10 +121,10 @@ class UClass* GetStaticClassImpl(const char* Name, class UClass*& StaticClass)
 	if (StaticClass == nullptr)
 	{
 		if constexpr (bIsFullName) {
-			StaticClass = BasicFilesImpleUtils::FindClassByFullName(Name);
+			StaticClass = BasicFilesImplUtils::FindClassByFullName(Name);
 		}
 		else /* default */ {
-			StaticClass = BasicFilesImpleUtils::FindClassByName(Name);
+			StaticClass = BasicFilesImplUtils::FindClassByName(Name);
 		}
 	}
 
@@ -115,8 +139,8 @@ class UClass* GetStaticBPGeneratedClass(const char* Name, int32& ClassIdx, uint6
 		{
 			if (Class)
 			{
-				Index = BasicFilesImpleUtils::GetObjectIndex(Class);
-				ClassName = BasicFilesImpleUtils::GetObjFNameAsUInt64(Class);
+				Index = BasicFilesImplUtils::GetObjectIndex(Class);
+				ClassName = BasicFilesImplUtils::GetObjFNameAsUInt64(Class);
 			}
 
 			return Class;
@@ -126,26 +150,26 @@ class UClass* GetStaticBPGeneratedClass(const char* Name, int32& ClassIdx, uint6
 	if constexpr (bIsFullName)
 	{
 		if (ClassIdx == 0x0) [[unlikely]]
-			return SetClassIndex(BasicFilesImpleUtils::FindClassByFullName(Name), ClassIdx, ClassNameIdx);
+			return SetClassIndex(BasicFilesImplUtils::FindClassByFullName(Name), ClassIdx, ClassNameIdx);
 
-		UClass* ClassObj = static_cast<UClass*>(BasicFilesImpleUtils::GetObjectByIndex(ClassIdx));
+		UClass* ClassObj = reinterpret_cast<UClass*>(BasicFilesImplUtils::GetObjectByIndex(ClassIdx));
 
 		/* Could use cast flags too to save some string comparisons */
-		if (!ClassObj || BasicFilesImpleUtils::GetObjFNameAsUInt64(ClassObj) != ClassNameIdx)
-			return SetClassIndex(BasicFilesImpleUtils::FindClassByFullName(Name), ClassIdx, ClassNameIdx);
+		if (!ClassObj || BasicFilesImplUtils::GetObjFNameAsUInt64(ClassObj) != ClassNameIdx)
+			return SetClassIndex(BasicFilesImplUtils::FindClassByFullName(Name), ClassIdx, ClassNameIdx);
 
 		return ClassObj;
 	}
 	else /* Default, use just the name to find an object*/
 	{
 		if (ClassIdx == 0x0) [[unlikely]]
-			return SetClassIndex(BasicFilesImpleUtils::FindClassByName(Name), ClassIdx, ClassNameIdx);
+			return SetClassIndex(BasicFilesImplUtils::FindClassByName(Name), ClassIdx, ClassNameIdx);
 
-		UClass* ClassObj = static_cast<UClass*>(BasicFilesImpleUtils::GetObjectByIndex(ClassIdx));
+		UClass* ClassObj = reinterpret_cast<UClass*>(BasicFilesImplUtils::GetObjectByIndex(ClassIdx));
 
 		/* Could use cast flags too to save some string comparisons */
-		if (!ClassObj || BasicFilesImpleUtils::GetObjFNameAsUInt64(ClassObj) != ClassNameIdx)
-			return SetClassIndex(BasicFilesImpleUtils::FindClassByName(Name), ClassIdx, ClassNameIdx);
+		if (!ClassObj || BasicFilesImplUtils::GetObjFNameAsUInt64(ClassObj) != ClassNameIdx)
+			return SetClassIndex(BasicFilesImplUtils::FindClassByName(Name), ClassIdx, ClassNameIdx);
 
 		return ClassObj;
 	}
@@ -154,14 +178,7 @@ class UClass* GetStaticBPGeneratedClass(const char* Name, int32& ClassIdx, uint6
 template<class ClassType>
 ClassType* GetDefaultObjImpl()
 {
-	UClass* StaticClass = ClassType::StaticClass();
-
-	if (StaticClass)
-	{
-		return reinterpret_cast<ClassType*>(StaticClass->DefaultObject);
-	}
-
-	return nullptr;
+	return reinterpret_cast<ClassType*>(BasicFilesImplUtils::GetDefaultObjectImpl(ClassType::StaticClass()));
 }
 
 #define STATIC_CLASS_IMPL(NameString) \
@@ -312,37 +329,140 @@ public:
 	}
 };
 
+// Predefined struct FNumberedData
+// 0x0008 (0x0008 - 0x0000)
+struct FNumberedData final
+{
+public:
+	uint8                                         Id[0x4];                                           // 0x0000(0x0001)(NOT AUTO-GENERATED PROPERTY)
+	uint8                                         Number[0x4];                                       // 0x0004(0x0001)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	int32 GetTypedId() const
+	{
+		return reinterpret_cast<int32>(Id);
+	}
+	uint32 GetNumber() const
+	{
+		return reinterpret_cast<uint32>(Number);
+	}
+};
+DUMPER7_ASSERTS_FNumberedData;
+
+// Predefined struct FNameEntryHeader
+// 0x0002 (0x0002 - 0x0000)
+struct FNameEntryHeader final
+{
+public:
+	uint16                                        bIsWide : 1;                                       // 0x0000(0x0002)(BitIndex: 0x00, PropSize: 0x0002 (NOT AUTO-GENERATED PROPERTY))
+	uint16                                        BitPad_0_1 : 5;                                    // 0x0000(0x0002)(Fixing Bit-Field Size Between Bits [ Dumper-7 ])
+	uint16                                        Len : 10;                                          // 0x0000(0x0002)(BitIndex: 0x06, PropSize: 0x0002 (NOT AUTO-GENERATED PROPERTY))
+};
+DUMPER7_ASSERTS_FNameEntryHeader;
+
+// Predefined struct FStringData
+// 0x0800 (0x0800 - 0x0000)
+union FStringData final
+{
+public:
+	char                                          AnsiName[0x400];                                   // 0x0000(0x0001)(NOT AUTO-GENERATED PROPERTY)
+	wchar_t                                       WideName[0x400];                                   // 0x0000(0x0002)(NOT AUTO-GENERATED PROPERTY)
+};
+DUMPER7_ASSERTS_FStringData;
+
+// Predefined struct FNameEntry
+// 0x0802 (0x0802 - 0x0000)
+struct FNameEntry final
+{
+public:
+	struct FNameEntryHeader                       Header;                                            // 0x0000(0x0002)(NOT AUTO-GENERATED PROPERTY)
+	union FStringData                             Name;                                              // 0x0002(0x0800)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	bool IsWide() const
+	{
+		return Header.bIsWide;
+	}
+	std::string GetString() const
+	{
+		if (IsWide())
+		{
+			return UtfN::Utf16StringToUtf8String<std::string>(Name.WideName, Header.Len);
+		}
+	
+		return std::string(Name.AnsiName, Header.Len);
+	}
+};
+DUMPER7_ASSERTS_FNameEntry;
+
+// Predefined struct FNamePool
+// 0x10010 (0x10010 - 0x0000)
+class FNamePool final
+{
+public:
+	static constexpr uint32                       FNameEntryStride = 0x0002;                         // 0x0000(0x0004)(NOT AUTO-GENERATED PROPERTY)
+	static constexpr uint32                       FNameBlockOffsetBits = 0x0010;                     // 0x0000(0x0004)(NOT AUTO-GENERATED PROPERTY)
+	static constexpr uint32                       FNameBlockOffsets = 1 << FNameBlockOffsetBits;     // 0x0000(0x0004)(NOT AUTO-GENERATED PROPERTY)
+
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint32                                        CurrentBlock;                                      // 0x0008(0x0004)(NOT AUTO-GENERATED PROPERTY)
+	uint32                                        CurrentByteCursor;                                 // 0x000C(0x0004)(NOT AUTO-GENERATED PROPERTY)
+	uint8*                                        Blocks[0x2000];                                    // 0x0010(0x10000)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	bool IsValidIndex(int32 Index, int32 ChunkIdx, int32 InChunkIdx) const
+	{
+		return ChunkIdx <= CurrentBlock && !(ChunkIdx == CurrentBlock && InChunkIdx > CurrentByteCursor);
+	}
+	
+	FNameEntry* GetEntryByIndex(int32 Index) const
+	{
+		const int32 ChunkIdx = Index >> FNameBlockOffsetBits;
+		const int32 InChunk = (Index & (FNameBlockOffsets - 1));
+	
+		if (!IsValidIndex(Index, ChunkIdx, InChunk))
+			return nullptr;
+	
+		return reinterpret_cast<FNameEntry*>(Blocks[ChunkIdx] + (InChunk * FNameEntryStride));
+	}
+};
+DUMPER7_ASSERTS_FNamePool;
+
 // Predefined struct FName
 // 0x0008 (0x0008 - 0x0000)
 class FName final
 {
 public:
-	static inline void*                           AppendString = nullptr;                            // 0x0000(0x0004)(NOT AUTO-GENERATED PROPERTY)
-	static inline void*                           GetNameEntryFromName = nullptr;                    // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+	static inline FNamePool*                      GNames = nullptr;                                  // 0x0000(0x0004)(NOT AUTO-GENERATED PROPERTY)
 
-	int32                                         ComparisonIndex;                                   // 0x0000(0x0004)(NOT AUTO-GENERATED PROPERTY)
-	uint32                                        Number;                                            // 0x0004(0x0004)(NOT AUTO-GENERATED PROPERTY)
+	int32                                         ComparisonIndex = 0x0;                             // 0x0000(0x0004)(NOT AUTO-GENERATED PROPERTY)
+	uint32                                        Number = 0x0;                                      // 0x0004(0x0004)(NOT AUTO-GENERATED PROPERTY)
 
 public:
-	constexpr FName(int32 ComparisonIndex = 0, uint32 Number = 0)
+	constexpr explicit FName(int32 ComparisonIndex, uint32 Number = 0)
 		: ComparisonIndex(ComparisonIndex), Number(Number)
 	{
 	}
 
 	static void InitManually(void* Location)
 	{
-		AppendString = reinterpret_cast<void*>(Location);
+		GNames = reinterpret_cast<FNamePool*>(Location);
 	}
 
-	constexpr FName(const FName& other)
-		: ComparisonIndex(other.ComparisonIndex), Number(other.Number)
-	{
-	}
+	constexpr FName() = default;
+	
+	constexpr FName(const FName&) = default;
+	
+	constexpr FName(FName&&) = default;
+	
+	constexpr FName& operator=(const FName&) = default;
+	
+	constexpr  FName& operator=(FName&&) = default;
+	
 
 	static void InitInternal()
 	{
-		AppendString = reinterpret_cast<void*>(InSDKUtils::GetImageBase() + Offsets::AppendString);
-		GetNameEntryFromName = reinterpret_cast<void*>(InSDKUtils::GetImageBase() + Offsets::GetNameEntry);
+		GNames = reinterpret_cast<FNamePool*>(InSDKUtils::GetImageBase() + Offsets::GNames);
 	}
 
 	bool IsNone() const
@@ -357,21 +477,15 @@ public:
 	
 	std::string GetRawString() const
 	{
-		wchar_t buffer[1024];
-	    FString TempString(buffer, 0, 1024);
-	
-		if (!AppendString)
+		if (!GNames)
 			InitInternal();
 	
-		const void* NameEntry = InSDKUtils::CallGameFunction(reinterpret_cast<const void*(*)(uint32 CmpIdx)>(GetNameEntryFromName), ComparisonIndex);
-		InSDKUtils::CallGameFunction(reinterpret_cast<void(*)(const void*, FString&)>(AppendString), NameEntry, TempString);
-	
-		std::string OutputString = TempString.ToString();
+		std::string RetStr = FName::GNames->GetEntryByIndex(GetDisplayIndex())->GetString();
 	
 		if (Number > 0)
-			OutputString += ("_" + std::to_string(Number - 1));
+			RetStr += ("_" + std::to_string(Number - 1));
 	
-		return OutputString;
+		return RetStr;
 	}
 	
 	std::string ToString() const
@@ -386,15 +500,6 @@ public:
 		return OutputString.substr(pos + 1);
 	}
 	
-
-	FName& operator=(const FName& Other)
-	{
-		ComparisonIndex = Other.ComparisonIndex;
-		Number = Other.Number;
-	
-		return *this;
-	}
-
 	bool operator==(const FName& Other) const
 	{
 		return ComparisonIndex == Other.ComparisonIndex && Number == Other.Number;
@@ -467,6 +572,17 @@ public:
 		return ClassPtr != Other;
 	}
 };
+
+// Predefined struct FStructBaseChain
+// 0x0010 (0x0010 - 0x0000)
+struct FStructBaseChain
+{
+public:
+	FStructBaseChain**                            StructBaseChainArray;                              // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+	int32                                         NumStructBasesInChainMinusOne;                     // 0x0008(0x0004)(NOT AUTO-GENERATED PROPERTY)
+};
+DUMPER7_ASSERTS_FStructBaseChain;
+
 namespace FTextImpl
 {
 // Predefined struct FTextData
@@ -764,7 +880,7 @@ template<typename FunctionSignature>
 class TDelegate
 {
 public:
-	struct InvalidUseOfTDelegate                  TemplateParamIsNotAFunctionSignature;              // 0x0000(0x0000)(NOT AUTO-GENERATED PROPERTY)
+	static_assert(false, "TDelegate should be used with a function signature. Something might be wrong in the SDK-Generator.");
 	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
@@ -783,7 +899,8 @@ template<typename FunctionSignature>
 class TMulticastInlineDelegate
 {
 public:
-	struct InvalidUseOfTMulticastInlineDelegate   TemplateParamIsNotAFunctionSignature;              // 0x0000(0x0010)(NOT AUTO-GENERATED PROPERTY)
+	static_assert(false, "TMulticastInlineDelegate should be used with a function signature. Something might be wrong in the SDK-Generator.");
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Predefined struct TMulticastInlineDelegate<Ret(Args...)>
@@ -795,24 +912,31 @@ public:
 	TArray<FScriptDelegate>                       InvocationList;                                    // 0x0000(0x0010)(NOT AUTO-GENERATED PROPERTY)
 };
 
-#define UE_ENUM_OPERATORS(EEnumClass)																																	\
-																																										\
-inline constexpr EEnumClass operator|(EEnumClass Left, EEnumClass Right)																								\
-{																																										\
-	return (EEnumClass)((std::underlying_type<EEnumClass>::type)(Left) | (std::underlying_type<EEnumClass>::type)(Right));												\
-}																																										\
-																																										\
-inline constexpr EEnumClass& operator|=(EEnumClass& Left, EEnumClass Right)																								\
-{																																										\
-	return (EEnumClass&)((std::underlying_type<EEnumClass>::type&)(Left) |= (std::underlying_type<EEnumClass>::type)(Right));											\
-}																																										\
-																																										\
-inline bool operator&(EEnumClass Left, EEnumClass Right)																												\
-{																																										\
-	return (((std::underlying_type<EEnumClass>::type)(Left) & (std::underlying_type<EEnumClass>::type)(Right)) == (std::underlying_type<EEnumClass>::type)(Right));		\
-}																																										
+#define UE_ENUM_OPERATORS(EEnumClassType)																													\
+																																							\
+inline constexpr EEnumClassType operator|(EEnumClassType Left, EEnumClassType Right)															 			\
+{																																							\
+	using EnumUnderlayingType = std::underlying_type<EEnumClassType>::type;																					\
+																																							\
+	return static_cast<EEnumClassType>(static_cast<EnumUnderlayingType>(Left) | static_cast<EnumUnderlayingType>(Right));									\
+}																																							\
+																																							\
+inline EEnumClassType& operator|=(EEnumClassType& Left, EEnumClassType Right)																				\
+{																																							\
+    using EnumUnderlayingType = std::underlying_type<EEnumClassType>::type;																					\
+																																							\
+    reinterpret_cast<EnumUnderlayingType&>(Left) |= static_cast<EnumUnderlayingType>(Right);																\
+	return Left;																																			\
+}																																							\
+																																							\
+inline bool operator&(EEnumClassType Left, EEnumClassType Right)																							\
+{																																							\
+	using EnumUnderlayingType = std::underlying_type<EEnumClassType>::type;																					\
+																																							\
+	return ((static_cast<EnumUnderlayingType>(Left) & static_cast<EnumUnderlayingType>(Right)) == static_cast<EnumUnderlayingType>(Right));					\
+}
 
-enum class EObjectFlags : int32
+enum class EObjectFlags : uint32
 {
 	NoFlags							= 0x00000000,
 
@@ -1276,5 +1400,4 @@ using TObjectBasedCycleFixup = CyclicDependencyFixupImpl::TCyclicClassFixup<Unde
 template<typename UnderlayingClassType, int32 Size, int32 Align = 0x8>
 using TActorBasedCycleFixup = CyclicDependencyFixupImpl::TCyclicClassFixup<UnderlayingClassType, Size, Align, class AActor>;
 
-}
-
+SDK_NAMESPACE_END

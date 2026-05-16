@@ -14,8 +14,7 @@
 #include "CheatMapJumpButton_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function CheatMapJumpButton.CheatMapJumpButton_C.BndEvt__SpawnButton_K2Node_ComponentBoundEvent_160_OnButtonClickedEvent__DelegateSignature
 // (BlueprintEvent)
@@ -70,5 +69,5 @@ void UCheatMapJumpButton_C::SetMapJumpInfo(const struct FCheatMapJumpInfo& Info)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

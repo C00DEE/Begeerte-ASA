@@ -14,8 +14,7 @@
 #include "ASAUI_NewsCarouselTemplate_Entry_News_Default_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ASAUI_NewsCarouselTemplate_Entry_News_Default.ASAUI_NewsCarouselTemplate_Entry_News_Default_C.BlueprintInit
 // (Event, Public, BlueprintEvent)
@@ -118,5 +117,5 @@ void UASAUI_NewsCarouselTemplate_Entry_News_Default_C::ExecuteUbergraph_ASAUI_Ne
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END

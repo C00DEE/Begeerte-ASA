@@ -13,8 +13,7 @@
 #include "ShooterGame_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass DinoColorSetGenericFemale.DinoColorSetGenericFemale_C
 // 0x0000 (0x0268 - 0x0268)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UDinoColorSetGenericFemale_C;
 
-}
-
+SDK_NAMESPACE_END

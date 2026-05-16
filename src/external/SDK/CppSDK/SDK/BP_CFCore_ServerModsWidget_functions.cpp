@@ -14,8 +14,7 @@
 #include "BP_CFCore_ServerModsWidget_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_CFCore_ServerModsWidget.BP_CFCore_ServerModsWidget_C.AddToTotalSize
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
@@ -1123,5 +1122,5 @@ void UBP_CFCore_ServerModsWidget_C::WipeTexts()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

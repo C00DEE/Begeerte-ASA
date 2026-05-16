@@ -13,8 +13,7 @@
 #include "StoneHarvestComponent_RequiresMetal_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass MetalHarvestComponent.MetalHarvestComponent_C
 // 0x0000 (0x0230 - 0x0230)
@@ -36,5 +35,4 @@ public:
 };
 DUMPER7_ASSERTS_UMetalHarvestComponent_C;
 
-}
-
+SDK_NAMESPACE_END

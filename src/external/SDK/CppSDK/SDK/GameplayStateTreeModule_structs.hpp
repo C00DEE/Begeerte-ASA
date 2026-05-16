@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "AIModule_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "StateTreeModule_structs.hpp"
+#include "AIModule_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct GameplayStateTreeModule.StateTreeGetActorLocationPropertyFunctionInstanceData
 // 0x0020 (0x0020 - 0x0000)
@@ -109,5 +108,4 @@ struct FStateTreeMoveToTask final : public FStateTreeAIActionTaskBase
 };
 DUMPER7_ASSERTS_FStateTreeMoveToTask;
 
-}
-
+SDK_NAMESPACE_END

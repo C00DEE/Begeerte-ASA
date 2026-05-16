@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "AnimGraphRuntime_structs.hpp"
 #include "Engine_structs.hpp"
+#include "AnimGraphRuntime_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // ScriptStruct Human_FaceCustomization_AnimBP.Human_FaceCustomization_AnimBP_C.AnimBlueprintGeneratedConstantData
 // 0x112F (0x1130 - 0x0001)
@@ -142,5 +141,4 @@ public:
 };
 DUMPER7_ASSERTS_Human_FaceCustomization_AnimBP__FAnimBlueprintGeneratedMutableData;
 
-}
-
+SDK_NAMESPACE_END

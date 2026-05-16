@@ -10,14 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "MassEntity_classes.hpp"
 #include "MassLOD_structs.hpp"
+#include "MassEntity_classes.hpp"
 #include "Engine_structs.hpp"
 #include "MassSpawner_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Class MassLOD.MassLODCollectorProcessor
 // 0x0CA0 (0x0D50 - 0x00B0)
@@ -190,5 +189,4 @@ public:
 };
 DUMPER7_ASSERTS_UMassSimulationLODProcessor;
 
-}
-
+SDK_NAMESPACE_END

@@ -13,8 +13,7 @@
 #include "FootprintOwnerInterface_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function FootprintOwnerInterface.FootprintOwnerInterface_C.RightBeforeSpawningFootprint
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -29,5 +28,5 @@ void IFootprintOwnerInterface_C::RightBeforeSpawningFootprint()
 	AsUObject()->ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

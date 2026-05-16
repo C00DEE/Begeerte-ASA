@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 
-namespace SDK::Params
-{
+SDK_NAMESPACE_START
+SDK_PARAM_NAMESPACE_START
 
 // Function BPI_CFCore_CustomComboBox.BPI_CFCore_CustomComboBox_C.OnOptionSelectedInterface
 // 0x0018 (0x0018 - 0x0000)
@@ -24,5 +24,5 @@ public:
 };
 DUMPER7_ASSERTS_BPI_CFCore_CustomComboBox_C_OnOptionSelectedInterface;
 
-}
-
+SDK_PARAM_NAMESPACE_END
+SDK_NAMESPACE_END

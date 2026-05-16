@@ -13,8 +13,7 @@
 #include "Engine_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass FL_VFX_Spawn_Ground_Effect.FL_VFX_Spawn_Ground_Effect_C
 // 0x0000 (0x0028 - 0x0028)
@@ -46,5 +45,4 @@ public:
 };
 DUMPER7_ASSERTS_UFL_VFX_Spawn_Ground_Effect_C;
 
-}
-
+SDK_NAMESPACE_END

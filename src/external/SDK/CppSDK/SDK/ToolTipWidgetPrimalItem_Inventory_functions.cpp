@@ -14,8 +14,7 @@
 #include "ToolTipWidgetPrimalItem_Inventory_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function ToolTipWidgetPrimalItem_Inventory.ToolTipWidgetPrimalItem_Inventory_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
@@ -50,5 +49,5 @@ void UToolTipWidgetPrimalItem_Inventory_C::ExecuteUbergraph_ToolTipWidgetPrimalI
 	UObject::ProcessEvent(Func, &Parms);
 }
 
-}
 
+SDK_NAMESPACE_END
