@@ -290,7 +290,7 @@ namespace g_DrawImGui {
 			{
 				ImGui::SetNextItemWidth(frame_h * 9.0f);
 				// 此处加入了 ImGuiColorEditFlags_NoSidePreview 标志，用于干掉右侧的 "Current" 预览区域
-				ImGui::ColorPicker4("##Picker", col_ptr, ImGuiColorEditFlags_AlphaBar | ImGuiColorEditFlags_NoInputs | ImGuiColorEditFlags_NoOptions | ImGuiColorEditFlags_NoSmallPreview | ImGuiColorEditFlags_NoLabel | ImGuiColorEditFlags_NoTooltip | ImGuiColorEditFlags_NoSidePreview);
+				ImGui::ColorPicker4("##Picker", col_ptr, ImGuiColorEditFlags_AlphaBar | ImGuiColorEditFlags_DisplayHex | ImGuiColorEditFlags_NoOptions | ImGuiColorEditFlags_NoSmallPreview | ImGuiColorEditFlags_NoLabel | ImGuiColorEditFlags_NoTooltip | ImGuiColorEditFlags_NoSidePreview);
 				ImGui::EndPopup();
 			}
 		}
