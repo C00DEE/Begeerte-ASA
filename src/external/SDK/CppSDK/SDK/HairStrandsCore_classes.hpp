@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Niagara_classes.hpp"
 #include "HairStrandsCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "Engine_classes.hpp"
 #include "MovieScene_classes.hpp"
+#include "Niagara_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -162,6 +162,50 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UGroomAsset;
+
+// Class HairStrandsCore.NiagaraDataInterfaceVelocityGrid
+// 0x0010 (0x0048 - 0x0038)
+class UNiagaraDataInterfaceVelocityGrid : public UNiagaraDataInterfaceRWBase
+{
+public:
+	struct FIntVector                             GridSize;                                          // 0x0038(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NiagaraDataInterfaceVelocityGrid")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NiagaraDataInterfaceVelocityGrid")
+	}
+	static class UNiagaraDataInterfaceVelocityGrid* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNiagaraDataInterfaceVelocityGrid>();
+	}
+};
+DUMPER7_ASSERTS_UNiagaraDataInterfaceVelocityGrid;
+
+// Class HairStrandsCore.NiagaraDataInterfacePressureGrid
+// 0x0000 (0x0048 - 0x0048)
+class UNiagaraDataInterfacePressureGrid final : public UNiagaraDataInterfaceVelocityGrid
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NiagaraDataInterfacePressureGrid")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NiagaraDataInterfacePressureGrid")
+	}
+	static class UNiagaraDataInterfacePressureGrid* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNiagaraDataInterfacePressureGrid>();
+	}
+};
+DUMPER7_ASSERTS_UNiagaraDataInterfacePressureGrid;
 
 // Class HairStrandsCore.HairCardGenerationSettings
 // 0x0000 (0x0028 - 0x0028)
@@ -640,49 +684,5 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UNiagaraDataInterfaceHairStrands;
-
-// Class HairStrandsCore.NiagaraDataInterfaceVelocityGrid
-// 0x0010 (0x0048 - 0x0038)
-class UNiagaraDataInterfaceVelocityGrid : public UNiagaraDataInterfaceRWBase
-{
-public:
-	struct FIntVector                             GridSize;                                          // 0x0038(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NiagaraDataInterfaceVelocityGrid")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NiagaraDataInterfaceVelocityGrid")
-	}
-	static class UNiagaraDataInterfaceVelocityGrid* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNiagaraDataInterfaceVelocityGrid>();
-	}
-};
-DUMPER7_ASSERTS_UNiagaraDataInterfaceVelocityGrid;
-
-// Class HairStrandsCore.NiagaraDataInterfacePressureGrid
-// 0x0000 (0x0048 - 0x0048)
-class UNiagaraDataInterfacePressureGrid final : public UNiagaraDataInterfaceVelocityGrid
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NiagaraDataInterfacePressureGrid")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NiagaraDataInterfacePressureGrid")
-	}
-	static class UNiagaraDataInterfacePressureGrid* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNiagaraDataInterfacePressureGrid>();
-	}
-};
-DUMPER7_ASSERTS_UNiagaraDataInterfacePressureGrid;
 
 SDK_NAMESPACE_END

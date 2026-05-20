@@ -45,24 +45,14 @@ struct SDK_ALIGN(0x01) FEditorDataStorageColumn
 #pragma pack(pop)
 DUMPER7_ASSERTS_FEditorDataStorageColumn;
 
-// ScriptStruct TypedElementFramework.TypedElementUObjectIdColumn
-// 0x0008 (0x0008 - 0x0000)
-struct FTypedElementUObjectIdColumn final : public FEditorDataStorageColumn
+// ScriptStruct TypedElementFramework.TypedElementLabelColumn
+// 0x0010 (0x0010 - 0x0000)
+struct FTypedElementLabelColumn final : public FEditorDataStorageColumn
 {
 public:
-	uint32                                        ID;                                                // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SerialNumber;                                      // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Label;                                             // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FTypedElementUObjectIdColumn;
-
-// ScriptStruct TypedElementFramework.Test_PingPongPrePhys
-// 0x0008 (0x0008 - 0x0000)
-struct FTest_PingPongPrePhys final : public FEditorDataStorageColumn
-{
-public:
-	uint64                                        Value;                                             // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FTest_PingPongPrePhys;
+DUMPER7_ASSERTS_FTypedElementLabelColumn;
 
 // ScriptStruct TypedElementFramework.ScriptTypedElementHandle
 // 0x0008 (0x0008 - 0x0000)
@@ -121,6 +111,16 @@ public:
 };
 DUMPER7_ASSERTS_FTypedElementUObjectColumn;
 
+// ScriptStruct TypedElementFramework.TypedElementUObjectIdColumn
+// 0x0008 (0x0008 - 0x0000)
+struct FTypedElementUObjectIdColumn final : public FEditorDataStorageColumn
+{
+public:
+	uint32                                        ID;                                                // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SerialNumber;                                      // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FTypedElementUObjectIdColumn;
+
 // ScriptStruct TypedElementFramework.TypedElementExternalObjectColumn
 // 0x0008 (0x0008 - 0x0000)
 struct alignas(0x08) FTypedElementExternalObjectColumn final : public FEditorDataStorageColumn
@@ -175,6 +175,15 @@ public:
 	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FTypedElementPropertyBagPlaceholderTypeInfoColumn;
+
+// ScriptStruct TypedElementFramework.Test_PingPongPrePhys
+// 0x0008 (0x0008 - 0x0000)
+struct FTest_PingPongPrePhys final : public FEditorDataStorageColumn
+{
+public:
+	uint64                                        Value;                                             // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FTest_PingPongPrePhys;
 
 // ScriptStruct TypedElementFramework.Test_PingPongDurPhys
 // 0x0008 (0x0008 - 0x0000)
@@ -252,15 +261,6 @@ public:
 	class FName                                   IconName;                                          // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FTypedElementIconOverrideColumn;
-
-// ScriptStruct TypedElementFramework.TypedElementLabelColumn
-// 0x0010 (0x0010 - 0x0000)
-struct FTypedElementLabelColumn final : public FEditorDataStorageColumn
-{
-public:
-	class FString                                 Label;                                             // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FTypedElementLabelColumn;
 
 // ScriptStruct TypedElementFramework.TypedElementLabelHashColumn
 // 0x0008 (0x0008 - 0x0000)

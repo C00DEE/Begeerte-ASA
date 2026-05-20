@@ -7188,6 +7188,31 @@ TMap<class FString, class FString> UDiscordMessageHandle::MetaData()
 }
 
 
+// Function DiscordPartnerSDK.DiscordMessageHandle.ModerationMetadata
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TMap<class FString, class FString>      ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+TMap<class FString, class FString> UDiscordMessageHandle::ModerationMetadata()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DiscordMessageHandle", "ModerationMetadata");
+
+	Params::DiscordMessageHandle_ModerationMetadata Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function DiscordPartnerSDK.DiscordMessageHandle.RawContent
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -9768,6 +9793,31 @@ bool UDiscordClient::IsAuthenticated()
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function DiscordPartnerSDK.DiscordClient.IsDiscordAppInstalled
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const TDelegate<void(bool installed)>&  Callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UDiscordClient::IsDiscordAppInstalled(const TDelegate<void(bool installed)>& Callback)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DiscordClient", "IsDiscordAppInstalled");
+
+	Params::DiscordClient_IsDiscordAppInstalled Parms{};
+
+	Parms.Callback = Callback;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

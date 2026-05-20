@@ -1062,6 +1062,7 @@ public:
 	struct FDiscordUniqueID ID();
 	class UDiscordLobbyHandle* Lobby();
 	TMap<class FString, class FString> MetaData();
+	TMap<class FString, class FString> ModerationMetadata();
 	class FString RawContent();
 	class UDiscordUserHandle* Recipient();
 	struct FDiscordUniqueID RecipientId();
@@ -1264,6 +1265,7 @@ public:
 	void InitWithBases(const class FString& ApiBase, const class FString& WebBase);
 	void InitWithOptions(class UDiscordClientCreateOptions* Options);
 	bool IsAuthenticated();
+	void IsDiscordAppInstalled(const TDelegate<void(bool installed)>& Callback);
 	void JoinLinkedLobbyGuild(const struct FDiscordUniqueID& LobbyId, const TDelegate<void()>& provisionalUserMergeRequiredCallback, const TDelegate<void(class UDiscordClientResult* Result, const class FString& inviteUrl)>& Callback);
 	void LeaveLobby(const struct FDiscordUniqueID& LobbyId, const TDelegate<void(class UDiscordClientResult* Result)>& Callback);
 	void LinkChannelToLobby(const struct FDiscordUniqueID& LobbyId, const struct FDiscordUniqueID& ChannelId, const TDelegate<void(class UDiscordClientResult* Result)>& Callback);

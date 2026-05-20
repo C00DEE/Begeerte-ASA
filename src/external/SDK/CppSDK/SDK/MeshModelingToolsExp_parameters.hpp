@@ -50,6 +50,24 @@ public:
 };
 DUMPER7_ASSERTS_BakeMultiTexture2DProperties_GetUVLayerNamesFunc;
 
+// Function MeshModelingToolsExp.MeshInspectorMaterialProperties.GetUVChannelNamesFunc
+// 0x0010 (0x0010 - 0x0000)
+struct MeshInspectorMaterialProperties_GetUVChannelNamesFunc final
+{
+public:
+	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MeshInspectorMaterialProperties_GetUVChannelNamesFunc;
+
+// Function MeshModelingToolsExp.MeshAttributePaintToolProperties.GetAttributeNames
+// 0x0010 (0x0010 - 0x0000)
+struct MeshAttributePaintToolProperties_GetAttributeNames final
+{
+public:
+	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MeshAttributePaintToolProperties_GetAttributeNames;
+
 // Function MeshModelingToolsExp.MeshConstraintProperties.IsPreventNormalFlipsEnabled
 // 0x0001 (0x0001 - 0x0000)
 struct MeshConstraintProperties_IsPreventNormalFlipsEnabled final
@@ -121,24 +139,6 @@ public:
 	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_SelectiveTessellationProperties_GetMaterialIDsFunc;
-
-// Function MeshModelingToolsExp.MeshAttributePaintToolProperties.GetAttributeNames
-// 0x0010 (0x0010 - 0x0000)
-struct MeshAttributePaintToolProperties_GetAttributeNames final
-{
-public:
-	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MeshAttributePaintToolProperties_GetAttributeNames;
-
-// Function MeshModelingToolsExp.MeshInspectorMaterialProperties.GetUVChannelNamesFunc
-// 0x0010 (0x0010 - 0x0000)
-struct MeshInspectorMaterialProperties_GetUVChannelNamesFunc final
-{
-public:
-	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MeshInspectorMaterialProperties_GetUVChannelNamesFunc;
 
 // Function MeshModelingToolsExp.MeshVertexPaintToolUtilityActions.GetWeightMapsFunc
 // 0x0010 (0x0010 - 0x0000)

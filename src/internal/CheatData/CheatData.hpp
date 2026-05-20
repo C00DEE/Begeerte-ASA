@@ -34,7 +34,11 @@ namespace g_CheatData {
 			// 2026/5/11 @zetsr
 			// push rbp; push r13; push r15; sub rsp, 0x40; mov rax, [rdx+0x20]; mov r11, [r8]
 			// 40 55 41 55 41 57 48 83 EC ? 48 8B ? ? 49 8B
-			std::string Tick = "40 55 41 55 41 57 48 83 EC ? 48 8B ? ? 49 8B";
+
+			// 2026/5/20 @zetsr
+			// mov r11, rsp | push rbp | push r14 | push r15 | sub rsp, alloc | mov rax, [rip+offset]
+			// 4C 8B DC 55 41 56 41 57 48 81 EC 80 08 00 00 48 8B 05 CA 9B D4 08
+			std::string Tick = "4C 8B DC 55 41 56 41 57 48 81 EC ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ??";
 
 			namespace UNetDriver {
 				namespace UNetConnection {
@@ -45,9 +49,8 @@ namespace g_CheatData {
 
 			// 48 89 5C 24 ? 48 89 7C 24 ? 55 48 8D AC 24 ? ? ? ? 48 81 EC ? ? ? ? 44 0F 29 BC 24 过期了
 			// 2026/5/20 @zetsr
-			// mov rax, rsp | push rbx | sub rsp, alloc | movaps [rax+offset], xmm6
+            // mov rax, rsp | push rbx | sub rsp, alloc | movaps [rax+offset], xmm6 | mov rbx, rcx | movaps [rax+offset], xmm7 | movaps
 			// 48 8B C4 53 48 81 EC 00 01 00 00 0F 29 70 E8 48 8B D9 0F 29 78 D8 0F 28
-			// 48 8B C4 53 48 81 EC ?? ?? ?? ?? 0F 29 70 ?? 48 8B D9 0F 29 78 ?? 0F 28
             std::string PhysicsRotation = "48 8B C4 53 48 81 EC ?? ?? ?? ?? 0F 29 70 ?? 48 8B D9 0F 29 78 ?? 0F 28";
 		}
 
@@ -68,7 +71,11 @@ namespace g_CheatData {
 					// 2026/5/11 @zetsr
 					// mov rax, rsp; push r12; sub rsp, 0x60; mov [rax+0x08], rbx; mov rbx, rdx
 					// 48 8B C4 41 54 48 83 EC ? 48 89 58 ? 48 8B ?
-					std::string OutputTextLine = "48 8B C4 41 54 48 83 EC ? 48 89 58 ? 48 8B ?";
+
+					// 2026/5/20 @zetsr
+					// mov [rsp+8], rbx | push rbp | push rsi | push rdi | push r12 | push r13 | push r14 | push r15 | mov rbp, rsp | sub rsp, alloc | movsxd rsi, [rdx+offset] | xor r14d, r14d
+					// 48 89 5C 24 08 55 56 57 41 54 41 55 41 56 41 57 48 8B EC 48 83 EC 40 48 63 72 08 45 33 F6
+					std::string OutputTextLine = "48 89 5C 24 08 55 56 57 41 54 41 55 41 56 41 57 48 8B EC 48 83 EC ?? 48 63 72 ?? 45 33 F6";
 				}
 			}
 		}

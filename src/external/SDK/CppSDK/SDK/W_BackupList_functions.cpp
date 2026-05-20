@@ -16,6 +16,20 @@
 
 SDK_NAMESPACE_START
 
+// Function W_BackupList.W_BackupList_C.BndEvt__W_BackupList_CloseBackupSave_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
+// (BlueprintEvent)
+
+void UW_BackupList_C::BndEvt__W_BackupList_CloseBackupSave_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_BackupList_C", "BndEvt__W_BackupList_CloseBackupSave_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_BackupList.W_BackupList_C.ExecuteUbergraph_W_BackupList
 // (Final, UbergraphFunction)
 // Parameters:
@@ -33,20 +47,6 @@ void UW_BackupList_C::ExecuteUbergraph_W_BackupList(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_BackupList.W_BackupList_C.BndEvt__W_BackupList_CloseBackupSave_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature
-// (BlueprintEvent)
-
-void UW_BackupList_C::BndEvt__W_BackupList_CloseBackupSave_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_BackupList_C", "BndEvt__W_BackupList_CloseBackupSave_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

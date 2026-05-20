@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
+#include "GameplayTags_structs.hpp"
 #include "SmartObjectsModule_structs.hpp"
 #include "AIModule_structs.hpp"
 #include "TargetingSystem_structs.hpp"
-#include "GameplayTags_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 SDK_NAMESPACE_START
