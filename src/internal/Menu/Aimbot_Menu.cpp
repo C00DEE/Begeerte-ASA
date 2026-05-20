@@ -15,7 +15,7 @@ namespace g_DrawImGui {
         const char* secTitle = LanguageManager::Aimbot_Menu::SectionTitle;
         const char* aimEnabled = LanguageManager::Aimbot_Menu::AimbotEnabled;
         const char* aimFOV = LanguageManager::Aimbot_Menu::AimbotFOV;
-        const char* aimSmooth = LanguageManager::Aimbot_Menu::AimbotSmooth;
+        const char* aimSmooth = LanguageManager::Aimbot_Menu::AimbotSmooth; 
         const char* trigEnabled = LanguageManager::Aimbot_Menu::TriggerbotEnabled;
 
         if (ImGui::BeginTabItem(tabLabel)) {

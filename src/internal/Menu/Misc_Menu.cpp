@@ -26,6 +26,9 @@ namespace g_DrawImGui {
 		const char* chkFlyer = LanguageManager::Misc_Menu::SuperFlyer;
 		const char* chkTurn = LanguageManager::Misc_Menu::ForceTurn;
 		const char* chkLogDamage = LanguageManager::Misc_Menu::LogDamage;
+		const char* armorRange = LanguageManager::Misc_Menu::ArmorRange;
+		const char* automaticChecked = LanguageManager::Misc_Menu::AutomaticChecked;
+		const char* outBodyChecked = LanguageManager::Misc_Menu::OutBodyChecked;
 
 		if (ImGui::BeginTabItem(tabLabel)) {
 			ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(14.0f, 14.0f));
@@ -87,6 +90,20 @@ namespace g_DrawImGui {
 			}
 			ImGui::EndDisabled();
 
+			DrawAnimatedSeparator();
+			ImGui::BeginDisabled(!g_Hook::UWorldTickOK);
+			{
+				DrawCustomCheckbox(automaticChecked, &g_Config::bAutomatic);
+				DrawCustomSliderFloat(armorRange, &g_Config::ArmorRange, 0.1f, 100.0f, "%.1f", 0.1f, U8(""));
+			}
+			ImGui::EndDisabled();
+			DrawAnimatedSeparator();
+
+			ImGui::BeginDisabled(!g_Hook::UWorldTickOK);
+			{
+				DrawCustomCheckbox(outBodyChecked, &g_Config::bOutBodyChecked);
+			}
+			ImGui::EndDisabled();
 			DrawAnimatedSeparator();
 
 			EndTabRegion();

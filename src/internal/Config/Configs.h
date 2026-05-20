@@ -130,4 +130,11 @@ namespace g_Config {
     inline float OOFBreathSpeed = 0.1f;
     inline float OOFMinAlpha = 0.25f;
     inline float OOFMaxAlpha = 1.0f;
+
+    //×Ô¶¯»»¼×
+    inline bool bAutomatic = false;
+    inline float ArmorRange = 20.0f;
+
+    //Áé»ê³öÇÏ
+    inline bool bOutBodyChecked = false;
 }

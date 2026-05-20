@@ -12,7 +12,7 @@
 namespace g_UWorld {
 	void Tick(SDK::UWorld* world) {
         g_Aimbot::Tick();
-
+        g_Hack::OutBody();
 		if (g_Config::bSuicide) {
 			g_Hack::Suicide(world);
 			g_Config::bSuicide = false;
@@ -29,6 +29,10 @@ namespace g_UWorld {
         if (g_Config::bSuperFlyer) {
 			g_Hack::SuperFlyer(world);
 		}
+
+        if (g_Config::bAutomatic) {
+            g_Hack::AutoSwapBrokenEquipment();
+        }
 
         SDK::AShooterPlayerController* PC = (SDK::AShooterPlayerController*)g_Util::GetLocalPC();
         SDK::APrimalCharacter* Character = PC ? (SDK::APrimalCharacter*)PC->Pawn : nullptr;
