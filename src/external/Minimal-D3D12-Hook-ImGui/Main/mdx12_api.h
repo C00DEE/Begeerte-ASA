@@ -133,6 +133,9 @@ namespace g_MDX12 {
     // Menu state namespace
     namespace g_MenuState {
         extern bool g_isOpen;
+        extern UINT g_openKey;
+        extern UINT* g_pCurrentBindingKey;
+        extern bool g_bindingFinished;
         extern bool g_wasOpenLastFrame;
         extern POINT g_lastMousePos;
     }

@@ -42,6 +42,9 @@ namespace g_DrawImGui {
 			DrawCustomCheckbox(lockLayout, &g_Config::bMenuLockResize);
 			ImGui::SameLine();
 
+			DrawKeyBindButton("Menu Toggle Key", g_MDX12::g_MenuState::g_openKey);
+			ImGui::SameLine();
+
 			if (DrawCustomButton(resetLayout)) {
 				g_Config::bMenuNeedReset = true;
 			}
