@@ -43,7 +43,12 @@ namespace g_CheatData {
 				}
 			}
 
-            std::string PhysicsRotation = "48 89 5C 24 ? 48 89 7C 24 ? 55 48 8D AC 24 ? ? ? ? 48 81 EC ? ? ? ? 44 0F 29 BC 24";
+			// 48 89 5C 24 ? 48 89 7C 24 ? 55 48 8D AC 24 ? ? ? ? 48 81 EC ? ? ? ? 44 0F 29 BC 24 过期了
+			// 2026/5/20 @zetsr
+			// mov rax, rsp | push rbx | sub rsp, alloc | movaps [rax+offset], xmm6
+			// 48 8B C4 53 48 81 EC 00 01 00 00 0F 29 70 E8 48 8B D9 0F 29 78 D8 0F 28
+			// 48 8B C4 53 48 81 EC ?? ?? ?? ?? 0F 29 70 ?? 48 8B D9 0F 29 78 ?? 0F 28
+            std::string PhysicsRotation = "48 8B C4 53 48 81 EC ?? ?? ?? ?? 0F 29 70 ?? 48 8B D9 0F 29 78 ?? 0F 28";
 		}
 
 		namespace UEngine {
