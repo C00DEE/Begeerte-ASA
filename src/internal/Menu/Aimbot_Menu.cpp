@@ -17,9 +17,6 @@ namespace g_DrawImGui {
         const char* aimFOV = LanguageManager::Aimbot_Menu::AimbotFOV;
         const char* aimSmooth = LanguageManager::Aimbot_Menu::AimbotSmooth; 
         const char* trigEnabled = LanguageManager::Aimbot_Menu::TriggerbotEnabled;
-        const char* otherTitle = LanguageManager::Aimbot_Menu::OtherTitle;
-        const char* armorRange = LanguageManager::Aimbot_Menu::ArmorRange;
-        const char* automaticChecked = LanguageManager::Aimbot_Menu::AutomaticChecked;
 
         if (ImGui::BeginTabItem(tabLabel)) {
             ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(14.0f, 14.0f));
@@ -38,14 +35,7 @@ namespace g_DrawImGui {
             ImGui::EndDisabled();
 
             DrawAnimatedSeparator();
-            ImGui::TextColored(ThemeColors::GetAccent(), otherTitle);
-            DrawAnimatedSeparator();
-            ImGui::BeginDisabled(!g_Hook::UWorldTickOK);
-            {
-                DrawCustomCheckbox(automaticChecked, &g_Config::bAutomatic);
-                DrawCustomSliderFloat(armorRange, &g_Config::ArmorRange, 0.1f, 100.0f, "%.1f", 0.1f, U8(""));
-            }
-            ImGui::EndDisabled();
+
             EndTabRegion();
             ImGui::PopStyleVar();
             ImGui::EndTabItem();

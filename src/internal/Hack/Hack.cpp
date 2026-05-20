@@ -201,4 +201,170 @@ namespace g_Hack {
             logMsg
         );
     }
+
+    void AutoSwapBrokenEquipment()
+    {
+        static int globalTick = 0;
+        globalTick++;
+
+        if (globalTick % 3 != 0) return;
+
+        SDK::AShooterPlayerController* PC = (SDK::AShooterPlayerController*)g_Util::GetLocalPC();
+        if (!PC || !PC->Pawn) return;
+
+        auto Character = (SDK::APrimalCharacter*)PC->Pawn;
+        if (!Character || !Character->MyInventoryComponent) return;
+
+        auto Inv = Character->MyInventoryComponent;
+        auto& EquippedItems = Inv->EquippedItems;
+        auto& InventoryItems = Inv->InventoryItems;
+
+        if (InventoryItems.Num() == 0) return;
+
+        static int lastSwapTick[25] = { 0 };
+        const float ALERT_DURABILITY = g_Config::ArmorRange;
+
+        //获取当前穿着的装备
+        SDK::UPrimalItem* WornArmor[20] = { nullptr };
+        for (int i = 0; i < EquippedItems.Num(); i++)
+        {
+            auto item = EquippedItems[i];
+            if (!item) continue;
+
+            int typeIndex = (int)item->MyEquipmentType;
+            if (typeIndex >= 0 && typeIndex < 20)
+            {
+                WornArmor[typeIndex] = item;
+            }
+        }
+
+        int targetSlots[] = { 0, 1, 2, 3, 4, 8 };
+        bool bSlotNeedsReplace[25] = { false }; // 记录需换甲
+        bool bAnyNeedsReplace = false;          // 是否需要换
+
+        for (int i = 0; i < 6; i++)
+        {
+            int typeIndex = targetSlots[i];
+
+            // 如果在冷却中，直接跳过，本帧不处理它
+            if (globalTick - lastSwapTick[typeIndex] < 60) continue;
+
+            auto CurrentEquippedItem = WornArmor[typeIndex];
+
+            if (CurrentEquippedItem == nullptr)
+            {
+                // 空槽位，需要穿
+                bSlotNeedsReplace[typeIndex] = true;
+                bAnyNeedsReplace = true;
+            }
+            else
+            {
+                // 有装备，判断是否快碎了
+                if (!CurrentEquippedItem->bIsItemSkin && CurrentEquippedItem->bUseItemDurability)
+                {
+                    if (CurrentEquippedItem->ItemDurability <= ALERT_DURABILITY)
+                    {
+                        bSlotNeedsReplace[typeIndex] = true;
+                        bAnyNeedsReplace = true;
+                    }
+                }
+            }
+        }
+
+        //如果没有需要换的 跳过
+        if (!bAnyNeedsReplace) return;
+
+        float bestDurabilityForSlot[25] = { -1.0f };         // 找到的最高耐久
+        SDK::FItemNetID* bestItemNetIdForSlot[25] = { nullptr }; // 记录最高耐久装备的ID
+
+        // 只遍历一次大背包
+        for (int j = 0; j < InventoryItems.Num(); j++)
+        {
+            auto CandItem = InventoryItems[j];
+            if (!CandItem) continue;
+
+            int typeIndex = (int)CandItem->MyEquipmentType;
+
+            if (typeIndex >= 0 && typeIndex < 25 && bSlotNeedsReplace[typeIndex])
+            {
+                if (CandItem->bIsItemSkin || !CandItem->bUseItemDurability) continue;
+                if (CandItem->bIsBlueprint || CandItem->bIsEngram) continue;
+
+                float candDur = CandItem->ItemDurability;
+                if (candDur > ALERT_DURABILITY && candDur > bestDurabilityForSlot[typeIndex])
+                {
+                    bestDurabilityForSlot[typeIndex] = candDur;
+                    bestItemNetIdForSlot[typeIndex] = &CandItem->ItemID;
+                }
+            }
+        }
+
+        for (int i = 0; i < 6; i++)
+        {
+            int typeIndex = targetSlots[i];
+
+            if (bSlotNeedsReplace[typeIndex])
+            {
+                if (bestItemNetIdForSlot[typeIndex] != nullptr)
+                {
+                    PC->ServerEquipPawnItem(*bestItemNetIdForSlot[typeIndex]);
+                    lastSwapTick[typeIndex] = globalTick; 
+                }
+                else
+                {
+                    lastSwapTick[typeIndex] = globalTick;
+                }
+            }
+        }
+    }
+
+    void OutBody()
+    {
+        SDK::APlayerController* LocalPC = g_Util::GetLocalPC();
+        if (!LocalPC || !LocalPC->Pawn) return;
+
+        auto Character = (SDK::APrimalCharacter*)LocalPC->Pawn;
+        auto MovementComp = Character->CharacterMovement;
+        if (!MovementComp) return;
+
+        static bool bLastGhostState = false;
+        bool bCurrentGhostState = g_Config::bOutBodyChecked;
+
+        static SDK::FVector SavedRealLocation = { 0.0f, 0.0f, 0.0f };
+
+        if (bCurrentGhostState == true && bLastGhostState == false)
+        {
+            SavedRealLocation = Character->K2_GetActorLocation();
+
+            Character->SetReplicateMovement(false);
+            Character->SetActorEnableCollision(false);
+
+            MovementComp->MaxFlySpeed = 10000.f;
+            MovementComp->MaxAcceleration = 5000.f;
+            MovementComp->BrakingDecelerationFlying = 9999.f;
+            MovementComp->SetMovementMode(SDK::EMovementMode::MOVE_Flying, 0);
+
+            bLastGhostState = true;
+        }
+
+        else if (bCurrentGhostState == false && bLastGhostState == true)
+        {
+            Character->K2_SetActorLocation(SavedRealLocation, false, nullptr, true);
+
+            MovementComp->SetMovementMode(SDK::EMovementMode::MOVE_Walking, 0);
+            Character->SetActorEnableCollision(true);
+
+            Character->SetReplicateMovement(true);
+
+            bLastGhostState = false;
+        }
+
+        if (bCurrentGhostState == true && bLastGhostState == true)
+        {
+            if (MovementComp->MovementMode != SDK::EMovementMode::MOVE_Flying)
+            {
+                MovementComp->SetMovementMode(SDK::EMovementMode::MOVE_Flying, 0);
+            }
+        }
+    }
 }

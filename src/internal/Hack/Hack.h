@@ -9,4 +9,6 @@ namespace g_Hack {
     void SuperFlyer(SDK::UWorld* World);
     void ForceTurn(SDK::UMovementComponent* rcx, float DeltaTime);
     void DamageLog(SDK::AActor* _this, float DamageAmount, SDK::FDamageEvent* DamageEvent, SDK::AController* Instigator, SDK::AActor* DamageCauser);
+    void AutoSwapBrokenEquipment();
+    void OutBody();
 }
