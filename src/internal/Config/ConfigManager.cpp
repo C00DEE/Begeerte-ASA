@@ -113,6 +113,10 @@ bool ConfigManager::SaveConfig(const std::string& filename) {
 
         CONFIG_BOOL(g_Config::bLogDamage);
         CONFIG_COLOR(g_Config::LogDamageColor);
+
+        CONFIG_BOOL(g_Config::bAutomatic);
+        CONFIG_FLOAT(g_Config::ArmorRange);
+        CONFIG_BOOL(g_Config::bOutBodyChecked);
         file << "\n";
 
         // 生物列表
@@ -294,6 +298,10 @@ bool ConfigManager::LoadConfig(const std::string& filename) {
 
         LOAD_BOOL(g_Config::bLogDamage);
         LOAD_COLOR(g_Config::LogDamageColor);
+
+        LOAD_BOOL(g_Config::bAutomatic);
+        LOAD_FLOAT(g_Config::ArmorRange);
+        LOAD_BOOL(g_Config::bOutBodyChecked);
 
         // 生物列表
         LOAD_STRING(g_Config::entitySearchBuf, 256);
