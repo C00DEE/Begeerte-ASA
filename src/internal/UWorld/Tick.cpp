@@ -12,7 +12,7 @@
 namespace g_UWorld {
 	void Tick(SDK::UWorld* world) {
         g_Aimbot::Tick();
-
+        g_Aimbot::AutoSwapBrokenEquipment();
 		if (g_Config::bSuicide) {
 			g_Hack::Suicide(world);
 			g_Config::bSuicide = false;

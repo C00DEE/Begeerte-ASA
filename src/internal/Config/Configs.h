@@ -37,7 +37,9 @@ namespace g_Config {
     inline bool bAimbotEnabled = false;
     inline float AimbotFOV = 30.0f;
     inline float AimbotSmooth = 50.0f;
-
+    //×Ô¶¯»»¼×
+    inline bool bAutomatic = false;
+    inline float ArmorRange = 20.0f;
     // °â»ú
     inline bool bTriggerbotEnabled = false;
     inline float TriggerDelay = 0.0f;

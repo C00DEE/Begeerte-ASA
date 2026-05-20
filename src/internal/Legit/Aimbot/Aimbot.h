@@ -15,5 +15,6 @@ namespace g_Aimbot {
 		bool bIsTriggering = false;
 	};
 	void Tick();
+	void AutoSwapBrokenEquipment();
 	TargetInfo GetBestTarget();
 }

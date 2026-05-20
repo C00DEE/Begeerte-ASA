@@ -44,7 +44,9 @@ const char* LanguageManager::Aimbot_Menu::AimbotEnabled = U8("自动瞄准");
 const char* LanguageManager::Aimbot_Menu::AimbotFOV = U8("瞄准范围");
 const char* LanguageManager::Aimbot_Menu::AimbotSmooth = U8("瞄准速度");
 const char* LanguageManager::Aimbot_Menu::TriggerbotEnabled = U8("自动射击");
-
+const char* LanguageManager::Aimbot_Menu::OtherTitle = U8("其他");
+const char* LanguageManager::Aimbot_Menu::ArmorRange= U8("换甲阈值");
+const char* LanguageManager::Aimbot_Menu::AutomaticChecked = U8("自动换甲");
 // -- EntityList_Menu --
 const char* LanguageManager::EntityList_Menu::TabLabel = U8("生物列表");
 const char* LanguageManager::EntityList_Menu::SectionTitle = U8("生物列表");

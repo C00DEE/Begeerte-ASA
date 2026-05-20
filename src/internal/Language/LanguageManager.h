@@ -77,6 +77,9 @@ public:
         static const char* AimbotFOV;
         static const char* AimbotSmooth;
         static const char* TriggerbotEnabled;
+        static const char* OtherTitle;
+        static const char* ArmorRange;
+        static const char* AutomaticChecked;
     };
 
     struct EntityList_Menu {
