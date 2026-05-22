@@ -5,11 +5,31 @@
 #include "../../../internal/ESP/ESP.h"
 #include "../../../internal/Util/Util.h"
 #include <chrono>
+#include <map>
 #include <float.h>
 
 namespace g_Aimbot {
 	static bool bIsAutoFiring = false;
-	static SDK::APrimalCharacter* pCurrentLockedTarget = nullptr; // 目标粘性：防止在两个目标间无限切换
+	static SDK::APrimalCharacter* pCurrentLockedTarget = nullptr;
+
+	// 基于骨骼分布动态计算目标的真实物理半径
+	float GetTargetBoneClusterRadius(SDK::APrimalCharacter* Char, const SDK::FVector& Center) {
+		if (!Char || !Char->Mesh) return 0.0f;
+
+		int BoneCount = Char->Mesh->GetNumBones();
+		if (BoneCount <= 0) return 0.0f;
+
+		float MaxDistSq = 0.0f;
+		for (int i = 0; i < BoneCount; i++) {
+			SDK::FVector BoneLoc = Char->Mesh->GetSocketLocation(Char->Mesh->GetBoneName(i));
+			if (BoneLoc.IsZero()) continue;
+
+			float DistSq = (float)SDK::UKismetMathLibrary::Vector_DistanceSquared(BoneLoc, Center);
+			if (DistSq > MaxDistSq) MaxDistSq = DistSq;
+		}
+
+		return (float)SDK::UKismetMathLibrary::sqrt((double)MaxDistSq);
+	}
 
 	void DrawStatusText(TargetInfo& best) {
 		SDK::APlayerController* LocalPC = g_Util::GetLocalPC();
@@ -20,8 +40,8 @@ namespace g_Aimbot {
 			ImColor textColor = best.bIsTriggering ? ImColor(255, 0, 0) : (best.bIsLocked ? ImColor(0, 255, 0) : ImColor(255, 255, 0));
 
 			char buf[128];
-			_snprintf_s(buf, sizeof(buf), "HP: %.0f | DIST: %.0fm | LCK: %s",
-				best.Health, best.Distance / 100.0f, best.bIsLocked ? "YES" : "NO");
+			_snprintf_s(buf, sizeof(buf), "HP: %.0f | DIST: %.0fm | HIT: %.0f%%",
+				best.Health, best.Distance / 100.0f, best.HitChance);
 
 			ImGui::GetBackgroundDrawList()->AddText(ImVec2(ScreenPos.X, ScreenPos.Y - 40), textColor, buf);
 
@@ -33,17 +53,13 @@ namespace g_Aimbot {
 
 	void VisualizeTargetBones(SDK::APrimalCharacter* Char, SDK::APlayerController* PC) {
 		if (!Char || !Char->Mesh || !PC) return;
-
 		int BoneCount = Char->Mesh->GetNumBones();
 		SDK::FVector2D lastPos = { 0, 0 };
-
 		for (int i = 0; i < BoneCount; i++) {
 			SDK::FVector BoneLoc = Char->Mesh->GetSocketLocation(Char->Mesh->GetBoneName(i));
 			SDK::FVector2D sPos;
-
 			if (PC->ProjectWorldLocationToScreen(BoneLoc, &sPos, false)) {
 				ImGui::GetBackgroundDrawList()->AddCircleFilled(ImVec2(sPos.X, sPos.Y), 1.2f, g_Util::GetU32Color(g_Config::AimPointsColor));
-
 				if (lastPos.X != 0 && lastPos.Y != 0) {
 					ImGui::GetBackgroundDrawList()->AddLine(ImVec2(lastPos.X, lastPos.Y), ImVec2(sPos.X, sPos.Y), g_Util::GetU32Color(g_Config::AimSkeletonColor));
 				}
@@ -56,33 +72,19 @@ namespace g_Aimbot {
 		SDK::FVector Diff = { TargetLoc.X - CamLoc.X, TargetLoc.Y - CamLoc.Y, TargetLoc.Z - CamLoc.Z };
 		SDK::FVector DirToTarget = SDK::UKismetMathLibrary::Normal(Diff, 0.0001f);
 		SDK::FVector CamForward = SDK::UKismetMathLibrary::GetForwardVector(CamRot);
-		float Dot = SDK::UKismetMathLibrary::Dot_VectorVector(DirToTarget, CamForward);
+		double Dot = SDK::UKismetMathLibrary::Dot_VectorVector(DirToTarget, CamForward);
 		Dot = SDK::UKismetMathLibrary::FClamp(Dot, -1.0f, 1.0f);
-		return SDK::UKismetMathLibrary::DegAcos(Dot);
+		return (float)SDK::UKismetMathLibrary::DegAcos(Dot);
 	}
 
-	// 辅助函数：根据你提供的 SDK 修正撞击检测逻辑
-	bool IsHitTarget(const SDK::FHitResult& Hit, SDK::APrimalCharacter* Target) {
-		if (!Target) return false;
-		// 使用 SDK 中的 HitObjectHandle 获取引用对象
-		SDK::UObject* HitObj = Hit.HitObjectHandle.ReferenceObject.Get();
-		return (HitObj == (SDK::UObject*)Target);
-	}
-
-	// 修复BUG 2：精确可见性检查，打向瞄准点位置
 	bool IsLocationVisible(SDK::APlayerController* PC, SDK::FVector Start, SDK::FVector End, SDK::AActor* TargetActor) {
 		SDK::FHitResult Hit;
 		SDK::TArray<SDK::AActor*> Ignore;
 		Ignore.Add(PC->Pawn);
-
-		// 从相机到“瞄准点”打射线
 		bool bHasHit = SDK::UKismetSystemLibrary::LineTraceSingle(PC, Start, End,
 			SDK::ETraceTypeQuery::TraceTypeQuery1, false, Ignore, SDK::EDrawDebugTrace::None, &Hit, true,
 			SDK::FLinearColor(0, 0, 0, 0), SDK::FLinearColor(0, 0, 0, 0), 0.0f);
-
-		// 如果没撞到东西说明路径清晰；如果撞到了，检查撞到的是不是目标本身
 		if (!bHasHit) return true;
-
 		SDK::UObject* HitObj = Hit.HitObjectHandle.ReferenceObject.Get();
 		return (HitObj == (SDK::UObject*)TargetActor);
 	}
@@ -95,16 +97,19 @@ namespace g_Aimbot {
 		SDK::APlayerController* LocalPC = g_Util::GetLocalPC();
 		if (!LocalPC || !LocalPC->Pawn) return Best;
 
+		SDK::AShooterCharacter* MyChar = (SDK::AShooterCharacter*)LocalPC->Pawn;
+		SDK::AShooterWeapon* MyWeapon = MyChar->CurrentWeapon;
+
 		SDK::FVector CamLoc; SDK::FRotator CamRot;
 		LocalPC->GetPlayerViewPoint(&CamLoc, &CamRot);
 
 		auto& Actors = World->PersistentLevel->Actors;
-
 		SDK::APrimalCharacter* BestChar = nullptr;
 		float MinDistance = FLT_MAX;
 		float MinHealth = FLT_MAX;
 		float MinAngle = FLT_MAX;
 		SDK::FVector BestLoc = { 0,0,0 };
+		float BestRadius = 0.0f;
 
 		for (int i = 0; i < Actors.Num(); i++) {
 			SDK::AActor* Actor = Actors[i];
@@ -113,7 +118,8 @@ namespace g_Aimbot {
 			SDK::APrimalCharacter* Char = (SDK::APrimalCharacter*)Actor;
 			if (Char->IsDead() || g_ESP::GetRelation(Char, (SDK::APrimalCharacter*)LocalPC->Pawn) == g_ESP::RelationType::Team) continue;
 
-			// 计算该目标的 AABB 中心作为瞄准点
+			if (MyWeapon && !MyWeapon->ShouldDealDamage(Char)) continue;
+
 			SDK::USkeletalMeshComponent* Mesh = Char->Mesh;
 			if (!Mesh) continue;
 
@@ -128,39 +134,30 @@ namespace g_Aimbot {
 			}
 			SDK::FVector CurrentTargetLoc = (MinB + MaxB) / 2.0f;
 
-			// 修复 BUG 2：不再对实体中心测试，而是对精确瞄准点测试射线
+			float CurrentRadius = GetTargetBoneClusterRadius(Char, CurrentTargetLoc);
+			if (CurrentRadius <= 0.0f) continue;
+
+			float Dist = (float)SDK::UKismetMathLibrary::Vector_Distance(CamLoc, CurrentTargetLoc);
+			if (MyWeapon && Dist > MyWeapon->InstantConfig.WeaponRange) continue;
+
 			if (!IsLocationVisible(LocalPC, CamLoc, CurrentTargetLoc, Char)) continue;
 
-			float Dist = SDK::UKismetMathLibrary::Vector_Distance(CamLoc, CurrentTargetLoc);
 			float Angle = GetAngleDistance(CamLoc, CurrentTargetLoc, CamRot);
-
 			if (Angle > g_Config::AimbotFOV) continue;
 
-			// 修复 BUG 1：引入目标粘性逻辑
 			float Bias = 0.0f;
-			if (pCurrentLockedTarget && Char == pCurrentLockedTarget) {
-				Bias = 300.0f; // 给予当前目标 3米的虚拟距离优势，防止在边缘抖动切换
-			}
+			if (pCurrentLockedTarget && Char == pCurrentLockedTarget) Bias = 300.0f;
 
 			bool bIsBetter = false;
-			if ((Dist - Bias) < MinDistance - 150.0f) {
-				bIsBetter = true;
-			}
+			if ((Dist - Bias) < MinDistance - 150.0f) bIsBetter = true;
 			else if (Dist <= MinDistance + 150.0f) {
-				if (Char->GetHealth() < MinHealth - 1.0f) {
-					bIsBetter = true;
-				}
-				else if (abs(Char->GetHealth() - MinHealth) < 1.0f) {
-					if (Angle < MinAngle) bIsBetter = true;
-				}
+				if (Char->GetHealth() < MinHealth - 1.0f) bIsBetter = true;
+				else if (abs(Char->GetHealth() - MinHealth) < 1.0f && Angle < MinAngle) bIsBetter = true;
 			}
 
 			if (bIsBetter) {
-				MinDistance = Dist;
-				MinHealth = Char->GetHealth();
-				MinAngle = Angle;
-				BestChar = Char;
-				BestLoc = CurrentTargetLoc;
+				MinDistance = Dist; MinHealth = Char->GetHealth(); MinAngle = Angle;
+				BestChar = Char; BestLoc = CurrentTargetLoc; BestRadius = CurrentRadius;
 			}
 		}
 
@@ -173,21 +170,24 @@ namespace g_Aimbot {
 			Best.Health = MinHealth;
 			Best.bIsValid = true;
 
-			float TriggerThreshold = (MinDistance > 5000.0f) ? 0.8f : 1.8f;
+			if (MyWeapon) {
+				float TargetRadiusDeg = (float)SDK::UKismetMathLibrary::DegAtan2((double)BestRadius, (double)MinDistance);
+				float CurrentSpreadDeg = (float)SDK::UKismetMathLibrary::RadiansToDegrees((double)MyWeapon->CurrentFiringSpread);
+				float RecoilPitch = (float)SDK::UKismetMathLibrary::abs((double)MyWeapon->AimDriftPitchAngle);
+				float RecoilYaw = (float)SDK::UKismetMathLibrary::abs((double)MyWeapon->AimDriftYawAngle);
+				float TotalRecoilOffsetDeg = (float)SDK::UKismetMathLibrary::sqrt((double)(RecoilPitch * RecoilPitch + RecoilYaw * RecoilYaw));
 
-			SDK::FHitResult Hit;
-			SDK::FVector TraceEnd = CamLoc + (SDK::UKismetMathLibrary::GetForwardVector(CamRot) * 20000.0f);
-			SDK::TArray<SDK::AActor*> Ignore; Ignore.Add(LocalPC->Pawn);
+				float TotalDispersion = Best.FovDistance + CurrentSpreadDeg + TotalRecoilOffsetDeg;
 
-			bool bHit = SDK::UKismetSystemLibrary::LineTraceSingle(LocalPC, CamLoc, TraceEnd,
-				SDK::ETraceTypeQuery::TraceTypeQuery1, false, Ignore, SDK::EDrawDebugTrace::None, &Hit, true,
-				SDK::FLinearColor(0, 0, 0, 0), SDK::FLinearColor(0, 0, 0, 0), 0.0f);
+				if (TotalDispersion <= TargetRadiusDeg) {
+					Best.HitChance = 100.0f;
+				}
+				else {
+					double Ratio = (double)TargetRadiusDeg / (double)TotalDispersion;
+					Best.HitChance = (float)SDK::UKismetMathLibrary::FClamp(Ratio * 100.0, 0.0, 100.0);
+				}
 
-			if (bHit && IsHitTarget(Hit, BestChar)) {
-				Best.bIsLocked = true;
-			}
-			else {
-				Best.bIsLocked = (Best.FovDistance < TriggerThreshold);
+				Best.bIsLocked = (Best.HitChance >= (float)g_Config::TriggerHitChance);
 			}
 		}
 		else {
@@ -208,57 +208,74 @@ namespace g_Aimbot {
 		SDK::APlayerController* LocalPC = g_Util::GetLocalPC();
 		if (!LocalPC || !LocalPC->Pawn) return;
 
-		SDK::AShooterPlayerController* ShooterPC = (SDK::AShooterPlayerController*)LocalPC;
-		SDK::AShooterCharacter* MyChar = (SDK::AShooterCharacter*)ShooterPC->Pawn;
-		if (!MyChar) return;
-
+		SDK::AShooterCharacter* MyChar = (SDK::AShooterCharacter*)LocalPC->Pawn;
 		SDK::AShooterWeapon* MyWeapon = MyChar->CurrentWeapon;
+
 		if (!MyWeapon || MyWeapon->GetAmmoReloadState() != SDK::EWeaponAmmoReloadState::Ready || MyWeapon->GetCurrentAmmo() <= 0) {
-			if (bIsAutoFiring) {
-				MyWeapon->StopFire();
-				bIsAutoFiring = false;
-			}
+			if (bIsAutoFiring) { MyWeapon->StopFire(); bIsAutoFiring = false; }
 			return;
 		}
 
 		TargetInfo Best = GetBestTarget();
 
 		if (g_Config::bDrawAimPoints && Best.bIsValid) {
-			VisualizeTargetBones(Best.Character, LocalPC);
+			// VisualizeTargetBones(Best.Character, LocalPC);
 		}
 
-		if (g_Config::bAimbotEnabled && Best.bIsValid) {
+		if (Best.bIsValid) {
 			SDK::FVector CamLoc; SDK::FRotator CamRot;
 			LocalPC->GetPlayerViewPoint(&CamLoc, &CamRot);
 			SDK::FRotator TargetRot = SDK::UKismetMathLibrary::FindLookAtRotation(CamLoc, Best.BestComponentLocation);
 
-			if (g_Config::AimbotSmooth >= 100.0f) {
-				LocalPC->SetControlRotation(TargetRot);
+			// --- 压枪补偿逻辑 (Recoil Compensation System) ---
+			if (g_Config::AimbotRCX > 0.0f || g_Config::AimbotRCY > 0.0f) {
+				// 获取引擎计算好的当前枪口偏移
+				float DriftPitch = MyWeapon->AimDriftPitchAngle;
+				float DriftYaw = MyWeapon->AimDriftYawAngle;
+
+				// 根据配置百分比应用压枪强度 (100 = 完全抵消)
+				TargetRot.Pitch -= (DriftPitch * (g_Config::AimbotRCY / 100.0f));
+				TargetRot.Yaw -= (DriftYaw * (g_Config::AimbotRCX / 100.0f));
 			}
-			else {
-				SDK::FRotator CurrentRot = LocalPC->ControlRotation;
-				float Alpha = SDK::UKismetMathLibrary::FClamp(g_Config::AimbotSmooth / 100.0f, 0.0f, 1.0f);
-				SDK::FRotator InterpRot = SDK::UKismetMathLibrary::RLerp(CurrentRot, TargetRot, Alpha, true);
-				LocalPC->SetControlRotation(InterpRot);
+
+			// Aimbot 转向控制
+			if (g_Config::bAimbotEnabled) {
+				if (g_Config::AimbotSmooth >= 100.0f) {
+					LocalPC->SetControlRotation(TargetRot);
+				}
+				else {
+					SDK::FRotator CurrentRot = LocalPC->ControlRotation;
+					float Alpha = (float)SDK::UKismetMathLibrary::FClamp((double)g_Config::AimbotSmooth / 100.0, 0.01, 1.0);
+					SDK::FRotator InterpRot = SDK::UKismetMathLibrary::RLerp(CurrentRot, TargetRot, Alpha, true);
+					LocalPC->SetControlRotation(InterpRot);
+				}
+			}
+
+			// Triggerbot 逻辑
+			if (g_Config::bTriggerbotEnabled) {
+				if (Best.bIsLocked && MyWeapon->CanFire(false)) {
+					if (!bIsAutoFiring) {
+						MyWeapon->StartFire(false);
+						bIsAutoFiring = true;
+					}
+					Best.bIsTriggering = true;
+				}
+				else if (bIsAutoFiring) {
+					MyWeapon->StopFire();
+					bIsAutoFiring = false;
+				}
 			}
 		}
-
-		if (g_Config::bTriggerbotEnabled && Best.bIsValid) {
-			if (Best.bIsLocked) {
-				MyWeapon->StartFire(false);
-				bIsAutoFiring = true;
-				Best.bIsTriggering = true;
-			}
-			else if (bIsAutoFiring) {
+		else {
+			if (bIsAutoFiring) {
 				MyWeapon->StopFire();
 				bIsAutoFiring = false;
 			}
-		}
-		else if (bIsAutoFiring) {
-			MyWeapon->StopFire();
-			bIsAutoFiring = false;
+
+			// 即使没有目标，如果正在射击且开启了压枪，也可以选择独立压枪逻辑（可选）
+			// 这里根据需求只在有目标时补偿 Aimbot 轨迹
 		}
 
-		DrawStatusText(Best);
+		// DrawStatusText(Best);
 	}
 }

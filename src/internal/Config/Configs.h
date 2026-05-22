@@ -37,12 +37,14 @@ namespace g_Config {
     inline bool bAimbotEnabled = false;
     inline float AimbotFOV = 30.0f;
     inline float AimbotSmooth = 50.0f;
+    inline float AimbotRCX = 100.0f;
+    inline float AimbotRCY = 100.0f;
 
     // 扳机
     inline bool bTriggerbotEnabled = false;
     inline float TriggerDelay = 0.0f;
     inline float TriggerRandomPercent = 0.0f;
-    inline float TriggerHitChance = 100.0f;
+    inline float TriggerHitChance = 50.0f;
 
     // 掉落物
     inline bool bDrawDroppedItems = true;
@@ -130,4 +132,11 @@ namespace g_Config {
     inline float OOFBreathSpeed = 0.1f;
     inline float OOFMinAlpha = 0.25f;
     inline float OOFMaxAlpha = 1.0f;
+
+    //自动换甲
+    inline bool bAutomatic = false;
+    inline float ArmorRange = 20.0f;
+
+    //灵魂出窍
+    inline bool bOutBodyChecked = false;
 }

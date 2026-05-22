@@ -113,6 +113,10 @@ bool ConfigManager::SaveConfig(const std::string& filename) {
 
         CONFIG_BOOL(g_Config::bLogDamage);
         CONFIG_COLOR(g_Config::LogDamageColor);
+
+        CONFIG_BOOL(g_Config::bAutomatic);
+        CONFIG_FLOAT(g_Config::ArmorRange);
+        CONFIG_BOOL(g_Config::bOutBodyChecked);
         file << "\n";
 
         // 生物列表
@@ -137,6 +141,8 @@ bool ConfigManager::SaveConfig(const std::string& filename) {
         CONFIG_BOOL(g_Config::bAimbotEnabled);
         CONFIG_FLOAT(g_Config::AimbotFOV);
         CONFIG_FLOAT(g_Config::AimbotSmooth);
+        CONFIG_FLOAT(g_Config::AimbotRCX);
+        CONFIG_FLOAT(g_Config::AimbotRCY);
         file << "\n";
 
         // 扳机
@@ -295,6 +301,10 @@ bool ConfigManager::LoadConfig(const std::string& filename) {
         LOAD_BOOL(g_Config::bLogDamage);
         LOAD_COLOR(g_Config::LogDamageColor);
 
+        LOAD_BOOL(g_Config::bAutomatic);
+        LOAD_FLOAT(g_Config::ArmorRange);
+        LOAD_BOOL(g_Config::bOutBodyChecked);
+
         // 生物列表
         LOAD_STRING(g_Config::entitySearchBuf, 256);
         LOAD_BOOL(g_Config::bEnableFilter);
@@ -310,6 +320,8 @@ bool ConfigManager::LoadConfig(const std::string& filename) {
         LOAD_BOOL(g_Config::bAimbotEnabled);
         LOAD_FLOAT(g_Config::AimbotFOV);
         LOAD_FLOAT(g_Config::AimbotSmooth);
+        LOAD_FLOAT(g_Config::AimbotRCX);
+        LOAD_FLOAT(g_Config::AimbotRCY);
 
         // 扳机
         LOAD_BOOL(g_Config::bTriggerbotEnabled);

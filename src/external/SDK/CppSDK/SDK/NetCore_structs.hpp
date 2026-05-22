@@ -177,6 +177,16 @@ enum class EFastArraySerializerDeltaFlags : uint8
 	EFastArraySerializerDeltaFlags_MAX       = 5,
 };
 
+// ScriptStruct NetCore.StateStruct
+// 0x0018 (0x0018 - 0x0000)
+struct FStateStruct
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 StateName;                                         // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FStateStruct;
+
 // ScriptStruct NetCore.FastArraySerializerItem
 // 0x000C (0x000C - 0x0000)
 struct FFastArraySerializerItem
@@ -187,16 +197,6 @@ public:
 	int32                                         MostRecentArrayReplicationKey;                     // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FFastArraySerializerItem;
-
-// ScriptStruct NetCore.StateStruct
-// 0x0018 (0x0018 - 0x0000)
-struct FStateStruct
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 StateName;                                         // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FStateStruct;
 
 // ScriptStruct NetCore.EscalationState
 // 0x0018 (0x0030 - 0x0018)

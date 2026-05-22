@@ -516,6 +516,17 @@ public:
 };
 DUMPER7_ASSERTS_FConcertReplication_ChangeStream_Frequency;
 
+// ScriptStruct ConcertSyncCore.ConcertStreamFrequencySettings
+// 0x0058 (0x0058 - 0x0000)
+struct FConcertStreamFrequencySettings final
+{
+public:
+	struct FConcertObjectReplicationSettings      Defaults;                                          // 0x0000(0x0002)(NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<struct FSoftObjectPath, struct FConcertObjectReplicationSettings> ObjectOverrides;          // 0x0008(0x0050)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FConcertStreamFrequencySettings;
+
 // ScriptStruct ConcertSyncCore.ConcertReplicatedObjectInfo
 // 0x0070 (0x0070 - 0x0000)
 struct FConcertReplicatedObjectInfo final
@@ -534,17 +545,6 @@ public:
 	TMap<struct FSoftObjectPath, struct FConcertReplicatedObjectInfo> ReplicatedObjects;             // 0x0000(0x0050)(NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FConcertObjectReplicationMap;
-
-// ScriptStruct ConcertSyncCore.ConcertStreamFrequencySettings
-// 0x0058 (0x0058 - 0x0000)
-struct FConcertStreamFrequencySettings final
-{
-public:
-	struct FConcertObjectReplicationSettings      Defaults;                                          // 0x0000(0x0002)(NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<struct FSoftObjectPath, struct FConcertObjectReplicationSettings> ObjectOverrides;          // 0x0008(0x0050)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FConcertStreamFrequencySettings;
 
 // ScriptStruct ConcertSyncCore.ConcertBaseStreamInfo
 // 0x00B8 (0x00B8 - 0x0000)

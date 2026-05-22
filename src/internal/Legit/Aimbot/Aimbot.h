@@ -5,6 +5,8 @@
 namespace g_Aimbot {
 	struct TargetInfo {
 		SDK::APrimalCharacter* Character = nullptr;
+		float CurrentSpread;
+		float HitChance;
 		SDK::FVector BestComponentLocation;
 		float FovDistance = 999999.0f;
 		float Health = 0.f;

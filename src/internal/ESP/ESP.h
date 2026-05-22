@@ -1,21 +1,13 @@
+// ESP.h
 #pragma once
 #include <vector>
 #include <string>
-
-struct ImVec2;
-using ImU32 = unsigned int;
+#include "../../external/SDK/SDK_Headers.hpp"
 
 namespace g_ESP {
-    SDK::APlayerController* GetLocalPC();
-
-    std::string ToLower(std::string s);
-
-    bool IsEntityMatch(std::string displayName, std::string filter);
-    bool IsStructureMatch(const std::string& structureName, const std::string& filter);
-
     struct BoxRect {
-        ImVec2 topLeft;
-        ImVec2 bottomRight;
+        SDK::FVector2D topLeft;
+        SDK::FVector2D bottomRight;
         bool valid = false;
     };
 
@@ -58,7 +50,7 @@ namespace g_ESP {
         float GetTopOffset() const { return topOffset; }
         float GetBottomOffset() const { return bottomOffset; }
 
-        void AddBar(BoxRect rect, float currentValue, float maxValue, ImU32 color, BarPos pos, BarOrientation orientation, float a);
+        void AddBar(SDK::UCanvas* Canvas, BoxRect rect, float currentValue, float maxValue, SDK::FLinearColor color, BarPos pos, BarOrientation orientation, float a);
     };
 
     class FlagManager {
@@ -76,19 +68,18 @@ namespace g_ESP {
             bottomY = 0.0f;
         }
 
-        void AddFlag(BoxRect rect, const std::string& text, ImU32 color, FlagPos pos, float alphaMult, const BarManager* barMgr);
+        void AddFlag(SDK::UCanvas* Canvas, BoxRect rect, const std::string& text, SDK::FLinearColor color, FlagPos pos, float alphaMult, const BarManager* barMgr);
     };
 
-    BoxRect DrawBox(SDK::AActor* entity, float r, float g, float b, float a, float width_scale, bool bTestOnly = false);
-    void DrawHealthBar(BoxRect rect, float healthPercent, float maxHealth, float a);
-    void DrawName(SDK::AActor* entity, BoxRect rect, float r, float g, float b, float a);
+    BoxRect DrawBox(SDK::UCanvas* Canvas, SDK::AActor* entity, float r, float g, float b, float a, float width_scale, bool bTestOnly);
+    void DrawBox(SDK::UCanvas* Canvas, const BoxRect& rect, SDK::FLinearColor color, float alpha);
+
+    void DrawHealthBar(SDK::UCanvas* Canvas, BoxRect rect, float healthPercent, float maxHealth, float a);
 
     struct OOFFlag {
         std::string text;
-        ImU32 color;
+        SDK::FLinearColor color;
     };
-
-    void DrawOutOfFOV(const SDK::FVector& targetLoc, SDK::APlayerController* LocalPC, const std::vector<OOFFlag>& flags, float alphaMult = 1.0f);
 
     enum class RelationType {
         Enemy,

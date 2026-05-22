@@ -15,9 +15,9 @@ namespace g_DrawImGui {
 
     struct MergedItem {
         std::string DisplayName;
-        SDK::FString OriginalFName; // 用于丢弃时的 Filter
+        SDK::FString OriginalFName;
         int TotalQuantity = 0;
-        SDK::UPrimalItem* LastItemPtr = nullptr; // 用于获取描述和使用物品（取最后一组）
+        SDK::UPrimalItem* LastItemPtr = nullptr;
     };
 
     void ItemList_Menu() {
@@ -28,9 +28,11 @@ namespace g_DrawImGui {
         const char* ttDesc = LanguageManager::ItemList_Menu::TooltipDesc;
         const char* ttCrafter = LanguageManager::ItemList_Menu::TooltipCrafter;
         const char* ttTribe = LanguageManager::ItemList_Menu::TooltipTribe;
-        const char* actUseOne = LanguageManager::ItemList_Menu::ActionUseOne;
-        const char* actDrop = LanguageManager::ItemList_Menu::ActionDrop;
         const char* noItems = LanguageManager::ItemList_Menu::NoItems;
+
+        // 【新增】用于划过式连发的全局时间控制
+        static double s_lastActionTime = 0.0;
+        const double actionDelay = 0.1; // 连发间隔（秒）
 
         if (ImGui::BeginTabItem(tabLabel)) {
             ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(14.0f, 14.0f));
@@ -58,7 +60,6 @@ namespace g_DrawImGui {
                     std::string name = Item->DescriptiveNameBase.ToString();
                     if (name.empty() || name == "None") continue;
 
-                    // 搜索过滤判断
                     if (strlen(g_Config::itemSearchBuf) > 0 && name.find(g_Config::itemSearchBuf) == std::string::npos)
                         continue;
 
@@ -66,30 +67,59 @@ namespace g_DrawImGui {
                     m.DisplayName = name;
                     m.OriginalFName = Item->DescriptiveNameBase;
                     m.TotalQuantity += Item->ItemQuantity;
-                    m.LastItemPtr = Item; // 存一个指针用于获取描述
+                    m.LastItemPtr = Item;
                 }
 
                 // 2. 渲染归并后的列表
                 int idx = 0;
+                double currentTime = ImGui::GetTime();
+
                 for (auto const& [name, data] : mergedMap) {
                     idx++;
                     std::string label = data.DisplayName + " x" + std::to_string(data.TotalQuantity);
 
-                    if (ImGui::Selectable((label + "##" + std::to_string(idx)).c_str())) {
-                        ImGui::OpenPopup(("ItemPopup" + std::to_string(idx)).c_str());
+                    // 渲染物品条目
+                    ImGui::Selectable((label + "##" + std::to_string(idx)).c_str());
+
+                    // --- 核心修改：基于 Hover 状态的划过式长按自适应连发 ---
+                    if (ImGui::IsItemHovered() && data.LastItemPtr) {
+
+                        // 检查连发冷却时间是否到了
+                        if (currentTime - s_lastActionTime >= actionDelay) {
+
+                            // 只要鼠标悬停在当前行，且【左键正被按住】
+                            if (ImGui::IsMouseDown(ImGuiMouseButton_Left)) {
+                                g_Config::useItemID = data.LastItemPtr->ItemID;
+                                g_Config::bUseItem = true;
+                                s_lastActionTime = currentTime; // 更新时间锚点
+                            }
+                            // 或者是【右键正被按住】
+                            else if (ImGui::IsMouseDown(ImGuiMouseButton_Right)) {
+                                g_Config::dropItemID = data.LastItemPtr->ItemID;
+                                g_Config::bDropItem = true;
+                                s_lastActionTime = currentTime; // 更新时间锚点
+                            }
+                        }
                     }
 
                     // 3. 悬浮窗显示详细信息
-                    if (ImGui::IsItemHovered() && data.LastItemPtr && data.LastItemPtr->CustomItemDescription) {
+                    if (ImGui::IsItemHovered() && data.LastItemPtr) {
                         ImGui::BeginTooltip();
                         SDK::UPrimalItem* p = data.LastItemPtr;
 
                         ImGui::TextColored(ThemeColors::GetAccent(), ttItem, data.DisplayName.c_str());
                         ImGui::Text(ttTotal, data.TotalQuantity);
 
-                        // 描述信息
-                        std::string desc = p->CustomItemDescription.ToString();
-                        if (desc.empty() || desc == "None") desc = p->ItemDescription.ToString();
+                        std::string desc = "";
+                        if (p->CustomItemDescription.IsValid() && !p->CustomItemDescription.ToString().empty()) {
+                            desc = p->CustomItemDescription.ToString();
+                        }
+                        if (desc.empty() || desc == "None") {
+                            if (p->ItemDescription.IsValid()) {
+                                desc = p->ItemDescription.ToString();
+                            }
+                        }
+
                         if (!desc.empty() && desc != "None") {
                             ImGui::Separator();
                             ImGui::PushTextWrapPos(ImGui::GetFontSize() * 20.0f);
@@ -97,31 +127,14 @@ namespace g_DrawImGui {
                             ImGui::PopTextWrapPos();
                         }
 
-                        // 制造者信息
-                        if (!p->CrafterCharacterName.ToString().empty() && p->CrafterCharacterName.ToString() != "None") {
+                        if (p->CrafterCharacterName.IsValid() && !p->CrafterCharacterName.ToString().empty() && p->CrafterCharacterName.ToString() != "None") {
                             ImGui::Separator();
                             ImGui::Text(ttCrafter, p->CrafterCharacterName.ToString().c_str());
-                            ImGui::Text(ttTribe, p->CrafterTribeName.ToString().c_str());
-                        }
-                        ImGui::EndTooltip();
-                    }
-
-                    // 4. 交互菜单
-                    if (ImGui::BeginPopup(("ItemPopup" + std::to_string(idx)).c_str())) {
-                        if (ImGui::MenuItem(actUseOne)) {
-                            if (data.LastItemPtr) {
-                                // 不再直接调用 PC->ServerRequestInventoryUseItem
-                                g_Config::useItemID = data.LastItemPtr->ItemID;
-                                g_Config::bUseItem = true;
+                            if (p->CrafterTribeName.IsValid()) {
+                                ImGui::Text(ttTribe, p->CrafterTribeName.ToString().c_str());
                             }
                         }
-
-                        if (ImGui::MenuItem(actDrop)) {
-                            // 不再直接调用 PC->ServerRequestRemoteDropAllItems
-                            g_Config::dropItemID = data.LastItemPtr->ItemID;
-                            g_Config::bDropItem = true;
-                        }
-                        ImGui::EndPopup();
+                        ImGui::EndTooltip();
                     }
                 }
             }

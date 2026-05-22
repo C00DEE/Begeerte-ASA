@@ -12,8 +12,8 @@
 
 #include "PCG_structs.hpp"
 #include "PCG_classes.hpp"
-#include "GeometryScriptingCore_structs.hpp"
 #include "PCGGeometryScriptInterop_structs.hpp"
+#include "GeometryScriptingCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 
@@ -38,31 +38,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UPCGDynamicMeshBaseSettings;
-
-// Class PCGGeometryScriptInterop.PCGGeometryBlueprintElement
-// 0x0000 (0x0068 - 0x0068)
-class UPCGGeometryBlueprintElement final : public UPCGBlueprintElement
-{
-public:
-	void ProcessDynamicMesh(class UDynamicMesh* InDynMesh, TArray<class FString>* OutTags);
-
-	class UPCGDynamicMeshData* CopyOrStealInputData(const struct FPCGTaggedData& InTaggedData) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("PCGGeometryBlueprintElement")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"PCGGeometryBlueprintElement")
-	}
-	static class UPCGGeometryBlueprintElement* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPCGGeometryBlueprintElement>();
-	}
-};
-DUMPER7_ASSERTS_UPCGGeometryBlueprintElement;
 
 // Class PCGGeometryScriptInterop.PCGAppendMeshesFromPointsSettings
 // 0x0068 (0x0120 - 0x00B8)
@@ -124,6 +99,59 @@ public:
 };
 DUMPER7_ASSERTS_UPCGBooleanOperationSettings;
 
+// Class PCGGeometryScriptInterop.PCGMeshSamplerSettings
+// 0x00D8 (0x0190 - 0x00B8)
+class UPCGMeshSamplerSettings final : public UPCGSettings
+{
+public:
+	bool                                          bExtractMeshFromInput;                             // 0x00B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B9[0x7];                                       // 0x00B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UStaticMesh>             StaticMesh;                                        // 0x00C0(0x0028)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FPCGAttributePropertyInputSelector     InputSource;                                       // 0x00E8(0x0028)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EPCGMeshSamplingMethod                        SamplingMethod;                                    // 0x0110(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseColorChannelAsDensity;                         // 0x0111(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_112[0x2];                                      // 0x0112(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	EPCGColorChannel                              ColorChannelAsDensity;                             // 0x0114(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bVoxelize;                                         // 0x0118(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_119[0x3];                                      // 0x0119(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         VoxelSize;                                         // 0x011C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRemoveHiddenTriangles;                            // 0x0120(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGeometryScriptLODType                        RequestedLODType;                                  // 0x0121(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_122[0x2];                                      // 0x0122(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         RequestedLODIndex;                                 // 0x0124(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGeometryScriptMeshPointSamplingOptions SamplingOptions;                                  // 0x0128(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptNonUniformPointSamplingOptions NonUniformSamplingOptions;                  // 0x0140(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bExtractUVAsAttribute;                             // 0x0158(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_159[0x3];                                      // 0x0159(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   UVAttributeName;                                   // 0x015C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         UVChannel;                                         // 0x0164(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOutputTriangleIds;                                // 0x0168(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_169[0x3];                                      // 0x0169(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   TriangleIdAttributeName;                           // 0x016C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOutputMaterialInfo;                               // 0x0174(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_175[0x3];                                      // 0x0175(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   MaterialIdAttributeName;                           // 0x0178(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   MaterialAttributeName;                             // 0x0180(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PointSteepness;                                    // 0x0188(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSynchronousLoad;                                  // 0x018C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18D[0x3];                                      // 0x018D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PCGMeshSamplerSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PCGMeshSamplerSettings")
+	}
+	static class UPCGMeshSamplerSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPCGMeshSamplerSettings>();
+	}
+};
+DUMPER7_ASSERTS_UPCGMeshSamplerSettings;
+
 // Class PCGGeometryScriptInterop.PCGCreateEmptyDynamicMeshSettings
 // 0x0000 (0x00B8 - 0x00B8)
 class UPCGCreateEmptyDynamicMeshSettings final : public UPCGDynamicMeshBaseSettings
@@ -144,39 +172,29 @@ public:
 };
 DUMPER7_ASSERTS_UPCGCreateEmptyDynamicMeshSettings;
 
-// Class PCGGeometryScriptInterop.PCGPrimitiveCrossSectionSettings
-// 0x0070 (0x0128 - 0x00B8)
-class UPCGPrimitiveCrossSectionSettings final : public UPCGSettings
+// Class PCGGeometryScriptInterop.PCGDynamicMeshManagedComponent
+// 0x0010 (0x0070 - 0x0060)
+class UPCGDynamicMeshManagedComponent final : public UPCGManagedComponent
 {
 public:
-	struct FVector                                SliceDirection;                                    // 0x00B8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FPCGAttributePropertyOutputSelector    ExtrusionVectorAttribute;                          // 0x00D0(0x0028)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MinimumCoplanarVertices;                           // 0x00F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxMeshVertexCount;                                // 0x00FC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableTierMerging;                                // 0x0100(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_101[0x7];                                      // 0x0101(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        TierMergingThreshold;                              // 0x0108(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableMinAreaCulling;                             // 0x0110(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_111[0x7];                                      // 0x0111(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        MinAreaCullingThreshold;                           // 0x0118(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRemoveRedundantSections;                          // 0x0120(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_121[0x7];                                      // 0x0121(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint64                                        DataUID;                                           // 0x0060(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("PCGPrimitiveCrossSectionSettings")
+		STATIC_CLASS_IMPL("PCGDynamicMeshManagedComponent")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"PCGPrimitiveCrossSectionSettings")
+		STATIC_NAME_IMPL(L"PCGDynamicMeshManagedComponent")
 	}
-	static class UPCGPrimitiveCrossSectionSettings* GetDefaultObj()
+	static class UPCGDynamicMeshManagedComponent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPCGPrimitiveCrossSectionSettings>();
+		return GetDefaultObjImpl<UPCGDynamicMeshManagedComponent>();
 	}
 };
-DUMPER7_ASSERTS_UPCGPrimitiveCrossSectionSettings;
+DUMPER7_ASSERTS_UPCGDynamicMeshManagedComponent;
 
 // Class PCGGeometryScriptInterop.PCGDynamicMeshData
 // 0x0290 (0x0310 - 0x0080)
@@ -231,29 +249,30 @@ public:
 };
 DUMPER7_ASSERTS_UPCGDynamicMeshTransformSettings;
 
-// Class PCGGeometryScriptInterop.PCGDynamicMeshManagedComponent
-// 0x0010 (0x0070 - 0x0060)
-class UPCGDynamicMeshManagedComponent final : public UPCGManagedComponent
+// Class PCGGeometryScriptInterop.PCGGeometryBlueprintElement
+// 0x0000 (0x0068 - 0x0068)
+class UPCGGeometryBlueprintElement final : public UPCGBlueprintElement
 {
 public:
-	uint64                                        DataUID;                                           // 0x0060(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	void ProcessDynamicMesh(class UDynamicMesh* InDynMesh, TArray<class FString>* OutTags);
+
+	class UPCGDynamicMeshData* CopyOrStealInputData(const struct FPCGTaggedData& InTaggedData) const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("PCGDynamicMeshManagedComponent")
+		STATIC_CLASS_IMPL("PCGGeometryBlueprintElement")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"PCGDynamicMeshManagedComponent")
+		STATIC_NAME_IMPL(L"PCGGeometryBlueprintElement")
 	}
-	static class UPCGDynamicMeshManagedComponent* GetDefaultObj()
+	static class UPCGGeometryBlueprintElement* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPCGDynamicMeshManagedComponent>();
+		return GetDefaultObjImpl<UPCGGeometryBlueprintElement>();
 	}
 };
-DUMPER7_ASSERTS_UPCGDynamicMeshManagedComponent;
+DUMPER7_ASSERTS_UPCGGeometryBlueprintElement;
 
 // Class PCGGeometryScriptInterop.PCGGetDynamicMeshDataSettings
 // 0x0010 (0x0170 - 0x0160)
@@ -299,58 +318,39 @@ public:
 };
 DUMPER7_ASSERTS_UPCGMergeDynamicMeshesSettings;
 
-// Class PCGGeometryScriptInterop.PCGMeshSamplerSettings
-// 0x00D8 (0x0190 - 0x00B8)
-class UPCGMeshSamplerSettings final : public UPCGSettings
+// Class PCGGeometryScriptInterop.PCGPrimitiveCrossSectionSettings
+// 0x0070 (0x0128 - 0x00B8)
+class UPCGPrimitiveCrossSectionSettings final : public UPCGSettings
 {
 public:
-	bool                                          bExtractMeshFromInput;                             // 0x00B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B9[0x7];                                       // 0x00B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class UStaticMesh>             StaticMesh;                                        // 0x00C0(0x0028)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FPCGAttributePropertyInputSelector     InputSource;                                       // 0x00E8(0x0028)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EPCGMeshSamplingMethod                        SamplingMethod;                                    // 0x0110(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseColorChannelAsDensity;                         // 0x0111(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_112[0x2];                                      // 0x0112(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	EPCGColorChannel                              ColorChannelAsDensity;                             // 0x0114(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bVoxelize;                                         // 0x0118(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_119[0x3];                                      // 0x0119(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         VoxelSize;                                         // 0x011C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRemoveHiddenTriangles;                            // 0x0120(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGeometryScriptLODType                        RequestedLODType;                                  // 0x0121(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_122[0x2];                                      // 0x0122(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         RequestedLODIndex;                                 // 0x0124(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptMeshPointSamplingOptions SamplingOptions;                                  // 0x0128(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FGeometryScriptNonUniformPointSamplingOptions NonUniformSamplingOptions;                  // 0x0140(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bExtractUVAsAttribute;                             // 0x0158(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_159[0x3];                                      // 0x0159(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   UVAttributeName;                                   // 0x015C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         UVChannel;                                         // 0x0164(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOutputTriangleIds;                                // 0x0168(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_169[0x3];                                      // 0x0169(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   TriangleIdAttributeName;                           // 0x016C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOutputMaterialInfo;                               // 0x0174(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_175[0x3];                                      // 0x0175(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   MaterialIdAttributeName;                           // 0x0178(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   MaterialAttributeName;                             // 0x0180(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PointSteepness;                                    // 0x0188(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSynchronousLoad;                                  // 0x018C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18D[0x3];                                      // 0x018D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FVector                                SliceDirection;                                    // 0x00B8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FPCGAttributePropertyOutputSelector    ExtrusionVectorAttribute;                          // 0x00D0(0x0028)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MinimumCoplanarVertices;                           // 0x00F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxMeshVertexCount;                                // 0x00FC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableTierMerging;                                // 0x0100(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_101[0x7];                                      // 0x0101(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        TierMergingThreshold;                              // 0x0108(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableMinAreaCulling;                             // 0x0110(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_111[0x7];                                      // 0x0111(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        MinAreaCullingThreshold;                           // 0x0118(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRemoveRedundantSections;                          // 0x0120(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_121[0x7];                                      // 0x0121(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("PCGMeshSamplerSettings")
+		STATIC_CLASS_IMPL("PCGPrimitiveCrossSectionSettings")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"PCGMeshSamplerSettings")
+		STATIC_NAME_IMPL(L"PCGPrimitiveCrossSectionSettings")
 	}
-	static class UPCGMeshSamplerSettings* GetDefaultObj()
+	static class UPCGPrimitiveCrossSectionSettings* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPCGMeshSamplerSettings>();
+		return GetDefaultObjImpl<UPCGPrimitiveCrossSectionSettings>();
 	}
 };
-DUMPER7_ASSERTS_UPCGMeshSamplerSettings;
+DUMPER7_ASSERTS_UPCGPrimitiveCrossSectionSettings;
 
 // Class PCGGeometryScriptInterop.PCGSaveDynamicMeshToAssetSettings
 // 0x00C0 (0x0178 - 0x00B8)

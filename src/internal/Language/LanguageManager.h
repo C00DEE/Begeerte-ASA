@@ -76,7 +76,11 @@ public:
         static const char* AimbotEnabled;
         static const char* AimbotFOV;
         static const char* AimbotSmooth;
+        static const char* AimbotRCX;
+        static const char* AimbotRCY;
         static const char* TriggerbotEnabled;
+        static const char* TriggerHitChance;
+
     };
 
     struct EntityList_Menu {
@@ -125,6 +129,9 @@ public:
         static const char* SuperFlyer;
         static const char* ForceTurn;
         static const char* LogDamage;
+        static const char* ArmorRange;
+        static const char* AutomaticChecked;
+        static const char* OutBodyChecked;
     };
 
     struct StructureList_Menu {

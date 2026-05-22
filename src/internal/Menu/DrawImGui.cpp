@@ -7,9 +7,9 @@
 
 #include "../../external/Minimal-D3D12-Hook-ImGui/Main/mdx12_api.h"
 #include "../../external/SDK/SDK_Headers.hpp"
-#include "../ESP/ESP.h"
+// #include "../ESP/ESP.h"
 #include "../Config/Configs.h"
-#include "../ESP/DrawESP.h"
+// #include "../ESP/DrawESP.h"
 #include "ConfigImGui.h"
 #include "DrawImGui.h"
 #include "Aimbot_Menu.h"
@@ -104,7 +104,7 @@ namespace g_DrawImGui {
 			ImGui::GetStyle().WindowMinSize = ImVec2(menu_size_w, menu_size_h);
 			// 处理重置逻辑
 			if (g_Config::bMenuNeedReset) {
-				ImGui::SetNextWindowPos(ImVec2(100, 100), ImGuiCond_Always);
+				ImGui::SetNextWindowPos(ImVec2(io.DisplaySize.x * 0.382, io.DisplaySize.y * 0.414), ImGuiCond_Always, ImVec2(0.5f, 0.5f));
 				ImGui::SetNextWindowSize(ImVec2(menu_size_w, menu_size_h), ImGuiCond_Always);
 				g_Config::bMenuNeedReset = false;
 			}
@@ -114,6 +114,7 @@ namespace g_DrawImGui {
 
 				// 如果你希望第一次打开是 menu_size_w x menu_size_h，可以用 FirstUseEver
 				// 但不要放在 if 块外面，否则会干扰上面的 Always 逻辑
+				ImGui::SetNextWindowPos(ImVec2(io.DisplaySize.x * 0.382, io.DisplaySize.y * 0.414), ImGuiCond_FirstUseEver, ImVec2(0.5f, 0.5f));
 				ImGui::SetNextWindowSize(ImVec2(menu_size_w, menu_size_h), ImGuiCond_FirstUseEver);
 			}
 
@@ -125,8 +126,10 @@ namespace g_DrawImGui {
 
 			ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
 
+			ImVec4 accentColor = ThemeColors::GetAccent();
+
 			ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(7.0f * g_Util::inv255, 8.0f * g_Util::inv255, 10.0f * g_Util::inv255, 0.97f));
-			ImGui::PushStyleColor(ImGuiCol_Border, ImVec4(110.0f * g_Util::inv255, 231.0f * g_Util::inv255, 183.0f * g_Util::inv255, 0.08f));
+			ImGui::PushStyleColor(ImGuiCol_Border, ImVec4(accentColor.x, accentColor.y, accentColor.z, 0.08f));
 
 			ImGuiWindowFlags wFlags = ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar;
 			io.ConfigWindowsResizeFromEdges = false;
@@ -142,7 +145,6 @@ namespace g_DrawImGui {
 				float time = ImGui::GetTime();
 
 				// 获取最新的 Accent 颜色用于绘制装饰线条
-				ImVec4 accentColor = ThemeColors::GetAccent();
 				ImU32 colAccentU32 = ImGui::GetColorU32(accentColor);
 				ImU32 colAccentTransparentU32 = ImGui::GetColorU32(ImVec4(accentColor.x, accentColor.y, accentColor.z, 0.0f));
 
@@ -189,7 +191,7 @@ namespace g_DrawImGui {
 		}
 
 		// g_Aimbot::Tick();
-		g_DrawESP::DrawESP();
+		// g_DrawESP::DrawESP();
 		g_LogManager::Run();
 		LuaManager::Get().Lua_OnPaint();
 	}

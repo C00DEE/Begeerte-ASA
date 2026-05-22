@@ -299,6 +299,15 @@ enum class EDiscordDisclosureTypes : uint8
 	EDiscordDisclosureTypes_MAX              = 4,
 };
 
+// Enum DiscordPartnerSDK.EDiscordLobbyMemberFlags
+// NumValues: 0x0003
+enum class EDiscordLobbyMemberFlags : uint8
+{
+	None                                     = 0,
+	CanLinkLobby                             = 1,
+	EDiscordLobbyMemberFlags_MAX             = 2,
+};
+
 // Enum DiscordPartnerSDK.EDiscordClientThread
 // NumValues: 0x0004
 enum class EDiscordClientThread : uint8

@@ -108,4 +108,28 @@ void UHuman_Riding_LinkedGraph_C::ExecuteUbergraph_Human_Riding_LinkedGraph(int3
 }
 
 
+// Function Human_Riding_LinkedGraph.Human_Riding_LinkedGraph_C.GetRidingLeanAmount
+// (Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector2D*                       Output                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UHuman_Riding_LinkedGraph_C::GetRidingLeanAmount(float DeltaTime, struct FVector2D* Output)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Human_Riding_LinkedGraph_C", "GetRidingLeanAmount");
+
+	Params::Human_Riding_LinkedGraph_C_GetRidingLeanAmount Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Output != nullptr)
+		*Output = std::move(Parms.Output);
+}
+
+
 SDK_NAMESPACE_END

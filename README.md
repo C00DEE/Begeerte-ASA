@@ -19,6 +19,8 @@
  - 在 `src\internal\CheatData\CheatData.hpp` 添加特征码
  - 在 `src\internal\Config\Configs.h` 添加配置变量
  - 在 `src\internal\Config\ConfigManager.cpp` 为配置变量添加保存/加载
+ - 在 `src\internal\Language\LanguageManager.cpp` 为菜单功能添加本地化内容
+ - 在 `language\` 为所有多语言本地化内容添加键值
  - 在 `src\internal\ESP\DrawESP.cpp` 处理ESP绘制
  - 在 `src\internal\Hack\Hack.cpp` 编写各种游戏功能的函数
  - 在 `src\internal\Tick\Tick.cpp` 运行各种游戏功能的函数

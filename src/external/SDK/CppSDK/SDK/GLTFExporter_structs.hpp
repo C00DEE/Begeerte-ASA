@@ -60,17 +60,6 @@ enum class EGLTFMaterialPropertyGroup : uint8
 	EGLTFMaterialPropertyGroup_MAX           = 8,
 };
 
-// ScriptStruct GLTFExporter.GLTFExportMessages
-// 0x0030 (0x0030 - 0x0000)
-struct FGLTFExportMessages final
-{
-public:
-	TArray<class FString>                         Suggestions;                                       // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class FString>                         Warnings;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class FString>                         Errors;                                            // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGLTFExportMessages;
-
 // ScriptStruct GLTFExporter.GLTFMaterialBakeSize
 // 0x000C (0x000C - 0x0000)
 struct FGLTFMaterialBakeSize final
@@ -82,6 +71,17 @@ public:
 	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FGLTFMaterialBakeSize;
+
+// ScriptStruct GLTFExporter.GLTFExportMessages
+// 0x0030 (0x0030 - 0x0000)
+struct FGLTFExportMessages final
+{
+public:
+	TArray<class FString>                         Suggestions;                                       // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Warnings;                                          // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Errors;                                            // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGLTFExportMessages;
 
 // ScriptStruct GLTFExporter.GLTFOverrideMaterialBakeSettings
 // 0x0014 (0x0014 - 0x0000)

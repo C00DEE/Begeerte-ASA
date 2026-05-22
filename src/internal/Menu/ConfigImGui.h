@@ -714,6 +714,23 @@ namespace g_DrawImGui {
 		return pressed;
 	}
 
+	inline void DrawKeyBindButton(const char* label, UINT& bindKey) {
+		// ImGui::Text("%s:", label);
+		// ImGui::SameLine();
+
+		char btnLabel[64];
+		if (g_MDX12::g_MenuState::g_pCurrentBindingKey == &bindKey) {
+			strcpy_s(btnLabel, "Press any key...");
+		}
+		else {
+			sprintf_s(btnLabel, "%s", g_Util::GetKeyName(bindKey));
+		}
+
+		if (DrawCustomButton(btnLabel)) {
+			g_MDX12::g_MenuState::g_pCurrentBindingKey = &bindKey;
+		}
+	}
+
 	inline void BeginTabRegion(const char* id)
 	{
 		ImGui::PushStyleVar(ImGuiStyleVar_ChildRounding, 14.0f);

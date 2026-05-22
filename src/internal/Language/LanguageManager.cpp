@@ -43,7 +43,10 @@ const char* LanguageManager::Aimbot_Menu::SectionTitle = U8("自动瞄准");
 const char* LanguageManager::Aimbot_Menu::AimbotEnabled = U8("自动瞄准");
 const char* LanguageManager::Aimbot_Menu::AimbotFOV = U8("瞄准范围");
 const char* LanguageManager::Aimbot_Menu::AimbotSmooth = U8("瞄准速度");
+const char* LanguageManager::Aimbot_Menu::AimbotRCX = U8("水平后坐力补偿");
+const char* LanguageManager::Aimbot_Menu::AimbotRCY = U8("垂直后坐力补偿");
 const char* LanguageManager::Aimbot_Menu::TriggerbotEnabled = U8("自动射击");
+const char* LanguageManager::Aimbot_Menu::TriggerHitChance = U8("最低命中率");
 
 // -- EntityList_Menu --
 const char* LanguageManager::EntityList_Menu::TabLabel = U8("生物列表");
@@ -88,6 +91,9 @@ const char* LanguageManager::Misc_Menu::AutoFeed = U8("自动喂肉");
 const char* LanguageManager::Misc_Menu::SuperFlyer = U8("飞行龙加强");
 const char* LanguageManager::Misc_Menu::ForceTurn = U8("秒转头");
 const char* LanguageManager::Misc_Menu::LogDamage = U8("伤害日志");
+const char* LanguageManager::Misc_Menu::ArmorRange = U8("换甲阈值");
+const char* LanguageManager::Misc_Menu::AutomaticChecked = U8("自动换甲");
+const char* LanguageManager::Misc_Menu::OutBodyChecked = U8("灵魂出窍");
 
 // -- StructureList_Menu --
 const char* LanguageManager::StructureList_Menu::TabLabel = U8("建筑列表");
@@ -177,7 +183,10 @@ void LanguageManager::RegisterDefaults(std::unordered_map<std::string, std::stri
     d["Aimbot_Menu.AimbotEnabled"] = U8("自动瞄准");
     d["Aimbot_Menu.AimbotFOV"] = U8("瞄准范围");
     d["Aimbot_Menu.AimbotSmooth"] = U8("瞄准速度");
+    d["Aimbot_Menu.AimbotRCX"] = U8("水平后坐力补偿");
+    d["Aimbot_Menu.AimbotRCY"] = U8("垂直后坐力补偿");
     d["Aimbot_Menu.TriggerbotEnabled"] = U8("自动射击");
+    d["Aimbot_Menu.TriggerHitChance"] = U8("最低命中率");
 
     // EntityList_Menu
     d["EntityList_Menu.TabLabel"] = U8("生物列表");
@@ -222,6 +231,9 @@ void LanguageManager::RegisterDefaults(std::unordered_map<std::string, std::stri
     d["Misc_Menu.SuperFlyer"] = U8("飞行龙加强");
     d["Misc_Menu.ForceTurn"] = U8("秒转头");
     d["Misc_Menu.LogDamage"] = U8("伤害日志");
+    d["Misc_Menu.ArmorRange"] = U8("换甲阈值");
+    d["Misc_Menu.AutomaticChecked"] = U8("自动换甲");
+    d["Misc_Menu.OutBodyChecked"] = U8("灵魂出窍");
 
     // StructureList_Menu
     d["StructureList_Menu.TabLabel"] = U8("建筑列表");
@@ -320,7 +332,10 @@ void LanguageManager::ApplyToStaticMembers() {
     apply("Aimbot_Menu.AimbotEnabled", Aimbot_Menu::AimbotEnabled);
     apply("Aimbot_Menu.AimbotFOV", Aimbot_Menu::AimbotFOV);
     apply("Aimbot_Menu.AimbotSmooth", Aimbot_Menu::AimbotSmooth);
+    apply("Aimbot_Menu.AimbotRCX", Aimbot_Menu::AimbotRCX);
+    apply("Aimbot_Menu.AimbotRCY", Aimbot_Menu::AimbotRCY);
     apply("Aimbot_Menu.TriggerbotEnabled", Aimbot_Menu::TriggerbotEnabled);
+    apply("Aimbot_Menu.TriggerHitChance", Aimbot_Menu::TriggerHitChance);
 
     // EntityList_Menu
     apply("EntityList_Menu.TabLabel", EntityList_Menu::TabLabel);
@@ -365,6 +380,9 @@ void LanguageManager::ApplyToStaticMembers() {
     apply("Misc_Menu.SuperFlyer", Misc_Menu::SuperFlyer);
     apply("Misc_Menu.ForceTurn", Misc_Menu::ForceTurn);
     apply("Misc_Menu.LogDamage", Misc_Menu::LogDamage);
+    apply("Misc_Menu.ArmorRange", Misc_Menu::ArmorRange);
+    apply("Misc_Menu.AutomaticChecked", Misc_Menu::AutomaticChecked);
+    apply("Misc_Menu.OutBodyChecked", Misc_Menu::OutBodyChecked);
 
     // StructureList_Menu
     apply("StructureList_Menu.TabLabel", StructureList_Menu::TabLabel);

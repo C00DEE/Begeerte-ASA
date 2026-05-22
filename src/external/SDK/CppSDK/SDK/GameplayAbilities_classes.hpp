@@ -43,34 +43,58 @@ public:
 };
 DUMPER7_ASSERTS_AAbilitySystemDebugHUD;
 
-// Class GameplayAbilities.AbilitySystemCheatManagerExtension
-// 0x0000 (0x0028 - 0x0028)
-class UAbilitySystemCheatManagerExtension final : public UCheatManagerExtension
+// Class GameplayAbilities.AbilityAsync
+// 0x0008 (0x0038 - 0x0030)
+class UAbilityAsync : public UCancellableAsyncAction
 {
 public:
-	void AbilityActivate(const class FString& PartialName) const;
-	void AbilityCancel(const class FString& PartialName) const;
-	void AbilityGrant(const class FString& AssetSearchString) const;
-	void AbilityListGranted() const;
-	void EffectApply(const class FString& PartialName, float EffectLevel) const;
-	void EffectListActive() const;
-	void EffectRemove(const class FString& NameOrHandle) const;
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void EndAction();
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("AbilitySystemCheatManagerExtension")
+		STATIC_CLASS_IMPL("AbilityAsync")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"AbilitySystemCheatManagerExtension")
+		STATIC_NAME_IMPL(L"AbilityAsync")
 	}
-	static class UAbilitySystemCheatManagerExtension* GetDefaultObj()
+	static class UAbilityAsync* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UAbilitySystemCheatManagerExtension>();
+		return GetDefaultObjImpl<UAbilityAsync>();
 	}
 };
-DUMPER7_ASSERTS_UAbilitySystemCheatManagerExtension;
+DUMPER7_ASSERTS_UAbilityAsync;
+
+// Class GameplayAbilities.AbilityAsync_WaitGameplayTagCountChanged
+// 0x0020 (0x0058 - 0x0038)
+class UAbilityAsync_WaitGameplayTagCountChanged final : public UAbilityAsync
+{
+public:
+	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(int32 TagCount)> TagCountChanged;                                  // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+
+public:
+	static class UAbilityAsync_WaitGameplayTagCountChanged* WaitGameplayTagCountChangedOnActor(class AActor* TargetActor, const struct FGameplayTag& Tag);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AbilityAsync_WaitGameplayTagCountChanged")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AbilityAsync_WaitGameplayTagCountChanged")
+	}
+	static class UAbilityAsync_WaitGameplayTagCountChanged* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAbilityAsync_WaitGameplayTagCountChanged>();
+	}
+};
+DUMPER7_ASSERTS_UAbilityAsync_WaitGameplayTagCountChanged;
 
 // Class GameplayAbilities.GameplayEffect
 // 0x0A48 (0x0A70 - 0x0028)
@@ -183,58 +207,34 @@ public:
 };
 DUMPER7_ASSERTS_UAbilitiesGameplayEffectComponent;
 
-// Class GameplayAbilities.AbilityAsync
-// 0x0008 (0x0038 - 0x0030)
-class UAbilityAsync : public UCancellableAsyncAction
+// Class GameplayAbilities.AbilitySystemCheatManagerExtension
+// 0x0000 (0x0028 - 0x0028)
+class UAbilitySystemCheatManagerExtension final : public UCheatManagerExtension
 {
 public:
-	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void EndAction();
+	void AbilityActivate(const class FString& PartialName) const;
+	void AbilityCancel(const class FString& PartialName) const;
+	void AbilityGrant(const class FString& AssetSearchString) const;
+	void AbilityListGranted() const;
+	void EffectApply(const class FString& PartialName, float EffectLevel) const;
+	void EffectListActive() const;
+	void EffectRemove(const class FString& NameOrHandle) const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("AbilityAsync")
+		STATIC_CLASS_IMPL("AbilitySystemCheatManagerExtension")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"AbilityAsync")
+		STATIC_NAME_IMPL(L"AbilitySystemCheatManagerExtension")
 	}
-	static class UAbilityAsync* GetDefaultObj()
+	static class UAbilitySystemCheatManagerExtension* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UAbilityAsync>();
+		return GetDefaultObjImpl<UAbilitySystemCheatManagerExtension>();
 	}
 };
-DUMPER7_ASSERTS_UAbilityAsync;
-
-// Class GameplayAbilities.AbilityAsync_WaitGameplayTagCountChanged
-// 0x0020 (0x0058 - 0x0038)
-class UAbilityAsync_WaitGameplayTagCountChanged final : public UAbilityAsync
-{
-public:
-	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(int32 TagCount)> TagCountChanged;                                  // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-
-public:
-	static class UAbilityAsync_WaitGameplayTagCountChanged* WaitGameplayTagCountChangedOnActor(class AActor* TargetActor, const struct FGameplayTag& Tag);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AbilityAsync_WaitGameplayTagCountChanged")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AbilityAsync_WaitGameplayTagCountChanged")
-	}
-	static class UAbilityAsync_WaitGameplayTagCountChanged* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAbilityAsync_WaitGameplayTagCountChanged>();
-	}
-};
-DUMPER7_ASSERTS_UAbilityAsync_WaitGameplayTagCountChanged;
+DUMPER7_ASSERTS_UAbilitySystemCheatManagerExtension;
 
 // Class GameplayAbilities.AbilityTask
 // 0x0018 (0x0080 - 0x0068)

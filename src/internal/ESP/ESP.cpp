@@ -1,5 +1,4 @@
 ﻿// ESP.cpp
-#include "../../external/Minimal-D3D12-Hook-ImGui/Main/mdx12_api.h"
 #include "../../external/SDK/SDK_Headers.hpp"
 #include "ESP.h"
 #include "../Config/Configs.h"
@@ -8,6 +7,16 @@
 #include <algorithm>
 #include <string>
 #include <vector>
+#include <locale>
+#include <codecvt>
+
+namespace {
+    // 辅助绘制实心矩形的方法，利用Canvas的默认贴图
+    void DrawFilledRect(SDK::UCanvas* Canvas, const SDK::FVector2D& Pos, const SDK::FVector2D& Size, const SDK::FLinearColor& Color) {
+        if (!Canvas || !Canvas->DefaultTexture) return;
+        Canvas->K2_DrawTexture(Canvas->DefaultTexture, Pos, Size, SDK::FVector2D{ 0, 0 }, SDK::FVector2D{ 1, 1 }, Color, SDK::EBlendMode::BLEND_Translucent, 0.0f, SDK::FVector2D{ 0, 0 });
+    }
+}
 
 namespace g_ESP {
     RelationType GetRelation(SDK::APrimalCharacter* TargetChar, SDK::APrimalCharacter* LocalChar) {
@@ -23,218 +32,159 @@ namespace g_ESP {
         return RelationType::Enemy;
     }
 
-    void BarManager::AddBar(BoxRect rect, float currentValue, float maxValue, ImU32 color, BarPos pos, BarOrientation orientation, float a) {
-        if (!rect.valid || maxValue <= 0) return;
+    void BarManager::AddBar(SDK::UCanvas* Canvas, BoxRect rect, float currentValue, float maxValue, SDK::FLinearColor color, BarPos pos, BarOrientation orientation, float a) {
+        if (!rect.valid || maxValue <= 0 || !Canvas) return;
 
-        ImDrawList* drawList = ImGui::GetBackgroundDrawList();
         float percentage = std::clamp(currentValue / maxValue, 0.0f, 1.0f);
 
+        SDK::FLinearColor bgColor = { 0.0f, 0.0f, 0.0f, a * 0.7f };
+        color.A = a;
+
         if (pos == BarPos::Left && orientation == BarOrientation::Vertical) {
-            float boxHeight = rect.bottomRight.y - rect.topLeft.y;
+            float boxHeight = rect.bottomRight.Y - rect.topLeft.Y;
             float barWidth = 2.5f;
             float barMargin = 4.0f + leftOffset;
 
-            ImVec2 barBgTop = ImVec2(rect.topLeft.x - barMargin - barWidth, rect.topLeft.y);
-            ImVec2 barBgBottom = ImVec2(rect.topLeft.x - barMargin, rect.bottomRight.y);
+            SDK::FVector2D barBgTop = { rect.topLeft.X - barMargin - barWidth, rect.topLeft.Y };
+            SDK::FVector2D barBgBottom = { rect.topLeft.X - barMargin, rect.bottomRight.Y };
 
-            drawList->AddRectFilled(ImVec2(barBgTop.x - 1, barBgTop.y - 1), ImVec2(barBgBottom.x + 1, barBgBottom.y + 1), g_Util::ToImColor(0, 0, 0, a * 0.7f));
-
-            ImVec4 col = ImGui::ColorConvertU32ToFloat4(color);
-            col.w = a * g_Util::inv255;
-            ImU32 barColor = ImGui::ColorConvertFloat4ToU32(col);
+            SDK::FVector2D bgPos = { barBgTop.X - 1.0f, barBgTop.Y - 1.0f };
+            SDK::FVector2D bgSize = { (barBgBottom.X + 1.0f) - bgPos.X, (barBgBottom.Y + 1.0f) - bgPos.Y };
+            DrawFilledRect(Canvas, bgPos, bgSize, bgColor);
 
             if (currentValue > 0) {
                 float dynamicHeight = boxHeight * percentage;
-                drawList->AddRectFilled(ImVec2(barBgTop.x, barBgBottom.y - dynamicHeight), barBgBottom, barColor);
+                SDK::FVector2D fgPos = { barBgTop.X, barBgBottom.Y - dynamicHeight };
+                SDK::FVector2D fgSize = { barWidth, dynamicHeight };
+                DrawFilledRect(Canvas, fgPos, fgSize, color);
             }
 
             leftOffset += barWidth + 2.0f;
         }
         else if (pos == BarPos::Right && orientation == BarOrientation::Vertical) {
-            float boxHeight = rect.bottomRight.y - rect.topLeft.y;
+            float boxHeight = rect.bottomRight.Y - rect.topLeft.Y;
             float barWidth = 2.5f;
             float barMargin = 4.0f + rightOffset;
 
-            ImVec2 barBgTop = ImVec2(rect.bottomRight.x + barMargin, rect.topLeft.y);
-            ImVec2 barBgBottom = ImVec2(rect.bottomRight.x + barMargin + barWidth, rect.bottomRight.y);
+            SDK::FVector2D barBgTop = { rect.bottomRight.X + barMargin, rect.topLeft.Y };
+            SDK::FVector2D barBgBottom = { rect.bottomRight.X + barMargin + barWidth, rect.bottomRight.Y };
 
-            drawList->AddRectFilled(ImVec2(barBgTop.x - 1, barBgTop.y - 1), ImVec2(barBgBottom.x + 1, barBgBottom.y + 1), g_Util::ToImColor(0, 0, 0, a * 0.7f));
-
-            ImVec4 col = ImGui::ColorConvertU32ToFloat4(color);
-            col.w = a * g_Util::inv255;
-            ImU32 barColor = ImGui::ColorConvertFloat4ToU32(col);
+            SDK::FVector2D bgPos = { barBgTop.X - 1.0f, barBgTop.Y - 1.0f };
+            SDK::FVector2D bgSize = { (barBgBottom.X + 1.0f) - bgPos.X, (barBgBottom.Y + 1.0f) - bgPos.Y };
+            DrawFilledRect(Canvas, bgPos, bgSize, bgColor);
 
             if (currentValue > 0) {
                 float dynamicHeight = boxHeight * percentage;
-                drawList->AddRectFilled(ImVec2(barBgTop.x, barBgBottom.y - dynamicHeight), barBgBottom, barColor);
+                SDK::FVector2D fgPos = { barBgTop.X, barBgBottom.Y - dynamicHeight };
+                SDK::FVector2D fgSize = { barWidth, dynamicHeight };
+                DrawFilledRect(Canvas, fgPos, fgSize, color);
             }
 
             rightOffset += barWidth + 2.0f;
         }
         else if (pos == BarPos::Top && orientation == BarOrientation::Horizontal) {
-            float boxWidth = rect.bottomRight.x - rect.topLeft.x;
+            float boxWidth = rect.bottomRight.X - rect.topLeft.X;
             float barHeight = 2.5f;
             float barMargin = 4.0f + topOffset;
 
-            ImVec2 barBgLeft = ImVec2(rect.topLeft.x, rect.topLeft.y - barMargin - barHeight);
-            ImVec2 barBgRight = ImVec2(rect.bottomRight.x, rect.topLeft.y - barMargin);
+            SDK::FVector2D barBgLeft = { rect.topLeft.X, rect.topLeft.Y - barMargin - barHeight };
+            SDK::FVector2D barBgRight = { rect.bottomRight.X, rect.topLeft.Y - barMargin };
 
-            drawList->AddRectFilled(ImVec2(barBgLeft.x - 1, barBgLeft.y - 1), ImVec2(barBgRight.x + 1, barBgRight.y + 1), g_Util::ToImColor(0, 0, 0, a * 0.7f));
-
-            ImVec4 col = ImGui::ColorConvertU32ToFloat4(color);
-            col.w = a * g_Util::inv255;
-            ImU32 barColor = ImGui::ColorConvertFloat4ToU32(col);
+            SDK::FVector2D bgPos = { barBgLeft.X - 1.0f, barBgLeft.Y - 1.0f };
+            SDK::FVector2D bgSize = { (barBgRight.X + 1.0f) - bgPos.X, (barBgRight.Y + 1.0f) - bgPos.Y };
+            DrawFilledRect(Canvas, bgPos, bgSize, bgColor);
 
             if (currentValue > 0) {
                 float dynamicWidth = boxWidth * percentage;
-                drawList->AddRectFilled(barBgLeft, ImVec2(barBgLeft.x + dynamicWidth, barBgRight.y), barColor);
+                SDK::FVector2D fgPos = { barBgLeft.X, barBgLeft.Y };
+                SDK::FVector2D fgSize = { dynamicWidth, barHeight };
+                DrawFilledRect(Canvas, fgPos, fgSize, color);
             }
 
             topOffset += barHeight + 2.0f;
         }
         else if (pos == BarPos::Bottom && orientation == BarOrientation::Horizontal) {
-            float boxWidth = rect.bottomRight.x - rect.topLeft.x;
+            float boxWidth = rect.bottomRight.X - rect.topLeft.X;
             float barHeight = 2.5f;
             float barMargin = 4.0f + bottomOffset;
 
-            ImVec2 barBgLeft = ImVec2(rect.topLeft.x, rect.bottomRight.y + barMargin);
-            ImVec2 barBgRight = ImVec2(rect.bottomRight.x, rect.bottomRight.y + barMargin + barHeight);
+            SDK::FVector2D barBgLeft = { rect.topLeft.X, rect.bottomRight.Y + barMargin };
+            SDK::FVector2D barBgRight = { rect.bottomRight.X, rect.bottomRight.Y + barMargin + barHeight };
 
-            drawList->AddRectFilled(ImVec2(barBgLeft.x - 1, barBgLeft.y - 1), ImVec2(barBgRight.x + 1, barBgRight.y + 1), g_Util::ToImColor(0, 0, 0, a * 0.7f));
-
-            ImVec4 col = ImGui::ColorConvertU32ToFloat4(color);
-            col.w = a * g_Util::inv255;
-            ImU32 barColor = ImGui::ColorConvertFloat4ToU32(col);
+            SDK::FVector2D bgPos = { barBgLeft.X - 1.0f, barBgLeft.Y - 1.0f };
+            SDK::FVector2D bgSize = { (barBgRight.X + 1.0f) - bgPos.X, (barBgRight.Y + 1.0f) - bgPos.Y };
+            DrawFilledRect(Canvas, bgPos, bgSize, bgColor);
 
             if (currentValue > 0) {
                 float dynamicWidth = boxWidth * percentage;
-                drawList->AddRectFilled(barBgLeft, ImVec2(barBgLeft.x + dynamicWidth, barBgRight.y), barColor);
+                SDK::FVector2D fgPos = { barBgLeft.X, barBgLeft.Y };
+                SDK::FVector2D fgSize = { dynamicWidth, barHeight };
+                DrawFilledRect(Canvas, fgPos, fgSize, color);
             }
 
             bottomOffset += barHeight + 2.0f;
         }
     }
 
-    void FlagManager::AddFlag(BoxRect rect, const std::string& text, ImU32 color, FlagPos pos, float alphaMult, const BarManager* barMgr) {
-        if (!rect.valid || text.empty()) return;
+    void FlagManager::AddFlag(SDK::UCanvas* Canvas, BoxRect rect, const std::string& text, SDK::FLinearColor color, FlagPos pos, float alphaMult, const BarManager* barMgr) {
+        if (!rect.valid || text.empty() || !Canvas) return;
 
-        ImDrawList* drawList = ImGui::GetBackgroundDrawList();
+        static SDK::UFont* font = nullptr;
+        if (!font)
+        {
+            static SDK::UObject* _Font = SDK::UObject::FindObject("Font SansationBold18.SansationBold18");
+            if (_Font && _Font->IsA(SDK::UFont::StaticClass())) {
+                font = (SDK::UFont*)_Font;
+            }
+        }
+        if (!font) return;
 
-        ImFont* font = ImGui::GetFont();
-        float fontSize = ImGui::GetFontSize();
-        ImVec2 textSize = font->CalcTextSizeA(fontSize, FLT_MAX, 0.0f, text.c_str());
+        // 【关键修复1】：直接在函数作用域内保留 wstr，让FString拥有生命周期安全的指针！
+        std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
+        std::wstring wstr = converter.from_bytes(text);
+        SDK::FString fText(wstr.c_str());
 
-        ImVec2 drawPos;
+        // 缩放字体
+        SDK::FVector2D scaleSize = SDK::FVector2D{ 1.0f, 1.0f };
 
+        // 获取精确宽高
+        SDK::FVector2D textSize = Canvas->K2_TextSize(font, fText, scaleSize);
+        SDK::FVector2D drawPos;
+
+        // 【关键修复2】：补全全部四个方向的 barOffset（解决文字和血条重叠的问题）
         if (pos == FlagPos::Right) {
-            drawPos = ImVec2(rect.bottomRight.x + 5.0f, rect.topLeft.y + rightY);
-            rightY += textSize.y + 1.0f;
+            float barOffset = barMgr ? barMgr->GetRightOffset() : 0.0f;
+            drawPos = { (float)(rect.bottomRight.X + 5.0f + barOffset), (float)(rect.topLeft.Y + rightY) };
+            rightY += textSize.Y + 1.0f;
         }
         else if (pos == FlagPos::Left) {
-            drawPos = ImVec2(rect.topLeft.x - 8.0f - textSize.x, rect.topLeft.y + leftY);
-            leftY += textSize.y + 1.0f;
+            float barOffset = barMgr ? barMgr->GetLeftOffset() : 0.0f;
+            drawPos = { (float)(rect.topLeft.X - 6.0f - barOffset - textSize.X), (float)(rect.topLeft.Y + leftY) };
+            leftY += textSize.Y + 1.0f;
         }
         else if (pos == FlagPos::Top) {
             float barOffset = barMgr ? barMgr->GetTopOffset() : 0.0f;
-            float centerX = (rect.topLeft.x + rect.bottomRight.x) / 2.0f;
-            drawPos = ImVec2(centerX - textSize.x / 2.0f, rect.topLeft.y - barOffset - topY - textSize.y - 5.0f);
-            topY += textSize.y + 1.0f;
+            float centerX = (rect.topLeft.X + rect.bottomRight.X) * 0.5f;
+            drawPos = { (float)(centerX - textSize.X * 0.5f), (float)(rect.topLeft.Y - barOffset - topY - textSize.Y - 3.0f) };
+            topY += textSize.Y + 1.0f;
         }
         else if (pos == FlagPos::Bottom) {
             float barOffset = barMgr ? barMgr->GetBottomOffset() : 0.0f;
-            float centerX = (rect.topLeft.x + rect.bottomRight.x) / 2.0f;
-            drawPos = ImVec2(centerX - textSize.x / 2.0f, rect.bottomRight.y + barOffset + bottomY + 5.0f);
-            bottomY += textSize.y + 1.0f;
+            float centerX = (rect.topLeft.X + rect.bottomRight.X) * 0.5f;
+            drawPos = { (float)(centerX - textSize.X * 0.5f), (float)(rect.bottomRight.Y + barOffset + bottomY + 3.0f) };
+            bottomY += textSize.Y + 1.0f;
         }
 
-        ImVec4 baseCol = ImGui::ColorConvertU32ToFloat4(color);
-        baseCol.w *= alphaMult;
-        ImU32 col = ImGui::ColorConvertFloat4ToU32(baseCol);
+        color.A *= alphaMult;
+        SDK::FLinearColor shadowCol = { 0.0f, 0.0f, 0.0f, color.A };
 
-        /*
-        ImVec4 shadowCol = ImVec4(0, 0, 0, 0.8f * alphaMult);
-        ImU32 sCol = ImGui::ColorConvertFloat4ToU32(shadowCol);
-        */
-
-        // Fixed
-        // baseCol.w 已经是 color.A * alphaMult 了
-        float finalAlpha = baseCol.w;
-        ImU32 sCol = ImGui::ColorConvertFloat4ToU32(ImVec4(0.0f, 0.0f, 0.0f, finalAlpha * 0.8f));
-
-        drawList->AddText(ImVec2(drawPos.x + 1, drawPos.y + 1), sCol, text.c_str());
-        drawList->AddText(drawPos, col, text.c_str());
+        // 渲染文字
+        Canvas->K2_DrawText(font, fText, drawPos, scaleSize, color, 0.0f, shadowCol, SDK::FVector2D{ 1.0f, 1.0f }, false, false, true, shadowCol);
     }
 
-    void DrawOutOfFOV(const SDK::FVector& targetLoc, SDK::APlayerController* LocalPC, const std::vector<OOFFlag>& flags, float alphaMult) {
-        if (targetLoc.X == 0 && targetLoc.Y == 0 && targetLoc.Z == 0) return;
-        if (!LocalPC || !LocalPC->Pawn || !LocalPC->PlayerCameraManager) return;
-
-        ImGuiIO& io = ImGui::GetIO();
-        ImVec2 screenSize = io.DisplaySize;
-        ImVec2 screenCenter = ImVec2(screenSize.x * 0.5f, screenSize.y * 0.5f);
-
-        SDK::FVector playerLoc = LocalPC->Pawn->K2_GetActorLocation();
-        SDK::FVector delta = targetLoc - playerLoc;
-
-        const float PI = 3.1415926535f;
-        SDK::FRotator cameraRot = LocalPC->PlayerCameraManager->GetCameraRotation();
-
-        float yawRad = cameraRot.Yaw * (PI / 180.0f);
-        float planarAngle = atan2f(delta.Y, delta.X) - yawRad;
-        while (planarAngle > PI) planarAngle -= 2.0f * PI;
-        while (planarAngle < -PI) planarAngle += 2.0f * PI;
-
-        float radiusX = (screenSize.x * 0.45f) * g_Config::OOFRadius;
-        float radiusY = (screenSize.y * 0.45f) * g_Config::OOFRadius;
-
-        ImVec2 drawPos;
-        drawPos.x = screenCenter.x + sinf(planarAngle) * radiusX;
-        drawPos.y = screenCenter.y - cosf(planarAngle) * radiusY;
-
-        ImVec4 baseCfgColor = *(ImVec4*)g_Config::OOFColor;
-        ImVec4 textColorVec = baseCfgColor;
-        textColorVec.w *= alphaMult;
-        ImU32 textColU = ImGui::ColorConvertFloat4ToU32(textColorVec);
-        ImU32 shadowColU = ImGui::ColorConvertFloat4ToU32(ImVec4(0, 0, 0, textColorVec.w * 0.85f));
-
-        static float breathTime = 0.0f;
-        breathTime += io.DeltaTime;
-
-        float distance3D = sqrtf(delta.X * delta.X + delta.Y * delta.Y + delta.Z * delta.Z);
-        float maxDistance = 500.0f;
-        float distanceRatio = 1.0f - std::clamp(distance3D / maxDistance, 0.0f, 1.0f);
-        float dynamicSpeed = g_Config::OOFBreathSpeed * (1.0f + distanceRatio * 2.0f);
-        float breathCycle = sinf(breathTime * dynamicSpeed) * 0.5f + 0.5f;
-        float breathAlphaMod = g_Config::OOFMinAlpha + (g_Config::OOFMaxAlpha - g_Config::OOFMinAlpha) * breathCycle;
-
-        ImVec4 triColorVec = baseCfgColor;
-        triColorVec.w *= (alphaMult * breathAlphaMod);
-        ImU32 triColU = ImGui::ColorConvertFloat4ToU32(triColorVec);
-
-        ImDrawList* drawList = ImGui::GetBackgroundDrawList();
-        float size = g_Config::OOFSize;
-
-        float triAngle = planarAngle;
-        ImVec2 p1 = ImVec2(drawPos.x + sinf(triAngle) * size, drawPos.y - cosf(triAngle) * size);
-        ImVec2 p2 = ImVec2(drawPos.x + sinf(triAngle + 2.3f) * size, drawPos.y - cosf(triAngle + 2.3f) * size);
-        ImVec2 p3 = ImVec2(drawPos.x + sinf(triAngle - 2.3f) * size, drawPos.y - cosf(triAngle - 2.3f) * size);
-        drawList->AddTriangleFilled(p1, p2, p3, triColU);
-
-        float textOffsetY = size + 5.0f;
-        for (const auto& flag : flags) {
-            ImVec2 textSize = ImGui::CalcTextSize(flag.text.c_str());
-            float tx = std::clamp(drawPos.x - (textSize.x * 0.5f), 10.0f, screenSize.x - textSize.x - 10.0f);
-            float ty = std::clamp(drawPos.y + textOffsetY, 10.0f, screenSize.y - textSize.y - 10.0f);
-
-            drawList->AddText(ImVec2(tx + 1, ty + 1), shadowColU, flag.text.c_str());
-            drawList->AddText(ImVec2(tx, ty), textColU, flag.text.c_str());
-
-            textOffsetY += textSize.y + 1.0f;
-        }
-    }
-
-    BoxRect DrawBox(SDK::AActor* entity, float r, float g, float b, float a, float width_scale, bool bTestOnly) {
+    BoxRect DrawBox(SDK::UCanvas* Canvas, SDK::AActor* entity, float r, float g, float b, float a, float width_scale, bool bTestOnly) {
         BoxRect rect;
+        rect.valid = false;
         if (!entity || entity->bHidden) return rect;
         auto PC = g_Util::GetLocalPC();
         if (!PC) return rect;
@@ -249,73 +199,68 @@ namespace g_ESP {
         if (PC->ProjectWorldLocationToScreen(worldTop, &screenTop, false) &&
             PC->ProjectWorldLocationToScreen(worldBottom, &screenBottom, false)) {
 
-            float height = abs(screenBottom.Y - screenTop.Y);
+            float height = std::abs(screenBottom.Y - screenTop.Y);
             float width = height * width_scale;
-            rect.topLeft = ImVec2(screenTop.X - width / 2.0f, screenTop.Y);
-            rect.bottomRight = ImVec2(screenTop.X + width / 2.0f, screenBottom.Y);
+            rect.topLeft = { (float)(screenTop.X - width * 0.5f), (float)screenTop.Y };
+            rect.bottomRight = { (float)(screenTop.X + width * 0.5f), (float)screenBottom.Y };
             rect.valid = true;
 
-            if (!bTestOnly && a > 0.1f) {
-                ImDrawList* drawList = ImGui::GetBackgroundDrawList();
-                drawList->AddRect(ImVec2(rect.topLeft.x - 1, rect.topLeft.y - 1),
-                    ImVec2(rect.bottomRight.x + 1, rect.bottomRight.y + 1),
-                    g_Util::ToImColor(0, 0, 0, a), 0.0f, 0, 1.5f);
-                drawList->AddRect(rect.topLeft, rect.bottomRight, g_Util::ToImColor(r, g, b, a), 0.0f, 0, 1.0f);
+            if (!bTestOnly && a > 0.1f && Canvas) {
+                SDK::FVector2D boxSize = { (float)(rect.bottomRight.X - rect.topLeft.X), (float)(rect.bottomRight.Y - rect.topLeft.Y) };
+
+                // 阴影边框
+                SDK::FVector2D outPos = { (float)(rect.topLeft.X - 1.0f), (float)(rect.topLeft.Y - 1.0f) };
+                SDK::FVector2D outSize = { (float)(boxSize.X + 2.0f), (float)(boxSize.Y + 2.0f) };
+                Canvas->K2_DrawBox(outPos, outSize, 1.5f, SDK::FLinearColor{ 0.0f, 0.0f, 0.0f, a });
+
+                // 主边框
+                Canvas->K2_DrawBox(rect.topLeft, boxSize, 1.0f, SDK::FLinearColor{ r, g, b, a });
             }
         }
         return rect;
     }
 
-    void DrawHealthBar(BoxRect rect, float healthPercent, float maxHealth, float a) {
-        if (!rect.valid || maxHealth <= 0) return;
-        ImDrawList* drawList = ImGui::GetBackgroundDrawList();
-        float boxHeight = rect.bottomRight.y - rect.topLeft.y;
+    void DrawBox(SDK::UCanvas* Canvas, const BoxRect& rect, SDK::FLinearColor color, float alpha) {
+        if (!rect.valid || alpha < 0.001f || !Canvas) return;
+
+        color.A *= alpha;
+        SDK::FVector2D boxSize = { (float)(rect.bottomRight.X - rect.topLeft.X), (float)(rect.bottomRight.Y - rect.topLeft.Y) };
+
+        // 1. 绘制黑色外边框
+        SDK::FVector2D outPos = { (float)(rect.topLeft.X - 1.0f), (float)(rect.topLeft.Y - 1.0f) };
+        SDK::FVector2D outSize = { (float)(boxSize.X + 2.0f), (float)(boxSize.Y + 2.0f) };
+        Canvas->K2_DrawBox(outPos, outSize, 1.5f, SDK::FLinearColor{ 0.0f, 0.0f, 0.0f, color.A });
+
+        // 2. 绘制彩色主边框
+        Canvas->K2_DrawBox(rect.topLeft, boxSize, 1.0f, color);
+    }
+
+    void DrawHealthBar(SDK::UCanvas* Canvas, BoxRect rect, float healthPercent, float maxHealth, float a) {
+        if (!rect.valid || maxHealth <= 0 || !Canvas) return;
+
+        float boxHeight = rect.bottomRight.Y - rect.topLeft.Y;
         float barWidth = 2.5f;
         float barMargin = 4.0f;
-        ImVec2 barBgTop = ImVec2(rect.topLeft.x - barMargin - barWidth, rect.topLeft.y);
-        ImVec2 barBgBottom = ImVec2(rect.topLeft.x - barMargin, rect.bottomRight.y);
+        SDK::FVector2D barBgTop = { (float)(rect.topLeft.X - barMargin - barWidth), (float)rect.topLeft.Y };
+        SDK::FVector2D barBgBottom = { (float)(rect.topLeft.X - barMargin), (float)rect.bottomRight.Y };
 
-        drawList->AddRectFilled(ImVec2(barBgTop.x - 1, barBgTop.y - 1), ImVec2(barBgBottom.x + 1, barBgBottom.y + 1), g_Util::ToImColor(0, 0, 0, a * 0.7f));
+        SDK::FVector2D bgPos = { (float)(barBgTop.X - 1.0f), (float)(barBgTop.Y - 1.0f) };
+        SDK::FVector2D bgSize = { (float)((barBgBottom.X + 1.0f) - bgPos.X), (float)((barBgBottom.Y + 1.0f) - bgPos.Y) };
+        DrawFilledRect(Canvas, bgPos, bgSize, SDK::FLinearColor{ 0.0f, 0.0f, 0.0f, a * 0.7f });
 
-        float percentage = healthPercent / maxHealth;
-        percentage = std::clamp(percentage, 0.0f, 1.0f);
+        float percentage = std::clamp(healthPercent / maxHealth, 0.0f, 1.0f);
 
-        ImVec4 col;
+        SDK::FLinearColor col;
         if (percentage > 0.5f)
-            col = ImVec4((1.0f - percentage) * 2.0f, 1.0f, 0.0f, a / 255.0f);
+            col = SDK::FLinearColor{ (1.0f - percentage) * 2.0f, 1.0f, 0.0f, a };
         else
-            col = ImVec4(1.0f, percentage * 2.0f, 0.0f, a / 255.0f);
-
-        ImU32 hpColor = ImGui::ColorConvertFloat4ToU32(col);
+            col = SDK::FLinearColor{ 1.0f, percentage * 2.0f, 0.0f, a };
 
         if (healthPercent > 0) {
             float dynamicHeight = boxHeight * percentage;
-            drawList->AddRectFilled(ImVec2(barBgTop.x, barBgBottom.y - dynamicHeight), barBgBottom, hpColor);
+            SDK::FVector2D fgPos = { (float)barBgTop.X, (float)(barBgBottom.Y - dynamicHeight) };
+            SDK::FVector2D fgSize = { barWidth, dynamicHeight };
+            DrawFilledRect(Canvas, fgPos, fgSize, col);
         }
-    }
-
-    void DrawName(SDK::AActor* entity, BoxRect rect, float r, float g, float b, float a) {
-        if (!rect.valid || !entity) return;
-
-        auto ShooterChar = static_cast<SDK::AShooterCharacter*>(entity);
-        if (!ShooterChar) return;
-
-        std::string nameStr;
-        if (ShooterChar->PlayerState) {
-            nameStr = ShooterChar->PlayerState->GetPlayerName().ToString();
-        }
-        else {
-            auto Dino = static_cast<SDK::APrimalDinoCharacter*>(entity);
-            if (Dino) nameStr = Dino->GetDescriptiveName().ToString();
-        }
-
-        if (nameStr.empty()) return;
-
-        ImDrawList* drawList = ImGui::GetBackgroundDrawList();
-        ImVec2 textSize = ImGui::CalcTextSize(nameStr.c_str());
-        ImVec2 textPos = ImVec2(rect.topLeft.x + (rect.bottomRight.x - rect.topLeft.x) / 2.0f - textSize.x / 2.0f, rect.topLeft.y - textSize.y - 5.0f);
-
-        drawList->AddText(ImVec2(textPos.x + 1, textPos.y + 1), g_Util::ToImColor(0, 0, 0, a), nameStr.c_str());
-        drawList->AddText(textPos, g_Util::ToImColor(r, g, b, a), nameStr.c_str());
     }
 }

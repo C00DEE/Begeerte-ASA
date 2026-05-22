@@ -17,96 +17,6 @@
 
 SDK_NAMESPACE_START
 
-// Class GeometryScriptingCore.GeometryScriptDebug
-// 0x0010 (0x0038 - 0x0028)
-class UGeometryScriptDebug final : public UObject
-{
-public:
-	TArray<struct FGeometryScriptDebugMessage>    messages;                                          // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GeometryScriptDebug")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GeometryScriptDebug")
-	}
-	static class UGeometryScriptDebug* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGeometryScriptDebug>();
-	}
-};
-DUMPER7_ASSERTS_UGeometryScriptDebug;
-
-// Class GeometryScriptingCore.GeometryScriptLibrary_MeshBoneWeightFunctions
-// 0x0000 (0x0028 - 0x0028)
-class UGeometryScriptLibrary_MeshBoneWeightFunctions final : public UBlueprintFunctionLibrary
-{
-public:
-	static void BlendBoneWeights(const TArray<struct FGeometryScriptBoneWeight>& BoneWeightsA, const TArray<struct FGeometryScriptBoneWeight>& BoneWeightsB, float Alpha, TArray<struct FGeometryScriptBoneWeight>* Result, class UGeometryScriptDebug* Debug);
-	static class UDynamicMesh* ComputeSmoothBoneWeights(class UDynamicMesh* TargetMesh, class USkeleton* Skeleton, const struct FGeometryScriptSmoothBoneWeightsOptions& Options, const struct FGeometryScriptBoneWeightProfile& Profile, class UGeometryScriptDebug* Debug);
-	static class UDynamicMesh* CopyBonesFromMesh(class UDynamicMesh* SourceMesh, class UDynamicMesh* TargetMesh, const struct FGeometryScriptCopyBonesFromMeshOptions& Options, class UGeometryScriptDebug* Debug);
-	static class UDynamicMesh* CopyBonesFromSkeleton(class USkeleton* SourceSkeleton, class UDynamicMesh* TargetMesh, const struct FGeometryScriptCopyBonesFromMeshOptions& Options, class UGeometryScriptDebug* Debug);
-	static class UDynamicMesh* DiscardBonesFromMesh(class UDynamicMesh* TargetMesh, class UGeometryScriptDebug* Debug);
-	static class UDynamicMesh* GetAllBonesInfo(class UDynamicMesh* TargetMesh, TArray<struct FGeometryScriptBoneInfo>* BonesInfo, class UGeometryScriptDebug* Debug);
-	static class UDynamicMesh* GetBoneChildren(class UDynamicMesh* TargetMesh, class FName BoneName, bool bRecursive, bool* bIsValidBoneName, TArray<struct FGeometryScriptBoneInfo>* ChildrenInfo, class UGeometryScriptDebug* Debug);
-	static class UDynamicMesh* GetBoneIndex(class UDynamicMesh* TargetMesh, class FName BoneName, bool* bIsValidBoneName, int32* BoneIndex, class UGeometryScriptDebug* Debug);
-	static class UDynamicMesh* GetBoneInfo(class UDynamicMesh* TargetMesh, class FName BoneName, bool* bIsValidBoneName, struct FGeometryScriptBoneInfo* BoneInfo, class UGeometryScriptDebug* Debug);
-	static class UDynamicMesh* GetLargestVertexBoneWeight(class UDynamicMesh* TargetMesh, int32 VertexID, struct FGeometryScriptBoneWeight* BoneWeight, bool* bHasValidBoneWeights, const struct FGeometryScriptBoneWeightProfile& Profile);
-	static class UDynamicMesh* GetMaxBoneWeightIndex(class UDynamicMesh* TargetMesh, bool* bHasBoneWeights, int32* MaxBoneIndex, const struct FGeometryScriptBoneWeightProfile& Profile);
-	static class UDynamicMesh* GetRootBoneName(class UDynamicMesh* TargetMesh, class FName* BoneName, class UGeometryScriptDebug* Debug);
-	static class UDynamicMesh* GetVertexBoneWeights(class UDynamicMesh* TargetMesh, int32 VertexID, TArray<struct FGeometryScriptBoneWeight>* BoneWeights, bool* bHasValidBoneWeights, const struct FGeometryScriptBoneWeightProfile& Profile);
-	static class UDynamicMesh* MeshCopyBoneWeights(class UDynamicMesh* TargetMesh, bool* bProfileExisted, const struct FGeometryScriptBoneWeightProfile& TargetProfile, const struct FGeometryScriptBoneWeightProfile& SourceProfile);
-	static class UDynamicMesh* MeshCreateBoneWeights(class UDynamicMesh* TargetMesh, bool* bProfileExisted, bool bReplaceExistingProfile, const struct FGeometryScriptBoneWeightProfile& Profile);
-	static class UDynamicMesh* MeshHasBoneWeights(class UDynamicMesh* TargetMesh, bool* bHasBoneWeights, const struct FGeometryScriptBoneWeightProfile& Profile);
-	static class UDynamicMesh* PruneBoneWeights(class UDynamicMesh* TargetMesh, const TArray<class FName>& BonesToPrune, const struct FGeometryScriptPruneBoneWeightsOptions& Options, const struct FGeometryScriptBoneWeightProfile& Profile, class UGeometryScriptDebug* Debug);
-	static class UDynamicMesh* SetAllVertexBoneWeights(class UDynamicMesh* TargetMesh, const TArray<struct FGeometryScriptBoneWeight>& BoneWeights, const struct FGeometryScriptBoneWeightProfile& Profile, class UGeometryScriptDebug* Debug);
-	static class UDynamicMesh* SetVertexBoneWeights(class UDynamicMesh* TargetMesh, int32 VertexID, const TArray<struct FGeometryScriptBoneWeight>& BoneWeights, bool* bIsValidVertexID, const struct FGeometryScriptBoneWeightProfile& Profile, class UGeometryScriptDebug* Debug);
-	static class UDynamicMesh* TransferBoneWeightsFromMesh(class UDynamicMesh* SourceMesh, class UDynamicMesh* TargetMesh, const struct FGeometryScriptTransferBoneWeightsOptions& Options, const struct FGeometryScriptMeshSelection& Selection, class UGeometryScriptDebug* Debug);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GeometryScriptLibrary_MeshBoneWeightFunctions")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GeometryScriptLibrary_MeshBoneWeightFunctions")
-	}
-	static class UGeometryScriptLibrary_MeshBoneWeightFunctions* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGeometryScriptLibrary_MeshBoneWeightFunctions>();
-	}
-};
-DUMPER7_ASSERTS_UGeometryScriptLibrary_MeshBoneWeightFunctions;
-
-// Class GeometryScriptingCore.GeometryScriptLibrary_ContainmentFunctions
-// 0x0000 (0x0028 - 0x0028)
-class UGeometryScriptLibrary_ContainmentFunctions final : public UBlueprintFunctionLibrary
-{
-public:
-	static class UDynamicMesh* ComputeMeshConvexDecomposition(class UDynamicMesh* TargetMesh, class UDynamicMesh*& CopyToMesh, class UDynamicMesh** CopyToMeshOut, const struct FGeometryScriptConvexDecompositionOptions& Options, class UGeometryScriptDebug* Debug);
-	static class UDynamicMesh* ComputeMeshConvexHull(class UDynamicMesh* TargetMesh, class UDynamicMesh*& CopyToMesh, class UDynamicMesh** CopyToMeshOut, const struct FGeometryScriptMeshSelection& Selection, const struct FGeometryScriptConvexHullOptions& Options, class UGeometryScriptDebug* Debug);
-	static class UDynamicMesh* ComputeMeshSweptHull(class UDynamicMesh* TargetMesh, class UDynamicMesh*& CopyToMesh, class UDynamicMesh** CopyToMeshOut, const struct FTransform& ProjectionFrame, const struct FGeometryScriptSweptHullOptions& Options, class UGeometryScriptDebug* Debug);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GeometryScriptLibrary_ContainmentFunctions")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GeometryScriptLibrary_ContainmentFunctions")
-	}
-	static class UGeometryScriptLibrary_ContainmentFunctions* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGeometryScriptLibrary_ContainmentFunctions>();
-	}
-};
-DUMPER7_ASSERTS_UGeometryScriptLibrary_ContainmentFunctions;
-
 // Class GeometryScriptingCore.GeometryScriptLibrary_CollisionFunctions
 // 0x0000 (0x0028 - 0x0028)
 class UGeometryScriptLibrary_CollisionFunctions final : public UBlueprintFunctionLibrary
@@ -151,6 +61,54 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UGeometryScriptLibrary_CollisionFunctions;
+
+// Class GeometryScriptingCore.GeometryScriptDebug
+// 0x0010 (0x0038 - 0x0028)
+class UGeometryScriptDebug final : public UObject
+{
+public:
+	TArray<struct FGeometryScriptDebugMessage>    messages;                                          // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GeometryScriptDebug")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GeometryScriptDebug")
+	}
+	static class UGeometryScriptDebug* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGeometryScriptDebug>();
+	}
+};
+DUMPER7_ASSERTS_UGeometryScriptDebug;
+
+// Class GeometryScriptingCore.GeometryScriptLibrary_ContainmentFunctions
+// 0x0000 (0x0028 - 0x0028)
+class UGeometryScriptLibrary_ContainmentFunctions final : public UBlueprintFunctionLibrary
+{
+public:
+	static class UDynamicMesh* ComputeMeshConvexDecomposition(class UDynamicMesh* TargetMesh, class UDynamicMesh*& CopyToMesh, class UDynamicMesh** CopyToMeshOut, const struct FGeometryScriptConvexDecompositionOptions& Options, class UGeometryScriptDebug* Debug);
+	static class UDynamicMesh* ComputeMeshConvexHull(class UDynamicMesh* TargetMesh, class UDynamicMesh*& CopyToMesh, class UDynamicMesh** CopyToMeshOut, const struct FGeometryScriptMeshSelection& Selection, const struct FGeometryScriptConvexHullOptions& Options, class UGeometryScriptDebug* Debug);
+	static class UDynamicMesh* ComputeMeshSweptHull(class UDynamicMesh* TargetMesh, class UDynamicMesh*& CopyToMesh, class UDynamicMesh** CopyToMeshOut, const struct FTransform& ProjectionFrame, const struct FGeometryScriptSweptHullOptions& Options, class UGeometryScriptDebug* Debug);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GeometryScriptLibrary_ContainmentFunctions")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GeometryScriptLibrary_ContainmentFunctions")
+	}
+	static class UGeometryScriptLibrary_ContainmentFunctions* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGeometryScriptLibrary_ContainmentFunctions>();
+	}
+};
+DUMPER7_ASSERTS_UGeometryScriptLibrary_ContainmentFunctions;
 
 // Class GeometryScriptingCore.GeometryScriptLibrary_ListUtilityFunctions
 // 0x0000 (0x0028 - 0x0028)
@@ -337,6 +295,48 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UGeometryScriptLibrary_MeshBasicEditFunctions;
+
+// Class GeometryScriptingCore.GeometryScriptLibrary_MeshBoneWeightFunctions
+// 0x0000 (0x0028 - 0x0028)
+class UGeometryScriptLibrary_MeshBoneWeightFunctions final : public UBlueprintFunctionLibrary
+{
+public:
+	static void BlendBoneWeights(const TArray<struct FGeometryScriptBoneWeight>& BoneWeightsA, const TArray<struct FGeometryScriptBoneWeight>& BoneWeightsB, float Alpha, TArray<struct FGeometryScriptBoneWeight>* Result, class UGeometryScriptDebug* Debug);
+	static class UDynamicMesh* ComputeSmoothBoneWeights(class UDynamicMesh* TargetMesh, class USkeleton* Skeleton, const struct FGeometryScriptSmoothBoneWeightsOptions& Options, const struct FGeometryScriptBoneWeightProfile& Profile, class UGeometryScriptDebug* Debug);
+	static class UDynamicMesh* CopyBonesFromMesh(class UDynamicMesh* SourceMesh, class UDynamicMesh* TargetMesh, const struct FGeometryScriptCopyBonesFromMeshOptions& Options, class UGeometryScriptDebug* Debug);
+	static class UDynamicMesh* CopyBonesFromSkeleton(class USkeleton* SourceSkeleton, class UDynamicMesh* TargetMesh, const struct FGeometryScriptCopyBonesFromMeshOptions& Options, class UGeometryScriptDebug* Debug);
+	static class UDynamicMesh* DiscardBonesFromMesh(class UDynamicMesh* TargetMesh, class UGeometryScriptDebug* Debug);
+	static class UDynamicMesh* GetAllBonesInfo(class UDynamicMesh* TargetMesh, TArray<struct FGeometryScriptBoneInfo>* BonesInfo, class UGeometryScriptDebug* Debug);
+	static class UDynamicMesh* GetBoneChildren(class UDynamicMesh* TargetMesh, class FName BoneName, bool bRecursive, bool* bIsValidBoneName, TArray<struct FGeometryScriptBoneInfo>* ChildrenInfo, class UGeometryScriptDebug* Debug);
+	static class UDynamicMesh* GetBoneIndex(class UDynamicMesh* TargetMesh, class FName BoneName, bool* bIsValidBoneName, int32* BoneIndex, class UGeometryScriptDebug* Debug);
+	static class UDynamicMesh* GetBoneInfo(class UDynamicMesh* TargetMesh, class FName BoneName, bool* bIsValidBoneName, struct FGeometryScriptBoneInfo* BoneInfo, class UGeometryScriptDebug* Debug);
+	static class UDynamicMesh* GetLargestVertexBoneWeight(class UDynamicMesh* TargetMesh, int32 VertexID, struct FGeometryScriptBoneWeight* BoneWeight, bool* bHasValidBoneWeights, const struct FGeometryScriptBoneWeightProfile& Profile);
+	static class UDynamicMesh* GetMaxBoneWeightIndex(class UDynamicMesh* TargetMesh, bool* bHasBoneWeights, int32* MaxBoneIndex, const struct FGeometryScriptBoneWeightProfile& Profile);
+	static class UDynamicMesh* GetRootBoneName(class UDynamicMesh* TargetMesh, class FName* BoneName, class UGeometryScriptDebug* Debug);
+	static class UDynamicMesh* GetVertexBoneWeights(class UDynamicMesh* TargetMesh, int32 VertexID, TArray<struct FGeometryScriptBoneWeight>* BoneWeights, bool* bHasValidBoneWeights, const struct FGeometryScriptBoneWeightProfile& Profile);
+	static class UDynamicMesh* MeshCopyBoneWeights(class UDynamicMesh* TargetMesh, bool* bProfileExisted, const struct FGeometryScriptBoneWeightProfile& TargetProfile, const struct FGeometryScriptBoneWeightProfile& SourceProfile);
+	static class UDynamicMesh* MeshCreateBoneWeights(class UDynamicMesh* TargetMesh, bool* bProfileExisted, bool bReplaceExistingProfile, const struct FGeometryScriptBoneWeightProfile& Profile);
+	static class UDynamicMesh* MeshHasBoneWeights(class UDynamicMesh* TargetMesh, bool* bHasBoneWeights, const struct FGeometryScriptBoneWeightProfile& Profile);
+	static class UDynamicMesh* PruneBoneWeights(class UDynamicMesh* TargetMesh, const TArray<class FName>& BonesToPrune, const struct FGeometryScriptPruneBoneWeightsOptions& Options, const struct FGeometryScriptBoneWeightProfile& Profile, class UGeometryScriptDebug* Debug);
+	static class UDynamicMesh* SetAllVertexBoneWeights(class UDynamicMesh* TargetMesh, const TArray<struct FGeometryScriptBoneWeight>& BoneWeights, const struct FGeometryScriptBoneWeightProfile& Profile, class UGeometryScriptDebug* Debug);
+	static class UDynamicMesh* SetVertexBoneWeights(class UDynamicMesh* TargetMesh, int32 VertexID, const TArray<struct FGeometryScriptBoneWeight>& BoneWeights, bool* bIsValidVertexID, const struct FGeometryScriptBoneWeightProfile& Profile, class UGeometryScriptDebug* Debug);
+	static class UDynamicMesh* TransferBoneWeightsFromMesh(class UDynamicMesh* SourceMesh, class UDynamicMesh* TargetMesh, const struct FGeometryScriptTransferBoneWeightsOptions& Options, const struct FGeometryScriptMeshSelection& Selection, class UGeometryScriptDebug* Debug);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GeometryScriptLibrary_MeshBoneWeightFunctions")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GeometryScriptLibrary_MeshBoneWeightFunctions")
+	}
+	static class UGeometryScriptLibrary_MeshBoneWeightFunctions* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGeometryScriptLibrary_MeshBoneWeightFunctions>();
+	}
+};
+DUMPER7_ASSERTS_UGeometryScriptLibrary_MeshBoneWeightFunctions;
 
 // Class GeometryScriptingCore.GeometryScriptLibrary_MeshBooleanFunctions
 // 0x0000 (0x0028 - 0x0028)
