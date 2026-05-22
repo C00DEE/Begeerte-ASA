@@ -144,13 +144,11 @@ namespace g_ESP {
         std::wstring wstr = converter.from_bytes(text);
         SDK::FString fText(wstr.c_str());
 
+        // 缩放字体
+        SDK::FVector2D scaleSize = SDK::FVector2D{ 1.0f, 1.0f };
+
         // 获取精确宽高
-        SDK::FVector2D textSize = Canvas->K2_TextSize(font, fText, SDK::FVector2D{ 1.0f, 1.0f });
-
-        // 防止部分字体未完全加载时返回0尺寸导致全部挤在中心
-        if (textSize.X <= 0.0f || textSize.X > 2000.0f) textSize.X = text.length() * 8.0f;
-        if (textSize.Y <= 0.0f || textSize.Y > 2000.0f) textSize.Y = 16.0f;
-
+        SDK::FVector2D textSize = Canvas->K2_TextSize(font, fText, scaleSize);
         SDK::FVector2D drawPos;
 
         // 【关键修复2】：补全全部四个方向的 barOffset（解决文字和血条重叠的问题）
@@ -166,22 +164,22 @@ namespace g_ESP {
         }
         else if (pos == FlagPos::Top) {
             float barOffset = barMgr ? barMgr->GetTopOffset() : 0.0f;
-            float centerX = (rect.topLeft.X + rect.bottomRight.X) / 2.0f;
-            drawPos = { (float)(centerX - textSize.X / 2.0f), (float)(rect.topLeft.Y - barOffset - topY - textSize.Y - 3.0f) };
+            float centerX = (rect.topLeft.X + rect.bottomRight.X) * 0.5f;
+            drawPos = { (float)(centerX - textSize.X * 0.5f), (float)(rect.topLeft.Y - barOffset - topY - textSize.Y - 3.0f) };
             topY += textSize.Y + 1.0f;
         }
         else if (pos == FlagPos::Bottom) {
             float barOffset = barMgr ? barMgr->GetBottomOffset() : 0.0f;
-            float centerX = (rect.topLeft.X + rect.bottomRight.X) / 2.0f;
-            drawPos = { (float)(centerX - textSize.X / 2.0f), (float)(rect.bottomRight.Y + barOffset + bottomY + 3.0f) };
+            float centerX = (rect.topLeft.X + rect.bottomRight.X) * 0.5f;
+            drawPos = { (float)(centerX - textSize.X * 0.5f), (float)(rect.bottomRight.Y + barOffset + bottomY + 3.0f) };
             bottomY += textSize.Y + 1.0f;
         }
 
         color.A *= alphaMult;
-        SDK::FLinearColor shadowCol = { 0.0f, 0.0f, 0.0f, color.A * 0.8f };
+        SDK::FLinearColor shadowCol = { 0.0f, 0.0f, 0.0f, color.A };
 
         // 渲染文字
-        Canvas->K2_DrawText(font, fText, drawPos, SDK::FVector2D{ 1.0f, 1.0f }, color, 0.0f, shadowCol, SDK::FVector2D{ 1.0f, 1.0f }, false, false, true, shadowCol);
+        Canvas->K2_DrawText(font, fText, drawPos, scaleSize, color, 0.0f, shadowCol, SDK::FVector2D{ 1.0f, 1.0f }, false, false, true, shadowCol);
     }
 
     BoxRect DrawBox(SDK::UCanvas* Canvas, SDK::AActor* entity, float r, float g, float b, float a, float width_scale, bool bTestOnly) {
@@ -203,8 +201,8 @@ namespace g_ESP {
 
             float height = std::abs(screenBottom.Y - screenTop.Y);
             float width = height * width_scale;
-            rect.topLeft = { (float)(screenTop.X - width / 2.0f), (float)screenTop.Y };
-            rect.bottomRight = { (float)(screenTop.X + width / 2.0f), (float)screenBottom.Y };
+            rect.topLeft = { (float)(screenTop.X - width * 0.5f), (float)screenTop.Y };
+            rect.bottomRight = { (float)(screenTop.X + width * 0.5f), (float)screenBottom.Y };
             rect.valid = true;
 
             if (!bTestOnly && a > 0.1f && Canvas) {
