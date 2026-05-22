@@ -16,26 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function UI_CFCore_Tag_PreviewPremium.UI_CFCore_Tag_PreviewPremium_C.UpdateText
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const class FText&                      InText                                                 (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UUI_CFCore_Tag_PreviewPremium_C::UpdateText(const class FText& InText)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_Tag_PreviewPremium_C", "UpdateText");
-
-	Params::UI_CFCore_Tag_PreviewPremium_C_UpdateText Parms{};
-
-	Parms.InText = std::move(InText);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function UI_CFCore_Tag_PreviewPremium.UI_CFCore_Tag_PreviewPremium_C.GetRootCFWidget
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
@@ -54,6 +34,26 @@ void UUI_CFCore_Tag_PreviewPremium_C::GetRootCFWidget(class UPanelWidget** RootP
 
 	if (RootPanelWidget != nullptr)
 		*RootPanelWidget = Parms.RootPanelWidget;
+}
+
+
+// Function UI_CFCore_Tag_PreviewPremium.UI_CFCore_Tag_PreviewPremium_C.UpdateText
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FText&                      InText                                                 (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UUI_CFCore_Tag_PreviewPremium_C::UpdateText(const class FText& InText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_CFCore_Tag_PreviewPremium_C", "UpdateText");
+
+	Params::UI_CFCore_Tag_PreviewPremium_C_UpdateText Parms{};
+
+	Parms.InText = std::move(InText);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

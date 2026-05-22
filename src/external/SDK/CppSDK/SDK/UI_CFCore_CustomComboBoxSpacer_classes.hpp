@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "CFCoreWidget_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -26,9 +26,9 @@ public:
 	double                                        Size;                                              // 0x0870(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
-	void PreConstruct(bool IsDesignTime);
-	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
 	void ExecuteUbergraph_UI_CFCore_CustomComboBoxSpacer(int32 EntryPoint);
+	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
+	void PreConstruct(bool IsDesignTime);
 
 public:
 	static class UClass* StaticClass()

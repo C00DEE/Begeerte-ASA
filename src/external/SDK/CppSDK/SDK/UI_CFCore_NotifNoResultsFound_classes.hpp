@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "CFCoreWidget_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -28,10 +28,10 @@ public:
 	class UTextBlock*                             TEXT_SearchModName;                                // 0x0880(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void UpdateWidget(const class FText& InText);
-	void ExecuteUbergraph_UI_CFCore_NotifNoResultsFound(int32 EntryPoint);
-	void Construct();
 	void ApplyThemeSettingsToAll();
+	void Construct();
+	void ExecuteUbergraph_UI_CFCore_NotifNoResultsFound(int32 EntryPoint);
+	void UpdateWidget(const class FText& InText);
 
 public:
 	static class UClass* StaticClass()

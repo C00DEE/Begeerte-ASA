@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "CFCoreWidget_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -29,8 +29,8 @@ public:
 	TMulticastInlineDelegate<void()>              OnClick;                                           // 0x0888(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
-	void ExecuteUbergraph_UI_CFCore_Button_Player_PlayPause(int32 EntryPoint);
 	void BndEvt__UI_Button_ScreenshotNavigation_IMG_PrevImage_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
+	void ExecuteUbergraph_UI_CFCore_Button_Player_PlayPause(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

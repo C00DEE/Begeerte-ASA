@@ -25,8 +25,8 @@ public:
 	class UTextBlock*                             TEXT_DownloadSize;                                 // 0x0870(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void SetSizeText(const class FText& InText);
 	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
+	void SetSizeText(const class FText& InText);
 
 public:
 	static class UClass* StaticClass()

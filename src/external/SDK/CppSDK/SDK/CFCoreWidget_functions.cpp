@@ -16,58 +16,37 @@
 
 SDK_NAMESPACE_START
 
-// Function CFCoreWidget.CFCoreWidget_C.Recursive_ApplyFontToAllWidgets
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function CFCoreWidget.CFCoreWidget_C.ApplyThemeSettingsToAll
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void UCFCoreWidget_C::Recursive_ApplyFontToAllWidgets()
+void UCFCoreWidget_C::ApplyThemeSettingsToAll()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CFCoreWidget_C", "Recursive_ApplyFontToAllWidgets");
+		Func = Class->GetFunction("CFCoreWidget_C", "ApplyThemeSettingsToAll");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function CFCoreWidget.CFCoreWidget_C.PreConstruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function CFCoreWidget.CFCoreWidget_C.ExecuteUbergraph_CFCoreWidget
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UCFCoreWidget_C::PreConstruct(bool IsDesignTime)
+void UCFCoreWidget_C::ExecuteUbergraph_CFCoreWidget(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CFCoreWidget_C", "PreConstruct");
+		Func = Class->GetFunction("CFCoreWidget_C", "ExecuteUbergraph_CFCoreWidget");
 
-	Params::CFCoreWidget_C_PreConstruct Parms{};
+	Params::CFCoreWidget_C_ExecuteUbergraph_CFCoreWidget Parms{};
 
-	Parms.IsDesignTime = IsDesignTime;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function CFCoreWidget.CFCoreWidget_C.GetRootCFWidget
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class UPanelWidget**                    RootPanelWidget                                        (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-
-void UCFCoreWidget_C::GetRootCFWidget(class UPanelWidget** RootPanelWidget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CFCoreWidget_C", "GetRootCFWidget");
-
-	Params::CFCoreWidget_C_GetRootCFWidget Parms{};
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	if (RootPanelWidget != nullptr)
-		*RootPanelWidget = Parms.RootPanelWidget;
 }
 
 
@@ -99,35 +78,56 @@ void UCFCoreWidget_C::Get_All_Text_Blocks(class UPanelWidget* Root_Widget, TArra
 }
 
 
-// Function CFCoreWidget.CFCoreWidget_C.ExecuteUbergraph_CFCoreWidget
-// (Final, UbergraphFunction, HasDefaults)
+// Function CFCoreWidget.CFCoreWidget_C.GetRootCFWidget
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UPanelWidget**                    RootPanelWidget                                        (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void UCFCoreWidget_C::ExecuteUbergraph_CFCoreWidget(int32 EntryPoint)
+void UCFCoreWidget_C::GetRootCFWidget(class UPanelWidget** RootPanelWidget)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CFCoreWidget_C", "ExecuteUbergraph_CFCoreWidget");
+		Func = Class->GetFunction("CFCoreWidget_C", "GetRootCFWidget");
 
-	Params::CFCoreWidget_C_ExecuteUbergraph_CFCoreWidget Parms{};
+	Params::CFCoreWidget_C_GetRootCFWidget Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (RootPanelWidget != nullptr)
+		*RootPanelWidget = Parms.RootPanelWidget;
+}
+
+
+// Function CFCoreWidget.CFCoreWidget_C.PreConstruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCFCoreWidget_C::PreConstruct(bool IsDesignTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CFCoreWidget_C", "PreConstruct");
+
+	Params::CFCoreWidget_C_PreConstruct Parms{};
+
+	Parms.IsDesignTime = IsDesignTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function CFCoreWidget.CFCoreWidget_C.ApplyThemeSettingsToAll
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function CFCoreWidget.CFCoreWidget_C.Recursive_ApplyFontToAllWidgets
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void UCFCoreWidget_C::ApplyThemeSettingsToAll()
+void UCFCoreWidget_C::Recursive_ApplyFontToAllWidgets()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CFCoreWidget_C", "ApplyThemeSettingsToAll");
+		Func = Class->GetFunction("CFCoreWidget_C", "Recursive_ApplyFontToAllWidgets");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "CFCoreWidget_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -27,9 +27,9 @@ public:
 	class UVerticalBox*                           VerBox_NoInstalledMods;                            // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
-	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
 	void ExecuteUbergraph_UI_NoModsFoundInCategoty(int32 EntryPoint);
+	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
+	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
 
 public:
 	static class UClass* StaticClass()

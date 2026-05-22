@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "CFCoreWidget_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -27,9 +27,9 @@ public:
 	class UOverlay*                               Overlay_0;                                         // 0x0878(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void PreConstruct(bool IsDesignTime);
-	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
 	void ExecuteUbergraph_UI_NoModProjects(int32 EntryPoint);
+	void GetRootCFWidget(class UPanelWidget** RootPanelWidget);
+	void PreConstruct(bool IsDesignTime);
 
 public:
 	static class UClass* StaticClass()

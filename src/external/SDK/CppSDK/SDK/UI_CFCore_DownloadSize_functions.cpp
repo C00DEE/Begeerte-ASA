@@ -16,26 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function UI_CFCore_DownloadSize.UI_CFCore_DownloadSize_C.SetSizeText
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const class FText&                      InText                                                 (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UUI_CFCore_DownloadSize_C::SetSizeText(const class FText& InText)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UI_CFCore_DownloadSize_C", "SetSizeText");
-
-	Params::UI_CFCore_DownloadSize_C_SetSizeText Parms{};
-
-	Parms.InText = std::move(InText);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function UI_CFCore_DownloadSize.UI_CFCore_DownloadSize_C.GetRootCFWidget
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
@@ -54,6 +34,26 @@ void UUI_CFCore_DownloadSize_C::GetRootCFWidget(class UPanelWidget** RootPanelWi
 
 	if (RootPanelWidget != nullptr)
 		*RootPanelWidget = Parms.RootPanelWidget;
+}
+
+
+// Function UI_CFCore_DownloadSize.UI_CFCore_DownloadSize_C.SetSizeText
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FText&                      InText                                                 (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UUI_CFCore_DownloadSize_C::SetSizeText(const class FText& InText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_CFCore_DownloadSize_C", "SetSizeText");
+
+	Params::UI_CFCore_DownloadSize_C_SetSizeText Parms{};
+
+	Parms.InText = std::move(InText);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
