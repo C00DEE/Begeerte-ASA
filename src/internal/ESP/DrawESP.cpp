@@ -208,12 +208,12 @@ namespace g_DrawESP {
                     if (relation == g_ESP::RelationType::Team) {
                         bShowRagdoll = g_Config::bDrawRagdollTeam;
                         RagdollCol = g_Config::RagdollColorTeam;
-                        DistCol = g_Config::DistanceColorTeam;
+                        DistCol = g_Config::RagdollColorTeam;
                     }
                     else {
                         bShowRagdoll = g_Config::bDrawRagdoll;
                         RagdollCol = g_Config::RagdollColor;
-                        DistCol = g_Config::DistanceColor;
+                        DistCol = g_Config::RagdollColor;
                     }
 
                     if (!bShowRagdoll) {

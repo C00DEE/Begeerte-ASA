@@ -219,7 +219,7 @@ namespace g_Aimbot {
 		TargetInfo Best = GetBestTarget();
 
 		if (g_Config::bDrawAimPoints && Best.bIsValid) {
-			VisualizeTargetBones(Best.Character, LocalPC);
+			// VisualizeTargetBones(Best.Character, LocalPC);
 		}
 
 		if (Best.bIsValid) {
@@ -276,6 +276,6 @@ namespace g_Aimbot {
 			// 这里根据需求只在有目标时补偿 Aimbot 轨迹
 		}
 
-		DrawStatusText(Best);
+		// DrawStatusText(Best);
 	}
 }
