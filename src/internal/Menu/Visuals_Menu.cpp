@@ -19,14 +19,14 @@ namespace g_DrawImGui {
         const char* secTeam = LanguageManager::Visuals_Menu::SectionTeam;
         const char* secTeamExtra = LanguageManager::Visuals_Menu::SectionTeamExtra;
 
-        if (ImGui::BeginTabItem(tabVisuals)) {
-            ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(14.0f, 14.0f));
-            BeginTabRegion("VisualsRegion");
+        ImGui::BeginDisabled(!g_Hook::PostRenderOK);
+        {
 
-            ImGui::BeginDisabled(!g_Hook::PostRenderOK);
-            {
-
+            if (ImGui::BeginTabItem(tabVisuals)) {
+                ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(14.0f, 14.0f));
+                BeginTabRegion("VisualsRegion");
                 ImGui::TextColored(ThemeColors::GetAccent(), secGlobal);
+
                 DrawAnimatedSeparator();
                 DrawColorPickerRow(LanguageManager::Visuals_Menu::Box, &g_Config::bDrawBox, "BoxCol1", g_Config::BoxColor);
                 DrawColorPickerRow(LanguageManager::Visuals_Menu::Name, &g_Config::bDrawName, "NameCol1", g_Config::NameColor);
