@@ -141,6 +141,8 @@ bool ConfigManager::SaveConfig(const std::string& filename) {
         CONFIG_BOOL(g_Config::bAimbotEnabled);
         CONFIG_FLOAT(g_Config::AimbotFOV);
         CONFIG_FLOAT(g_Config::AimbotSmooth);
+        CONFIG_FLOAT(g_Config::AimbotRCX);
+        CONFIG_FLOAT(g_Config::AimbotRCY);
         file << "\n";
 
         // °â»ú
@@ -318,6 +320,8 @@ bool ConfigManager::LoadConfig(const std::string& filename) {
         LOAD_BOOL(g_Config::bAimbotEnabled);
         LOAD_FLOAT(g_Config::AimbotFOV);
         LOAD_FLOAT(g_Config::AimbotSmooth);
+        LOAD_FLOAT(g_Config::AimbotRCX);
+        LOAD_FLOAT(g_Config::AimbotRCY);
 
         // °â»ú
         LOAD_BOOL(g_Config::bTriggerbotEnabled);

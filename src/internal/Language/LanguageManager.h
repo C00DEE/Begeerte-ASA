@@ -76,7 +76,10 @@ public:
         static const char* AimbotEnabled;
         static const char* AimbotFOV;
         static const char* AimbotSmooth;
+        static const char* AimbotRCX;
+        static const char* AimbotRCY;
         static const char* TriggerbotEnabled;
+        static const char* TriggerHitChance;
 
     };
 

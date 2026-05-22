@@ -37,12 +37,14 @@ namespace g_Config {
     inline bool bAimbotEnabled = false;
     inline float AimbotFOV = 30.0f;
     inline float AimbotSmooth = 50.0f;
+    inline float AimbotRCX = 100.0f;
+    inline float AimbotRCY = 100.0f;
 
     // °â»ú
     inline bool bTriggerbotEnabled = false;
     inline float TriggerDelay = 0.0f;
     inline float TriggerRandomPercent = 0.0f;
-    inline float TriggerHitChance = 100.0f;
+    inline float TriggerHitChance = 50.0f;
 
     // µôÂäÎï
     inline bool bDrawDroppedItems = true;
