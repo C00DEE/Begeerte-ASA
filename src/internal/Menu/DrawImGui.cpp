@@ -7,9 +7,9 @@
 
 #include "../../external/Minimal-D3D12-Hook-ImGui/Main/mdx12_api.h"
 #include "../../external/SDK/SDK_Headers.hpp"
-#include "../ESP/ESP.h"
+// #include "../ESP/ESP.h"
 #include "../Config/Configs.h"
-#include "../ESP/DrawESP.h"
+// #include "../ESP/DrawESP.h"
 #include "ConfigImGui.h"
 #include "DrawImGui.h"
 #include "Aimbot_Menu.h"
@@ -191,7 +191,7 @@ namespace g_DrawImGui {
 		}
 
 		// g_Aimbot::Tick();
-		g_DrawESP::DrawESP();
+		// g_DrawESP::DrawESP();
 		g_LogManager::Run();
 		LuaManager::Get().Lua_OnPaint();
 	}

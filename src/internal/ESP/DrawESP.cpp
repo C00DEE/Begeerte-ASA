@@ -1,5 +1,4 @@
 // DrawESP.cpp
-#include "../../external/Minimal-D3D12-Hook-ImGui/Main/mdx12_api.h"
 #include "../../external/SDK/SDK_Headers.hpp"
 #include "ESP.h"
 #include "../Config/Configs.h"
@@ -11,22 +10,42 @@
 #include <cmath>
 #include <memory>
 #include <cstdio>
+#include <chrono>
+
+namespace {
+    // 将 g_Util 中的 ImU32 等价格式转换为 FLinearColor
+    SDK::FLinearColor U32ToFLinearColor(uint32_t color) {
+        float r = (float)(color & 0xFF) / 255.0f;
+        float g = (float)((color >> 8) & 0xFF) / 255.0f;
+        float b = (float)((color >> 16) & 0xFF) / 255.0f;
+        float a = (float)((color >> 24) & 0xFF) / 255.0f;
+        return SDK::FLinearColor{ r, g, b, a };
+    }
+
+    SDK::FLinearColor GetHealthColorLinear(float percentage) {
+        percentage = std::clamp(percentage, 0.0f, 1.0f);
+        if (percentage > 0.5f)
+            return SDK::FLinearColor{ (1.0f - percentage) * 2.0f, 1.0f, 0.0f, 1.0f };
+        else
+            return SDK::FLinearColor{ 1.0f, percentage * 2.0f, 0.0f, 1.0f };
+    }
+}
 
 namespace g_DrawESP {
     static constexpr float FADE_IN_TIME = 0.10f;
     static constexpr float FADE_OUT_TIME = 0.20f;
 
     struct CachedFlag {
-        std::string text;
-        ImU32       color;
-        g_ESP::FlagPos pos;
+        std::string       text;
+        SDK::FLinearColor color;
+        g_ESP::FlagPos    pos;
     };
 
     struct CachedBar {
-        float               currentValue;
-        float               maxValue;
-        ImU32               color;
-        g_ESP::BarPos       pos;
+        float                 currentValue;
+        float                 maxValue;
+        SDK::FLinearColor     color;
+        g_ESP::BarPos         pos;
         g_ESP::BarOrientation orientation;
     };
 
@@ -51,9 +70,9 @@ namespace g_DrawESP {
         std::vector<CachedFlag> flags;
         std::vector<CachedBar>  bars;
 
-        ImU32  boxColor = 0;
-        ImU32  nameColor = 0;
-        ImU32  distanceColor = 0;
+        SDK::FLinearColor boxColor{ 0,0,0,0 };
+        SDK::FLinearColor nameColor{ 0,0,0,0 };
+        SDK::FLinearColor distanceColor{ 0,0,0,0 };
         float  configBoxAlpha = 1.0f;
         float  targetAlpha = 0.0f;
         float  alpha = 0.0f;
@@ -87,8 +106,10 @@ namespace g_DrawESP {
     static std::vector<uintptr_t>      s_toErase;
 
     // 主函数
-    void DrawESP()
+    void DrawESP(SDK::UCanvas* Canvas)
     {
+        if (!Canvas) return;
+
         SDK::UWorld* World = SDK::UWorld::GetWorld();
         if (!World || !World->GameState || !World->PersistentLevel) return;
 
@@ -110,11 +131,13 @@ namespace g_DrawESP {
             return;
         }
 
-        // 只调用一次 GetIO()
-        ImGuiIO& io = ImGui::GetIO();
-        const float screenW = io.DisplaySize.x;
-        const float screenH = io.DisplaySize.y;
-        const float deltaTime = io.DeltaTime;
+        const float screenW = Canvas->SizeX;
+        const float screenH = Canvas->SizeY;
+
+        static auto s_lastTime = std::chrono::high_resolution_clock::now();
+        auto s_currentTime = std::chrono::high_resolution_clock::now();
+        const float deltaTime = std::chrono::duration<float>(s_currentTime - s_lastTime).count();
+        s_lastTime = s_currentTime;
 
         SDK::APrimalCharacter* LocalChar = static_cast<SDK::APrimalCharacter*>(LocalPC->Pawn);
 
@@ -199,9 +222,10 @@ namespace g_DrawESP {
                         continue;
                     }
 
-                    g_ESP::BoxRect rect = g_ESP::DrawBox(TargetActor,
-                        RagdollCol[0] * 255.0f, RagdollCol[1] * 255.0f,
-                        RagdollCol[2] * 255.0f, RagdollCol[3] * 255.0f, 0.5f, true);
+                    // FLinearColor要求0-1范围，因此直接传入配置参数（原逻辑为参数*255）
+                    g_ESP::BoxRect rect = g_ESP::DrawBox(Canvas, TargetActor,
+                        RagdollCol[0], RagdollCol[1],
+                        RagdollCol[2], RagdollCol[3], 0.5f, true);
 
                     if (!rect.valid) {
                         entry.targetAlpha = 0.0f;
@@ -209,8 +233,8 @@ namespace g_DrawESP {
                     }
 
                     entry.cachedRect = rect;
-                    entry.boxColor = g_Util::GetU32Color(RagdollCol);
-                    entry.distanceColor = g_Util::GetU32Color(DistCol);
+                    entry.boxColor = SDK::FLinearColor{ RagdollCol[0], RagdollCol[1], RagdollCol[2], RagdollCol[3] };
+                    entry.distanceColor = SDK::FLinearColor{ DistCol[0], DistCol[1], DistCol[2], DistCol[3] };
                     entry.configBoxAlpha = RagdollCol[3];
                     entry.targetAlpha = 1.0f;
                     entry.aliveThisFrame = true;
@@ -238,7 +262,7 @@ namespace g_DrawESP {
                     }
                     if (entry.shouldDrawDistance) {
                         entry.flags.push_back({
-                            g_Util::IntToStr((int)dist) + "m",
+                            std::to_string((int)dist) + "m",
                             entry.distanceColor,
                             g_ESP::FlagPos::Right
                             });
@@ -292,13 +316,13 @@ namespace g_DrawESP {
                     TorporColor = g_Config::TorporColor;
                 }
 
-                g_ESP::BoxRect rect = g_ESP::DrawBox(TargetActor,
-                    BoxColor[0] * 255.0f, BoxColor[1] * 255.0f,
-                    BoxColor[2] * 255.0f, BoxColor[3] * 255.0f, 0.5f, true);
+                g_ESP::BoxRect rect = g_ESP::DrawBox(Canvas, TargetActor,
+                    BoxColor[0], BoxColor[1],
+                    BoxColor[2], BoxColor[3], 0.5f, true);
 
                 entry.cachedRect = rect;
-                entry.boxColor = g_Util::GetU32Color(BoxColor);
-                entry.nameColor = g_Util::GetU32Color(NameColor);
+                entry.boxColor = SDK::FLinearColor{ BoxColor[0], BoxColor[1], BoxColor[2], BoxColor[3] };
+                entry.nameColor = SDK::FLinearColor{ NameColor[0], NameColor[1], NameColor[2], NameColor[3] };
                 entry.configBoxAlpha = BoxColor[3];
                 entry.isItem = false;
                 entry.isOOF = false;
@@ -340,22 +364,22 @@ namespace g_DrawESP {
 
                 if (bDrawHealthBar) {
                     const float healthPct = (entry.cachedMaxHP > 0.0f) ? (entry.cachedHP / entry.cachedMaxHP) : 0.0f;
-                    const ImU32 hpCol = g_Util::GetHealthColor(healthPct);
-                    entry.flags.push_back({ g_Util::IntToStr((int)entry.cachedHP), hpCol, g_ESP::FlagPos::Left });
+                    const SDK::FLinearColor hpCol = GetHealthColorLinear(healthPct);
+                    entry.flags.push_back({ std::to_string((int)entry.cachedHP), hpCol, g_ESP::FlagPos::Left });
                     entry.bars.push_back({ entry.cachedHP, entry.cachedMaxHP, hpCol, g_ESP::BarPos::Left, g_ESP::BarOrientation::Vertical });
                 }
 
                 if (bDrawTorpor && entry.cachedMaxTorpor > 0.0f) {
-                    const ImU32 torporCol = g_Util::GetU32Color(TorporColor);
+                    const SDK::FLinearColor torporCol = SDK::FLinearColor{ TorporColor[0], TorporColor[1], TorporColor[2], TorporColor[3] };
                     entry.flags.push_back({
-                        g_Util::IntToStr((int)entry.cachedTorpor) + "/" + g_Util::IntToStr((int)entry.cachedMaxTorpor),
+                        std::to_string((int)entry.cachedTorpor) + "/" + std::to_string((int)entry.cachedMaxTorpor),
                         torporCol, g_ESP::FlagPos::Bottom
                         });
                     entry.bars.push_back({ entry.cachedTorpor, entry.cachedMaxTorpor, torporCol, g_ESP::BarPos::Bottom, g_ESP::BarOrientation::Horizontal });
                 }
 
                 if (bDrawDistance)
-                    entry.flags.push_back({ g_Util::IntToStr((int)dist) + "m", g_Util::GetU32Color(DistanceColor), g_ESP::FlagPos::Right });
+                    entry.flags.push_back({ std::to_string((int)dist) + "m", SDK::FLinearColor{DistanceColor[0], DistanceColor[1], DistanceColor[2], DistanceColor[3]}, g_ESP::FlagPos::Right });
 
                 // 屏幕空间可见性判断
                 SDK::FVector2D screenPos;
@@ -363,18 +387,8 @@ namespace g_DrawESP {
                     const bool onScreen = screenPos.X > 0 && screenPos.X < screenW
                         && screenPos.Y > 0 && screenPos.Y < screenH;
                     if (onScreen) {
-                        entry.targetAlpha = entry.configBoxAlpha;
+                        entry.targetAlpha = 1.0f;
                         entry.isOOF = false;
-                    }
-                    else if (g_Config::bEnableOOF) {
-                        entry.isOOF = true;
-                        entry.targetAlpha = entry.configBoxAlpha;
-                        // OOF 只保留名字与距离
-                        entry.flags.clear();
-                        if (bDrawName && !entry.name.empty())
-                            entry.flags.push_back({ entry.name, entry.nameColor, g_ESP::FlagPos::Right });
-                        if (bDrawDistance)
-                            entry.flags.push_back({ g_Util::IntToStr((int)dist) + "m", g_Util::GetU32Color(DistanceColor), g_ESP::FlagPos::Right});
                     }
                     else {
                         entry.targetAlpha = 0.0f;
@@ -434,8 +448,8 @@ namespace g_DrawESP {
                 bool bOnScreen = bIsProjected && (screenPos.X > 0 && screenPos.X < screenW && screenPos.Y > 0 && screenPos.Y < screenH);
 
                 if (bIsProjected) {
-                    entry.cachedRect.topLeft = ImVec2(screenPos.X - 5, screenPos.Y - 5);
-                    entry.cachedRect.bottomRight = ImVec2(screenPos.X + 5, screenPos.Y + 5);
+                    entry.cachedRect.topLeft = SDK::FVector2D{ (float)(screenPos.X - 5), (float)(screenPos.Y - 5) };
+                    entry.cachedRect.bottomRight = SDK::FVector2D{ (float)(screenPos.X + 5), (float)(screenPos.Y + 5) };
                     entry.cachedRect.valid = true;
                 }
 
@@ -463,20 +477,19 @@ namespace g_DrawESP {
 
                 const std::string className = Item->Class ? Item->Class->GetName() : "";
                 const int         quantity = Item->ItemQuantity;
-                const ImU32       finalCol = g_Util::ResolveDroppedItemColor(className, Item->ItemRating, quantity);
+                const SDK::FLinearColor finalCol = U32ToFLinearColor(g_Util::ResolveDroppedItemColor(className, Item->ItemRating, quantity));
 
                 entry.flags.clear();
                 entry.bars.clear();
 
                 std::string label = "[" + itemName + "";
-                if (quantity > 1) label += " x" + g_Util::IntToStr(quantity);
+                if (quantity > 1) label += " x" + std::to_string(quantity);
                 if (Item->bIsBlueprint) label = "[BP] " + label;
 
-                entry.flags.push_back({ std::move(label) + "] (" + g_Util::IntToStr((int)dist) + "m" + ")", finalCol, g_ESP::FlagPos::Right});
-                // entry.flags.push_back({ g_Util::IntToStr((int)dist) + "m", g_Util::GetU32Color(g_Config::DroppedItemDistanceColor), g_ESP::FlagPos::Right });
+                entry.flags.push_back({ std::move(label) + "] (" + std::to_string((int)dist) + "m" + ")", finalCol, g_ESP::FlagPos::Right });
 
                 entry.boxColor = finalCol;
-                entry.nameColor = g_Util::GetU32Color(g_Config::DroppedItemNameColor);
+                entry.nameColor = SDK::FLinearColor{ g_Config::DroppedItemNameColor[0], g_Config::DroppedItemNameColor[1], g_Config::DroppedItemNameColor[2], g_Config::DroppedItemNameColor[3] };
                 entry.shouldDrawBox = false;
                 entry.shouldDrawHealthBar = false;
                 entry.shouldDrawName = false;
@@ -524,8 +537,8 @@ namespace g_DrawESP {
                 bool bProjected = LocalPC && LocalPC->ProjectWorldLocationToScreen(actorLoc, &screenPos, false);
 
                 if (bProjected) {
-                    entry.cachedRect.topLeft = ImVec2(screenPos.X - 2, screenPos.Y - 2);
-                    entry.cachedRect.bottomRight = ImVec2(screenPos.X + 2, screenPos.Y + 2);
+                    entry.cachedRect.topLeft = SDK::FVector2D{ (float)(screenPos.X - 2), (float)(screenPos.Y - 2) };
+                    entry.cachedRect.bottomRight = SDK::FVector2D{ (float)(screenPos.X + 2), (float)(screenPos.Y + 2) };
                     entry.cachedRect.valid = true;
                 }
 
@@ -548,7 +561,7 @@ namespace g_DrawESP {
                 const float maxHP = Structure->MaxHealth;
                 const float healthPct = (maxHP > 0.0f) ? (curHP / maxHP) : 0.0f;
                 const int   hpPctInt = (int)(healthPct * 100.0f);
-                const ImU32 hpColor = g_Util::GetHealthColor(healthPct);
+                const SDK::FLinearColor hpColor = GetHealthColorLinear(healthPct);
 
                 std::string owner = Structure->OwnerName.ToString();
                 std::string ownerStf = (owner.empty() || owner == "None") ? "" : " [" + owner + "]";
@@ -557,10 +570,10 @@ namespace g_DrawESP {
                 entry.bars.clear();
 
                 entry.flags.push_back({
-                    "[" + sName + "]" + std::move(ownerStf) + " [" + g_Util::IntToStr(hpPctInt) + "%] (" + g_Util::IntToStr((int)dist) + "m" + ")",
+                    "[" + sName + "]" + std::move(ownerStf) + " [" + std::to_string(hpPctInt) + "%] (" + std::to_string((int)dist) + "m" + ")",
                     hpColor,
                     g_ESP::FlagPos::Right
-                });
+                    });
 
                 entry.shouldDrawTorpor = false;
             }
@@ -599,8 +612,8 @@ namespace g_DrawESP {
                 : g_Config::WaterMaxCount;
 
             // 颜色预先计算，不在循环内重复调用
-            const ImU32 waterColor = g_Util::GetU32Color(g_Config::WaterNameColor);
-            const ImU32 waterDistColor = g_Util::GetU32Color(g_Config::WaterDistanceColor);
+            const SDK::FLinearColor waterColor = SDK::FLinearColor{ g_Config::WaterNameColor[0], g_Config::WaterNameColor[1], g_Config::WaterNameColor[2], g_Config::WaterNameColor[3] };
+            const SDK::FLinearColor waterDistColor = SDK::FLinearColor{ g_Config::WaterDistanceColor[0], g_Config::WaterDistanceColor[1], g_Config::WaterDistanceColor[2], g_Config::WaterDistanceColor[3] };
 
             // 水源标签静态缓存，避免每帧宽字符转换
             static const std::string kWaterLabel = SDK::FString(L"[水源").ToString();
@@ -612,8 +625,8 @@ namespace g_DrawESP {
 
                 SDK::FVector2D currentScreenPos;
                 if (LocalPC && LocalPC->ProjectWorldLocationToScreen(wc.surfaceLoc, &currentScreenPos, false)) {
-                    wEntry.cachedRect.topLeft = ImVec2(currentScreenPos.X - 2, currentScreenPos.Y - 2);
-                    wEntry.cachedRect.bottomRight = ImVec2(currentScreenPos.X + 2, currentScreenPos.Y + 2);
+                    wEntry.cachedRect.topLeft = SDK::FVector2D{ (float)(currentScreenPos.X - 2), (float)(currentScreenPos.Y - 2) };
+                    wEntry.cachedRect.bottomRight = SDK::FVector2D{ (float)(currentScreenPos.X + 2), (float)(currentScreenPos.Y + 2) };
                     wEntry.cachedRect.valid = true;
 
                     const bool onScreen = currentScreenPos.X > 0 && currentScreenPos.X < screenW
@@ -626,7 +639,7 @@ namespace g_DrawESP {
 
                         wEntry.flags.clear();
                         wEntry.bars.clear();
-                        wEntry.flags.push_back({ kWaterLabel + "] (" + g_Util::IntToStr((int)wc.dist) + "m" + ")", waterColor, g_ESP::FlagPos::Right });
+                        wEntry.flags.push_back({ kWaterLabel + "] (" + std::to_string((int)wc.dist) + "m" + ")", waterColor, g_ESP::FlagPos::Right });
 
                         wEntry.shouldDrawBox = false;
                         wEntry.shouldDrawHealthBar = false;
@@ -663,40 +676,22 @@ namespace g_DrawESP {
             }
 
             if (entry.alpha > 0.001f) {
-                const float alpha255 = entry.alpha * 255.0f;
-                ImDrawList* drawList = ImGui::GetBackgroundDrawList();
-
                 if (!entry.isItem && entry.shouldDrawBox && entry.cachedRect.valid) {
-                    ImVec4 boxF = ImGui::ColorConvertU32ToFloat4(entry.boxColor);
-                    float  drawA = entry.configBoxAlpha * entry.alpha;
-                    ImU32  bgShadow = ImGui::ColorConvertFloat4ToU32(ImVec4(0, 0, 0, drawA));
-                    ImU32  col = ImGui::ColorConvertFloat4ToU32(ImVec4(boxF.x, boxF.y, boxF.z, drawA));
-                    drawList->AddRect(
-                        ImVec2(entry.cachedRect.topLeft.x - 1, entry.cachedRect.topLeft.y - 1),
-                        ImVec2(entry.cachedRect.bottomRight.x + 1, entry.cachedRect.bottomRight.y + 1),
-                        bgShadow, 0.0f, 0, 1.5f);
-                    drawList->AddRect(entry.cachedRect.topLeft, entry.cachedRect.bottomRight, col, 0.0f, 0, 1.0f);
+                    float boxConfigAlpha = entry.configBoxAlpha;
+                    SDK::FLinearColor boxCol = entry.boxColor;
+
+                    g_ESP::DrawBox(Canvas, entry.cachedRect, boxCol, entry.alpha);
                 }
 
                 g_ESP::BarManager bm;
                 bm.Reset();
                 for (const auto& bar : entry.bars)
-                    bm.AddBar(entry.cachedRect, bar.currentValue, bar.maxValue, bar.color, bar.pos, bar.orientation, alpha255);
+                    bm.AddBar(Canvas, entry.cachedRect, bar.currentValue, bar.maxValue, bar.color, bar.pos, bar.orientation, entry.alpha);
 
                 g_ESP::FlagManager fm;
                 fm.Reset();
                 for (const auto& f : entry.flags)
-                    fm.AddFlag(entry.cachedRect, f.text, f.color, f.pos, entry.alpha, &bm);
-
-                /*
-                if (entry.isOOF) {
-                    std::vector<g_ESP::OOFFlag> oofFlags;
-                    oofFlags.reserve(entry.flags.size());
-                    for (const auto& ff : entry.flags)
-                        oofFlags.push_back({ ff.text, ff.color });
-                    g_ESP::DrawOutOfFOV(entry.lastWorldLoc, LocalPC, oofFlags, entry.alpha);
-                }
-                */
+                    fm.AddFlag(Canvas, entry.cachedRect, f.text, f.color, f.pos, entry.alpha, &bm);
             }
         }
 
