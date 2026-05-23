@@ -206,6 +206,8 @@ bool ConfigManager::SaveConfig(const std::string& filename) {
 
         // 全局
         file << "[Global]\n";
+        CONFIG_BOOL(g_Config::bESPEnabled);
+
         CONFIG_BOOL(g_Config::bDrawBox);
         CONFIG_COLOR(g_Config::BoxColor);
         CONFIG_BOOL(g_Config::bDrawHealthBar);
@@ -227,6 +229,8 @@ bool ConfigManager::SaveConfig(const std::string& filename) {
 
         // 队友
         file << "[Team]\n";
+        CONFIG_BOOL(g_Config::bESPTeamEnabled);
+
         CONFIG_BOOL(g_Config::bDrawBoxTeam);
         CONFIG_COLOR(g_Config::BoxColorTeam);
         CONFIG_BOOL(g_Config::bDrawHealthBarTeam);
@@ -373,6 +377,8 @@ bool ConfigManager::LoadConfig(const std::string& filename) {
         LOAD_COLOR(g_Config::WaterDistanceColor);
 
         // 全局
+        LOAD_BOOL(g_Config::bESPEnabled);
+
         LOAD_BOOL(g_Config::bDrawBox);
         LOAD_COLOR(g_Config::BoxColor);
         LOAD_BOOL(g_Config::bDrawHealthBar);
@@ -392,6 +398,8 @@ bool ConfigManager::LoadConfig(const std::string& filename) {
         LOAD_COLOR(g_Config::AimSkeletonColor);
 
         // 队友
+        LOAD_BOOL(g_Config::bESPTeamEnabled);
+
         LOAD_BOOL(g_Config::bDrawBoxTeam);
         LOAD_COLOR(g_Config::BoxColorTeam);
         LOAD_BOOL(g_Config::bDrawHealthBarTeam);

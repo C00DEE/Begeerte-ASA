@@ -110,6 +110,9 @@ const char* LanguageManager::Visuals_Menu::SectionExtra = U8("额外信息");
 const char* LanguageManager::Visuals_Menu::SectionWorld = U8("世界信息");
 const char* LanguageManager::Visuals_Menu::SectionTeam = U8("队友设置");
 const char* LanguageManager::Visuals_Menu::SectionTeamExtra = U8("额外信息");
+
+const char* LanguageManager::Visuals_Menu::ESPEnabled = U8("启用透视");
+
 const char* LanguageManager::Visuals_Menu::Box = U8("方框");
 const char* LanguageManager::Visuals_Menu::Name = U8("名称");
 const char* LanguageManager::Visuals_Menu::HealthBar = U8("血量");
@@ -144,6 +147,9 @@ const char* LanguageManager::Visuals_Menu::StructureMaxDistance = U8("建筑显示距
 const char* LanguageManager::Visuals_Menu::ShowWater = U8("显示水源");
 const char* LanguageManager::Visuals_Menu::WaterMaxCount = U8("显示最近水源数量");
 const char* LanguageManager::Visuals_Menu::WaterCountUnit = U8("个");
+
+const char* LanguageManager::Visuals_Menu::ESPTeamEnabled = U8("启用透视##Team");
+
 const char* LanguageManager::Visuals_Menu::TeamBox = U8("方框##Team");
 const char* LanguageManager::Visuals_Menu::TeamName = U8("名称##Team");
 const char* LanguageManager::Visuals_Menu::TeamHealthBar = U8("血量##Team");
@@ -250,6 +256,7 @@ void LanguageManager::RegisterDefaults(std::unordered_map<std::string, std::stri
     d["Visuals_Menu.SectionWorld"] = U8("世界信息");
     d["Visuals_Menu.SectionTeam"] = U8("队友设置");
     d["Visuals_Menu.SectionTeamExtra"] = U8("额外信息");
+    d["Visuals_Menu.ESPEnabled"] = U8("启用透视");
     d["Visuals_Menu.Box"] = U8("方框");
     d["Visuals_Menu.Name"] = U8("名称");
     d["Visuals_Menu.HealthBar"] = U8("血量");
@@ -284,6 +291,7 @@ void LanguageManager::RegisterDefaults(std::unordered_map<std::string, std::stri
     d["Visuals_Menu.ShowWater"] = U8("显示水源");
     d["Visuals_Menu.WaterMaxCount"] = U8("显示最近水源数量");
     d["Visuals_Menu.WaterCountUnit"] = U8("个");
+    d["Visuals_Menu.ESPTeamEnabled"] = U8("启用透视##Team");
     d["Visuals_Menu.TeamBox"] = U8("方框##Team");
     d["Visuals_Menu.TeamName"] = U8("名称##Team");
     d["Visuals_Menu.TeamHealthBar"] = U8("血量##Team");
@@ -399,6 +407,8 @@ void LanguageManager::ApplyToStaticMembers() {
     apply("Visuals_Menu.SectionWorld", Visuals_Menu::SectionWorld);
     apply("Visuals_Menu.SectionTeam", Visuals_Menu::SectionTeam);
     apply("Visuals_Menu.SectionTeamExtra", Visuals_Menu::SectionTeamExtra);
+
+    apply("Visuals_Menu.ESPEnabled", Visuals_Menu::ESPEnabled);
     apply("Visuals_Menu.Box", Visuals_Menu::Box);
     apply("Visuals_Menu.Name", Visuals_Menu::Name);
     apply("Visuals_Menu.HealthBar", Visuals_Menu::HealthBar);
@@ -433,6 +443,8 @@ void LanguageManager::ApplyToStaticMembers() {
     apply("Visuals_Menu.ShowWater", Visuals_Menu::ShowWater);
     apply("Visuals_Menu.WaterMaxCount", Visuals_Menu::WaterMaxCount);
     apply("Visuals_Menu.WaterCountUnit", Visuals_Menu::WaterCountUnit);
+
+    apply("Visuals_Menu.ESPTeamEnabled", Visuals_Menu::ESPTeamEnabled);
     apply("Visuals_Menu.TeamBox", Visuals_Menu::TeamBox);
     apply("Visuals_Menu.TeamName", Visuals_Menu::TeamName);
     apply("Visuals_Menu.TeamHealthBar", Visuals_Menu::TeamHealthBar);

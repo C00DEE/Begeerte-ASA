@@ -155,6 +155,8 @@ public:
         static const char* SectionTeamExtra;
 
         // х╚╬ж
+        static const char* ESPEnabled;
+
         static const char* Box;
         static const char* Name;
         static const char* HealthBar;
@@ -199,6 +201,8 @@ public:
         static const char* WaterCountUnit;
 
         // ╤сся
+        static const char* ESPTeamEnabled;
+
         static const char* TeamBox;
         static const char* TeamName;
         static const char* TeamHealthBar;

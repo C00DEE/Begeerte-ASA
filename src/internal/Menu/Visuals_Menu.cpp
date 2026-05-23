@@ -28,6 +28,8 @@ namespace g_DrawImGui {
                 ImGui::TextColored(ThemeColors::GetAccent(), secGlobal);
 
                 DrawAnimatedSeparator();
+                DrawCustomCheckbox(LanguageManager::Visuals_Menu::ESPEnabled, &g_Config::bESPEnabled);
+
                 DrawColorPickerRow(LanguageManager::Visuals_Menu::Box, &g_Config::bDrawBox, "BoxCol1", g_Config::BoxColor);
                 DrawColorPickerRow(LanguageManager::Visuals_Menu::Name, &g_Config::bDrawName, "NameCol1", g_Config::NameColor);
                 DrawCustomCheckbox(LanguageManager::Visuals_Menu::HealthBar, &g_Config::bDrawHealthBar);
@@ -121,6 +123,8 @@ namespace g_DrawImGui {
 
                 ImGui::TextColored(ThemeColors::GetAccent(), secTeam);
                 DrawAnimatedSeparator();
+                DrawCustomCheckbox(LanguageManager::Visuals_Menu::ESPTeamEnabled, &g_Config::bESPTeamEnabled);
+
                 DrawColorPickerRow(LanguageManager::Visuals_Menu::TeamBox, &g_Config::bDrawBoxTeam, "BoxColTeam", g_Config::BoxColorTeam);
                 DrawColorPickerRow(LanguageManager::Visuals_Menu::TeamName, &g_Config::bDrawNameTeam, "NameColTeam", g_Config::NameColorTeam);
                 DrawCustomCheckbox(LanguageManager::Visuals_Menu::TeamHealthBar, &g_Config::bDrawHealthBarTeam);

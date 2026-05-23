@@ -110,6 +110,12 @@ namespace g_DrawESP {
     {
         if (!Canvas) return;
 
+        if (!g_Config::bESPEnabled) {
+            s_entries.clear();
+            waterCandidates.clear();
+            return;
+        }
+
         SDK::UWorld* World = SDK::UWorld::GetWorld();
         if (!World || !World->GameState || !World->PersistentLevel) return;
 
@@ -201,6 +207,13 @@ namespace g_DrawESP {
 
                 if (isDead) {
                     g_ESP::RelationType relation = g_ESP::GetRelation(TargetChar, LocalChar);
+
+                    if (relation == g_ESP::RelationType::Team && !g_Config::bESPTeamEnabled) {
+                        entry.targetAlpha = 0.0f;
+                        entry.aliveThisFrame = false;
+                        continue;
+                    }
+
                     bool   bShowRagdoll = false;
                     float* RagdollCol = nullptr;
                     float* DistCol = nullptr;
@@ -283,6 +296,12 @@ namespace g_DrawESP {
                 }
 
                 g_ESP::RelationType relation = g_ESP::GetRelation(TargetChar, LocalChar);
+
+                if (relation == g_ESP::RelationType::Team && !g_Config::bESPTeamEnabled) {
+                    entry.targetAlpha = 0.0f;
+                    entry.aliveThisFrame = false;
+                    continue;
+                }
 
                 bool   bDrawBox = false, bDrawHealthBar = false, bDrawName = false;
                 bool   bDrawGrowth = false, bDrawDistance = false, bDrawTorpor = false;

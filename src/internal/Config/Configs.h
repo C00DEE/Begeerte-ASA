@@ -91,6 +91,8 @@ namespace g_Config {
     inline float WaterDistanceColor[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
 
     // х╚╬ж
+    inline bool bESPEnabled = true;
+
     inline bool bDrawBox = true;
     inline float BoxColor[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
     inline bool bDrawHealthBar = true;
@@ -110,6 +112,8 @@ namespace g_Config {
     inline float AimSkeletonColor[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
 
     // ╤сся
+    inline bool bESPTeamEnabled = true;
+
     inline bool bDrawBoxTeam = true;
     inline float BoxColorTeam[4] = { 0.0f, 0.5f, 1.0f, 1.0f };
     inline bool bDrawHealthBarTeam = true;
