@@ -34776,6 +34776,29 @@ float APrimalCharacter::BPOverrideJumpZModifier(float InJumpZModifier) const
 }
 
 
+// Function ShooterGame.PrimalCharacter.BPPreventForceTriggerIgnoredTrapClass
+// (Event, Public, BlueprintEvent, Const)
+// Parameters:
+// TSubclassOf<class APrimalStructure>     TrapClass                                              (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool APrimalCharacter::BPPreventForceTriggerIgnoredTrapClass(TSubclassOf<class APrimalStructure> TrapClass) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PrimalCharacter", "BPPreventForceTriggerIgnoredTrapClass");
+
+	Params::PrimalCharacter_BPPreventForceTriggerIgnoredTrapClass Parms{};
+
+	Parms.TrapClass = TrapClass;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
 // Function ShooterGame.PrimalCharacter.BPPreventNotifySound
 // (Event, Public, BlueprintEvent, Const)
 // Parameters:

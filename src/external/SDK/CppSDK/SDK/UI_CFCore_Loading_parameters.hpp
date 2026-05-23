@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "ENUM_CFCore_LoadingProgress_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "ENUM_CFCore_LoadingProgress_structs.hpp"
 
 
 SDK_NAMESPACE_START

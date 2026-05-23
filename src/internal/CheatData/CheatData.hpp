@@ -75,7 +75,11 @@ namespace g_CheatData {
 					// 2026/5/20 @zetsr
 					// mov [rsp+8], rbx | push rbp | push rsi | push rdi | push r12 | push r13 | push r14 | push r15 | mov rbp, rsp | sub rsp, alloc | movsxd rsi, [rdx+offset] | xor r14d, r14d
 					// 48 89 5C 24 08 55 56 57 41 54 41 55 41 56 41 57 48 8B EC 48 83 EC 40 48 63 72 08 45 33 F6
-					std::string OutputTextLine = "48 89 5C 24 08 55 56 57 41 54 41 55 41 56 41 57 48 8B EC 48 83 EC ?? 48 63 72 ?? 45 33 F6";
+
+					// 2026/5/23 @zetsr
+					// mov rax, rsp | push r12 | sub rsp, alloc | mov [rax+8], rbx | mov rbx, rdx
+					// 48 8B C4 41 54 48 83 EC 60 48 89 58 08 48 8B DA
+					std::string OutputTextLine = "48 8B C4 41 54 48 83 EC ?? 48 89 58 08 48 8B DA";
 				}
 			}
 		}

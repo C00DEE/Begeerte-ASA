@@ -4836,6 +4836,7 @@ public:
 	bool BPCanBeBaseForCharacter(class APawn* Pawn) const;
 	float BPGetApproachRadius() const;
 	float BPOverrideJumpZModifier(float InJumpZModifier) const;
+	bool BPPreventForceTriggerIgnoredTrapClass(TSubclassOf<class APrimalStructure> TrapClass) const;
 	bool BPPreventNotifySound(class USoundBase* SoundIn) const;
 	bool BPPreventRunning() const;
 	void BPRemoveCharacterSnapshot(class UPrimalItem* Item, class AActor* From) const;
@@ -31537,7 +31538,7 @@ public:
 DUMPER7_ASSERTS_AHierarchicalInstancedStaticMeshActor;
 
 // Class ShooterGame.StandingMountedTurret
-// 0x0448 (0x1790 - 0x1348)
+// 0x0458 (0x17A0 - 0x1348)
 class AStandingMountedTurret final : public APrimalStructureSeating
 {
 public:
@@ -31717,7 +31718,7 @@ public:
 	uint8                                         IsRefuelingLoadedAmmoPercent : 1;                  // 0x1770(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         Pad_1771[0x7];                                     // 0x1771(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        LastTimeDealtDamage;                               // 0x1778(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1780[0x10];                                    // 0x1780(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1780[0x20];                                    // 0x1780(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AddLockOnTarget(class AActor* TargetActor);

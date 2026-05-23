@@ -56,12 +56,11 @@ using namespace UC;
 */
 namespace Offsets
 {
-	constexpr int32 GObjects          = 0x0E0D8170;
-	constexpr int32 AppendString      = 0x016687F0;
-	constexpr int32 GetNameEntry      = 0x01669520;
-	constexpr int32 GNames            = 0x0E45ACC0;
-	constexpr int32 GWorld            = 0x0E4226B8;
-	constexpr int32 ProcessEvent      = 0x01924E70;
+	constexpr int32 GObjects          = 0x0DB78170;
+	constexpr int32 AppendString      = 0x00000000;
+	constexpr int32 GNames            = 0x0DEF9540;
+	constexpr int32 GWorld            = 0x0DEC0468;
+	constexpr int32 ProcessEvent      = 0x017DB180;
 	constexpr int32 ProcessEventIdx   = 0x00000050;
 }
 
@@ -330,13 +329,111 @@ public:
 	}
 };
 
+// Predefined struct FNumberedData
+// 0x0008 (0x0008 - 0x0000)
+struct FNumberedData final
+{
+public:
+	uint8                                         Id[0x4];                                           // 0x0000(0x0001)(NOT AUTO-GENERATED PROPERTY)
+	uint8                                         Number[0x4];                                       // 0x0004(0x0001)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	int32 GetTypedId() const
+	{
+		return reinterpret_cast<int32>(Id);
+	}
+	uint32 GetNumber() const
+	{
+		return reinterpret_cast<uint32>(Number);
+	}
+};
+DUMPER7_ASSERTS_FNumberedData;
+
+// Predefined struct FNameEntryHeader
+// 0x0002 (0x0002 - 0x0000)
+struct FNameEntryHeader final
+{
+public:
+	uint16                                        bIsWide : 1;                                       // 0x0000(0x0002)(BitIndex: 0x00, PropSize: 0x0002 (NOT AUTO-GENERATED PROPERTY))
+	uint16                                        BitPad_0_1 : 5;                                    // 0x0000(0x0002)(Fixing Bit-Field Size Between Bits [ Dumper-7 ])
+	uint16                                        Len : 10;                                          // 0x0000(0x0002)(BitIndex: 0x06, PropSize: 0x0002 (NOT AUTO-GENERATED PROPERTY))
+};
+DUMPER7_ASSERTS_FNameEntryHeader;
+
+// Predefined struct FStringData
+// 0x0800 (0x0800 - 0x0000)
+union FStringData final
+{
+public:
+	char                                          AnsiName[0x400];                                   // 0x0000(0x0001)(NOT AUTO-GENERATED PROPERTY)
+	wchar_t                                       WideName[0x400];                                   // 0x0000(0x0002)(NOT AUTO-GENERATED PROPERTY)
+};
+DUMPER7_ASSERTS_FStringData;
+
+// Predefined struct FNameEntry
+// 0x0802 (0x0802 - 0x0000)
+struct FNameEntry final
+{
+public:
+	struct FNameEntryHeader                       Header;                                            // 0x0000(0x0002)(NOT AUTO-GENERATED PROPERTY)
+	union FStringData                             Name;                                              // 0x0002(0x0800)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	bool IsWide() const
+	{
+		return Header.bIsWide;
+	}
+	std::string GetString() const
+	{
+		if (IsWide())
+		{
+			return UtfN::Utf16StringToUtf8String<std::string>(Name.WideName, Header.Len);
+		}
+	
+		return std::string(Name.AnsiName, Header.Len);
+	}
+};
+DUMPER7_ASSERTS_FNameEntry;
+
+// Predefined struct FNamePool
+// 0x10010 (0x10010 - 0x0000)
+class FNamePool final
+{
+public:
+	static constexpr uint32                       FNameEntryStride = 0x0002;                         // 0x0000(0x0004)(NOT AUTO-GENERATED PROPERTY)
+	static constexpr uint32                       FNameBlockOffsetBits = 0x0010;                     // 0x0000(0x0004)(NOT AUTO-GENERATED PROPERTY)
+	static constexpr uint32                       FNameBlockOffsets = 1 << FNameBlockOffsetBits;     // 0x0000(0x0004)(NOT AUTO-GENERATED PROPERTY)
+
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint32                                        CurrentBlock;                                      // 0x0008(0x0004)(NOT AUTO-GENERATED PROPERTY)
+	uint32                                        CurrentByteCursor;                                 // 0x000C(0x0004)(NOT AUTO-GENERATED PROPERTY)
+	uint8*                                        Blocks[0x2000];                                    // 0x0010(0x10000)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	bool IsValidIndex(int32 Index, int32 ChunkIdx, int32 InChunkIdx) const
+	{
+		return ChunkIdx <= CurrentBlock && !(ChunkIdx == CurrentBlock && InChunkIdx > CurrentByteCursor);
+	}
+	
+	FNameEntry* GetEntryByIndex(int32 Index) const
+	{
+		const int32 ChunkIdx = Index >> FNameBlockOffsetBits;
+		const int32 InChunk = (Index & (FNameBlockOffsets - 1));
+	
+		if (!IsValidIndex(Index, ChunkIdx, InChunk))
+			return nullptr;
+	
+		return reinterpret_cast<FNameEntry*>(Blocks[ChunkIdx] + (InChunk * FNameEntryStride));
+	}
+};
+DUMPER7_ASSERTS_FNamePool;
+
 // Predefined struct FName
 // 0x0008 (0x0008 - 0x0000)
 class FName final
 {
 public:
-	static inline void*                           AppendString = nullptr;                            // 0x0000(0x0004)(NOT AUTO-GENERATED PROPERTY)
-	static inline void*                           GetNameEntryFromName = nullptr;                    // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+	static inline FNamePool*                      GNames = nullptr;                                  // 0x0000(0x0004)(NOT AUTO-GENERATED PROPERTY)
 
 	int32                                         ComparisonIndex = 0x0;                             // 0x0000(0x0004)(NOT AUTO-GENERATED PROPERTY)
 	uint32                                        Number = 0x0;                                      // 0x0004(0x0004)(NOT AUTO-GENERATED PROPERTY)
@@ -349,7 +446,7 @@ public:
 
 	static void InitManually(void* Location)
 	{
-		AppendString = reinterpret_cast<void*>(Location);
+		GNames = reinterpret_cast<FNamePool*>(Location);
 	}
 
 	constexpr FName() = default;
@@ -365,8 +462,7 @@ public:
 
 	static void InitInternal()
 	{
-		AppendString = reinterpret_cast<void*>(InSDKUtils::GetImageBase() + Offsets::AppendString);
-		GetNameEntryFromName = reinterpret_cast<void*>(InSDKUtils::GetImageBase() + Offsets::GetNameEntry);
+		GNames = reinterpret_cast<FNamePool*>(InSDKUtils::GetImageBase() + Offsets::GNames);
 	}
 
 	bool IsNone() const
@@ -381,21 +477,15 @@ public:
 	
 	std::string GetRawString() const
 	{
-		wchar_t buffer[1024];
-	    FString TempString(buffer, 0, 1024);
-	
-		if (!AppendString)
+		if (!GNames)
 			InitInternal();
 	
-		const void* NameEntry = InSDKUtils::CallGameFunction(reinterpret_cast<const void*(*)(uint32 CmpIdx)>(GetNameEntryFromName), ComparisonIndex);
-		InSDKUtils::CallGameFunction(reinterpret_cast<void(*)(const void*, FString&)>(AppendString), NameEntry, TempString);
-	
-		std::string OutputString = TempString.ToString();
+		std::string RetStr = FName::GNames->GetEntryByIndex(GetDisplayIndex())->GetString();
 	
 		if (Number > 0)
-			OutputString += ("_" + std::to_string(Number - 1));
+			RetStr += ("_" + std::to_string(Number - 1));
 	
-		return OutputString;
+		return RetStr;
 	}
 	
 	std::string ToString() const
