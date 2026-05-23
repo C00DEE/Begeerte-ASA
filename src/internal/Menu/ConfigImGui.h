@@ -709,7 +709,9 @@ namespace g_DrawImGui {
 			text_pos.y += 1.0f;
 
 		ImU32 text_col = ImGui::GetColorU32(((hovered || held) && anim > 0.5f) ? ThemeColors::GetAccent() : ThemeColors::TEXT);
-		draw_list->AddText(text_pos, text_col, label);
+		const char* label_end = ImGui::FindRenderedTextEnd(label);
+
+		draw_list->AddText(NULL, 0.0f, text_pos, text_col, label, label_end);
 
 		return pressed;
 	}
@@ -723,7 +725,7 @@ namespace g_DrawImGui {
 			strcpy_s(btnLabel, "Press any key...");
 		}
 		else {
-			sprintf_s(btnLabel, "%s", g_Util::GetKeyName(bindKey));
+			sprintf_s(btnLabel, "%s##%s", g_Util::GetKeyName(bindKey), label);
 		}
 
 		if (DrawCustomButton(btnLabel)) {

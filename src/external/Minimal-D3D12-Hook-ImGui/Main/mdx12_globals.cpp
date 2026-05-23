@@ -98,6 +98,8 @@ namespace g_MDX12 {
     namespace g_MenuState {
         bool g_isOpen = true;
         UINT g_openKey = VK_F1;
+        bool g_isOutBodyActive = false;
+        UINT g_OutBodyKey = 0x5A;
         UINT* g_pCurrentBindingKey = nullptr;
         bool g_bindingFinished = false;
         bool g_wasOpenLastFrame = true;

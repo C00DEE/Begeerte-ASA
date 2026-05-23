@@ -331,7 +331,7 @@ namespace g_Hack {
         if (!MovementComp) return;
 
         static bool bLastGhostState = false;
-        bool bCurrentGhostState = g_Config::bOutBodyChecked;
+        bool bCurrentGhostState = g_Config::bOutBodyChecked && g_MDX12::g_MenuState::g_isOutBodyActive;
 
         static SDK::FVector SavedRealLocation = { 0.0f, 0.0f, 0.0f };
 

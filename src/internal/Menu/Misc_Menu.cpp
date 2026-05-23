@@ -105,6 +105,8 @@ namespace g_DrawImGui {
 			ImGui::BeginDisabled(!g_Hook::UWorldTickOK);
 			{
 				DrawCustomCheckbox(outBodyChecked, &g_Config::bOutBodyChecked);
+				ImGui::SameLine();
+				DrawKeyBindButton("OutBody Key", g_MDX12::g_MenuState::g_OutBodyKey);
 			}
 			ImGui::EndDisabled();
 			DrawAnimatedSeparator();
