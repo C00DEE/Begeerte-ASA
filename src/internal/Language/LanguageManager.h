@@ -154,6 +154,16 @@ public:
         static const char* SectionTeam;
         static const char* SectionTeamExtra;
 
+        // ESP类型
+        static const char* TYPEPlayer;
+        static const char* TYPEDino;
+        static const char* TYPEStructures;
+        static const char* TYPEDroppedItems;
+        static const char* TYPEWorld;
+
+        // 掉落物过滤
+        static const char* DroppedItemsCombo;
+
         // 全局
         static const char* ESPEnabled;
 
@@ -166,6 +176,14 @@ public:
         // 额外信息
         static const char* Distance;
         static const char* ShowAimPoints;
+
+        // 生物
+        static const char* DinoBox;
+        static const char* DinoName;
+        static const char* DinoHealthBar;
+        static const char* DinoTorpor;
+        static const char* DinoRagdoll;
+        static const char* DinoDistance;
 
         // 世界信息 - 掉落物
         static const char* DroppedItems;
@@ -190,10 +208,35 @@ public:
         static const char* DroppedItemPolymer;
         static const char* DroppedItemMaxDistance;
 
+        // 掉落物开关
+        static const char* bDroppedItemMeat;
+        static const char* bDroppedItemCryopod;
+        static const char* bDroppedItemEgg;
+        static const char* bDroppedItemPiled;
+        static const char* bDroppedItemWood;
+        static const char* bDroppedItemThatch;
+        static const char* bDroppedItemHide;
+        static const char* bDroppedItemPelt;
+        static const char* bDroppedItemKeratin;
+        static const char* bDroppedItemChitin;
+        static const char* bDroppedItemCorruptedPolymer;
+        static const char* bDroppedItemPolymer_Organic;
+        static const char* bDroppedItemPolymer;
+        static const char* bDroppedItemMetal;
+        static const char* bDroppedItemStone;
+        static const char* bDroppedItemCrystal;
+        static const char* bDroppedItemGem;
+        static const char* bDroppedItemPearl;
+        static const char* bDroppedItemSpoiledMeat;
+
         // 世界信息 - 建筑
         static const char* ShowStructures;
         static const char* OnlyEnemyStructures;
         static const char* StructureMaxDistance;
+
+        // 队友建筑
+        static const char* TeamShowStructures;
+        static const char* TeamStructureMaxDistance;
 
         // 世界信息 - 水源
         static const char* ShowWater;
@@ -209,6 +252,19 @@ public:
         static const char* TeamTorpor;
         static const char* TeamRagdoll;
         static const char* TeamDistance;
+
+        // 队友生物
+        static const char* TeamDinoBox;
+        static const char* TeamDinoName;
+        static const char* TeamDinoHealthBar;
+        static const char* TeamDinoTorpor;
+        static const char* TeamDinoRagdoll;
+        static const char* TeamDinoDistance;
+    };
+
+    struct ConfigImGui_Menu {
+        static const char* Copy;
+        static const char* Paste;
     };
 
 private:

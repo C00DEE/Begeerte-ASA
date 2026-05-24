@@ -9,6 +9,7 @@
 #include "../Config/Configs.h"
 #include "DrawImGui.h"
 #include "../Util/Util.h"
+#include "../Language/LanguageManager.h"
 
 #include <cstdio>
 #include <string>
@@ -150,6 +151,13 @@ namespace g_DrawImGui {
 	static float g_saved_color[4] = { 1.0f,1.0f,1.0f,1.0f };
 	static bool style_initialized = false;
 
+	struct CustomComboItem {
+		const char* label = nullptr; // 子项显示的文本
+		bool        selected = false;   // 子项自身在下拉框中的选中状态
+		float* color_ptr = nullptr; // 调色盘绑定的颜色指针（float[4]），为 nullptr 则不显示调色盘
+		bool* checkbox_ptr = nullptr;  // 外部绑定的逻辑指针。若不为 nullptr，其勾选状态将与外部变量同步（等价于复选框）
+	};
+
 	static float CalcPopupMinWidthForItems(const char* items[], int count)
 	{
 		ImGuiStyle& style = ImGui::GetStyle();
@@ -236,11 +244,11 @@ namespace g_DrawImGui {
 			}
 
 			// ==================== 弹窗 1：纯右键菜单（复制/粘贴） ====================
-			const char* popup_items[] = { U8("复制"), U8("粘贴") };
+			const char* popup_items[] = { LanguageManager::ConfigImGui_Menu::Copy, LanguageManager::ConfigImGui_Menu::Paste };
 			float padding_w = g.Style.WindowPadding.x * 2.0f;
 
 			// 计算文本宽度，用于完美对齐和匹配
-			float text_only_w = ImGui::CalcTextSize(U8("复制")).x;
+			float text_only_w = ImGui::CalcTextSize(LanguageManager::ConfigImGui_Menu::Copy).x;
 			// 精确计算“复制/粘贴”四个字的实际占用宽度，扣除任何默认对齐边距
 			float tight_w = text_only_w + padding_w + g.Style.FramePadding.x * 2.0f;
 
@@ -264,14 +272,14 @@ namespace g_DrawImGui {
 				float btn_w = ImGui::GetContentRegionAvail().x;
 
 				// 绘制“复制”按钮
-				if (ImGui::Button(U8("复制"), ImVec2(btn_w, 0))) {
+				if (ImGui::Button(LanguageManager::ConfigImGui_Menu::Copy, ImVec2(btn_w, 0))) {
 					g_saved_color[0] = col_ptr[0]; g_saved_color[1] = col_ptr[1];
 					g_saved_color[2] = col_ptr[2]; g_saved_color[3] = col_ptr[3];
 					ImGui::CloseCurrentPopup(); // 点击按钮后关闭弹出窗口
 				}
 
 				// 绘制“粘贴”按钮
-				if (ImGui::Button(U8("粘贴"), ImVec2(btn_w, 0))) {
+				if (ImGui::Button(LanguageManager::ConfigImGui_Menu::Paste, ImVec2(btn_w, 0))) {
 					col_ptr[0] = g_saved_color[0]; col_ptr[1] = g_saved_color[1];
 					col_ptr[2] = g_saved_color[2]; col_ptr[3] = g_saved_color[3];
 					ImGui::CloseCurrentPopup(); // 点击按钮后关闭弹出窗口
@@ -429,7 +437,8 @@ namespace g_DrawImGui {
 		const ImGuiStyle& style = g.Style;
 
 		ImGuiID id = window->GetID(label);
-		ImVec2 label_size = ImGui::CalcTextSize(label);
+		const char* label_end = ImGui::FindRenderedTextEnd(label);
+		ImVec2 label_size = ImGui::CalcTextSize(label, label_end);
 		float full_w = ImGui::GetContentRegionAvail().x;
 		const float TRACK_HEIGHT = 9.0f;
 		const float HANDLE_RADIUS = 9.0f;
@@ -456,6 +465,11 @@ namespace g_DrawImGui {
 		ImGui::InvisibleButton(label, bb.GetSize());
 		bool hovered = ImGui::IsItemHovered();
 		bool active = ImGui::IsItemActive();
+
+		if (g.NavId == id && ImGui::IsMouseClicked(0) && !hovered) {
+			ImGui::ClearActiveID(); // 清理活跃状态
+			g.NavId = 0;            // 清除当前控件焦点
+		}
 
 		float t;
 		{
@@ -572,7 +586,7 @@ namespace g_DrawImGui {
 		draw->AddCircle(handle_center, handle_radius * 0.7f, IM_COL32(255, 255, 255, 30), 24, 2.5f);
 
 		ImVec2 label_pos = ImVec2(pos.x, pos.y + (size.y - label_size.y) * 0.5f);
-		draw->AddText(label_pos, col_text, label);
+		draw->AddText(g.Font, g.FontSize, label_pos, col_text, label, label_end);
 
 		char valbuf[128];
 		int n = std::snprintf(valbuf, sizeof(valbuf), fmt, *v);
@@ -714,6 +728,356 @@ namespace g_DrawImGui {
 		draw_list->AddText(NULL, 0.0f, text_pos, text_col, label, label_end);
 
 		return pressed;
+	}
+
+	inline bool DrawCustomCombo(const char* label, int* current_item, const std::vector<const char*>& items, const char* custom_text = nullptr)
+	{
+		if (items.empty() || current_item == nullptr) return false;
+
+		ImGuiWindow* window = ImGui::GetCurrentWindow();
+		if (window->SkipItems) return false;
+
+		ImGuiContext& g = *GImGui;
+		const ImGuiStyle& style = g.Style;
+		const ImGuiID id = window->GetID(label);
+
+		// 检查 label 是否为隐藏 ID (以 ## 开头)
+		bool has_label_text = (label[0] != '#' || (label[1] != '\0' && label[1] != '#'));
+		const ImVec2 label_size = has_label_text ? ImGui::CalcTextSize(label, NULL, true) : ImVec2(0.0f, 0.0f);
+
+		// 1. 【核心改进】动态计算下拉框主体的目标宽度
+		float combo_box_w = 0.0f;
+
+		// 如果外部通过 ImGui::SetNextItemWidth() 强行指定了宽度，则尊重外部设定
+		if (window->DC.ItemWidthStack.Size > 0) {
+			combo_box_w = ImGui::CalcItemWidth();
+		}
+		else {
+			// 否则：根据 items 里面最长的文本自适应宽度，并加上 padding 和右侧小箭头的空间
+			float max_text_w = 0.0f;
+			for (const char* item : items) {
+				float tw = ImGui::CalcTextSize(item).x;
+				if (tw > max_text_w) max_text_w = tw;
+			}
+			// 如果有附加的 custom_text 后缀，也算上它的宽度
+			if (custom_text && custom_text[0] != '\0') {
+				max_text_w += ImGui::CalcTextSize(custom_text).x;
+			}
+
+			// 额外留白：左边距 + 右边距 + 箭头大小(10px) + 间隙
+			combo_box_w = max_text_w + style.FramePadding.x * 2.0f + 18.0f;
+		}
+
+		// 2. 重新计算整体总宽度 (Label 区域 + 间距 + 下拉框主体)
+		float label_area_width = label_size.x > 0.0f ? label_size.x + style.ItemInnerSpacing.x : 0.0f;
+		float total_w = label_area_width + combo_box_w;
+
+		float frame_h = ImGui::GetFrameHeight();
+		float box_rounding = 6.0f;
+
+		ImVec2 pos = window->DC.CursorPos;
+		ImVec2 size = ImVec2(total_w, std::max(frame_h, label_size.y + style.FramePadding.y * 2.0f));
+		ImRect bb(pos, ImVec2(pos.x + size.x, pos.y + size.y));
+
+		ImGui::ItemSize(bb, style.FramePadding.y);
+		if (!ImGui::ItemAdd(bb, id)) return false;
+
+		// 交互逻辑
+		bool hovered, held;
+		bool pressed = ImGui::ButtonBehavior(bb, id, &hovered, &held);
+
+		// 动画状态机
+		ImGuiStorage* storage = ImGui::GetStateStorage();
+		float hover_anim = storage->GetFloat(id, 0.0f);
+		hover_anim = hovered ? std::min(hover_anim + g.IO.DeltaTime * 8.0f, 1.0f) : std::max(hover_anim - g.IO.DeltaTime * 8.0f, 0.0f);
+		storage->SetFloat(id, hover_anim);
+
+		char popup_id[256];
+		std::snprintf(popup_id, sizeof(popup_id), "##ComboPopup_%s", label);
+
+		if (pressed) {
+			ImGui::OpenPopup(popup_id);
+		}
+
+		// ==========================================
+		// 高质感分层渲染（空间已裁剪，不再顶满）
+		// ==========================================
+		ImDrawList* draw_list = window->DrawList;
+		float final_alpha = g_MenuAlpha;
+		ImVec4 accent_color = ThemeColors::GetAccent();
+
+		// 精确确定右侧选择框的真实起始与结束坐标
+		ImVec2 combo_min = ImVec2(pos.x + label_area_width, pos.y + (size.y - frame_h) * 0.5f);
+		ImVec2 combo_max = ImVec2(combo_min.x + combo_box_w, combo_min.y + frame_h);
+
+		// [背景层 Glow] 悬浮外发光
+		if (hover_anim > 0.0f && final_alpha > 0.01f) {
+			float glow_expand = 3.0f * hover_anim;
+			ImVec2 glow_min = ImVec2(combo_min.x - glow_expand, combo_min.y - glow_expand);
+			ImVec2 glow_max = ImVec2(combo_max.x + glow_expand, combo_max.y + glow_expand);
+			ImU32 glow_col = ImGui::GetColorU32(ImVec4(accent_color.x, accent_color.y, accent_color.z, 0.20f * hover_anim * final_alpha));
+			draw_list->AddRectFilled(glow_min, glow_max, glow_col, box_rounding + glow_expand);
+		}
+
+		// [第一层] 底座背景
+		ImVec4 bg_col = ThemeColors::WHITE_LOW;
+		bg_col.w *= final_alpha;
+		draw_list->AddRectFilled(combo_min, combo_max, ImGui::GetColorU32(bg_col), box_rounding);
+
+		// [第二层] 渲染当前选中项文本与右侧小箭头
+		int selected_idx = (*current_item >= 0 && *current_item < (int)items.size()) ? *current_item : 0;
+		char preview_buf[256];
+		std::snprintf(preview_buf, sizeof(preview_buf), "%s", items[selected_idx]);
+		if (custom_text && custom_text[0] != '\0') {
+			std::strncat(preview_buf, custom_text, sizeof(preview_buf) - std::strlen(preview_buf) - 1);
+		}
+
+		// 文本居左对齐（带Padding）
+		ImVec2 text_pos = ImVec2(combo_min.x + style.FramePadding.x, combo_min.y + style.FramePadding.y);
+		draw_list->AddText(text_pos, ImGui::GetColorU32(ThemeColors::TEXT), preview_buf);
+
+		// 绘制极简三角箭头
+		float arrow_sz = 10.0f;
+		ImVec2 arrow_center = ImVec2(combo_max.x - style.FramePadding.x - arrow_sz * 0.5f, combo_min.y + frame_h * 0.5f);
+		ImU32 arrow_col = ImGui::GetColorU32(hovered ? accent_color : ThemeColors::TEXT);
+
+		ImVec2 p1 = ImVec2(arrow_center.x - arrow_sz * 0.5f, arrow_center.y - arrow_sz * 0.25f);
+		ImVec2 p2 = ImVec2(arrow_center.x + arrow_sz * 0.5f, arrow_center.y - arrow_sz * 0.25f);
+		ImVec2 p3 = ImVec2(arrow_center.x, arrow_center.y + arrow_sz * 0.35f);
+		draw_list->AddTriangleFilled(p1, p2, p3, arrow_col);
+
+		// [第三层] 玻璃边框
+		ImVec4 border_col_vec = ThemeColors::GLASS_BORDER;
+		if (hovered) {
+			border_col_vec.x = ImLerp(border_col_vec.x, accent_color.x, 0.5f);
+			border_col_vec.y = ImLerp(border_col_vec.y, accent_color.y, 0.5f);
+			border_col_vec.z = ImLerp(border_col_vec.z, accent_color.z, 0.5f);
+		}
+		border_col_vec.w *= final_alpha;
+		draw_list->AddRect(combo_min, combo_max, ImGui::GetColorU32(border_col_vec), box_rounding, 0, 1.0f);
+
+		// 渲染左侧 Label 文本
+		if (label_size.x > 0.0f) {
+			ImVec2 label_pos = ImVec2(pos.x, pos.y + (size.y - label_size.y) * 0.5f);
+			ImGui::RenderText(label_pos, label);
+		}
+
+		// ==========================================
+		// 弹窗渲染：展开下拉菜单列表
+		// ==========================================
+		bool value_changed = false;
+
+		// 弹出窗宽度精确限制在 combo_box_w，使其与选择框严丝合缝
+		ImGui::SetNextWindowSizeConstraints(ImVec2(combo_box_w, 0.0f), ImVec2(combo_box_w, frame_h * 8.0f));
+
+		if (ImGui::BeginPopup(popup_id, ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoMove))
+		{
+			float original_frame_rounding = g.Style.FrameRounding;
+			g.Style.FrameRounding = 4.0f;
+
+			ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(0.0f, g.Style.ItemSpacing.y));
+
+			for (int i = 0; i < (int)items.size(); ++i)
+			{
+				bool is_selected = (*current_item == i);
+
+				ImGui::PushID(i);
+				if (CustomSelectable(items[i], is_selected, 4.0f))
+				{
+					*current_item = i;
+					value_changed = true;
+					ImGui::CloseCurrentPopup();
+				}
+				ImGui::PopID();
+			}
+
+			ImGui::PopStyleVar();
+			g.Style.FrameRounding = original_frame_rounding;
+			ImGui::EndPopup();
+		}
+
+		return value_changed;
+	}
+
+	// 针对传统 C 风格数组的重载接口（保持你代码一设的多态扩展性）
+	inline bool DrawCustomCombo(const char* label, int* current_item, const char* items[], int items_count, const char* custom_text = nullptr)
+	{
+		std::vector<const char*> vec_items(items, items + items_count);
+		return DrawCustomCombo(label, current_item, vec_items, custom_text);
+	}
+
+	inline bool DrawCustomMultiCombo(const char* label, std::vector<CustomComboItem>& items, const char* placeholder = nullptr)
+	{
+		if (items.empty()) return false;
+
+		ImGuiWindow* window = ImGui::GetCurrentWindow();
+		if (window->SkipItems) return false;
+
+		ImGuiContext& g = *GImGui;
+		const ImGuiStyle& style = g.Style;
+		const ImGuiID id = window->GetID(label);
+
+		bool has_label_text = (label[0] != '#' || (label[1] != '\0' && label[1] != '#'));
+		const ImVec2 label_size = has_label_text ? ImGui::CalcTextSize(label, NULL, true) : ImVec2(0.0f, 0.0f);
+
+		// ==========================================
+		// 1. 【动态生成预览文本】
+		// ==========================================
+		std::string preview_str = "";
+		int selected_count = 0;
+		for (size_t i = 0; i < items.size(); ++i) {
+			if (items[i].checkbox_ptr != nullptr) items[i].selected = *(items[i].checkbox_ptr);
+			if (items[i].selected) {
+				selected_count++;
+				if (selected_count <= 2) {
+					if (!preview_str.empty()) preview_str += ", ";
+					preview_str += items[i].label;
+				}
+			}
+		}
+
+		if (selected_count == 0) {
+			preview_str = (placeholder && placeholder[0] != '\0') ? placeholder : U8("未选择...");
+		}
+		else if (selected_count > 2) {
+			char count_buf[64];
+			std::snprintf(count_buf, sizeof(count_buf), U8("%dx"), selected_count);
+			preview_str = count_buf;
+		}
+
+		// ==========================================
+		// 2. 【精准宽度计算】
+		// ==========================================
+		float combo_box_w = 0.0f;
+		float frame_h = ImGui::GetFrameHeight();
+
+		if (window->DC.ItemWidthStack.Size > 0) {
+			combo_box_w = ImGui::CalcItemWidth();
+		}
+		else {
+			// 计算弹窗内所有项中，内容最宽的一行
+			float max_content_w = ImGui::CalcTextSize(U8("1x")).x;
+
+			for (const auto& item : items) {
+				if (!item.label) continue;
+				float item_w = ImGui::CalcTextSize(item.label).x;
+
+				// 无论该项是否有调色盘，我们按“统一对齐”的逻辑计算宽度
+				// 宽度 = 调色盘(frame_h) + 间距(6.0f) + 文本宽度(item_w)
+				float total_row_w = frame_h + 6.0f + item_w;
+
+				if (total_row_w > max_content_w) max_content_w = total_row_w;
+			}
+
+			// 最终宽度 = 内容最宽处 + 左右内边距 + 箭头预留位(约等于frame_h)
+			combo_box_w = max_content_w + (style.FramePadding.x * 2.0f);
+		}
+
+		float label_area_width = label_size.x > 0.0f ? label_size.x + style.ItemInnerSpacing.x : 0.0f;
+		float total_w = label_area_width + combo_box_w;
+
+		ImVec2 pos = window->DC.CursorPos;
+		ImVec2 size = ImVec2(total_w, std::max(frame_h, label_size.y + style.FramePadding.y * 2.0f));
+		ImRect bb(pos, ImVec2(pos.x + size.x, pos.y + size.y));
+
+		ImGui::ItemSize(bb, style.FramePadding.y);
+		if (!ImGui::ItemAdd(bb, id)) return false;
+
+		// 交互逻辑
+		bool hovered, held;
+		bool pressed = ImGui::ButtonBehavior(bb, id, &hovered, &held);
+
+		// 动画处理
+		ImGuiStorage* storage = ImGui::GetStateStorage();
+		float hover_anim = storage->GetFloat(id, 0.0f);
+		hover_anim = hovered ? std::min(hover_anim + g.IO.DeltaTime * 8.0f, 1.0f) : std::max(hover_anim - g.IO.DeltaTime * 8.0f, 0.0f);
+		storage->SetFloat(id, hover_anim);
+
+		char popup_id[256];
+		std::snprintf(popup_id, sizeof(popup_id), "##MultiComboPopup_%s", label);
+		if (pressed) ImGui::OpenPopup(popup_id);
+
+		// ==========================================
+		// 3. 【渲染预览框】
+		// ==========================================
+		ImDrawList* draw_list = window->DrawList;
+		float final_alpha = g_MenuAlpha;
+		ImVec4 accent_color = ThemeColors::GetAccent();
+		float box_rounding = 6.0f;
+
+		ImVec2 combo_min = ImVec2(pos.x + label_area_width, pos.y + (size.y - frame_h) * 0.5f);
+		ImVec2 combo_max = ImVec2(combo_min.x + combo_box_w, combo_min.y + frame_h);
+
+		// 背景与发光
+		if (hover_anim > 0.0f) {
+			draw_list->AddRectFilled(combo_min, combo_max, ImGui::GetColorU32(ImVec4(accent_color.x, accent_color.y, accent_color.z, 0.15f * hover_anim * final_alpha)), box_rounding);
+		}
+		draw_list->AddRectFilled(combo_min, combo_max, ImGui::GetColorU32(ThemeColors::WHITE_LOW), box_rounding);
+
+		// 裁剪文本防止溢出预览框
+		ImGui::PushClipRect(combo_min, ImVec2(combo_max.x - 25.0f, combo_max.y), true);
+		draw_list->AddText(ImVec2(combo_min.x + style.FramePadding.x, combo_min.y + style.FramePadding.y), ImGui::GetColorU32(ThemeColors::TEXT), preview_str.c_str());
+		ImGui::PopClipRect();
+
+		// 箭头
+		float arrow_sz = 10.0f;
+		ImVec2 arrow_center = ImVec2(combo_max.x - style.FramePadding.x - arrow_sz * 0.5f, combo_min.y + frame_h * 0.5f);
+		draw_list->AddTriangleFilled(
+			ImVec2(arrow_center.x - 5, arrow_center.y - 2),
+			ImVec2(arrow_center.x + 5, arrow_center.y - 2),
+			ImVec2(arrow_center.x, arrow_center.y + 4),
+			ImGui::GetColorU32(hovered ? accent_color : ThemeColors::TEXT)
+		);
+
+		if (label_size.x > 0.0f) {
+			ImGui::RenderText(ImVec2(pos.x, pos.y + (size.y - label_size.y) * 0.5f), label);
+		}
+
+		// ==========================================
+		// 4. 【多选弹窗逻辑】
+		// ==========================================
+		bool value_changed = false;
+
+		// 设置弹窗宽度刚好等于预览框宽度，不再盲目扩充
+		ImGui::SetNextWindowSizeConstraints(ImVec2(combo_box_w, 0.0f), ImVec2(combo_box_w, frame_h * 15.0f));
+
+		if (ImGui::BeginPopup(popup_id, ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoMove))
+		{
+			ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(0.0f, style.ItemSpacing.y));
+			float text_align_pos_x = style.FramePadding.x + frame_h + 6.0f;
+
+			for (int i = 0; i < (int)items.size(); ++i)
+			{
+				ImGui::PushID(i);
+				ImGui::BeginGroup();
+
+				if (items[i].color_ptr != nullptr) {
+					DrawCustomColorPicker("##cp", items[i].color_ptr, true, nullptr);
+					ImGui::SameLine();
+					ImGui::SetCursorPosX(ImGui::GetCursorPosX() + 6.0f);
+					text_align_pos_x = ImGui::GetCursorPosX(); // 捕捉真实的对齐线
+				}
+				else {
+					ImGui::SetCursorPosX(text_align_pos_x);
+				}
+
+				// 计算文本可用的剩余宽度
+				float avail_w = ImGui::GetContentRegionAvail().x - style.FramePadding.x;
+				if (CustomSelectable(items[i].label, items[i].selected, 4.0f))
+				{
+					items[i].selected = !items[i].selected;
+					if (items[i].checkbox_ptr != nullptr) *(items[i].checkbox_ptr) = items[i].selected;
+					value_changed = true;
+				}
+
+				ImGui::EndGroup();
+				ImGui::PopID();
+			}
+			ImGui::PopStyleVar();
+			ImGui::EndPopup();
+		}
+
+		return value_changed;
 	}
 
 	inline void DrawKeyBindButton(const char* label, UINT& bindKey) {

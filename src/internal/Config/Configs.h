@@ -49,8 +49,10 @@ namespace g_Config {
     // 掉落物
     inline bool bDrawDroppedItems = true;
     inline float DroppedItemMaxDistance = 500.0f;
+
     inline float DroppedItemNameColor[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
     inline float DroppedItemDistanceColor[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
+
     inline float DroppedItemMeatColor[4] = { 1.0f, 0.62f, 0.34f, 1.0f };
     inline float DroppedItemCryopodColor[4] = { 1.0f, 0.39f, 1.0f, 1.0f };
     inline float DroppedItemEggColor[4] = { 1.0f, 0.96f, 0.92f, 1.0f };
@@ -71,6 +73,26 @@ namespace g_Config {
     inline float DroppedItemPearlColor[4] = { 0.29f, 0.0f, 0.51f, 1.0f };
     inline float DroppedItemSpoiledMeatColor[4] = { 0.39f, 0.69f, 0.39f, 1.0f };
 
+    inline bool bDroppedItemMeat = false;
+    inline bool bDroppedItemCryopod = false;
+    inline bool bDroppedItemEgg = false;
+    inline bool bDroppedItemPiled = false;
+    inline bool bDroppedItemWood = false;
+    inline bool bDroppedItemThatch = false;
+    inline bool bDroppedItemHide = false;
+    inline bool bDroppedItemPelt = false;
+    inline bool bDroppedItemKeratin = false;
+    inline bool bDroppedItemChitin = false;
+    inline bool bDroppedItemCorruptedPolymer = false;
+    inline bool bDroppedItemPolymer_Organic = false;
+    inline bool bDroppedItemPolymer = false;
+    inline bool bDroppedItemMetal = false;
+    inline bool bDroppedItemStone = false;
+    inline bool bDroppedItemCrystal = false;
+    inline bool bDroppedItemGem = false;
+    inline bool bDroppedItemPearl = false;
+    inline bool bDroppedItemSpoiledMeat = false;
+
     // 宝箱
     inline bool bDrawSupplyDrops = true;
     inline float SupplyDropMaxDistance = 10000.0f;
@@ -82,6 +104,10 @@ namespace g_Config {
     inline float StructureNameColor[4] = { 1.0f, 1.0f, 0.7f, 1.0f };
     inline float StructureOwnerColor[4] = { 0.4f, 1.0f, 1.0f, 1.0f };
     inline float StructureDistanceColor[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
+
+    // 建筑 - 队友
+    inline bool bTeamDrawStructures = true;
+    inline float TeamStructureMaxDistance = 10000.0f;
 
     // 水源
     inline bool bDrawWater = true;
@@ -111,6 +137,19 @@ namespace g_Config {
     inline bool bDrawAimSkeleton = true;
     inline float AimSkeletonColor[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
 
+    // 生物
+    inline bool bDinoDrawBox = true;
+    inline float DinoBoxColor[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
+    inline bool bDinoDrawHealthBar = true;
+    inline bool bDinoDrawName = true;
+    inline float DinoNameColor[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
+    inline bool bDinoDrawTorpor = true;
+    inline float DinoTorporColor[4] = { 0.95f, 0.5f, 0.95f, 1.0f };
+    inline bool bDinoDrawRagdoll = true;
+    inline float DinoRagdollColor[4] = { 1.0f, 0.0f, 0.25f, 0.75f };
+    inline bool bDinoDrawDistance = true;
+    inline float DinoDistanceColor[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
+
     // 队友
     inline bool bESPTeamEnabled = true;
 
@@ -127,6 +166,19 @@ namespace g_Config {
     inline float RagdollColorTeam[4] = { 1.0f, 0.0f, 0.25f, 0.75f };
     inline bool bDrawDistanceTeam = true;
     inline float DistanceColorTeam[4] = { 0.0f, 0.5f, 1.0f, 1.0f };
+
+    // 队友 - 生物
+    inline bool bTeamDinoDrawBox = true;
+    inline float TeamDinoBoxColor[4] = { 0.0f, 0.5f, 1.0f, 1.0f };
+    inline bool bTeamDinoDrawHealthBar = true;
+    inline bool bTeamDinoDrawName = true;
+    inline float TeamDinoNameColor[4] = { 0.0f, 0.5f, 1.0f, 1.0f };
+    inline bool bTeamDinoDrawTorpor = true;
+    inline float TeamDinoTorporColor[4] = { 0.0f, 0.9f, 1.0f, 1.0f };
+    inline bool bTeamDinoDrawRagdoll = true;
+    inline float TeamDinoRagdollColor[4] = { 1.0f, 0.0f, 0.25f, 0.75f };
+    inline bool bTeamDinoDrawDistance = true;
+    inline float TeamDinoDistanceColor[4] = { 0.0f, 0.5f, 1.0f, 1.0f };
 
     // OOF
     inline bool bEnableOOF = false;

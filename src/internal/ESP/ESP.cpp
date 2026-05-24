@@ -132,6 +132,9 @@ namespace g_ESP {
         static SDK::UFont* font = nullptr;
         if (!font)
         {
+            // Font SansationBold18.SansationBold18
+            // Font OpenSansRegular12.OpenSansRegular12
+
             static SDK::UObject* _Font = SDK::UObject::FindObject("Font SansationBold18.SansationBold18");
             if (_Font && _Font->IsA(SDK::UFont::StaticClass())) {
                 font = (SDK::UFont*)_Font;
