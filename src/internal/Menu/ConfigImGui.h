@@ -158,6 +158,11 @@ namespace g_DrawImGui {
 		bool* checkbox_ptr = nullptr;  // 外部绑定的逻辑指针。若不为 nullptr，其勾选状态将与外部变量同步（等价于复选框）
 	};
 
+	struct ColorPickerData {
+		const char* label_id;
+		float* col_ptr;
+	};
+
 	static float CalcPopupMinWidthForItems(const char* items[], int count)
 	{
 		ImGuiStyle& style = ImGui::GetStyle();
@@ -194,7 +199,8 @@ namespace g_DrawImGui {
 		{
 			ImGui::AlignTextToFramePadding();
 			ImGui::PushStyleVar(ImGuiStyleVar_Alpha, enable_anim * g_MenuAlpha);
-			ImGui::TextUnformatted(display_text);
+			const char* text_end = ImGui::FindRenderedTextEnd(display_text);
+			ImGui::TextUnformatted(display_text, text_end);
 			ImGui::PopStyleVar();
 
 			ImGui::SameLine();
@@ -314,6 +320,146 @@ namespace g_DrawImGui {
 	inline void DrawCustomColorPicker(const char* label_id, float* col_ptr, const char* display_text)
 	{
 		DrawCustomColorPicker(label_id, col_ptr, true, display_text);
+	}
+
+	inline void DrawMultiColorPicker(const char* display_text, bool active, std::initializer_list<ColorPickerData> pickers)
+	{
+		ImGuiContext& g = *GImGui;
+		ImGuiStorage* storage = ImGui::GetStateStorage();
+
+		float frame_h = ImGui::GetFrameHeight();
+		float pad_y = g.Style.FramePadding.y;
+		float btn_size = frame_h - pad_y * 2.0f;
+		if (btn_size <= 0.0f) btn_size = frame_h * 0.8f;
+		ImVec2 btn_size_vec(btn_size, btn_size);
+		float item_spacing_x = g.Style.ItemSpacing.x;
+
+		ImGui::BeginGroup();
+		ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(5.0f, 5.0f));
+
+		// 1. 处理左侧文本
+		if (display_text && display_text[0] != '\0')
+		{
+			ImGui::AlignTextToFramePadding();
+			ImGui::PushStyleVar(ImGuiStyleVar_Alpha, g_MenuAlpha);
+			const char* text_end = ImGui::FindRenderedTextEnd(display_text);
+			ImGui::TextUnformatted(display_text, text_end);
+			ImGui::PopStyleVar();
+		}
+
+		int index = 0;
+		int total_count = (int)pickers.size();
+
+		// 2. 渲染颜色选择器
+		for (const auto& picker : pickers)
+		{
+			// 每个 Picker 都必须在同一行，除非它是 Group 的第一个元素且没文本
+			// 我们直接在循环开始就强制 SameLine，ImGui 会自动处理第一个元素的特殊情况
+			if (index > 0 || (display_text && display_text[0] != '\0'))
+				ImGui::SameLine();
+
+			ImGuiID anim_id = ImGui::GetID(picker.label_id);
+			float* col_ptr = picker.col_ptr;
+
+			float enable_anim = storage->GetFloat(anim_id + 1, 0.0f);
+			enable_anim = ImLinearSweep(enable_anim, active ? 1.0f : 0.0f, g.IO.DeltaTime * 6.0f);
+			storage->SetFloat(anim_id + 1, enable_anim);
+
+			if (enable_anim > 0.0f)
+			{
+				// --- 核心修复：精确对齐计算 ---
+				float remaining_items_count = (float)(total_count - index);
+				float total_needed_w = (remaining_items_count * btn_size) + ((remaining_items_count - 1) * item_spacing_x);
+
+				float avail_x = ImGui::GetContentRegionAvail().x;
+				if (avail_x > total_needed_w) {
+					// 使用 SetCursorPosX 之前不应有其他换行逻辑
+					ImGui::SetCursorPosX(ImGui::GetCursorPosX() + avail_x - total_needed_w);
+				}
+
+				char button_id[256];
+				char popup_picker_id[256];
+				char popup_menu_id[256];
+				std::snprintf(button_id, sizeof(button_id), "##ColorBtn_%s", picker.label_id);
+				std::snprintf(popup_picker_id, sizeof(popup_picker_id), "##ColorPickerPopup_%s", picker.label_id);
+				std::snprintf(popup_menu_id, sizeof(popup_menu_id), "##ColorMenuPopup_%s", picker.label_id);
+
+				ImVec4 cur = ImVec4(col_ptr[0], col_ptr[1], col_ptr[2], col_ptr[3]);
+				ImDrawList* draw_list = ImGui::GetWindowDrawList();
+				ImVec2 btn_pos = ImGui::GetCursorScreenPos();
+				ImVec2 btn_center = ImVec2(btn_pos.x + btn_size * 0.5f, btn_pos.y + btn_size * 0.5f);
+
+				float final_alpha = enable_anim * g_MenuAlpha;
+				float hover_anim = storage->GetFloat(anim_id, 0.0f);
+
+				if (hover_anim > 0.0f && final_alpha > 0.01f) {
+					float glow_radius = btn_size * 0.5f + hover_anim * 4.0f;
+					ImU32 glow_col = ImGui::GetColorU32(ImVec4(cur.x, cur.y, cur.z, 0.3f * hover_anim * final_alpha));
+					draw_list->AddCircleFilled(btn_center, glow_radius, glow_col, 32);
+				}
+
+				ImGui::PushStyleVar(ImGuiStyleVar_Alpha, final_alpha);
+				if (ImGui::ColorButton(button_id, cur, ImGuiColorEditFlags_NoBorder | ImGuiColorEditFlags_NoTooltip, btn_size_vec))
+				{
+					ImGui::OpenPopup(popup_picker_id);
+				}
+				ImGui::PopStyleVar();
+
+				bool hovered = ImGui::IsItemHovered();
+				hover_anim = hovered ? std::min(hover_anim + g.IO.DeltaTime * 8.0f, 1.0f) : std::max(hover_anim - g.IO.DeltaTime * 8.0f, 0.0f);
+				storage->SetFloat(anim_id, hover_anim);
+
+				if (hovered && ImGui::IsMouseReleased(ImGuiMouseButton_Right))
+				{
+					ImGui::OpenPopup(popup_menu_id);
+				}
+
+				// 右键菜单
+				float padding_w = g.Style.WindowPadding.x * 2.0f;
+				float text_only_w = ImGui::CalcTextSize(LanguageManager::ConfigImGui_Menu::Copy).x;
+				float tight_w = text_only_w + padding_w + g.Style.FramePadding.x * 2.0f;
+				ImGui::SetNextWindowSizeConstraints(ImVec2(tight_w, 0.0f), ImVec2(tight_w, FLT_MAX));
+				if (ImGui::BeginPopup(popup_menu_id, ImGuiWindowFlags_AlwaysAutoResize))
+				{
+					ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(0.0f, g.Style.ItemSpacing.y));
+					float original_frame_rounding = g.Style.FrameRounding;
+					g.Style.FrameRounding = 4.0f;
+					float btn_w = ImGui::GetContentRegionAvail().x;
+					if (ImGui::Button(LanguageManager::ConfigImGui_Menu::Copy, ImVec2(btn_w, 0))) {
+						g_saved_color[0] = col_ptr[0]; g_saved_color[1] = col_ptr[1];
+						g_saved_color[2] = col_ptr[2]; g_saved_color[3] = col_ptr[3];
+						ImGui::CloseCurrentPopup();
+					}
+					if (ImGui::Button(LanguageManager::ConfigImGui_Menu::Paste, ImVec2(btn_w, 0))) {
+						col_ptr[0] = g_saved_color[0]; col_ptr[1] = g_saved_color[1];
+						col_ptr[2] = g_saved_color[2]; col_ptr[3] = g_saved_color[3];
+						ImGui::CloseCurrentPopup();
+					}
+					g.Style.FrameRounding = original_frame_rounding;
+					ImGui::PopStyleVar();
+					ImGui::EndPopup();
+				}
+
+				// 左键 Picker
+				ImGui::SetNextWindowSizeConstraints(ImVec2(frame_h * 9.0f, 0.0f), ImVec2(FLT_MAX, FLT_MAX));
+				if (ImGui::BeginPopup(popup_picker_id, ImGuiWindowFlags_AlwaysAutoResize))
+				{
+					ImGui::SetNextItemWidth(frame_h * 9.0f);
+					ImGui::ColorPicker4("##Picker", col_ptr, ImGuiColorEditFlags_AlphaBar | ImGuiColorEditFlags_DisplayHex | ImGuiColorEditFlags_NoOptions | ImGuiColorEditFlags_NoSmallPreview | ImGuiColorEditFlags_NoLabel | ImGuiColorEditFlags_NoTooltip | ImGuiColorEditFlags_NoSidePreview);
+					ImGui::EndPopup();
+				}
+			}
+			else
+			{
+				// 隐藏状态下也保持在当前行，使用 Dummy 占位或跳过
+				ImGui::Dummy(ImVec2(0, 0));
+			}
+
+			index++;
+		}
+
+		ImGui::PopStyleVar();
+		ImGui::EndGroup();
 	}
 
 	inline bool DrawCustomCheckbox(const char* label, bool* v)

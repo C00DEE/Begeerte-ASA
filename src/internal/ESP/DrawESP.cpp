@@ -22,12 +22,15 @@ namespace {
         return SDK::FLinearColor{ r, g, b, a };
     }
 
-    SDK::FLinearColor GetHealthColorLinear(float percentage) {
+    SDK::FLinearColor GetHealthColorLinear(float percentage, float* colorMax, float* colorMin) {
         percentage = std::clamp(percentage, 0.0f, 1.0f);
-        if (percentage > 0.5f)
-            return SDK::FLinearColor{ (1.0f - percentage) * 2.0f, 1.0f, 0.0f, 1.0f };
-        else
-            return SDK::FLinearColor{ 1.0f, percentage * 2.0f, 0.0f, 1.0f };
+
+        float r = colorMin[0] + (colorMax[0] - colorMin[0]) * percentage;
+        float g = colorMin[1] + (colorMax[1] - colorMin[1]) * percentage;
+        float b = colorMin[2] + (colorMax[2] - colorMin[2]) * percentage;
+        float a = colorMin[3] + (colorMax[3] - colorMin[3]) * percentage;
+
+        return SDK::FLinearColor{ r, g, b, a };
     }
 }
 
@@ -309,6 +312,7 @@ namespace g_DrawESP {
 
                     entry.shouldDrawHealthBar = false;
                     entry.shouldDrawTorpor = false;
+                    entry.shouldDrawDistance = false;
                     entry.flags.clear();
                     entry.bars.clear();
 
@@ -453,7 +457,11 @@ namespace g_DrawESP {
 
                 if (bDrawHealthBar) {
                     const float healthPct = (entry.cachedMaxHP > 0.0f) ? (entry.cachedHP / entry.cachedMaxHP) : 0.0f;
-                    const SDK::FLinearColor hpCol = GetHealthColorLinear(healthPct);
+                    float* colMax = (relation == g_ESP::RelationType::Team) ? g_Config::TeamHealthColor1 : g_Config::HealthBarColor1;
+                    float* colMin = (relation == g_ESP::RelationType::Team) ? g_Config::TeamHealthColor2 : g_Config::HealthBarColor2;
+
+                    const SDK::FLinearColor hpCol = GetHealthColorLinear(healthPct, colMax, colMin);
+
                     entry.flags.push_back({ std::to_string((int)entry.cachedHP), hpCol, g_ESP::FlagPos::Left });
                     entry.bars.push_back({ entry.cachedHP, entry.cachedMaxHP, hpCol, g_ESP::BarPos::Left, g_ESP::BarOrientation::Vertical });
                 }
@@ -671,7 +679,11 @@ namespace g_DrawESP {
                 const float maxHP = Structure->MaxHealth;
                 const float healthPct = (maxHP > 0.0f) ? (curHP / maxHP) : 0.0f;
                 const int   hpPctInt = (int)(healthPct * 100.0f);
-                const SDK::FLinearColor hpColor = GetHealthColorLinear(healthPct);
+
+                float* sColMax = isTeam ? g_Config::TeamStructureHealthColor1 : g_Config::StructureHealthColor1;
+                float* sColMin = isTeam ? g_Config::TeamStructureHealthColor2 : g_Config::StructureHealthColor2;
+
+                const SDK::FLinearColor hpColor = GetHealthColorLinear(healthPct, sColMax, sColMin);
 
                 std::string owner = Structure->OwnerName.ToString();
                 std::string ownerStf = (owner.empty() || owner == "None") ? "" : " [" + owner + "]";

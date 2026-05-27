@@ -81,6 +81,9 @@ namespace g_DrawImGui {
                     DrawColorPickerRow(LanguageManager::Visuals_Menu::Box, &g_Config::bDrawBox, "BoxCol1", g_Config::BoxColor);
                     DrawColorPickerRow(LanguageManager::Visuals_Menu::Name, &g_Config::bDrawName, "NameCol1", g_Config::NameColor);
                     DrawCustomCheckbox(LanguageManager::Visuals_Menu::HealthBar, &g_Config::bDrawHealthBar);
+					ImGui::SameLine();
+                    DrawMultiColorPicker("##HealthBarCol", true, { {"##HealthBarColor1", g_Config::HealthBarColor1},{"##HealthBarColor2", g_Config::HealthBarColor2}});
+
                     DrawColorPickerRow(LanguageManager::Visuals_Menu::Torpor, &g_Config::bDrawTorpor, "TorporCol", g_Config::TorporColor);
                     DrawColorPickerRow(LanguageManager::Visuals_Menu::Ragdoll, &g_Config::bDrawRagdoll, "RagdollCol", g_Config::RagdollColor);
                     DrawAnimatedSeparator();
@@ -113,6 +116,9 @@ namespace g_DrawImGui {
                     DrawAnimatedSeparator();
                     // DrawColorPickerRow(U8("显示建筑"), &g_Config::bDrawStructures, "StructureNameCol", g_Config::StructureNameColor);
                     DrawCustomCheckbox(LanguageManager::Visuals_Menu::ShowStructures, &g_Config::bDrawStructures);
+                    ImGui::SameLine();
+                    DrawMultiColorPicker("##StructureHealthCol", true, { {"##StructureHealthColor1", g_Config::StructureHealthColor1},{"##StructureHealthColor2", g_Config::StructureHealthColor2} });
+
                     if (g_Config::bDrawStructures) {
                         // DrawCustomColorPicker("StructureOwnerCol", g_Config::StructureOwnerColor, U8("建筑所有者"));
                         // DrawCustomColorPicker("StructureDistanceCol", g_Config::StructureDistanceColor, U8("建筑距离"));
@@ -206,6 +212,8 @@ namespace g_DrawImGui {
                     DrawColorPickerRow(LanguageManager::Visuals_Menu::TeamBox, &g_Config::bDrawBoxTeam, "BoxColTeam", g_Config::BoxColorTeam);
                     DrawColorPickerRow(LanguageManager::Visuals_Menu::TeamName, &g_Config::bDrawNameTeam, "NameColTeam", g_Config::NameColorTeam);
                     DrawCustomCheckbox(LanguageManager::Visuals_Menu::TeamHealthBar, &g_Config::bDrawHealthBarTeam);
+                    ImGui::SameLine();
+                    DrawMultiColorPicker("##TeamHealthCol", true, { {"##TeamHealthColor1", g_Config::TeamHealthColor1},{"##TeamHealthColor2", g_Config::TeamHealthColor2} });
                     DrawColorPickerRow(LanguageManager::Visuals_Menu::TeamTorpor, &g_Config::bDrawTorporTeam, "TorporColTeam", g_Config::TorporColorTeam);
                     DrawColorPickerRow(LanguageManager::Visuals_Menu::TeamRagdoll, &g_Config::bDrawRagdollTeam, "RagdollColTeam", g_Config::RagdollColorTeam);
                     DrawAnimatedSeparator();
@@ -234,6 +242,8 @@ namespace g_DrawImGui {
                     // 建筑
                     DrawAnimatedSeparator();
                     DrawCustomCheckbox(LanguageManager::Visuals_Menu::TeamShowStructures, &g_Config::bTeamDrawStructures);
+                    ImGui::SameLine();
+                    DrawMultiColorPicker("##TeamStructureHealthCol", true, { {"##TeamStructureHealthColor1", g_Config::TeamStructureHealthColor1},{"##TeamStructureHealthColor2", g_Config::TeamStructureHealthColor2} });
                     if (g_Config::bTeamDrawStructures) {
                         DrawCustomSliderFloat(LanguageManager::Visuals_Menu::TeamStructureMaxDistance, &g_Config::TeamStructureMaxDistance, 1.0f, 10000.0f, "%.0f", 1.0f, "m");
                     }

@@ -104,10 +104,14 @@ namespace g_Config {
     inline float StructureNameColor[4] = { 1.0f, 1.0f, 0.7f, 1.0f };
     inline float StructureOwnerColor[4] = { 0.4f, 1.0f, 1.0f, 1.0f };
     inline float StructureDistanceColor[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
+    inline float StructureHealthColor1[4] = { 0.0f, 1.0f, 0.0f, 1.0f };
+    inline float StructureHealthColor2[4] = { 1.0f, 0.0f, 0.0f, 1.0f };
 
     // 建筑 - 队友
     inline bool bTeamDrawStructures = true;
     inline float TeamStructureMaxDistance = 10000.0f;
+    inline float TeamStructureHealthColor1[4] = { 0.0f, 1.0f, 0.0f, 1.0f };
+    inline float TeamStructureHealthColor2[4] = { 1.0f, 0.0f, 0.0f, 1.0f };
 
     // 水源
     inline bool bDrawWater = true;
@@ -123,7 +127,11 @@ namespace g_Config {
 
     inline bool bDrawBox = true;
     inline float BoxColor[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
+
     inline bool bDrawHealthBar = true;
+    inline float HealthBarColor1[4] = { 0.0f, 1.0f, 0.0f, 1.0f };
+    inline float HealthBarColor2[4] = { 1.0f, 0.0f, 0.0f, 1.0f };
+
     inline bool bDrawName = true;
     inline float NameColor[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
     inline bool bDrawSpecies = false;
@@ -158,6 +166,9 @@ namespace g_Config {
     inline bool bDrawBoxTeam = true;
     inline float BoxColorTeam[4] = { 0.0f, 0.5f, 1.0f, 1.0f };
     inline bool bDrawHealthBarTeam = true;
+    inline float TeamHealthColor1[4] = { 0.0f, 1.0f, 0.0f, 1.0f };
+    inline float TeamHealthColor2[4] = { 1.0f, 0.0f, 0.0f, 1.0f };
+
     inline bool bDrawNameTeam = true;
     inline float NameColorTeam[4] = { 0.0f, 0.5f, 1.0f, 1.0f };
     inline bool bDrawSpeciesTeam = false;

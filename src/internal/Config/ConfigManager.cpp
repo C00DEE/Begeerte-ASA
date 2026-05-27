@@ -215,10 +215,14 @@ bool ConfigManager::SaveConfig(const std::string& filename) {
         CONFIG_COLOR(g_Config::StructureNameColor);
         CONFIG_COLOR(g_Config::StructureOwnerColor);
         CONFIG_COLOR(g_Config::StructureDistanceColor);
+        CONFIG_COLOR(g_Config::StructureHealthColor1);
+        CONFIG_COLOR(g_Config::StructureHealthColor2);
 
         // 队友建筑
         CONFIG_BOOL(g_Config::bTeamDrawStructures);
         CONFIG_FLOAT(g_Config::TeamStructureMaxDistance);
+        CONFIG_COLOR(g_Config::TeamStructureHealthColor1);
+        CONFIG_COLOR(g_Config::TeamStructureHealthColor2);
         file << "\n";
 
         // 水源
@@ -252,6 +256,8 @@ bool ConfigManager::SaveConfig(const std::string& filename) {
         CONFIG_COLOR(g_Config::AimPointsColor);
         CONFIG_BOOL(g_Config::bDrawAimSkeleton);
         CONFIG_COLOR(g_Config::AimSkeletonColor);
+        CONFIG_COLOR(g_Config::HealthBarColor1);
+        CONFIG_COLOR(g_Config::HealthBarColor2);
 
         // 生物
         CONFIG_BOOL(g_Config::bDinoDrawBox);
@@ -297,6 +303,8 @@ bool ConfigManager::SaveConfig(const std::string& filename) {
         CONFIG_COLOR(g_Config::TeamDinoRagdollColor);
         CONFIG_BOOL(g_Config::bTeamDinoDrawDistance);
         CONFIG_COLOR(g_Config::TeamDinoDistanceColor);
+        CONFIG_COLOR(g_Config::TeamHealthColor1);
+        CONFIG_COLOR(g_Config::TeamHealthColor2);
         file << "\n";
 
         // OOF
@@ -443,10 +451,14 @@ bool ConfigManager::LoadConfig(const std::string& filename) {
         LOAD_COLOR(g_Config::StructureNameColor);
         LOAD_COLOR(g_Config::StructureOwnerColor);
         LOAD_COLOR(g_Config::StructureDistanceColor);
+        LOAD_COLOR(g_Config::StructureHealthColor1);
+        LOAD_COLOR(g_Config::StructureHealthColor2);
 
         // 队友建筑
         LOAD_BOOL(g_Config::bTeamDrawStructures);
         LOAD_FLOAT(g_Config::TeamStructureMaxDistance);
+        LOAD_COLOR(g_Config::TeamStructureHealthColor1);
+        LOAD_COLOR(g_Config::TeamStructureHealthColor2);
 
         // 水源
         LOAD_BOOL(g_Config::bDrawWater);
@@ -476,6 +488,8 @@ bool ConfigManager::LoadConfig(const std::string& filename) {
         LOAD_COLOR(g_Config::AimPointsColor);
         LOAD_BOOL(g_Config::bDrawAimSkeleton);
         LOAD_COLOR(g_Config::AimSkeletonColor);
+        LOAD_COLOR(g_Config::HealthBarColor1);
+        LOAD_COLOR(g_Config::HealthBarColor2);
 
         // 生物
         LOAD_BOOL(g_Config::bDinoDrawBox);
@@ -506,6 +520,8 @@ bool ConfigManager::LoadConfig(const std::string& filename) {
         LOAD_COLOR(g_Config::RagdollColorTeam);
         LOAD_BOOL(g_Config::bDrawDistanceTeam);
         LOAD_COLOR(g_Config::DistanceColorTeam);
+        LOAD_COLOR(g_Config::TeamHealthColor1);
+        LOAD_COLOR(g_Config::TeamHealthColor2);
 
         // 队友生物
         LOAD_BOOL(g_Config::bTeamDinoDrawBox);
