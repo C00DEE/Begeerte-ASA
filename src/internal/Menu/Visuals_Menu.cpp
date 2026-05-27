@@ -10,6 +10,46 @@
 #include "../Language/LanguageManager.h"
 
 namespace g_DrawImGui {
+    static int ESP_Type_idx = 0;
+
+    std::vector<const char*> ESP_Types = {
+        LanguageManager::Visuals_Menu::TYPEPlayer,
+        LanguageManager::Visuals_Menu::TYPEDino,
+        LanguageManager::Visuals_Menu::TYPEStructures,
+        LanguageManager::Visuals_Menu::TYPEDroppedItems,
+        LanguageManager::Visuals_Menu::TYPEWorld
+    };
+
+    std::vector<const char*> ESP_Scale = {
+        "50%",
+        "75%",
+        "100%",
+        "125%",
+        "150%"
+    };
+
+    std::vector<CustomComboItem> dropped_items_combo = {
+        { LanguageManager::Visuals_Menu::DroppedItemPiled,            false, g_Config::DroppedItemPiledColor,            &g_Config::bDroppedItemPiled },
+        { LanguageManager::Visuals_Menu::DroppedItemCryopod,          false, g_Config::DroppedItemCryopodColor,          &g_Config::bDroppedItemCryopod },
+        { LanguageManager::Visuals_Menu::DroppedItemEgg,              false, g_Config::DroppedItemEggColor,              &g_Config::bDroppedItemEgg },
+        { LanguageManager::Visuals_Menu::DroppedItemMeat,             false, g_Config::DroppedItemMeatColor,             &g_Config::bDroppedItemMeat },
+        { LanguageManager::Visuals_Menu::DroppedItemSpoiledMeat,      false, g_Config::DroppedItemSpoiledMeatColor,      &g_Config::bDroppedItemSpoiledMeat },
+        { LanguageManager::Visuals_Menu::DroppedItemWood,             false, g_Config::DroppedItemWoodColor,             &g_Config::bDroppedItemWood },
+        { LanguageManager::Visuals_Menu::DroppedItemThatch,           false, g_Config::DroppedItemThatchColor,           &g_Config::bDroppedItemThatch },
+        { LanguageManager::Visuals_Menu::DroppedItemMetal,            false, g_Config::DroppedItemMetalColor,            &g_Config::bDroppedItemMetal },
+        { LanguageManager::Visuals_Menu::DroppedItemStone,            false, g_Config::DroppedItemStoneColor,            &g_Config::bDroppedItemStone },
+        { LanguageManager::Visuals_Menu::DroppedItemCrystal,          false, g_Config::DroppedItemCrystalColor,          &g_Config::bDroppedItemCrystal },
+        { LanguageManager::Visuals_Menu::DroppedItemGem,              false, g_Config::DroppedItemGemColor,              &g_Config::bDroppedItemGem },
+        { LanguageManager::Visuals_Menu::DroppedItemPearl,            false, g_Config::DroppedItemPearlColor,            &g_Config::bDroppedItemPearl },
+        { LanguageManager::Visuals_Menu::DroppedItemHide,             false, g_Config::DroppedItemHideColor,             &g_Config::bDroppedItemHide },
+        { LanguageManager::Visuals_Menu::DroppedItemPelt,             false, g_Config::DroppedItemPeltColor,             &g_Config::bDroppedItemPelt },
+        { LanguageManager::Visuals_Menu::DroppedItemKeratin,          false, g_Config::DroppedItemKeratinColor,          &g_Config::bDroppedItemKeratin },
+        { LanguageManager::Visuals_Menu::DroppedItemChitin,           false, g_Config::DroppedItemChitinColor,           &g_Config::bDroppedItemChitin },
+        { LanguageManager::Visuals_Menu::DroppedItemCorruptedPolymer, false, g_Config::DroppedItemCorruptedPolymerColor,  &g_Config::bDroppedItemCorruptedPolymer },
+        { LanguageManager::Visuals_Menu::DroppedItemPolymer_Organic,  false, g_Config::DroppedItemPolymer_OrganicColor,  &g_Config::bDroppedItemPolymer_Organic },
+        { LanguageManager::Visuals_Menu::DroppedItemPolymer,          false, g_Config::DroppedItemPolymerColor,          &g_Config::bDroppedItemPolymer }
+    };
+
     void Visuals_Menu() {
         const char* tabVisuals = LanguageManager::Visuals_Menu::TabLabelVisuals;
         const char* tabTeam = LanguageManager::Visuals_Menu::TabLabelTeam;
@@ -28,41 +68,10 @@ namespace g_DrawImGui {
                 ImGui::TextColored(ThemeColors::GetAccent(), secGlobal);
                 DrawAnimatedSeparator();
 
-                static int ESP_Type_idx = 0;
-
-                std::vector<const char*> ESP_Types = {
-                    LanguageManager::Visuals_Menu::TYPEPlayer,
-                    LanguageManager::Visuals_Menu::TYPEDino,
-                    LanguageManager::Visuals_Menu::TYPEStructures,
-                    LanguageManager::Visuals_Menu::TYPEDroppedItems,
-                    LanguageManager::Visuals_Menu::TYPEWorld
-                };
-
-                std::vector<CustomComboItem> dropped_items_combo = {
-                    { LanguageManager::Visuals_Menu::DroppedItemPiled,            false, g_Config::DroppedItemPiledColor,            &g_Config::bDroppedItemPiled },
-                    { LanguageManager::Visuals_Menu::DroppedItemCryopod,          false, g_Config::DroppedItemCryopodColor,          &g_Config::bDroppedItemCryopod },
-                    { LanguageManager::Visuals_Menu::DroppedItemEgg,              false, g_Config::DroppedItemEggColor,              &g_Config::bDroppedItemEgg },
-                    { LanguageManager::Visuals_Menu::DroppedItemMeat,             false, g_Config::DroppedItemMeatColor,             &g_Config::bDroppedItemMeat },
-                    { LanguageManager::Visuals_Menu::DroppedItemSpoiledMeat,      false, g_Config::DroppedItemSpoiledMeatColor,      &g_Config::bDroppedItemSpoiledMeat },
-                    { LanguageManager::Visuals_Menu::DroppedItemWood,             false, g_Config::DroppedItemWoodColor,             &g_Config::bDroppedItemWood },
-                    { LanguageManager::Visuals_Menu::DroppedItemThatch,           false, g_Config::DroppedItemThatchColor,           &g_Config::bDroppedItemThatch },
-                    { LanguageManager::Visuals_Menu::DroppedItemMetal,            false, g_Config::DroppedItemMetalColor,            &g_Config::bDroppedItemMetal },
-                    { LanguageManager::Visuals_Menu::DroppedItemStone,            false, g_Config::DroppedItemStoneColor,            &g_Config::bDroppedItemStone },
-                    { LanguageManager::Visuals_Menu::DroppedItemCrystal,          false, g_Config::DroppedItemCrystalColor,          &g_Config::bDroppedItemCrystal },
-                    { LanguageManager::Visuals_Menu::DroppedItemGem,              false, g_Config::DroppedItemGemColor,              &g_Config::bDroppedItemGem },
-                    { LanguageManager::Visuals_Menu::DroppedItemPearl,            false, g_Config::DroppedItemPearlColor,            &g_Config::bDroppedItemPearl },
-                    { LanguageManager::Visuals_Menu::DroppedItemHide,             false, g_Config::DroppedItemHideColor,             &g_Config::bDroppedItemHide },
-                    { LanguageManager::Visuals_Menu::DroppedItemPelt,             false, g_Config::DroppedItemPeltColor,             &g_Config::bDroppedItemPelt },
-                    { LanguageManager::Visuals_Menu::DroppedItemKeratin,          false, g_Config::DroppedItemKeratinColor,          &g_Config::bDroppedItemKeratin },
-                    { LanguageManager::Visuals_Menu::DroppedItemChitin,           false, g_Config::DroppedItemChitinColor,           &g_Config::bDroppedItemChitin },
-                    { LanguageManager::Visuals_Menu::DroppedItemCorruptedPolymer, false, g_Config::DroppedItemCorruptedPolymerColor,  &g_Config::bDroppedItemCorruptedPolymer },
-                    { LanguageManager::Visuals_Menu::DroppedItemPolymer_Organic,  false, g_Config::DroppedItemPolymer_OrganicColor,  &g_Config::bDroppedItemPolymer_Organic },
-                    { LanguageManager::Visuals_Menu::DroppedItemPolymer,          false, g_Config::DroppedItemPolymerColor,          &g_Config::bDroppedItemPolymer }
-                };
-
                 DrawCustomCheckbox(LanguageManager::Visuals_Menu::ESPEnabled, &g_Config::bESPEnabled);
                 DrawCustomCombo(U8("##ESP_Type"), &ESP_Type_idx, ESP_Types);
-                // ImGui::SameLine();
+                ImGui::SameLine();
+                DrawCustomCombo(U8("##ESP_Scale"), &g_Config::ESPScaleIdx, ESP_Scale);
 
                 switch (ESP_Type_idx)
                 {

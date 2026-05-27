@@ -232,6 +232,8 @@ bool ConfigManager::SaveConfig(const std::string& filename) {
         // 全局
         file << "[Global]\n";
         CONFIG_BOOL(g_Config::bESPEnabled);
+        CONFIG_INT(g_Config::ESPScaleIdx);
+        // CONFIG_FLOAT(g_Config::ESPScale);
 
         CONFIG_BOOL(g_Config::bDrawBox);
         CONFIG_COLOR(g_Config::BoxColor);
@@ -454,6 +456,8 @@ bool ConfigManager::LoadConfig(const std::string& filename) {
 
         // 全局
         LOAD_BOOL(g_Config::bESPEnabled);
+        LOAD_INT(g_Config::ESPScaleIdx);
+        // LOAD_FLOAT(g_Config::ESPScale);
 
         LOAD_BOOL(g_Config::bDrawBox);
         LOAD_COLOR(g_Config::BoxColor);
@@ -571,6 +575,16 @@ bool ConfigManager::ReadValue(const std::string& value, bool& out) {
 bool ConfigManager::ReadValue(const std::string& value, float& out) {
     try {
         out = std::stof(value);
+        return true;
+    }
+    catch (...) {
+        return false;
+    }
+}
+
+bool ConfigManager::ReadValue(const std::string& value, int& out) {
+    try {
+        out = std::stoi(value);
         return true;
     }
     catch (...) {

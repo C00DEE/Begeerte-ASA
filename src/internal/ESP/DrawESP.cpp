@@ -110,6 +110,25 @@ namespace g_DrawESP {
     {
         if (!Canvas) return;
 
+        switch (g_Config::ESPScaleIdx)
+        {
+        case 0:
+            g_Config::ESPScale = 0.5f;
+            break;
+        case 1:
+            g_Config::ESPScale = 0.75f;
+            break;
+        case 2:
+            g_Config::ESPScale = 1.0f;
+            break;
+        case 3:
+            g_Config::ESPScale = 1.25f;
+            break;
+        case 4:
+            g_Config::ESPScale = 1.5f;
+            break;
+        }
+
         if (!g_Config::bESPEnabled) {
             s_entries.clear();
             waterCandidates.clear();

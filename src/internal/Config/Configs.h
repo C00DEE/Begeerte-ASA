@@ -118,6 +118,8 @@ namespace g_Config {
 
     // È«¾Ö
     inline bool bESPEnabled = true;
+	inline int ESPScaleIdx = 2;
+	inline float ESPScale = 1.0f;
 
     inline bool bDrawBox = true;
     inline float BoxColor[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
