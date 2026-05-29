@@ -116,19 +116,19 @@ namespace g_DrawESP {
         switch (g_Config::ESPScaleIdx)
         {
         case 0:
-            g_Config::ESPScale = 0.5f;
-            break;
-        case 1:
             g_Config::ESPScale = 0.75f;
             break;
-        case 2:
-            g_Config::ESPScale = 1.0f;
+        case 1:
+            g_Config::ESPScale = 1.00f;
             break;
-        case 3:
+        case 2:
             g_Config::ESPScale = 1.25f;
             break;
-        case 4:
+        case 3:
             g_Config::ESPScale = 1.5f;
+            break;
+        case 4:
+            g_Config::ESPScale = 2.0f;
             break;
         }
 

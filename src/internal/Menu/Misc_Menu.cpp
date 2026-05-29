@@ -11,6 +11,14 @@
 #include "../Language/LanguageManager.h"
 
 namespace g_DrawImGui {
+	std::vector<const char*> Menu_Scale = {
+	"75%",
+	"100%",
+	"125%",
+	"150%",
+	"200%"
+	};
+
 	void Misc_Menu() {
 		const char* tabLabel = LanguageManager::Misc_Menu::TabLabel;
 		const char* secMenu = LanguageManager::Misc_Menu::SectionMenu;
@@ -43,6 +51,9 @@ namespace g_DrawImGui {
 			ImGui::SameLine();
 
 			DrawKeyBindButton("Menu Toggle Key", g_MDX12::g_MenuState::g_openKey);
+			ImGui::SameLine();
+
+			DrawCustomCombo(U8("##Menu_Scale"), &g_Config::MenuScaleIdx, Menu_Scale);
 			ImGui::SameLine();
 
 			if (DrawCustomButton(resetLayout)) {

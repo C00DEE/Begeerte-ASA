@@ -7,6 +7,7 @@ namespace g_Config {
     inline bool bMenuNeedReset = false;
     inline bool bMenuLockResize = false;
     inline float MenuColor[4] = { 0.431f, 0.906f, 0.718f, 1.000f };
+    inline int MenuScaleIdx = 1;
 
     // 其他功能
     inline bool bSuperFlyer = false;
@@ -122,7 +123,7 @@ namespace g_Config {
 
     // 全局
     inline bool bESPEnabled = true;
-	inline int ESPScaleIdx = 2;
+	inline int ESPScaleIdx = 1;
 	inline float ESPScale = 1.0f;
 
     inline bool bDrawBox = true;

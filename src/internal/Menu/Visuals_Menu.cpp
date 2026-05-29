@@ -21,11 +21,11 @@ namespace g_DrawImGui {
     };
 
     std::vector<const char*> ESP_Scale = {
-        "50%",
         "75%",
         "100%",
         "125%",
-        "150%"
+        "150%",
+        "200%"
     };
 
     std::vector<CustomComboItem> dropped_items_combo = {

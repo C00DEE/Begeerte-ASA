@@ -42,8 +42,9 @@ namespace g_MDX12 {
     // extern ImFont* g_Alibaba_PuHuiTi_Bold;
     // extern ImFont* g_Alibaba_PuHuiTi_Heavy;
     // extern ImFont* g_Alibaba_PuHuiTi_Light;
-    extern ImFont* g_Alibaba_PuHuiTi_Medium;
+    // extern ImFont* g_Alibaba_PuHuiTi_Medium;
     extern ImFont* g_HarmonyOS_Sans_SC_Regular;
+    extern int g_LoadedFontScaleIdx;
 
     // Hook function pointer types
     typedef HRESULT(STDMETHODCALLTYPE* PFN_Present)(IDXGISwapChain3* pSwapChain, UINT SyncInterval, UINT Flags);
@@ -164,6 +165,7 @@ namespace g_MDX12 {
     }
 
     // Rendering and cleanup functions
+    void UpdateImGuiFont();
     void InitProcessName();
     void CleanupRenderResources();
     void CleanupRenderResources_NoInput();
