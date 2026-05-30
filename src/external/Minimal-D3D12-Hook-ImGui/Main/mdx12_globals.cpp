@@ -6,8 +6,9 @@ namespace g_MDX12 {
     // ImFont* g_Alibaba_PuHuiTi_Bold = nullptr;
     // ImFont* g_Alibaba_PuHuiTi_Heavy = nullptr;
     // ImFont* g_Alibaba_PuHuiTi_Light = nullptr;
-    ImFont* g_Alibaba_PuHuiTi_Medium = nullptr;
+    // ImFont* g_Alibaba_PuHuiTi_Medium = nullptr;
     ImFont* g_HarmonyOS_Sans_SC_Regular = nullptr;
+    int g_LoadedFontScaleIdx = -1;
 
     // Hook original function pointers
     namespace g_HookFunctions {
@@ -98,6 +99,8 @@ namespace g_MDX12 {
     namespace g_MenuState {
         bool g_isOpen = true;
         UINT g_openKey = VK_F1;
+        bool g_isOutBodyActive = false;
+        UINT g_OutBodyKey = 0x5A;
         UINT* g_pCurrentBindingKey = nullptr;
         bool g_bindingFinished = false;
         bool g_wasOpenLastFrame = true;

@@ -385,6 +385,19 @@ namespace g_MDX12 {
                 return 0;
             }
 
+            if (uMsg == WM_KEYDOWN && wParam == g_MenuState::g_OutBodyKey && !g_MenuState::g_isOutBodyActive) {
+                if (!g_MenuState::g_isOpen) {
+                    g_MenuState::g_isOutBodyActive = true;
+                }
+                return 0;
+            }
+            else if (uMsg == WM_KEYUP && wParam == g_MenuState::g_OutBodyKey) {
+                if (g_MenuState::g_isOutBodyActive) {
+                    g_MenuState::g_isOutBodyActive = false;
+                }
+                return 0;
+            }
+
             if (uMsg == WM_INPUT || uMsg == WM_INPUT_DEVICE_CHANGE) {
                 if (g_MenuState::g_isOpen && g_InputState::g_blockMouseInput) {
                     return 0;

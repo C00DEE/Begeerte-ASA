@@ -45,6 +45,7 @@ private:
     void WriteCharArray(std::ofstream& file, const std::string& key, const char* str, size_t maxLen);
     bool ReadValue(const std::string& value, bool& out);
     bool ReadValue(const std::string& value, float& out);
+    bool ReadValue(const std::string& value, int& out);
     bool ReadValue(const std::string& value, char* out, size_t maxLen);
     bool ReadColorArray(const std::string& value, float* color);
 
@@ -58,6 +59,9 @@ private:
     ConfigManager::Get().WriteValue(file, #var, var);
 
 #define CONFIG_FLOAT(var) \
+    ConfigManager::Get().WriteValue(file, #var, var);
+
+#define CONFIG_INT(var) \
     ConfigManager::Get().WriteValue(file, #var, var);
 
 #define CONFIG_COLOR(var) \
@@ -79,6 +83,10 @@ private:
       if (it != data.end()) ConfigManager::Get().ReadValue(it->second, var); }
 
 #define LOAD_FLOAT(var) \
+    { auto it = data.find(#var); \
+      if (it != data.end()) ConfigManager::Get().ReadValue(it->second, var); }
+
+#define LOAD_INT(var) \
     { auto it = data.find(#var); \
       if (it != data.end()) ConfigManager::Get().ReadValue(it->second, var); }
 

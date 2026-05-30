@@ -129,15 +129,20 @@ namespace g_ESP {
     void FlagManager::AddFlag(SDK::UCanvas* Canvas, BoxRect rect, const std::string& text, SDK::FLinearColor color, FlagPos pos, float alphaMult, const BarManager* barMgr) {
         if (!rect.valid || text.empty() || !Canvas) return;
 
-        static SDK::UFont* font = nullptr;
-        if (!font)
-        {
-            static SDK::UObject* _Font = SDK::UObject::FindObject("Font SansationBold18.SansationBold18");
-            if (_Font && _Font->IsA(SDK::UFont::StaticClass())) {
-                font = (SDK::UFont*)_Font;
-            }
+        static SDK::UFont* SansationBold18 = nullptr;
+        static SDK::UFont* OpenSansRegular12 = nullptr;
+
+        if (!SansationBold18) {
+            SDK::UObject* _Font = SDK::UObject::FindObject("Font SansationBold18.SansationBold18");
+            if (_Font && _Font->IsA(SDK::UFont::StaticClass())) SansationBold18 = (SDK::UFont*)_Font;
         }
-        if (!font) return;
+        if (!OpenSansRegular12) {
+            SDK::UObject* _Font = SDK::UObject::FindObject("Font OpenSansRegular12.OpenSansRegular12");
+            if (_Font && _Font->IsA(SDK::UFont::StaticClass())) OpenSansRegular12 = (SDK::UFont*)_Font;
+        }
+
+        if (!SansationBold18 || !OpenSansRegular12) return;
+        SDK::UFont* currentFont = (pos == FlagPos::Top) ? SansationBold18 : OpenSansRegular12;
 
         // 【关键修复1】：直接在函数作用域内保留 wstr，让FString拥有生命周期安全的指针！
         std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
@@ -145,10 +150,10 @@ namespace g_ESP {
         SDK::FString fText(wstr.c_str());
 
         // 缩放字体
-        SDK::FVector2D scaleSize = SDK::FVector2D{ 1.0f, 1.0f };
+        SDK::FVector2D scaleSize = SDK::FVector2D{ 1.0f * g_Config::ESPScale, 1.0f * g_Config::ESPScale };
 
         // 获取精确宽高
-        SDK::FVector2D textSize = Canvas->K2_TextSize(font, fText, scaleSize);
+        SDK::FVector2D textSize = Canvas->K2_TextSize(currentFont, fText, scaleSize);
         SDK::FVector2D drawPos;
 
         // 【关键修复2】：补全全部四个方向的 barOffset（解决文字和血条重叠的问题）
@@ -179,7 +184,7 @@ namespace g_ESP {
         SDK::FLinearColor shadowCol = { 0.0f, 0.0f, 0.0f, color.A };
 
         // 渲染文字
-        Canvas->K2_DrawText(font, fText, drawPos, scaleSize, color, 0.0f, shadowCol, SDK::FVector2D{ 1.0f, 1.0f }, false, false, true, shadowCol);
+        Canvas->K2_DrawText(currentFont, fText, drawPos, scaleSize, color, 0.0f, shadowCol, SDK::FVector2D{ 1.0f, 1.0f }, false, false, true, shadowCol);
     }
 
     BoxRect DrawBox(SDK::UCanvas* Canvas, SDK::AActor* entity, float r, float g, float b, float a, float width_scale, bool bTestOnly) {
@@ -224,15 +229,26 @@ namespace g_ESP {
         if (!rect.valid || alpha < 0.001f || !Canvas) return;
 
         color.A *= alpha;
-        SDK::FVector2D boxSize = { (float)(rect.bottomRight.X - rect.topLeft.X), (float)(rect.bottomRight.Y - rect.topLeft.Y) };
 
-        // 1. 绘制黑色外边框
-        SDK::FVector2D outPos = { (float)(rect.topLeft.X - 1.0f), (float)(rect.topLeft.Y - 1.0f) };
-        SDK::FVector2D outSize = { (float)(boxSize.X + 2.0f), (float)(boxSize.Y + 2.0f) };
-        Canvas->K2_DrawBox(outPos, outSize, 1.5f, SDK::FLinearColor{ 0.0f, 0.0f, 0.0f, color.A });
+        float x = rect.topLeft.X;
+        float y = rect.topLeft.Y;
+        float w = rect.bottomRight.X - rect.topLeft.X;
+        float h = rect.bottomRight.Y - rect.topLeft.Y;
+        float thickness = 1.0f; // 边框线条粗细
+
+        // 1. 绘制黑色外边框阴影
+        SDK::FLinearColor shadowCol = { 0.0f, 0.0f, 0.0f, color.A };
+        float s_t = thickness + 2.0f; // 阴影比主线稍微粗一点点
+        DrawFilledRect(Canvas, { x - 1.0f, y - 1.0f }, { w + 2.0f, s_t }, shadowCol); // 顶
+        DrawFilledRect(Canvas, { x - 1.0f, y + h - thickness - 1.0f }, { w + 2.0f, s_t }, shadowCol); // 底
+        DrawFilledRect(Canvas, { x - 1.0f, y - 1.0f }, { s_t, h + 2.0f }, shadowCol); // 左
+        DrawFilledRect(Canvas, { x + w - thickness - 1.0f, y - 1.0f }, { s_t, h + 2.0f }, shadowCol); // 右
 
         // 2. 绘制彩色主边框
-        Canvas->K2_DrawBox(rect.topLeft, boxSize, 1.0f, color);
+        DrawFilledRect(Canvas, { x, y }, { w, thickness }, color); // 顶
+        DrawFilledRect(Canvas, { x, y + h - thickness }, { w, thickness }, color); // 底
+        DrawFilledRect(Canvas, { x, y }, { thickness, h }, color); // 左
+        DrawFilledRect(Canvas, { x + w - thickness, y }, { thickness, h }, color); // 右
     }
 
     void DrawHealthBar(SDK::UCanvas* Canvas, BoxRect rect, float healthPercent, float maxHealth, float a) {

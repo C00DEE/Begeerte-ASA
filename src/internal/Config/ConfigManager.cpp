@@ -178,6 +178,27 @@ bool ConfigManager::SaveConfig(const std::string& filename) {
         CONFIG_COLOR(g_Config::DroppedItemGemColor);
         CONFIG_COLOR(g_Config::DroppedItemPearlColor);
         CONFIG_COLOR(g_Config::DroppedItemSpoiledMeatColor);
+
+        // 掉落物开关
+        CONFIG_BOOL(g_Config::bDroppedItemMeat);
+        CONFIG_BOOL(g_Config::bDroppedItemCryopod);
+        CONFIG_BOOL(g_Config::bDroppedItemEgg);
+        CONFIG_BOOL(g_Config::bDroppedItemPiled);
+        CONFIG_BOOL(g_Config::bDroppedItemWood);
+        CONFIG_BOOL(g_Config::bDroppedItemThatch);
+        CONFIG_BOOL(g_Config::bDroppedItemHide);
+        CONFIG_BOOL(g_Config::bDroppedItemPelt);
+        CONFIG_BOOL(g_Config::bDroppedItemKeratin);
+        CONFIG_BOOL(g_Config::bDroppedItemChitin);
+        CONFIG_BOOL(g_Config::bDroppedItemCorruptedPolymer);
+        CONFIG_BOOL(g_Config::bDroppedItemPolymer_Organic);
+        CONFIG_BOOL(g_Config::bDroppedItemPolymer);
+        CONFIG_BOOL(g_Config::bDroppedItemMetal);
+        CONFIG_BOOL(g_Config::bDroppedItemStone);
+        CONFIG_BOOL(g_Config::bDroppedItemCrystal);
+        CONFIG_BOOL(g_Config::bDroppedItemGem);
+        CONFIG_BOOL(g_Config::bDroppedItemPearl);
+        CONFIG_BOOL(g_Config::bDroppedItemSpoiledMeat);
         file << "\n";
 
         // 宝箱
@@ -194,6 +215,14 @@ bool ConfigManager::SaveConfig(const std::string& filename) {
         CONFIG_COLOR(g_Config::StructureNameColor);
         CONFIG_COLOR(g_Config::StructureOwnerColor);
         CONFIG_COLOR(g_Config::StructureDistanceColor);
+        CONFIG_COLOR(g_Config::StructureHealthColor1);
+        CONFIG_COLOR(g_Config::StructureHealthColor2);
+
+        // 队友建筑
+        CONFIG_BOOL(g_Config::bTeamDrawStructures);
+        CONFIG_FLOAT(g_Config::TeamStructureMaxDistance);
+        CONFIG_COLOR(g_Config::TeamStructureHealthColor1);
+        CONFIG_COLOR(g_Config::TeamStructureHealthColor2);
         file << "\n";
 
         // 水源
@@ -206,6 +235,10 @@ bool ConfigManager::SaveConfig(const std::string& filename) {
 
         // 全局
         file << "[Global]\n";
+        CONFIG_BOOL(g_Config::bESPEnabled);
+        CONFIG_INT(g_Config::ESPScaleIdx);
+        // CONFIG_FLOAT(g_Config::ESPScale);
+
         CONFIG_BOOL(g_Config::bDrawBox);
         CONFIG_COLOR(g_Config::BoxColor);
         CONFIG_BOOL(g_Config::bDrawHealthBar);
@@ -223,10 +256,27 @@ bool ConfigManager::SaveConfig(const std::string& filename) {
         CONFIG_COLOR(g_Config::AimPointsColor);
         CONFIG_BOOL(g_Config::bDrawAimSkeleton);
         CONFIG_COLOR(g_Config::AimSkeletonColor);
+        CONFIG_COLOR(g_Config::HealthBarColor1);
+        CONFIG_COLOR(g_Config::HealthBarColor2);
+
+        // 生物
+        CONFIG_BOOL(g_Config::bDinoDrawBox);
+        CONFIG_COLOR(g_Config::DinoBoxColor);
+        CONFIG_BOOL(g_Config::bDinoDrawHealthBar);
+        CONFIG_BOOL(g_Config::bDinoDrawName);
+        CONFIG_COLOR(g_Config::DinoNameColor);
+        CONFIG_BOOL(g_Config::bDinoDrawTorpor);
+        CONFIG_COLOR(g_Config::DinoTorporColor);
+        CONFIG_BOOL(g_Config::bDinoDrawRagdoll);
+        CONFIG_COLOR(g_Config::DinoRagdollColor);
+        CONFIG_BOOL(g_Config::bDinoDrawDistance);
+        CONFIG_COLOR(g_Config::DinoDistanceColor);
         file << "\n";
 
         // 队友
         file << "[Team]\n";
+        CONFIG_BOOL(g_Config::bESPTeamEnabled);
+
         CONFIG_BOOL(g_Config::bDrawBoxTeam);
         CONFIG_COLOR(g_Config::BoxColorTeam);
         CONFIG_BOOL(g_Config::bDrawHealthBarTeam);
@@ -240,6 +290,21 @@ bool ConfigManager::SaveConfig(const std::string& filename) {
         CONFIG_COLOR(g_Config::RagdollColorTeam);
         CONFIG_BOOL(g_Config::bDrawDistanceTeam);
         CONFIG_COLOR(g_Config::DistanceColorTeam);
+
+        // 队友生物
+        CONFIG_BOOL(g_Config::bTeamDinoDrawBox);
+        CONFIG_COLOR(g_Config::TeamDinoBoxColor);
+        CONFIG_BOOL(g_Config::bTeamDinoDrawHealthBar);
+        CONFIG_BOOL(g_Config::bTeamDinoDrawName);
+        CONFIG_COLOR(g_Config::TeamDinoNameColor);
+        CONFIG_BOOL(g_Config::bTeamDinoDrawTorpor);
+        CONFIG_COLOR(g_Config::TeamDinoTorporColor);
+        CONFIG_BOOL(g_Config::bTeamDinoDrawRagdoll);
+        CONFIG_COLOR(g_Config::TeamDinoRagdollColor);
+        CONFIG_BOOL(g_Config::bTeamDinoDrawDistance);
+        CONFIG_COLOR(g_Config::TeamDinoDistanceColor);
+        CONFIG_COLOR(g_Config::TeamHealthColor1);
+        CONFIG_COLOR(g_Config::TeamHealthColor2);
         file << "\n";
 
         // OOF
@@ -354,6 +419,27 @@ bool ConfigManager::LoadConfig(const std::string& filename) {
         LOAD_COLOR(g_Config::DroppedItemPearlColor);
         LOAD_COLOR(g_Config::DroppedItemSpoiledMeatColor);
 
+        // 掉落物开关
+        LOAD_BOOL(g_Config::bDroppedItemMeat);
+        LOAD_BOOL(g_Config::bDroppedItemCryopod);
+        LOAD_BOOL(g_Config::bDroppedItemEgg);
+        LOAD_BOOL(g_Config::bDroppedItemPiled);
+        LOAD_BOOL(g_Config::bDroppedItemWood);
+        LOAD_BOOL(g_Config::bDroppedItemThatch);
+        LOAD_BOOL(g_Config::bDroppedItemHide);
+        LOAD_BOOL(g_Config::bDroppedItemPelt);
+        LOAD_BOOL(g_Config::bDroppedItemKeratin);
+        LOAD_BOOL(g_Config::bDroppedItemChitin);
+        LOAD_BOOL(g_Config::bDroppedItemCorruptedPolymer);
+        LOAD_BOOL(g_Config::bDroppedItemPolymer_Organic);
+        LOAD_BOOL(g_Config::bDroppedItemPolymer);
+        LOAD_BOOL(g_Config::bDroppedItemMetal);
+        LOAD_BOOL(g_Config::bDroppedItemStone);
+        LOAD_BOOL(g_Config::bDroppedItemCrystal);
+        LOAD_BOOL(g_Config::bDroppedItemGem);
+        LOAD_BOOL(g_Config::bDroppedItemPearl);
+        LOAD_BOOL(g_Config::bDroppedItemSpoiledMeat);
+
         // 宝箱
         LOAD_BOOL(g_Config::bDrawSupplyDrops);
         LOAD_FLOAT(g_Config::SupplyDropMaxDistance);
@@ -365,6 +451,14 @@ bool ConfigManager::LoadConfig(const std::string& filename) {
         LOAD_COLOR(g_Config::StructureNameColor);
         LOAD_COLOR(g_Config::StructureOwnerColor);
         LOAD_COLOR(g_Config::StructureDistanceColor);
+        LOAD_COLOR(g_Config::StructureHealthColor1);
+        LOAD_COLOR(g_Config::StructureHealthColor2);
+
+        // 队友建筑
+        LOAD_BOOL(g_Config::bTeamDrawStructures);
+        LOAD_FLOAT(g_Config::TeamStructureMaxDistance);
+        LOAD_COLOR(g_Config::TeamStructureHealthColor1);
+        LOAD_COLOR(g_Config::TeamStructureHealthColor2);
 
         // 水源
         LOAD_BOOL(g_Config::bDrawWater);
@@ -373,6 +467,10 @@ bool ConfigManager::LoadConfig(const std::string& filename) {
         LOAD_COLOR(g_Config::WaterDistanceColor);
 
         // 全局
+        LOAD_BOOL(g_Config::bESPEnabled);
+        LOAD_INT(g_Config::ESPScaleIdx);
+        // LOAD_FLOAT(g_Config::ESPScale);
+
         LOAD_BOOL(g_Config::bDrawBox);
         LOAD_COLOR(g_Config::BoxColor);
         LOAD_BOOL(g_Config::bDrawHealthBar);
@@ -390,8 +488,25 @@ bool ConfigManager::LoadConfig(const std::string& filename) {
         LOAD_COLOR(g_Config::AimPointsColor);
         LOAD_BOOL(g_Config::bDrawAimSkeleton);
         LOAD_COLOR(g_Config::AimSkeletonColor);
+        LOAD_COLOR(g_Config::HealthBarColor1);
+        LOAD_COLOR(g_Config::HealthBarColor2);
+
+        // 生物
+        LOAD_BOOL(g_Config::bDinoDrawBox);
+        LOAD_COLOR(g_Config::DinoBoxColor);
+        LOAD_BOOL(g_Config::bDinoDrawHealthBar);
+        LOAD_BOOL(g_Config::bDinoDrawName);
+        LOAD_COLOR(g_Config::DinoNameColor);
+        LOAD_BOOL(g_Config::bDinoDrawTorpor);
+        LOAD_COLOR(g_Config::DinoTorporColor);
+        LOAD_BOOL(g_Config::bDinoDrawRagdoll);
+        LOAD_COLOR(g_Config::DinoRagdollColor);
+        LOAD_BOOL(g_Config::bDinoDrawDistance);
+        LOAD_COLOR(g_Config::DinoDistanceColor);
 
         // 队友
+        LOAD_BOOL(g_Config::bESPTeamEnabled);
+
         LOAD_BOOL(g_Config::bDrawBoxTeam);
         LOAD_COLOR(g_Config::BoxColorTeam);
         LOAD_BOOL(g_Config::bDrawHealthBarTeam);
@@ -405,6 +520,21 @@ bool ConfigManager::LoadConfig(const std::string& filename) {
         LOAD_COLOR(g_Config::RagdollColorTeam);
         LOAD_BOOL(g_Config::bDrawDistanceTeam);
         LOAD_COLOR(g_Config::DistanceColorTeam);
+        LOAD_COLOR(g_Config::TeamHealthColor1);
+        LOAD_COLOR(g_Config::TeamHealthColor2);
+
+        // 队友生物
+        LOAD_BOOL(g_Config::bTeamDinoDrawBox);
+        LOAD_COLOR(g_Config::TeamDinoBoxColor);
+        LOAD_BOOL(g_Config::bTeamDinoDrawHealthBar);
+        LOAD_BOOL(g_Config::bTeamDinoDrawName);
+        LOAD_COLOR(g_Config::TeamDinoNameColor);
+        LOAD_BOOL(g_Config::bTeamDinoDrawTorpor);
+        LOAD_COLOR(g_Config::TeamDinoTorporColor);
+        LOAD_BOOL(g_Config::bTeamDinoDrawRagdoll);
+        LOAD_COLOR(g_Config::TeamDinoRagdollColor);
+        LOAD_BOOL(g_Config::bTeamDinoDrawDistance);
+        LOAD_COLOR(g_Config::TeamDinoDistanceColor);
 
         // OOF
         LOAD_BOOL(g_Config::bEnableOOF);
@@ -461,6 +591,16 @@ bool ConfigManager::ReadValue(const std::string& value, bool& out) {
 bool ConfigManager::ReadValue(const std::string& value, float& out) {
     try {
         out = std::stof(value);
+        return true;
+    }
+    catch (...) {
+        return false;
+    }
+}
+
+bool ConfigManager::ReadValue(const std::string& value, int& out) {
+    try {
+        out = std::stoi(value);
         return true;
     }
     catch (...) {

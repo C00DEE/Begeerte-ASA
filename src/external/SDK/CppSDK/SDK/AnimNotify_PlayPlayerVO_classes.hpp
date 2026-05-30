@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Enum_VoiceCollectionLine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "Enum_VoiceCollectionLine_structs.hpp"
 
 
 SDK_NAMESPACE_START

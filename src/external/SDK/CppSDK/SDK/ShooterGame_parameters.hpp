@@ -12388,6 +12388,17 @@ public:
 };
 DUMPER7_ASSERTS_PrimalCharacter_BPOverrideJumpZModifier;
 
+// Function ShooterGame.PrimalCharacter.BPPreventForceTriggerIgnoredTrapClass
+// 0x0010 (0x0010 - 0x0000)
+struct PrimalCharacter_BPPreventForceTriggerIgnoredTrapClass final
+{
+public:
+	TSubclassOf<class APrimalStructure>           TrapClass;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PrimalCharacter_BPPreventForceTriggerIgnoredTrapClass;
+
 // Function ShooterGame.PrimalCharacter.BPPreventNotifySound
 // 0x0010 (0x0010 - 0x0000)
 struct PrimalCharacter_BPPreventNotifySound final

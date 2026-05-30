@@ -110,6 +110,9 @@ const char* LanguageManager::Visuals_Menu::SectionExtra = U8("额外信息");
 const char* LanguageManager::Visuals_Menu::SectionWorld = U8("世界信息");
 const char* LanguageManager::Visuals_Menu::SectionTeam = U8("队友设置");
 const char* LanguageManager::Visuals_Menu::SectionTeamExtra = U8("额外信息");
+
+const char* LanguageManager::Visuals_Menu::ESPEnabled = U8("启用透视");
+
 const char* LanguageManager::Visuals_Menu::Box = U8("方框");
 const char* LanguageManager::Visuals_Menu::Name = U8("名称");
 const char* LanguageManager::Visuals_Menu::HealthBar = U8("血量");
@@ -118,38 +121,70 @@ const char* LanguageManager::Visuals_Menu::Ragdoll = U8("尸体");
 const char* LanguageManager::Visuals_Menu::Distance = U8("距离");
 const char* LanguageManager::Visuals_Menu::ShowAimPoints = U8("显示瞄准点");
 const char* LanguageManager::Visuals_Menu::DroppedItems = U8("掉落的物品");
-const char* LanguageManager::Visuals_Menu::DroppedItemPiled = U8("堆叠颜色");
-const char* LanguageManager::Visuals_Menu::DroppedItemCryopod = U8("低温仓颜色");
-const char* LanguageManager::Visuals_Menu::DroppedItemEgg = U8("蛋颜色");
-const char* LanguageManager::Visuals_Menu::DroppedItemMeat = U8("肉类颜色");
-const char* LanguageManager::Visuals_Menu::DroppedItemSpoiledMeat = U8("腐肉颜色");
-const char* LanguageManager::Visuals_Menu::DroppedItemWood = U8("木头颜色");
-const char* LanguageManager::Visuals_Menu::DroppedItemThatch = U8("茅草颜色");
-const char* LanguageManager::Visuals_Menu::DroppedItemMetal = U8("金属颜色");
-const char* LanguageManager::Visuals_Menu::DroppedItemStone = U8("石头颜色");
-const char* LanguageManager::Visuals_Menu::DroppedItemCrystal = U8("水晶颜色");
-const char* LanguageManager::Visuals_Menu::DroppedItemGem = U8("宝石颜色");
-const char* LanguageManager::Visuals_Menu::DroppedItemPearl = U8("珍珠颜色");
-const char* LanguageManager::Visuals_Menu::DroppedItemHide = U8("兽皮颜色");
-const char* LanguageManager::Visuals_Menu::DroppedItemPelt = U8("毛皮颜色");
-const char* LanguageManager::Visuals_Menu::DroppedItemKeratin = U8("角质颜色");
-const char* LanguageManager::Visuals_Menu::DroppedItemChitin = U8("甲壳素颜色");
-const char* LanguageManager::Visuals_Menu::DroppedItemCorruptedPolymer = U8("腐化瘤颜色");
-const char* LanguageManager::Visuals_Menu::DroppedItemPolymer_Organic = U8("有机聚合物颜色");
-const char* LanguageManager::Visuals_Menu::DroppedItemPolymer = U8("聚合物颜色");
+const char* LanguageManager::Visuals_Menu::DroppedItemPiled = U8("堆叠物品");
+const char* LanguageManager::Visuals_Menu::DroppedItemCryopod = U8("低温仓");
+const char* LanguageManager::Visuals_Menu::DroppedItemEgg = U8("蛋");
+const char* LanguageManager::Visuals_Menu::DroppedItemMeat = U8("肉类");
+const char* LanguageManager::Visuals_Menu::DroppedItemSpoiledMeat = U8("腐肉");
+const char* LanguageManager::Visuals_Menu::DroppedItemWood = U8("木头");
+const char* LanguageManager::Visuals_Menu::DroppedItemThatch = U8("茅草");
+const char* LanguageManager::Visuals_Menu::DroppedItemMetal = U8("金属");
+const char* LanguageManager::Visuals_Menu::DroppedItemStone = U8("石头");
+const char* LanguageManager::Visuals_Menu::DroppedItemCrystal = U8("水晶");
+const char* LanguageManager::Visuals_Menu::DroppedItemGem = U8("宝石");
+const char* LanguageManager::Visuals_Menu::DroppedItemPearl = U8("珍珠");
+const char* LanguageManager::Visuals_Menu::DroppedItemHide = U8("兽皮");
+const char* LanguageManager::Visuals_Menu::DroppedItemPelt = U8("毛皮");
+const char* LanguageManager::Visuals_Menu::DroppedItemKeratin = U8("角质");
+const char* LanguageManager::Visuals_Menu::DroppedItemChitin = U8("甲壳素");
+const char* LanguageManager::Visuals_Menu::DroppedItemCorruptedPolymer = U8("腐化瘤");
+const char* LanguageManager::Visuals_Menu::DroppedItemPolymer_Organic = U8("有机聚合物");
+const char* LanguageManager::Visuals_Menu::DroppedItemPolymer = U8("聚合物");
 const char* LanguageManager::Visuals_Menu::DroppedItemMaxDistance = U8("物品显示距离");
+
 const char* LanguageManager::Visuals_Menu::ShowStructures = U8("显示建筑");
 const char* LanguageManager::Visuals_Menu::OnlyEnemyStructures = U8("仅显示敌人建筑");
 const char* LanguageManager::Visuals_Menu::StructureMaxDistance = U8("建筑显示距离");
+
+const char* LanguageManager::Visuals_Menu::TeamShowStructures = U8("显示建筑##Team");
+const char* LanguageManager::Visuals_Menu::TeamStructureMaxDistance = U8("建筑显示距离##Team");
+
 const char* LanguageManager::Visuals_Menu::ShowWater = U8("显示水源");
 const char* LanguageManager::Visuals_Menu::WaterMaxCount = U8("显示最近水源数量");
 const char* LanguageManager::Visuals_Menu::WaterCountUnit = U8("个");
+
+const char* LanguageManager::Visuals_Menu::ESPTeamEnabled = U8("启用透视##Team");
+
 const char* LanguageManager::Visuals_Menu::TeamBox = U8("方框##Team");
 const char* LanguageManager::Visuals_Menu::TeamName = U8("名称##Team");
 const char* LanguageManager::Visuals_Menu::TeamHealthBar = U8("血量##Team");
 const char* LanguageManager::Visuals_Menu::TeamTorpor = U8("眩晕##Team");
 const char* LanguageManager::Visuals_Menu::TeamRagdoll = U8("尸体##Team");
 const char* LanguageManager::Visuals_Menu::TeamDistance = U8("距离##Team");
+
+const char* LanguageManager::Visuals_Menu::TeamDinoBox = U8("方框##TeamDino");
+const char* LanguageManager::Visuals_Menu::TeamDinoName = U8("名称##TeamDino");
+const char* LanguageManager::Visuals_Menu::TeamDinoHealthBar = U8("血量##TeamDino");
+const char* LanguageManager::Visuals_Menu::TeamDinoTorpor = U8("眩晕##TeamDino");
+const char* LanguageManager::Visuals_Menu::TeamDinoRagdoll = U8("尸体##TeamDino");
+const char* LanguageManager::Visuals_Menu::TeamDinoDistance = U8("距离##TeamDino");
+
+const char* LanguageManager::Visuals_Menu::DinoBox = U8("方框##Dino");
+const char* LanguageManager::Visuals_Menu::DinoName = U8("名称##Dino");
+const char* LanguageManager::Visuals_Menu::DinoHealthBar = U8("血量##Dino");
+const char* LanguageManager::Visuals_Menu::DinoTorpor = U8("眩晕##Dino");
+const char* LanguageManager::Visuals_Menu::DinoRagdoll = U8("尸体##Dino");
+const char* LanguageManager::Visuals_Menu::DinoDistance = U8("距离##Dino");
+
+const char* LanguageManager::Visuals_Menu::TYPEPlayer = U8("生存者");
+const char* LanguageManager::Visuals_Menu::TYPEDino = U8("生物");
+const char* LanguageManager::Visuals_Menu::TYPEStructures = U8("建筑");
+const char* LanguageManager::Visuals_Menu::TYPEDroppedItems = U8("物品");
+const char* LanguageManager::Visuals_Menu::TYPEWorld = U8("世界");
+const char* LanguageManager::Visuals_Menu::DroppedItemsCombo = U8("选择要显示的掉落物");
+
+const char* LanguageManager::ConfigImGui_Menu::Copy = U8("复制");
+const char* LanguageManager::ConfigImGui_Menu::Paste = U8("粘贴");
 
 // =============================================================================
 // RegisterDefaults —— 生成模板 ini 使用，值为 UTF-8 字符串
@@ -250,6 +285,7 @@ void LanguageManager::RegisterDefaults(std::unordered_map<std::string, std::stri
     d["Visuals_Menu.SectionWorld"] = U8("世界信息");
     d["Visuals_Menu.SectionTeam"] = U8("队友设置");
     d["Visuals_Menu.SectionTeamExtra"] = U8("额外信息");
+    d["Visuals_Menu.ESPEnabled"] = U8("启用透视");
     d["Visuals_Menu.Box"] = U8("方框");
     d["Visuals_Menu.Name"] = U8("名称");
     d["Visuals_Menu.HealthBar"] = U8("血量");
@@ -281,15 +317,44 @@ void LanguageManager::RegisterDefaults(std::unordered_map<std::string, std::stri
     d["Visuals_Menu.ShowStructures"] = U8("显示建筑");
     d["Visuals_Menu.OnlyEnemyStructures"] = U8("仅显示敌人建筑");
     d["Visuals_Menu.StructureMaxDistance"] = U8("建筑显示距离");
+
+    d["Visuals_Menu.TeamShowStructures"] = U8("显示建筑##Team");
+    d["Visuals_Menu.TeamStructureMaxDistance"] = U8("建筑显示距离##Team");
+
     d["Visuals_Menu.ShowWater"] = U8("显示水源");
     d["Visuals_Menu.WaterMaxCount"] = U8("显示最近水源数量");
     d["Visuals_Menu.WaterCountUnit"] = U8("个");
+    d["Visuals_Menu.ESPTeamEnabled"] = U8("启用透视##Team");
     d["Visuals_Menu.TeamBox"] = U8("方框##Team");
     d["Visuals_Menu.TeamName"] = U8("名称##Team");
     d["Visuals_Menu.TeamHealthBar"] = U8("血量##Team");
     d["Visuals_Menu.TeamTorpor"] = U8("眩晕##Team");
     d["Visuals_Menu.TeamRagdoll"] = U8("尸体##Team");
     d["Visuals_Menu.TeamDistance"] = U8("距离##Team");
+
+    d["Visuals_Menu.TeamDinoBox"] = U8("方框##TeamDino");
+    d["Visuals_Menu.TeamDinoName"] = U8("名称##TeamDino");
+    d["Visuals_Menu.TeamDinoHealthBar"] = U8("血量##TeamDino");
+    d["Visuals_Menu.TeamDinoTorpor"] = U8("眩晕##TeamDino");
+    d["Visuals_Menu.TeamDinoRagdoll"] = U8("尸体##TeamDino");
+    d["Visuals_Menu.TeamDinoDistance"] = U8("距离##TeamDino");
+
+    d["Visuals_Menu.DinoBox"] = U8("方框##Dino");
+    d["Visuals_Menu.DinoName"] = U8("名称##Dino");
+    d["Visuals_Menu.DinoHealthBar"] = U8("血量##Dino");
+    d["Visuals_Menu.DinoTorpor"] = U8("眩晕##Dino");
+    d["Visuals_Menu.DinoRagdoll"] = U8("尸体##Dino");
+    d["Visuals_Menu.DinoDistance"] = U8("距离##Dino");
+
+    d["Visuals_Menu.TYPEPlayer"] = U8("生存者");
+    d["Visuals_Menu.TYPEDino"] = U8("生物");
+    d["Visuals_Menu.TYPEStructures"] = U8("建筑");
+    d["Visuals_Menu.TYPEDroppedItems"] = U8("物品");
+    d["Visuals_Menu.TYPEWorld"] = U8("世界");
+    d["Visuals_Menu.DroppedItemsCombo"] = U8("选择要显示的掉落物");
+
+    d["ConfigImGui_Menu.Copy"] = U8("复制");
+    d["ConfigImGui_Menu.Paste"] = U8("粘贴");
 }
 
 // =============================================================================
@@ -399,6 +464,8 @@ void LanguageManager::ApplyToStaticMembers() {
     apply("Visuals_Menu.SectionWorld", Visuals_Menu::SectionWorld);
     apply("Visuals_Menu.SectionTeam", Visuals_Menu::SectionTeam);
     apply("Visuals_Menu.SectionTeamExtra", Visuals_Menu::SectionTeamExtra);
+
+    apply("Visuals_Menu.ESPEnabled", Visuals_Menu::ESPEnabled);
     apply("Visuals_Menu.Box", Visuals_Menu::Box);
     apply("Visuals_Menu.Name", Visuals_Menu::Name);
     apply("Visuals_Menu.HealthBar", Visuals_Menu::HealthBar);
@@ -430,15 +497,45 @@ void LanguageManager::ApplyToStaticMembers() {
     apply("Visuals_Menu.ShowStructures", Visuals_Menu::ShowStructures);
     apply("Visuals_Menu.OnlyEnemyStructures", Visuals_Menu::OnlyEnemyStructures);
     apply("Visuals_Menu.StructureMaxDistance", Visuals_Menu::StructureMaxDistance);
+
+    apply("Visuals_Menu.TeamShowStructures", Visuals_Menu::TeamShowStructures);
+    apply("Visuals_Menu.TeamStructureMaxDistance", Visuals_Menu::TeamStructureMaxDistance);
+
     apply("Visuals_Menu.ShowWater", Visuals_Menu::ShowWater);
     apply("Visuals_Menu.WaterMaxCount", Visuals_Menu::WaterMaxCount);
     apply("Visuals_Menu.WaterCountUnit", Visuals_Menu::WaterCountUnit);
+
+    apply("Visuals_Menu.ESPTeamEnabled", Visuals_Menu::ESPTeamEnabled);
     apply("Visuals_Menu.TeamBox", Visuals_Menu::TeamBox);
     apply("Visuals_Menu.TeamName", Visuals_Menu::TeamName);
     apply("Visuals_Menu.TeamHealthBar", Visuals_Menu::TeamHealthBar);
     apply("Visuals_Menu.TeamTorpor", Visuals_Menu::TeamTorpor);
     apply("Visuals_Menu.TeamRagdoll", Visuals_Menu::TeamRagdoll);
     apply("Visuals_Menu.TeamDistance", Visuals_Menu::TeamDistance);
+
+    apply("Visuals_Menu.TeamDinoBox", Visuals_Menu::TeamDinoBox);
+    apply("Visuals_Menu.TeamDinoName", Visuals_Menu::TeamDinoName);
+    apply("Visuals_Menu.TeamDinoHealthBar", Visuals_Menu::TeamDinoHealthBar);
+    apply("Visuals_Menu.TeamDinoTorpor", Visuals_Menu::TeamDinoTorpor);
+    apply("Visuals_Menu.TeamDinoRagdoll", Visuals_Menu::TeamDinoRagdoll);
+    apply("Visuals_Menu.TeamDinoDistance", Visuals_Menu::TeamDinoDistance);
+
+    apply("Visuals_Menu.DinoBox", Visuals_Menu::DinoBox);
+    apply("Visuals_Menu.DinoName", Visuals_Menu::DinoName);
+    apply("Visuals_Menu.DinoHealthBar", Visuals_Menu::DinoHealthBar);
+    apply("Visuals_Menu.DinoTorpor", Visuals_Menu::DinoTorpor);
+    apply("Visuals_Menu.DinoRagdoll", Visuals_Menu::DinoRagdoll);
+    apply("Visuals_Menu.DinoDistance", Visuals_Menu::DinoDistance);
+
+    apply("Visuals_Menu.TYPEPlayer", Visuals_Menu::TYPEPlayer);
+    apply("Visuals_Menu.TYPEDino", Visuals_Menu::TYPEDino);
+    apply("Visuals_Menu.TYPEStructures", Visuals_Menu::TYPEStructures);
+    apply("Visuals_Menu.TYPEDroppedItems", Visuals_Menu::TYPEDroppedItems);
+    apply("Visuals_Menu.TYPEWorld", Visuals_Menu::TYPEWorld);
+    apply("Visuals_Menu.DroppedItemsCombo", Visuals_Menu::DroppedItemsCombo);
+
+    apply("ConfigImGui_Menu.Copy", ConfigImGui_Menu::Copy);
+    apply("ConfigImGui_Menu.Paste", ConfigImGui_Menu::Paste);
 }
 
 // =============================================================================
